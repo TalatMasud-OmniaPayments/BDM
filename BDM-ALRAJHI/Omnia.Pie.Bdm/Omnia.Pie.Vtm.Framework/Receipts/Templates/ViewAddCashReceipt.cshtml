@@ -1,0 +1,33 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface.Receipts
+@using Omnia.Pie.Vtm.Framework.Interface.Engine
+@{
+	Layout = "LayoutHeader";
+	const byte CURRENCY_COLUMN_WIDTH = 4;
+	const byte DENOMINATION_COLUMN_WIDTH = 5;
+	const byte COUNT_COLUMN_WIDTH = 6;
+	const byte REJECTED_COLUMN_WIDTH = 6;
+	const byte REMAINING_COLUMN_WIDTH = 6;
+	const byte DISPENSED_COLUMN_WIDTH = 5;
+	const byte TOTAL_COLUMN_WIDTH = 6;
+	var Receipt = (ViewAddCashReceipt)Model.Receipt;
+}
+
+@Model.Output.WriteRow("# CUR DENO CST + REJ = REM + DISP=TOTAL")
+@if (Receipt.Units != null && Receipt.Units.Any())
+{
+	foreach (var unit in Receipt.Units)
+	{
+		@Model.Output.WriteRow(
+			Column.Create(unit.Index.ToString()),
+			Column.Create(unit.Currency, CURRENCY_COLUMN_WIDTH),
+			Column.Create(unit.Denomination.ToString(), DENOMINATION_COLUMN_WIDTH),
+			Column.Create(Model.Binding(unit.Count, "D5"), COUNT_COLUMN_WIDTH),
+			Column.Create(Model.Binding(unit.Rejected, "D5"), REJECTED_COLUMN_WIDTH),
+			Column.Create(Model.Binding(unit.Remaining, "D5"), REMAINING_COLUMN_WIDTH),
+			Column.Create(Model.Binding(unit.Dispensed, "D4"), DISPENSED_COLUMN_WIDTH),
+			Column.Create(Model.Binding(unit.Total, "D5"), TOTAL_COLUMN_WIDTH)
+		)
+		WriteLiteral("\r\n");
+	}
+}

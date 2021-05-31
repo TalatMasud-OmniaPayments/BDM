@@ -1,0 +1,6 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@{
+	Layout = "UpdateCustomerDetailsLayout";
+}
+@Model.Output.WriteRow(@Resources.UpdatedEmailColon)
+@Model.Output.WriteRow(@Model.Binding(@Model.Receipt.Email, @Resources.NotSpecified))

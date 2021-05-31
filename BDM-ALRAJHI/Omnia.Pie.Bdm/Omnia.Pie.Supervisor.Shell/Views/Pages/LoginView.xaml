@@ -1,0 +1,54 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			xmlns:local="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Pages"
+			xmlns:c="clr-namespace:Omnia.Pie.Supervisor.UI.Themes.Controls;assembly=Omnia.Pie.Supervisor.UI.Themes"
+			x:Class="Omnia.Pie.Supervisor.Shell.Views.Pages.LoginView"
+			mc:Ignorable="d" 
+			d:DesignHeight="500" 
+			d:DesignWidth="800">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Resources/Main.xaml"/>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Styles/Main.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="500">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="1.5*"/>
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Label Grid.Row="1" Content="User Name" x:Name="userName" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+		<ComboBox Grid.Row="1" Grid.Column="1" x:Name="txtUserName" 
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center"
+					Margin="{StaticResource margin}" Width="200" Height="50" 
+					ItemsSource="{Binding UserNames}"
+					SelectedItem="{Binding SelectedUserName, UpdateSourceTrigger=PropertyChanged}" />
+
+		<Label Grid.Row="2" Content="Enter password:" Margin="5,15" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+		<PasswordBox Grid.Row="2" Grid.Column="1" Style="{StaticResource passwordBox}" c:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay}"  Width="200" c:TextBoxHelper.DataType="Numeric" PasswordChar="*" >
+			<PasswordBox.InputBindings>
+				<KeyBinding Key="Return" Command="{Binding Login}" />
+			</PasswordBox.InputBindings>
+		</PasswordBox>
+
+		<Button Grid.Row="3" Grid.Column="1" Content="Login" Command="{Binding Login}" Margin="{StaticResource margin}" Width="200" Height="60" />
+
+		<TextBlock x:Name="PART_Error" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+								   Style="{StaticResource TextBlock.Error.Base.Style}" Text="{Binding ErrorMessage}"/>
+	</Grid>
+</UserControl>

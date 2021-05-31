@@ -1,0 +1,7 @@
+﻿namespace Omnia.Pie.Vtm.Devices.Interface
+{
+	public interface IMediaOutDevice : IMediaDevice
+	{
+
+	}
+}

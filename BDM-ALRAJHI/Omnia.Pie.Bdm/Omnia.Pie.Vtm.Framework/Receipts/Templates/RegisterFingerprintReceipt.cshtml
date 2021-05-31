@@ -1,0 +1,11 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface
+@{
+    Layout = "Layout";
+}
+@Model.Output.WriteRow(@Resources.UsernameColon, @Model.Binding(@Model.Receipt.userName, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.NameColon, @Model.Binding(@Model.Receipt.name, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.MobileColon, @Model.Binding(@Model.Receipt.mobile, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.EmailColon, @Model.Binding(@Model.Receipt.email, @Resources.NotSpecified))
+
+@Model.Output.WriteRow(@Resources.RegisterFingerprintReceipt)

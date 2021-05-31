@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Omnia.Pie.Supervisor.Shell.Views.Pages.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Pages"
+			 xmlns:Charts="clr-namespace:Omnia.Pie.Supervisor.Shell.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1500">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Resources/Main.xaml"/>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Styles/Main.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50px"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" MaxWidth="1200" MaxHeight="600">
+			<Charts:DeviceChart Margin="0,5" DeviceData="{Binding CardData}" />
+            <!--<Charts:DeviceChart Margin="0,5" DeviceData="{Binding CheckData}" />-->
+            <Charts:DeviceChart Margin="0,5" DeviceData="{Binding CashDispenserData}" /> 
+            <Charts:DeviceChart Margin="0,5" DeviceData="{Binding CashAcceptorData}" />
+			<Border Height="100" Margin="5" BorderThickness="2" Background="Black" BorderBrush="#FF19852D">
+				<StackPanel Orientation="Vertical">
+					<TextBlock Foreground="#FF19852D" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Width="200" Height="30" Text="Paper Status:" />
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Width="120" Height="30" Text="Receipt Printer:" />
+						<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Width="120" Height="30" Text="{Binding ReceiptPaperStatus}" />
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Width="120" Height="30" Text="Journal Printer:" />
+						<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Width="120" Height="30" Text="{Binding JournalPaperStatus}" />
+					</StackPanel>
+				</StackPanel>
+			</Border>
+		</WrapPanel>
+        <Label Grid.Row="1" Content="{Binding Message}"  HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="{StaticResource normalFont}" Foreground="{StaticResource foreground}" Background="Transparent"/>
+
+        <!--<Button Grid.Row="1" Margin="0,10,10,0" Content="Exchange Cassettes" Command="{Binding ExchangeCassettes}" HorizontalAlignment="Right" />-->
+	</Grid>
+</UserControl>

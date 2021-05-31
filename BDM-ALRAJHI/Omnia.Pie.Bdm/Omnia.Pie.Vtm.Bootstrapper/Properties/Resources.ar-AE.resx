@@ -1,0 +1,1674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Button1000Aed" xml:space="preserve">
+    <value>1000 درهم</value>
+  </data>
+  <data name="Button100Aed" xml:space="preserve">
+    <value>100 درهم</value>
+  </data>
+  <data name="Button200Aed" xml:space="preserve">
+    <value>200 درهم</value>
+  </data>
+  <data name="Button500Aed" xml:space="preserve">
+    <value>500 درهم</value>
+  </data>
+  <data name="ButtonAccountInquiry" xml:space="preserve">
+    <value>الاستعلام عن الحساب</value>
+  </data>
+  <data name="ButtonAddBeneficiary" xml:space="preserve">
+    <value>أضف مستفيد</value>
+  </data>
+  <data name="ButtonAddMore" xml:space="preserve">
+    <value>إيداع المزيد</value>
+  </data>
+  <data name="ButtonApprove" xml:space="preserve">
+    <value>استمرار</value>
+  </data>
+  <data name="ButtonArabic" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="ButtonBack" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="ButtonBalanceInquiry" xml:space="preserve">
+    <value>الإستعلام عن الرصيد</value>
+  </data>
+  <data name="ButtonBillPayment" xml:space="preserve">
+    <value>دفعة الفاتورة</value>
+  </data>
+  <data name="ButtonCallForAssistance" xml:space="preserve">
+    <value>مساعدة مباشرة</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="ButtonCardlessCashWithdrawal" xml:space="preserve">
+    <value>السحب النقدي بدون بطاقة</value>
+  </data>
+  <data name="ButtonCardTransactions" xml:space="preserve">
+    <value>عمليات البطاقة الإئتمانية</value>
+  </data>
+  <data name="ButtonCashDeposit" xml:space="preserve">
+    <value>الإيداع النقدي</value>
+  </data>
+  <data name="ButtonCashDepositToAccount" xml:space="preserve">
+    <value>الإيداع النقدي لحساب</value>
+  </data>
+  <data name="ButtonCashDepositToCreditCard" xml:space="preserve">
+    <value>الإيداع النقدي لبطاقة الإئتمان</value>
+  </data>
+  <data name="ButtonCashWithdrawal" xml:space="preserve">
+    <value>السحب النقدي</value>
+  </data>
+  <data name="ButtonChequeBookRequest" xml:space="preserve">
+    <value>طلب دفتر شيكات</value>
+  </data>
+  <data name="ButtonChequeDeposit" xml:space="preserve">
+    <value>إيداع الشيك</value>
+  </data>
+  <data name="ButtonChequeDepositToAccount" xml:space="preserve">
+    <value>إيداع الشيك إلى الحساب</value>
+  </data>
+  <data name="ButtonChequeDepositToCreditCard" xml:space="preserve">
+    <value>إيداع شيك إلى بطاقة الائتمان</value>
+  </data>
+  <data name="ButtonConfirm" xml:space="preserve">
+    <value>استمرار</value>
+  </data>
+  <data name="ButtonCreditCardPayment" xml:space="preserve">
+    <value>الدفع لبطاقة الإئتمان</value>
+  </data>
+  <data name="ButtonCreditCardPayments" xml:space="preserve">
+    <value>دفعات بطاقات الائتمان</value>
+  </data>
+  <data name="ButtonCustomerDetailsUpdate" xml:space="preserve">
+    <value>تحديث تفاصيل العملاء</value>
+  </data>
+  <data name="ButtonDepositTransactionsCardless" xml:space="preserve">
+    <value>معاملات الإيداع بدون بطاقة</value>
+  </data>
+  <data name="ButtonELife" xml:space="preserve">
+    <value>اي لايف</value>
+  </data>
+  <data name="ButtonEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="ButtonEnter" xml:space="preserve">
+    <value>أدخل</value>
+  </data>
+  <data name="ButtonEnterAccountNumber" xml:space="preserve">
+    <value>ادخل رقم الحساب يدويًا</value>
+  </data>
+  <data name="ButtonEnterCardNumber" xml:space="preserve">
+    <value>أدخل رقم البطاقة المكون من 16 رقم</value>
+  </data>
+  <data name="ButtonFundsTransfer" xml:space="preserve">
+    <value>تحويل الأموال</value>
+  </data>
+  <data name="ButtonFundsTransferOtherAccounts" xml:space="preserve">
+    <value>التحويل بين حسابات بنك الهلال الأخرى</value>
+  </data>
+  <data name="ButtonFundsTransferOwnAccounts" xml:space="preserve">
+    <value>التحويل بين الحسابات الخاصة</value>
+  </data>
+  <data name="ButtonGoGreen" xml:space="preserve">
+    <value>لا تطبع الإيصال</value>
+  </data>
+  <data name="ButtonLast6MonthsStatement" xml:space="preserve">
+    <value>كشف حساب عن الستة أشهر الماضية</value>
+  </data>
+  <data name="ButtonLoanInquiry" xml:space="preserve">
+    <value>الاستعلام عن القرض</value>
+  </data>
+  <data name="ButtonLoanSchedule" xml:space="preserve">
+    <value>جدول القرض</value>
+  </data>
+  <data name="ButtonMinistatement" xml:space="preserve">
+    <value>بيان مؤقت</value>
+  </data>
+  <data name="ButtonMinistatementInquiry" xml:space="preserve">
+    <value>الاستفسار عن الكشف المصغر</value>
+  </data>
+  <data name="ButtonNext" xml:space="preserve">
+    <value>التالى</value>
+  </data>
+  <data name="ButtonNo" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="ButtonNoThanks" xml:space="preserve">
+    <value>لا, شكرا</value>
+  </data>
+  <data name="ButtonOK" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="ButtonOtherAmount" xml:space="preserve">
+    <value>مبلغ آخر</value>
+  </data>
+  <data name="ButtonOtherTransactions" xml:space="preserve">
+    <value>تعاملات أخرى</value>
+  </data>
+  <data name="ButtonPostpaid" xml:space="preserve">
+    <value>آجل الدفع</value>
+  </data>
+  <data name="ButtonPostpaidGsm" xml:space="preserve">
+    <value>آجل الدفع
+(GSM)</value>
+  </data>
+  <data name="ButtonPrintPreview" xml:space="preserve">
+    <value>معاينة الطباعة</value>
+  </data>
+  <data name="ButtonPrintReceipt" xml:space="preserve">
+    <value>طباعة الإيصال</value>
+  </data>
+  <data name="ButtonProceed" xml:space="preserve">
+    <value>استمرار</value>
+  </data>
+  <data name="ButtonRecharge" xml:space="preserve">
+    <value>إعادة شحن</value>
+  </data>
+  <data name="ButtonSelfService" xml:space="preserve">
+    <value>الخدمة الذاتية</value>
+  </data>
+  <data name="ButtonSubmit" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="ButtonTelcoBillPayment" xml:space="preserve">
+    <value>سداد فواتير تيلكو</value>
+  </data>
+  <data name="ButtonUpdate" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="ButtonUpdateAddress" xml:space="preserve">
+    <value>عنوان التحديث</value>
+  </data>
+  <data name="ButtonUpdateEmail" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني الجديد</value>
+  </data>
+  <data name="ButtonUpdateEmiratesId" xml:space="preserve">
+    <value>تحديث الهوية الإماراتية</value>
+  </data>
+  <data name="ButtonUpdateMobileNumber" xml:space="preserve">
+    <value>تحديث رقم الجوال</value>
+  </data>
+  <data name="ButtonUtilityBillPayment" xml:space="preserve">
+    <value>دفعات الفواتير</value>
+  </data>
+  <data name="ButtonWaselRecharge" xml:space="preserve">
+    <value>إعادة شحن واصل</value>
+  </data>
+  <data name="ButtonYes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="ErrorAlreadyRequestedChequeBook" xml:space="preserve">
+    <value>تم طلب إصدار دفتر شيكات بالفعل</value>
+  </data>
+  <data name="ErrorBeneficiaryAlreadyExists" xml:space="preserve">
+    <value>هوية المستفيد موجودة بالفعل، يرجى إدخال هوية مستفيد جديد</value>
+  </data>
+  <data name="ErrorBlockedCard" xml:space="preserve">
+    <value>البطاقة غير صالحة، يرجى سحب البطاقة</value>
+  </data>
+  <data name="ErrorCapturedCard" xml:space="preserve">
+    <value>لقد تم حجز البطاقة، الرجاء التواصل مع المصرف</value>
+  </data>
+  <data name="ErrorCardlessTransactionDeclined" xml:space="preserve">
+    <value>معاملة غير صحيحة يرجى الاتصال بالمرسل</value>
+  </data>
+  <data name="ErrorChequeScanner" xml:space="preserve">
+    <value>هذه الخدمة غير متوفرة في الوقت الحالي، يرجى زيارة أحد اجهزة مصرف الهلال الأخرى أو تفضل بزيارة الفرع</value>
+  </data>
+  <data name="ErrorCollectCash" xml:space="preserve">
+    <value>يرجى سحب النقد. أقل ورقة نقدية يمكن إيداعها هي من فئة عشرة دراهم</value>
+  </data>
+  <data name="ErrorDeclinedCashDeposit" xml:space="preserve">
+    <value>تم رفض الإيداع النقدي</value>
+  </data>
+  <data name="ErrorDeclinedChequeBook" xml:space="preserve">
+    <value>لا يمكن إتمام طلبك الآن، الرجاء زيارة الفرع</value>
+  </data>
+  <data name="ErrorDeclinedChequeBookContact" xml:space="preserve">
+    <value>لا يمكن إتمام طلبك الآن، الرجاء زيارة الفرع</value>
+  </data>
+  <data name="ErrorExceededAmount" xml:space="preserve">
+    <value>لا يمكن أن يتجاوز المبلغ الحد الأقصى للتحويل</value>
+  </data>
+  <data name="ErrorExceededDailyWithdrawalLimit" xml:space="preserve">
+    <value>لقد تجاوزت حد السحب اليومي الخاص بك</value>
+  </data>
+  <data name="ErrorExceededDepositLimit" xml:space="preserve">
+    <value>لقد تجاوزت حد السحب الخاص بك. يرجى استرجاع النقود الخاصة بك</value>
+  </data>
+  <data name="ErrorExceededOtp" xml:space="preserve">
+    <value>كلمة المرور التي تستخدم لمرة واحدة التي ادخلتها غير صحيحة ويجب إعادة تعيينها</value>
+  </data>
+  <data name="ErrorExceededPin" xml:space="preserve">
+    <value>لقد تجاوزت محاولاتك اليومية لإدخال رقم التعريف الشخصي. سيتم إرسال رسالة نصية إلى هاتفك المحمول حول كيفية إعادة تعيين رقم التعريف الشخصي الخاص بك. يرجى أخذ البطاقة</value>
+  </data>
+  <data name="ErrorExceededWithdrawalLimit" xml:space="preserve">
+    <value>لقد تجاوزت حد المعاملة السحب الخاص بك</value>
+  </data>
+	<data name="ErrorExceededWithdrawalFrequencyLimit" xml:space="preserve">
+    <value>لقد تجاوزت حد تكرر السحب الخاص بك</value>
+  </data>
+  <data name="ErrorExpiredCard" xml:space="preserve">
+    <value>لقد انتهت صلاحية البطاقة الخاصة بك</value>
+  </data>
+  <data name="ErrorExpiredEmiratesId" xml:space="preserve">
+    <value>انتهت صلاحية بطاقة الهوية الخاصة بك</value>
+  </data>
+  <data name="ErrorExpiredOtp" xml:space="preserve">
+    <value>انتهت فترة صلاحية كلمة المرور لمرة واحدة ويجب إعادة إرسالها</value>
+  </data>
+  <data name="ErrorFailedRequest" xml:space="preserve">
+    <value>هذه الخدمة غير متوفرة في الوقت الحالي، يرجى زيارة أحد اجهزة مصرف الهلال الأخرى أو تفضل بزيارة الفرع</value>
+  </data>
+  <data name="ErrorIncorrectAmount" xml:space="preserve">
+    <value>المبلغ الذي تم إدخاله غير صحيح، يرجى إعادة إدخال المبلغ بمضاعفة العدد 100</value>
+  </data>
+  <data name="ErrorInsufficientBalance" xml:space="preserve">
+    <value>إن الرصيد المتوفر في الحساب غير كاف لإتمام المعاملة.</value>
+  </data>
+  <data name="ErrorInvalidAccount" xml:space="preserve">
+    <value>إن الحساب غير صحيح</value>
+  </data>
+  <data name="ErrorInvalidAccountNumber" xml:space="preserve">
+    <value>رقم الحساب غير صحيح يرجى المحاولة مرة أخرى</value>
+  </data>
+  <data name="ErrorInvalidBeneficiaryAccount" xml:space="preserve">
+    <value>يرجى إدخال حساب مستفيد صالح</value>
+  </data>
+  <data name="ErrorInvalidCardNumber" xml:space="preserve">
+    <value>عميلنا العزيز، إن هذه الخدمة مخصصة في الوقت الحالي لحاملي بطاقات مصرف الهلال.
+لمعرفة المزيد عن أخر عروضنا، الرجاء إختيار "المنتجات" من القائمة الرئيسية، المهم أنت</value>
+  </data>
+  <data name="ErrorInvalidCreditCard" xml:space="preserve">
+    <value>بطاقة الائتمان غير صالحة يرجى المحاولة ببطاقة ائتمان صالحة</value>
+  </data>
+  <data name="ErrorInvalidDebitCard" xml:space="preserve">
+    <value>بطاقة الخصم غير صالحة يرجى المحاولة ببطاقة خصم صالحة</value>
+  </data>
+  <data name="ErrorInvalidOtp" xml:space="preserve">
+    <value>كلمة المرور التي تستخدم لمرة واحدة التي ادخلتها حاول مرة اخرى</value>
+  </data>
+  <data name="ErrorInvalidPin" xml:space="preserve">
+    <value>رقم التعريف الشخصي غير صحيح يرجى المحاولة مرة أخرى</value>
+  </data>
+  <data name="ErrorInvalidTransaction" xml:space="preserve">
+    <value>تعذر إجراء المعاملة. يرجى المحاولة مرة أخرى لاحقًا</value>
+  </data>
+  <data name="ErrorLeadExists" xml:space="preserve">
+    <value>البيانات مسجلة مسبقاً، سيتم الإتصال بك قريباً</value>
+  </data>
+  <data name="ErrorNotAvailableFunction" xml:space="preserve">
+    <value>هذه الخدمة غير متوفرة في الوقت الحالي، يرجى زيارة أحد اجهزة مصرف الهلال الأخرى أو تفضل بزيارة الفرع</value>
+  </data>
+  <data name="ErrorNotHaveRequestedAmount" xml:space="preserve">
+    <value>لا يحتوي الجهازعلى المبلغ المطلوب في الوقت الحالي، يرجى إدخال مبلغ أقل</value>
+  </data>
+  <data name="ErrorNotRegisteredEmiratesId" xml:space="preserve">
+    <value>بطاقة الهوية الإماراتية الخاصة بك غير مسجلة. يرجى الاتصال بالبنك</value>
+  </data>
+  <data name="ErrorPinTriesLimit" xml:space="preserve">
+    <value>لم يتم إدخال رقمك السري بالصوره الصحيحه الرجاء سحب البطاقه</value>
+  </data>
+  <data name="ErrorUnableDeposit" xml:space="preserve">
+    <value>تعذر إيداع النقود الخاصة بك</value>
+  </data>
+  <data name="ErrorUnableDispense" xml:space="preserve">
+    <value>تعذر صرف النقود. يرجى المحاولة لاحقًا</value>
+  </data>
+  <data name="ErrorUnablePrintReceipt" xml:space="preserve">
+    <value>لا يمكن طباعة الإيصال. يرجى إعادة المحاولة في وقت لاحق</value>
+  </data>
+  <data name="ErrorUnableProvideInformation" xml:space="preserve">
+    <value>تعذر توفير المعلومات. يرجى المحاولة لاحقًا</value>
+  </data>
+  <data name="ErrorUnauthorizedUsage" xml:space="preserve">
+    <value>استخدام غير مصرح. يرجى الاتصال بالبنك</value>
+  </data>
+  <data name="LabelAadc" xml:space="preserve">
+    <value>شركة العين للتوزيع</value>
+  </data>
+  <data name="LabelAadcConsumerNumber" xml:space="preserve">
+    <value>رقم المستهلك لدى العين للتوزيع</value>
+  </data>
+  <data name="LabelAadcConsumerNumberColon" xml:space="preserve">
+    <value>رقم المستهلك لدى العين للتوزيع</value>
+  </data>
+  <data name="LabelAccountCurrency" xml:space="preserve">
+    <value>عملة الحساب</value>
+  </data>
+  <data name="LabelAccountCurrencyColon" xml:space="preserve">
+    <value>عملة الحساب</value>
+  </data>
+  <data name="LabelAccountNameColon" xml:space="preserve">
+    <value>اسم الحساب</value>
+  </data>
+  <data name="LabelAccountNumberColon" xml:space="preserve">
+    <value>رقم الحساب</value>
+  </data>
+  <data name="LabelAccountType" xml:space="preserve">
+    <value>نوع الحساب</value>
+  </data>
+  <data name="LabelAccountTypeColon" xml:space="preserve">
+    <value>نوع الحساب</value>
+  </data>
+  <data name="LabelAddc" xml:space="preserve">
+    <value>شركة أبوظبي للتوزيع</value>
+  </data>
+  <data name="LabelAddcConsumerNumber" xml:space="preserve">
+    <value>رقم المستهلك لدى العين للتوزيع</value>
+  </data>
+  <data name="LabelAddcConsumerNumberColon" xml:space="preserve">
+    <value>رقم المستهلك لدى العين للتوزيع</value>
+  </data>
+  <data name="LabelAddressUpdated" xml:space="preserve">
+    <value>تم تحديث عنوانك في السجل الخاص بك</value>
+  </data>
+  <data name="LabelAed" xml:space="preserve">
+    <value>درهم</value>
+  </data>
+  <data name="LabelAmount" xml:space="preserve">
+    <value>المبلغ</value>
+  </data>
+  <data name="LabelAmountColon" xml:space="preserve">
+    <value>المبلغ</value>
+  </data>
+  <data name="LabelApplicationType" xml:space="preserve">
+    <value>نوع الطلب</value>
+  </data>
+  <data name="LabelAuthCodeColon" xml:space="preserve">
+    <value>رمز التفويض</value>
+  </data>
+  <data name="LabelAvailableBalance" xml:space="preserve">
+    <value>الرصيد المتاح</value>
+  </data>
+  <data name="LabelAvailableBalanceColon" xml:space="preserve">
+    <value>الرصيد المتاح</value>
+  </data>
+  <data name="LabelAvailableCardLimitColon" xml:space="preserve">
+    <value>المبلغ المتوفر في البطاقة</value>
+  </data>
+  <data name="LabelAvailableLimit" xml:space="preserve">
+    <value>المبلغ المتوفر في البطاقة</value>
+  </data>
+  <data name="LabelAvailableLimitColon" xml:space="preserve">
+    <value>المبلغ المتوفر في البطاقة</value>
+  </data>
+  <data name="LabelBalance" xml:space="preserve">
+    <value>الرصيد</value>
+  </data>
+  <data name="LabelBalanceColon" xml:space="preserve">
+    <value>الرصيد</value>
+  </data>
+  <data name="LabelBeneficiaryAccount" xml:space="preserve">
+    <value>حساب المستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryAccountColon" xml:space="preserve">
+    <value>حساب المستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryAccountCurrencyColon" xml:space="preserve">
+    <value>عملة حساب المستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryAccountIbanColon" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي / رقم حساب المستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryFirstName" xml:space="preserve">
+    <value>الاسم الأول للمستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryId" xml:space="preserve">
+    <value>هوية المستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryIdColon" xml:space="preserve">
+    <value>هوية المستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryLastName" xml:space="preserve">
+    <value>الاسم الأخير للمستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryMobile" xml:space="preserve">
+    <value>رقم الهاتف المتحرك للمستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryMobileColon" xml:space="preserve">
+    <value>رقم الهاتف المتحرك للمستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryNameColon" xml:space="preserve">
+    <value>اسم المستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryPhone" xml:space="preserve">
+    <value>رقم هاتف المستفيد</value>
+  </data>
+  <data name="LabelBeneficiaryPhoneColon" xml:space="preserve">
+    <value>رقم هاتف المستفيد</value>
+  </data>
+  <data name="LabelBillAmountDue" xml:space="preserve">
+    <value>مبلغ الفاتورة المستحق</value>
+  </data>
+  <data name="LabelBillAmountDueColon" xml:space="preserve">
+    <value>مبلغ الفاتورة المستحق</value>
+  </data>
+  <data name="LabelBirthDate" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+  </data>
+  <data name="LabelBlockedAmountColon" xml:space="preserve">
+    <value>المبلغ المحجوز</value>
+  </data>
+  <data name="LabelBusiness" xml:space="preserve">
+    <value>أعمال تجارية</value>
+  </data>
+  <data name="LabelCall" xml:space="preserve">
+    <value>اتصال</value>
+  </data>
+  <data name="LabelCallAccountCode" xml:space="preserve">
+    <value>Call Account</value>
+  </data>
+  <data name="LabelCardLimitColon" xml:space="preserve">
+    <value>حد البطاقة</value>
+  </data>
+  <data name="LabelCardNumberColon" xml:space="preserve">
+    <value>رقم البطاقة</value>
+  </data>
+  <data name="LabelCardType" xml:space="preserve">
+    <value>نوع البطاقة</value>
+  </data>
+  <data name="LabelChequeBook" xml:space="preserve">
+    <value>دفتر شيكات</value>
+  </data>
+  <data name="LabelChooseBillPaymentType" xml:space="preserve">
+    <value>يرجى اختيار نوع دفعة الفاتورة</value>
+  </data>
+  <data name="LabelChooseTransactionType" xml:space="preserve">
+    <value>الرجاء إختيار المعاملة المطلوبة</value>
+  </data>
+  <data name="LabelChooseUpdateType" xml:space="preserve">
+    <value>يرجى  اختيار نوع التحديث</value>
+  </data>
+  <data name="LabelColon" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="LabelCompanyName" xml:space="preserve">
+    <value>اسم الشركة</value>
+  </data>
+  <data name="LabelConfirmUpdate" xml:space="preserve">
+    <value>يرجى  التأكد من التحديث</value>
+  </data>
+  <data name="LabelConsumerMobileNumber" xml:space="preserve">
+    <value>رقم هاتف المستهلك</value>
+  </data>
+  <data name="LabelConsumerMobileNumberColon" xml:space="preserve">
+    <value>رقم هاتف المستهلك</value>
+  </data>
+  <data name="LabelCountryColon" xml:space="preserve">
+    <value>البلد</value>
+  </data>
+  <data name="LabelCredit" xml:space="preserve">
+    <value>ائتمان</value>
+  </data>
+  <data name="LabelCreditCard" xml:space="preserve">
+    <value>بطاقة الائتمان</value>
+  </data>
+  <data name="LabelCreditCardNameColon" xml:space="preserve">
+    <value>اسم صاحب البطاقة</value>
+  </data>
+  <data name="LabelCreditCardNumberColon" xml:space="preserve">
+    <value>رقم بطاقة الائتمان</value>
+  </data>
+  <data name="LabelCreditCardTypeColon" xml:space="preserve">
+    <value>نوع بطاقة الائتمان</value>
+  </data>
+  <data name="LabelCurrency" xml:space="preserve">
+    <value>العملة</value>
+  </data>
+  <data name="LabelCurrencyAed" xml:space="preserve">
+    <value>درهم إماراتي</value>
+  </data>
+  <data name="LabelCurrencyAud" xml:space="preserve">
+    <value>دولار استرالي</value>
+  </data>
+  <data name="LabelCurrencyCad" xml:space="preserve">
+    <value>دولار كندي</value>
+  </data>
+  <data name="LabelCurrencyChf" xml:space="preserve">
+    <value>فرنك سويسري</value>
+  </data>
+  <data name="LabelCurrencyCodeAed" xml:space="preserve">
+    <value>درهم إماراتي</value>
+  </data>
+  <data name="LabelCurrencyCodeAud" xml:space="preserve">
+    <value>AUD</value>
+  </data>
+  <data name="LabelCurrencyCodeCad" xml:space="preserve">
+    <value>CAD</value>
+  </data>
+  <data name="LabelCurrencyCodeChf" xml:space="preserve">
+    <value>CHF</value>
+  </data>
+  <data name="LabelCurrencyCodeEur" xml:space="preserve">
+    <value>EUR</value>
+  </data>
+  <data name="LabelCurrencyCodeGbp" xml:space="preserve">
+    <value>GBP</value>
+  </data>
+  <data name="LabelCurrencyCodeUsd" xml:space="preserve">
+    <value>USD</value>
+  </data>
+  <data name="LabelCurrencyColon" xml:space="preserve">
+    <value>العملة</value>
+  </data>
+  <data name="LabelCurrencyEur" xml:space="preserve">
+    <value>يورو</value>
+  </data>
+  <data name="LabelCurrencyGbp" xml:space="preserve">
+    <value>جنيه بريطاني</value>
+  </data>
+  <data name="LabelCurrencyUsd" xml:space="preserve">
+    <value>دولار أمريكي</value>
+  </data>
+  <data name="LabelCurrent" xml:space="preserve">
+    <value>جاري</value>
+  </data>
+  <data name="LabelCurrentAccount" xml:space="preserve">
+    <value>حساب جاري</value>
+  </data>
+  <data name="LabelCurrentAccountCode" xml:space="preserve">
+    <value>حساب جاري</value>
+  </data>
+  <data name="LabelCurrentOutstandingColon" xml:space="preserve">
+    <value>الرصيد الحالي المستحق</value>
+  </data>
+  <data name="LabelCustomerID" xml:space="preserve">
+    <value>هوية العميل</value>
+  </data>
+  <data name="LabelCustomerName" xml:space="preserve">
+    <value>اسم العميل</value>
+  </data>
+  <data name="LabelCustomerNameColon" xml:space="preserve">
+    <value>اسم العميل</value>
+  </data>
+  <data name="LabelDailyLimit" xml:space="preserve">
+    <value>الحد اليومي</value>
+  </data>
+  <data name="LabelDebit" xml:space="preserve">
+    <value>دين</value>
+  </data>
+  <data name="LabelDenomination" xml:space="preserve">
+    <value>الفئة المودعة</value>
+  </data>
+  <data name="LabelDepositedAmountColon" xml:space="preserve">
+    <value>المبلغ المودع</value>
+  </data>
+  <data name="LabelDepositedVolume" xml:space="preserve">
+    <value>حجم المبلغ المودع</value>
+  </data>
+  <data name="LabelDestinationAccount" xml:space="preserve">
+    <value>الحساب المودع له</value>
+  </data>
+  <data name="LabelDestinationAccountColon" xml:space="preserve">
+    <value>الحساب المودع له</value>
+  </data>
+  <data name="LabelDestinationAccountCurrencyColon" xml:space="preserve">
+    <value>عملة الحساب المودع له</value>
+  </data>
+  <data name="LabelDestinationAccountTypeColon" xml:space="preserve">
+    <value>نوع الحساب المودع له</value>
+  </data>
+  <data name="LabelDewa" xml:space="preserve">
+    <value>هيئة كهرباء ومياه دبي</value>
+  </data>
+  <data name="LabelDewaConsumerNumber" xml:space="preserve">
+    <value>رقم المستهلك لدى هيئة الكهرباء والمياه في دبي</value>
+  </data>
+  <data name="LabelDewaConsumerNumberColon" xml:space="preserve">
+    <value>رقم المستهلك لدى هيئة الكهرباء والمياه في دبي</value>
+  </data>
+  <data name="LabelDu" xml:space="preserve">
+    <value>دو</value>
+  </data>
+  <data name="LabelEmailAddress" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني</value>
+  </data>
+  <data name="LabelEmirate" xml:space="preserve">
+    <value>الإمارة</value>
+  </data>
+  <data name="LabelEmirateCity" xml:space="preserve">
+    <value>الإمارة / المدينة</value>
+  </data>
+  <data name="LabelEmiratesIdNo" xml:space="preserve">
+    <value>بطاقة هوية إماراتية برقم</value>
+  </data>
+  <data name="LabelEmiratesIdNoColon" xml:space="preserve">
+    <value>بطاقة هوية إماراتية برقم</value>
+  </data>
+  <data name="LabelEmiratesIdUpdated" xml:space="preserve">
+    <value>تم تحديث بطاقة الهوية الإماراتية في السجل الخاص بك</value>
+  </data>
+  <data name="LabelEnterAccountNumber" xml:space="preserve">
+    <value>أدخل رقم حساب آخر مكون من عشرة أرقام</value>
+  </data>
+  <data name="LabelEnterAmount" xml:space="preserve">
+    <value>قم بإدخال المبلغ</value>
+  </data>
+  <data name="LabelEnterCardNumber" xml:space="preserve">
+    <value>ادخل رقم البطاقة المكون من 16 رقما</value>
+  </data>
+  <data name="LabelEnterOtp" xml:space="preserve">
+    <value>الرجاء ادخال “كلمة المرور لمرة واحدة” والتي تم إرسالها الى رقم هاتفك المتحرك المسجل لدينا</value>
+  </data>
+  <data name="LabelEnterPin" xml:space="preserve">
+    <value>الرجاء إدخال رقم التعريف الشخصي الخاص بك و المكون من 4 أرقام</value>
+  </data>
+  <data name="LabelEtisalat" xml:space="preserve">
+    <value>اتصالات</value>
+  </data>
+  <data name="LabelExceededDeposit" xml:space="preserve">
+    <value>يتجاوز المبلغ الذي تم إيداعه حد الـ 40000 درهم إماراتي. يرجى توضيح مصدر التمويل</value>
+  </data>
+  <data name="LabelExchangeRateLoading" xml:space="preserve">
+    <value>تحميل سعر الصرف</value>
+  </data>
+  <data name="LabelExchangeRateLoadingError" xml:space="preserve">
+    <value>حدث خطأ أثناء تحميل سعر الصرف</value>
+  </data>
+  <data name="LabelExpiryDate" xml:space="preserve">
+    <value>تاريخ الانتهاء</value>
+  </data>
+  <data name="LabelExpiryDateColon" xml:space="preserve">
+    <value>تاريخ الانتهاء</value>
+  </data>
+  <data name="LabelFillOutInformation" xml:space="preserve">
+    <value>يرجى تعبئة المعلومات التالية</value>
+  </data>
+  <data name="LabelFirsName" xml:space="preserve">
+    <value>الاسم الاول</value>
+  </data>
+  <data name="LabelFollowInstruction" xml:space="preserve">
+    <value>الرجاء اتباع التعليمات من مندوب خدمة العملاء لدى المصرف</value>
+  </data>
+  <data name="LabelFundsTransfer" xml:space="preserve">
+    <value>يرجى  اختيار نوع حوالات الأموال</value>
+  </data>
+  <data name="LabelHowDidYouHear" xml:space="preserve">
+    <value>كيف سمعت عنا؟</value>
+  </data>
+  <data name="LabelIbanColon" xml:space="preserve">
+    <value>رقم الحساب المصرفي الدولي (IBAN)</value>
+  </data>
+  <data name="LabelIdColon" xml:space="preserve">
+    <value>الهوية</value>
+  </data>
+  <data name="LabelInsertCreditCard" xml:space="preserve">
+    <value>يرجى إدخال بطاقة الائتمان</value>
+  </data>
+  <data name="LabelInsertDebitCard" xml:space="preserve">
+    <value>يرجى إدخال بطاقة الخصم المباشر الخاصة بك</value>
+  </data>
+  <data name="LabelInstallmentAmount" xml:space="preserve">
+    <value>مبلغ القسط</value>
+  </data>
+  <data name="LabelInstallmentDate" xml:space="preserve">
+    <value>تاريخ القسط</value>
+  </data>
+  <data name="LabelInterestedIn" xml:space="preserve">
+    <value>مهتم ب</value>
+  </data>
+  <data name="LabelInterestRateColon" xml:space="preserve">
+    <value>معدل الربح</value>
+  </data>
+  <data name="LabelLastName" xml:space="preserve">
+    <value>الاسم الأخير</value>
+  </data>
+  <data name="LabelLastStatementDateColon" xml:space="preserve">
+    <value>تاريخ اخر كشف حساب</value>
+  </data>
+  <data name="LabelLastStatementDueColon" xml:space="preserve">
+    <value>الكشف الأخير المستحق</value>
+  </data>
+  <data name="LabelLedgerBalanceColon" xml:space="preserve">
+    <value>الرصيد الدفتري</value>
+  </data>
+  <data name="LabelLimitAmountColon" xml:space="preserve">
+    <value>مبلغ الحد</value>
+  </data>
+  <data name="LabelLoanAccountNameColon" xml:space="preserve">
+    <value>اسم حساب القرض</value>
+  </data>
+  <data name="LabelLoanAccountNumberColon" xml:space="preserve">
+    <value>رقم حساب القرض</value>
+  </data>
+  <data name="LabelLoanClosureDateColon" xml:space="preserve">
+    <value>تاريخ إغلاق القرض</value>
+  </data>
+  <data name="LabelLoanStartDateColon" xml:space="preserve">
+    <value>تاريخ بدء القرض</value>
+  </data>
+  <data name="LabelLoanTenorColon" xml:space="preserve">
+    <value>مدة القرض</value>
+  </data>
+  <data name="LabelLoanTypeColon" xml:space="preserve">
+    <value>نوع القرض</value>
+  </data>
+  <data name="LabelLookupEmpty" xml:space="preserve">
+    <value>لم نعثر على أي شيء ليعرض هنا</value>
+  </data>
+  <data name="LabelMiddleNameOptional" xml:space="preserve">
+    <value>الاسم الأوسط (اختياري)</value>
+  </data>
+  <data name="LabelMinimumAmountDue" xml:space="preserve">
+    <value>الحد الأدنى للمبلغ المستحق</value>
+  </data>
+  <data name="LabelMinimumAmountDueColon" xml:space="preserve">
+    <value>الحد الأدنى للمبلغ المستحق</value>
+  </data>
+  <data name="LabelMobileNo" xml:space="preserve">
+    <value>رقم هاتف متحرك إماراتي</value>
+  </data>
+  <data name="LabelMobileNumber" xml:space="preserve">
+    <value>رقم الهاتف المتحرك</value>
+  </data>
+  <data name="LabelMobileUpdated" xml:space="preserve">
+    <value>تم تحديث رقم هاتفك المحمول في السجل الخاص بك</value>
+  </data>
+  <data name="LabelMonthlyInstallmentAmountColon" xml:space="preserve">
+    <value>مبلغ القسط الشهري</value>
+  </data>
+  <data name="LabelMonthlySalary" xml:space="preserve">
+    <value>راتب شهري</value>
+  </data>
+  <data name="LabelMonths" xml:space="preserve">
+    <value>شهر</value>
+  </data>
+  <data name="LabelNameColon" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="LabelNationality" xml:space="preserve">
+    <value>الجنسية</value>
+  </data>
+  <data name="LabelNeedReceipt" xml:space="preserve">
+    <value>هل تحتاج إلى ايصال ؟</value>
+  </data>
+  <data name="LabelNewEmail" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني الجديد</value>
+  </data>
+  <data name="LabelNewEmailColon" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني الجديد</value>
+  </data>
+  <data name="LabelNewEmirateCity" xml:space="preserve">
+    <value>الإمارة / المدينة الجديدة</value>
+  </data>
+  <data name="LabelNewEmirateCityColon" xml:space="preserve">
+    <value>الإمارة / المدينة الجديدة</value>
+  </data>
+  <data name="LabelNewEmiratesIdNoColon" xml:space="preserve">
+    <value>رقم الهوية الإماراتية الجديدة</value>
+  </data>
+  <data name="LabelNewExpiryDate" xml:space="preserve">
+    <value>تاريخ انتهاء الصلاحية الجديد</value>
+  </data>
+  <data name="LabelNewMobileNo" xml:space="preserve">
+    <value>رقم  الهاتف المتحرك الجديد</value>
+  </data>
+  <data name="LabelNewMobileNoColon" xml:space="preserve">
+    <value>رقم  الهاتف المتحرك الجديد</value>
+  </data>
+  <data name="LabelNewPoBoxNo" xml:space="preserve">
+    <value>صندوق البريد الجديد</value>
+  </data>
+  <data name="LabelNewPoBoxNoColon" xml:space="preserve">
+    <value>صندوق البريد الجديد</value>
+  </data>
+  <data name="LabelNextInstallmentDateColon" xml:space="preserve">
+    <value>تاريخ القسط القادم</value>
+  </data>
+  <data name="LabelNoTransactions" xml:space="preserve">
+    <value>لا توجد عمليات متاحة</value>
+  </data>
+  <data name="LabelNumberOfMonths" xml:space="preserve">
+    <value>عدد الأشهر</value>
+  </data>
+  <data name="LabelOpeningBalanceColon" xml:space="preserve">
+    <value>الرصيد الافتتاحي</value>
+  </data>
+  <data name="LabelOther" xml:space="preserve">
+    <value>أخرى</value>
+  </data>
+  <data name="LabelOtherCode" xml:space="preserve">
+    <value>أخرى</value>
+  </data>
+  <data name="LabelOutstandingAmount" xml:space="preserve">
+    <value>المبلغ الكلي المستحق</value>
+  </data>
+  <data name="LabelOutstandingBalance" xml:space="preserve">
+    <value>المبلغ المستحق</value>
+  </data>
+  <data name="LabelOutstandingBalanceColon" xml:space="preserve">
+    <value>المبلغ المستحق</value>
+  </data>
+  <data name="LabelOutstandingDue" xml:space="preserve">
+    <value>المستحقات</value>
+  </data>
+  <data name="LabelPaymentDetails" xml:space="preserve">
+    <value>تفاصيل الدفعات</value>
+  </data>
+  <data name="LabelPaymentDetailsColon" xml:space="preserve">
+    <value>تفاصيل الدفعات</value>
+  </data>
+  <data name="LabelPaymentDueDateColon" xml:space="preserve">
+    <value>تاريخ استحقاق الدفعة</value>
+  </data>
+  <data name="LabelPhoneColon" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="LabelPhoneNumber" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="LabelPoBoxNo" xml:space="preserve">
+    <value>رقم صندوق البريد</value>
+  </data>
+  <data name="LabelPostingDate" xml:space="preserve">
+    <value>تاريخ القيد</value>
+  </data>
+  <data name="LabelPrincipalAmountColon" xml:space="preserve">
+    <value>المبلغ الرئيسي</value>
+  </data>
+  <data name="LabelPromotion" xml:space="preserve">
+    <value>للتحدث إلى مندوب حول العروض الترويجية الحالية، يرجى الضغط على الزر أدناه</value>
+  </data>
+  <data name="LabelRechargeAmount" xml:space="preserve">
+    <value>مبلغ إعادة الشحن</value>
+  </data>
+  <data name="LabelRechargeAmountColon" xml:space="preserve">
+    <value>مبلغ إعادة الشحن</value>
+  </data>
+  <data name="LabelReferenceNumberColon" xml:space="preserve">
+    <value>رقم المرجع</value>
+  </data>
+  <data name="LabelRelationship" xml:space="preserve">
+    <value>العلاقة</value>
+  </data>
+  <data name="LabelRemaining" xml:space="preserve">
+    <value>متبقي</value>
+  </data>
+  <data name="LabelRemittance" xml:space="preserve">
+    <value>الحوالات</value>
+  </data>
+  <data name="LabelRetard" xml:space="preserve">
+    <value>هل تحتاج إلى مزيد من الوقت؟</value>
+  </data>
+  <data name="LabelRotateCheque" xml:space="preserve">
+    <value>الرجاء الضغط على صورة الشيك للتدوير</value>
+  </data>
+  <data name="LabelSalary" xml:space="preserve">
+    <value>الراتب</value>
+  </data>
+  <data name="LabelSalik" xml:space="preserve">
+    <value>سالك</value>
+  </data>
+  <data name="LabelSalikConsumerNumber" xml:space="preserve">
+    <value>رقم المستهلك في سالك</value>
+  </data>
+  <data name="LabelSalikConsumerNumberColon" xml:space="preserve">
+    <value>رقم المستهلك في سالك</value>
+  </data>
+  <data name="LabelSalikPinNumber" xml:space="preserve">
+    <value>رقم التعريف الشخصي لسالك</value>
+  </data>
+  <data name="LabelSalikPinNumberColon" xml:space="preserve">
+    <value>رقم التعريف الشخصي لسالك</value>
+  </data>
+  <data name="LabelSavings" xml:space="preserve">
+    <value>التوفير</value>
+  </data>
+  <data name="LabelSavingsAccountCode" xml:space="preserve">
+    <value>حساب التوفير</value>
+  </data>
+  <data name="LabelSelectAccount" xml:space="preserve">
+    <value>الرجاء تحديد حسابك</value>
+  </data>
+  <data name="LabelSelectAccountWatermark" xml:space="preserve">
+    <value>حدد الحساب</value>
+  </data>
+  <data name="LabelSelectCreditCard" xml:space="preserve">
+    <value>حدد بطاقة الائتمان</value>
+  </data>
+  <data name="LabelSelectCreditCardWatermark" xml:space="preserve">
+    <value>حدد بطاقة الائتمان</value>
+  </data>
+  <data name="LabelSelectDepositType" xml:space="preserve">
+    <value>الرجاء اختيار نوع الحساب</value>
+  </data>
+  <data name="LabelSelectInquiry" xml:space="preserve">
+    <value>الرجاء تحديد طبيعة الإستفسار</value>
+  </data>
+  <data name="LabelSelectLoanAccount" xml:space="preserve">
+    <value>حدد حساب القرض</value>
+  </data>
+  <data name="LabelSelectLoanAccountWatermark" xml:space="preserve">
+    <value>حدد حساب القرض</value>
+  </data>
+  <data name="LabelSelectService" xml:space="preserve">
+    <value>قم باختيار الخدمة</value>
+  </data>
+  <data name="LabelSelectServices" xml:space="preserve">
+    <value>قم باختيار الخدمات</value>
+  </data>
+  <data name="LabelSelectTransactionType" xml:space="preserve">
+    <value>يرجى  اختيار نوع المعاملة</value>
+  </data>
+  <data name="LabelSenderMobile" xml:space="preserve">
+    <value>رقم الهاتف المتحرك للمرسل</value>
+  </data>
+  <data name="LabelSenderMobileColon" xml:space="preserve">
+    <value>رقم الهاتف المتحرك للمرسل</value>
+  </data>
+  <data name="LabelSewa" xml:space="preserve">
+    <value>هيئة كهرباء ومياه الشارقة</value>
+  </data>
+  <data name="LabelSewaConsumerNumber" xml:space="preserve">
+    <value>رقم المستهلك لدى هيئة الكهرباء والمياه في الشارقة</value>
+  </data>
+  <data name="LabelSewaConsumerNumberColon" xml:space="preserve">
+    <value>رقم المستهلك لدى هيئة الكهرباء والمياه في الشارقة</value>
+  </data>
+  <data name="LabelSignOnSignaturePad" xml:space="preserve">
+    <value>يرجى التوقيع في لوحة التوقيع</value>
+  </data>
+  <data name="LabelSourceAccount" xml:space="preserve">
+    <value>من حساب</value>
+  </data>
+  <data name="LabelSourceAccountColon" xml:space="preserve">
+    <value>من حساب</value>
+  </data>
+  <data name="LabelSourceAccountCurrencyColon" xml:space="preserve">
+    <value>عملة الحساب "من"</value>
+  </data>
+  <data name="LabelSourceAccountTypeColon" xml:space="preserve">
+    <value>نوع الحساب "من"</value>
+  </data>
+  <data name="LabelSpecimenSignature1" xml:space="preserve">
+    <value>نموذج التوقيع 1</value>
+  </data>
+  <data name="LabelSpecimenSignature2" xml:space="preserve">
+    <value>نموذج التوقيع 2</value>
+  </data>
+  <data name="LabelThankYou" xml:space="preserve">
+    <value>شكرا لاستخدامكم خدمات مصرف الهلال</value>
+  </data>
+  <data name="LabelTotal" xml:space="preserve">
+    <value>الإجمالي</value>
+  </data>
+  <data name="LabelTotalChequesDepositedColon" xml:space="preserve">
+    <value>إجمالي الشيكات المودعة</value>
+  </data>
+  <data name="LabelTransactionLimit" xml:space="preserve">
+    <value>حد المعاملات</value>
+  </data>
+  <data name="LabelTransactionPin" xml:space="preserve">
+    <value>رقم التعريف الشخصي للمعاملة</value>
+  </data>
+  <data name="LabelTransactionPinColon" xml:space="preserve">
+    <value>رقم التعريف الشخصي للمعاملة</value>
+  </data>
+  <data name="LabelTransactions" xml:space="preserve">
+    <value>معاملة (معاملات)</value>
+  </data>
+  <data name="LabelTransactionSuccessful" xml:space="preserve">
+    <value>تم إنجاز العملية بنجاح</value>
+  </data>
+  <data name="LabelTransferAmountColon" xml:space="preserve">
+    <value>مبلغ التحويل</value>
+  </data>
+  <data name="LabelTransferInformation" xml:space="preserve">
+    <value>يرجى ملاحظة أن أسعار الصرف هي للإرشاد فقط. حيث يكون الحد الأدنى للمبلغ اللازم لتنفيذ حوالة الحساب هو وحدة واحدة من العملة المعنية</value>
+  </data>
+  <data name="LabelTransferredAmount" xml:space="preserve">
+    <value>مبلغ التحويل</value>
+  </data>
+  <data name="LabelTransferredAmountColon" xml:space="preserve">
+    <value>مبلغ التحويل</value>
+  </data>
+  <data name="LabelTypeOfAccount" xml:space="preserve">
+    <value>نوع الحساب</value>
+  </data>
+  <data name="LabelUnClearedAmountColon" xml:space="preserve">
+    <value>المبلغ الذي لم تتم تسويته</value>
+  </data>
+  <data name="LabelValueDate" xml:space="preserve">
+    <value>تاريخ القيمة</value>
+  </data>
+  <data name="LabelWelcomeArabic" xml:space="preserve">
+    <value>مرحبا في مصرف الهلال</value>
+  </data>
+  <data name="LabelWelcomeEnglish" xml:space="preserve">
+    <value>Welcome to Al Hilal Bank</value>
+  </data>
+  <data name="LabelWelcomeTallerAssistance" xml:space="preserve">
+    <value>نرحب بكم في الخدمة المباشرة عبر تقنية الإتصال من خلال الفيديو من مصرف الهلال</value>
+  </data>
+  <data name="LabelWithdrawalAmountColon" xml:space="preserve">
+    <value>مبلغ السحب</value>
+  </data>
+  <data name="MessageCallEnded" xml:space="preserve">
+    <value>انتهى الاتصال</value>
+  </data>
+  <data name="MessageCallingForAssistance" xml:space="preserve">
+    <value>جاري الإتصال بمندوب الخدمة لدينا من خلال تقنية الإتصال عبر الفيديو
+لحماية خصوصيتك، استخدم سماعة الهاتف و المثبتة على يسارك</value>
+  </data>
+  <data name="MessageCancelledDepositTransaction" xml:space="preserve">
+    <value>لقد تم إلغاء المعاملة، الرجاء سحب النقد الخاص بكم</value>
+  </data>
+  <data name="MessageChequesProcessing" xml:space="preserve">
+    <value>الرجاء الإنتظار لحين معالجة الشيكات الخاصة بك</value>
+  </data>
+  <data name="MessageCollectCheques" xml:space="preserve">
+    <value>يرجى سحب الشيكات الخاصة بك.</value>
+  </data>
+  <data name="MessageCollectRemainingCheques" xml:space="preserve">
+    <value>يرجى سحب الشيكات المتبقية الخاصة بك.</value>
+  </data>
+  <data name="MessageInitializingApplication" xml:space="preserve">
+    <value>Initializing application...</value>
+  </data>
+  <data name="MessageInsertCard" xml:space="preserve">
+    <value>يرجى إدخال بطاقتك</value>
+  </data>
+  <data name="MessageInsertCash" xml:space="preserve">
+    <value>الرجاء ايداع النقود، أقل ورقة نقدية يمكن إيداعها هي من فئة عشرة دراهم</value>
+  </data>
+  <data name="MessageInsertCashMax" xml:space="preserve">
+    <value>يرجى إدخال النقود (الحد الأقصى 40000 درهم إماراتي)الحد الأدنى للإيداع هو ١٠ دراهم</value>
+  </data>
+  <data name="MessageInsertCheque" xml:space="preserve">
+    <value>يرجى إدخال الشيك</value>
+  </data>
+  <data name="MessageInsertEmiratesId" xml:space="preserve">
+    <value>يرجى إدخال بطاقة الهوية الإماراتية</value>
+  </data>
+  <data name="MessageNotEligibleTransaction" xml:space="preserve">
+    <value>عميلنا العزيز، لا يمكن لك تنفيذ هذه العملية</value>
+  </data>
+  <data name="MessageNoTellerAvailable" xml:space="preserve">
+    <value>إننا نقوم بخدمة عملاء آخرين في الوقت الحالي، الرجاء الإنتظار و سنقوم بخدمتك قريبا</value>
+  </data>
+  <data name="MessageNotifyActivatedAccount" xml:space="preserve">
+    <value>سنقوم بإشعارك ما أن يتم تفعيل حسابك الجديد شكراً لك</value>
+  </data>
+  <data name="MessagePrintingReceipt" xml:space="preserve">
+    <value>طباعة الإيصال الخاص بك</value>
+  </data>
+  <data name="MessagePrintingStatement" xml:space="preserve">
+    <value>جاري طباعة كشف حسابك</value>
+  </data>
+  <data name="MessageRetractingCard" xml:space="preserve">
+    <value>نعتذر لسحب البطاقة عن طريق الجهاز، الرجاء الإتصال بالفرع</value>
+  </data>
+  <data name="MessageRetractingCash" xml:space="preserve">
+    <value>نعتذر لحجز المبلغ عن طريق الجهاز، الرجاء الإتصال بالفرع</value>
+  </data>
+  <data name="MessageRetractingCheques" xml:space="preserve">
+    <value>نعتذر لحجز الشيك (الشيكات) عن طريق الجهاز، الرجاء الإتصال بالفرع</value>
+  </data>
+  <data name="MessageRetractingEmiratesId" xml:space="preserve">
+    <value>نعتذر لسحب بطاقة الهوية الإمراتية عن طريق الجهاز، الرجاء الإتصال بالفرع</value>
+  </data>
+  <data name="MessageSuccessfulRequest" xml:space="preserve">
+    <value>تم إرسال الطلب بنجاح</value>
+  </data>
+  <data name="MessageTakeCard" xml:space="preserve">
+    <value>الرجاء القيام بسحب بطاقتك</value>
+  </data>
+  <data name="MessageTakeCash" xml:space="preserve">
+    <value>الرجاء جمع النقد الخاص بك</value>
+  </data>
+  <data name="MessageTakeEmiratesId" xml:space="preserve">
+    <value>الرجاء سحب بطاقة الهوية الإماراتية الخاصة بك</value>
+  </data>
+  <data name="MessageTakeReceipt" xml:space="preserve">
+    <value>الرجاء تحصيل الإيصال الخاص بك</value>
+  </data>
+  <data name="MessageUsingATMNetwork" xml:space="preserve">
+    <value>شكرًا لاستخدامك خدمات صراف الإمارات الآلي</value>
+  </data>
+  <data name="MessageWait" xml:space="preserve">
+    <value>الرجاء الإنتظار</value>
+  </data>
+  <data name="NotSpecified" xml:space="preserve">
+    <value>‒</value>
+  </data>
+  <data name="QuestionPerformTransaction" xml:space="preserve">
+    <value>هل ترغب في إجراء معاملة أخرى</value>
+  </data>
+  <data name="QuestionProceedWithoutReceipt" xml:space="preserve">
+    <value>لا يمكن طباعة الإيصال حالياً.هل تريد إتمام معاملتك بدون طبع الإيصال؟</value>
+  </data>
+  <data name="QuestionRetard" xml:space="preserve">
+    <value>هل أنت بحاجة لمزيد من الوقت؟</value>
+  </data>
+  <data name="ValidationAccountCurrencyRequired" xml:space="preserve">
+    <value>لم يتم تحديد عملة الحساب</value>
+  </data>
+  <data name="ValidationAccountIbanLength" xml:space="preserve">
+    <value>يجب أن يكون الطول 16</value>
+  </data>
+  <data name="ValidationAccountNumberMinLength" xml:space="preserve">
+    <value>يجب إدخال 16 رقم كحد أقصى</value>
+  </data>
+  <data name="ValidationAccountNumberRequired" xml:space="preserve">
+    <value>لم يتم تحديد رقم الحساب</value>
+  </data>
+  <data name="ValidationAccountTypeCodeRequired" xml:space="preserve">
+    <value>لم يتم تحديد رمز نوع الحساب</value>
+  </data>
+  <data name="ValidationAmountMultiples100" xml:space="preserve">
+    <value>يجب أن يكون المبلغ من مضاعافات 100</value>
+  </data>
+  <data name="ValidationAmountMultiplesFormat" xml:space="preserve">
+    <value>يجب أن يكون المبلغ من مضاعافات {0}</value>
+  </data>
+  <data name="ValidationBeneficiaryIdLength" xml:space="preserve">
+    <value>يجب أن يكون الطول 5</value>
+  </data>
+  <data name="ValidationCommentsLength" xml:space="preserve">
+    <value>يجب أن يكون الطول بين 3 و 100</value>
+  </data>
+  <data name="ValidationCompanyNameLingth" xml:space="preserve">
+    <value>يجب أن يكون الطول بين 2 و 50</value>
+  </data>
+  <data name="ValidationConsumerNumberMinLength" xml:space="preserve">
+    <value>يجب إدخال 10 رقم كحد أقصى</value>
+  </data>
+  <data name="ValidationCreditCardNumberRequired" xml:space="preserve">
+    <value>لم يتم تحديد رقم البطاقة الائتمانية</value>
+  </data>
+  <data name="ValidationDateMustBeLaterThanToday" xml:space="preserve">
+    <value>يجب أن يكون التاريخ لاحق لتاريخ اليوم</value>
+  </data>
+  <data name="ValidationEnterNewValue" xml:space="preserve">
+    <value>ادخل القيمة الجديدة</value>
+  </data>
+  <data name="ValidationEqualAccounts" xml:space="preserve">
+    <value>لا يمكن أن يكون حساب المصدر هو نفسه حساب المستلم</value>
+  </data>
+  <data name="ValidationFundSourceRequired" xml:space="preserve">
+    <value>الرجاء توضيح مصدر التمويل</value>
+  </data>
+  <data name="ValidationInsufficientBalance" xml:space="preserve">
+    <value>عدم توافر الرصيد الكافي في الحساب</value>
+  </data>
+  <data name="ValidationInsufficientCreditCardBalance" xml:space="preserve">
+    <value>لا يوجد رصيد كاف بالبطاقة الائتمانية.</value>
+  </data>
+  <data name="ValidationInvalidEmailAddress" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني غير صحيح</value>
+  </data>
+  <data name="ValidationInvalidEmiratesId" xml:space="preserve">
+    <value>بطاقة الهوية الإماراتية غير صالحة</value>
+  </data>
+  <data name="ValidationInvalidOtp" xml:space="preserve">
+    <value>يسمح بوجود 6 خانات فقط</value>
+  </data>
+  <data name="ValidationInvalidPin" xml:space="preserve">
+    <value>رقم التعريف الشخصي غير صحيح يرجى المحاولة مرة أخرى</value>
+  </data>
+  <data name="ValidationInvalidPoBoxNo" xml:space="preserve">
+    <value>رقم صندوق بريد غير صالح</value>
+  </data>
+  <data name="ValidationMaxRechargedAmountFormat" xml:space="preserve">
+    <value>الحد الأعلى لإعادة الشحن هو {0} درهم</value>
+  </data>
+  <data name="ValidationMinAge" xml:space="preserve">
+    <value>الحد الأدنى لمتطلبات العمر هو 18 سنة</value>
+  </data>
+  <data name="ValidationMinRechargedAmountFormat" xml:space="preserve">
+    <value>الحد الأدنى لإعادة الشحن هو {0} درهم</value>
+  </data>
+  <data name="ValidationMobileNumberLength" xml:space="preserve">
+    <value>الرجاء ادخال رقم هاتف متحرك اماراتي صحيح</value>
+  </data>
+  <data name="ValidationMobileStartWith" xml:space="preserve">
+    <value>يجب أن يبدأ رقم الهاتف برقم 05</value>
+  </data>
+  <data name="ValidationNameLength" xml:space="preserve">
+    <value>يجب أن يكون الطول بين 2 و 35</value>
+  </data>
+  <data name="ValidationPartialPayment" xml:space="preserve">
+    <value>لا يسمح بالدفع الجزئي</value>
+  </data>
+  <data name="ValidationPhoneLength" xml:space="preserve">
+    <value>يجب أن يكون الطول بين 9 و 15</value>
+  </data>
+  <data name="ValidationRequired" xml:space="preserve">
+    <value>مطلوب</value>
+  </data>
+  <data name="ValidationSalaryLength" xml:space="preserve">
+    <value>يجب أن يكون الطول بين 3 و 10</value>
+  </data>
+  <data name="ValidationSalikPinLength" xml:space="preserve">
+    <value>يجب أن يكون الطول 4</value>
+  </data>
+  <data name="ValidationTransactionPinLength" xml:space="preserve">
+    <value>يجب أن يتكون رقم التعريف الشخصي للمعاملة من ٨ أرقام.</value>
+  </data>
+  <data name="ValidationWealthTypeRequired" xml:space="preserve">
+    <value>يرجى اختيار نوع برنامج الثراء</value>
+  </data>
+  <data name="ValidationZeroAmount" xml:space="preserve">
+    <value>ينبغي أن يكون المبلغ أكبر من صفر</value>
+  </data>
+  <data name="LabelEnterCif" xml:space="preserve">
+    <value>أدخل رقم الحساب  المكون من 7 أرقام ثم اضغط على إرسال كلمة مرور لمرة واحدة</value>
+  </data>
+  <data name="LabelEnterCifArabic" xml:space="preserve">
+    <value>الرجاء إدخال سيف الخاص بك</value>
+  </data>
+  <data name="ValidationInvalidCif" xml:space="preserve">
+    <value>إن رقم الحساب المكون من 7 أرقا غير صحيح، الرجاء المحاولة مرة أخرى</value>
+  </data>
+  <data name="ButtonDocuments" xml:space="preserve">
+    <value>مستندات</value>
+  </data>
+  <data name="ButtonAHBChequeDeposit" xml:space="preserve">
+    <value>صرف / إيداع شيك الهلال بشكل فوري</value>
+  </data>
+  <data name="ButtonAHBChequePrinting" xml:space="preserve">
+    <value>طباعة شيك بشكل فوري</value>
+  </data>
+  <data name="ButtonBankingServices" xml:space="preserve">
+    <value>الخدمات المصرفية</value>
+  </data>
+  <data name="ButtonProductInfo" xml:space="preserve">
+    <value>المنتجات</value>
+  </data>
+  <data name="ButtonCardlessDeposit" xml:space="preserve">
+    <value>إيداع بدون البطاقة</value>
+  </data>
+  <data name="ErrorAuthenticationFailed" xml:space="preserve">
+    <value>إن المعلومات المدخلة غير صحيحة، الرجاء المحاولة مرة أخرى</value>
+  </data>
+  <data name="LabelLast5Transactions" xml:space="preserve">
+    <value>آخر 5 معاملات</value>
+  </data>
+  <data name="MessagePrintingCheque" xml:space="preserve">
+    <value>جار طباعة الشيكات</value>
+  </data>
+  <data name="ErrorA4PrinterNotAvailable" xml:space="preserve">
+    <value>هذه الخدمة غير متوفرة في الوقت الحالي، يرجى زيارة أحد اجهزة مصرف الهلال الأخرى أو تفضل بزيارة الفرع</value>
+  </data>
+  <data name="ErrorA4PrinterPaperJam" xml:space="preserve">
+    <value>هذه الخدمة غير متوفرة في الوقت الحالي، يرجى زيارة أحد اجهزة مصرف الهلال الأخرى أو تفضل بزيارة الفرع</value>
+  </data>
+  <data name="LabelChargesColon" xml:space="preserve">
+    <value>الرسوم</value>
+  </data>
+  <data name="LabelNumberOfChequesColon" xml:space="preserve">
+    <value>عدد أوراق الشيكات</value>
+  </data>
+  <data name="LabelStatementPeriod" xml:space="preserve">
+    <value>يرحى اختيار الفترة المطلوبة ( لكشف الحساب )  واضغط على استمرار</value>
+  </data>
+  <data name="ButtonLC" xml:space="preserve">
+    <value>شهادة مديونية</value>
+  </data>
+  <data name="ButtonIBAN" xml:space="preserve">
+    <value>IBAN رسالة رقم الحساب الدولي</value>
+  </data>
+  <data name="ButtonNLC" xml:space="preserve">
+    <value>شهادة براءة الذمة</value>
+  </data>
+  <data name="AccountStatusLabel" xml:space="preserve">
+    <value>حالة الحساب</value>
+  </data>
+  <data name="BranchIDLabel" xml:space="preserve">
+    <value>رمز الفرع</value>
+  </data>
+  <data name="IBANCopyMessage" xml:space="preserve">
+    <value>إذا كنت تريد الحصول على رقم الحساب الدولي من خلال هاتفك المتحرك أو البريد الإلكتروني، يرجى تحديد أحد الخيارين أدناه</value>
+  </data>
+  <data name="PrintButton" xml:space="preserve">
+    <value>طباعة</value>
+  </data>
+  <data name="ProceedButton" xml:space="preserve">
+    <value>استمرار</value>
+  </data>
+  <data name="AuthenticatewithCIF" xml:space="preserve">
+    <value>أدخل رقم حسابك المكون من 7 أرقام</value>
+  </data>
+  <data name="AcceptLabel" xml:space="preserve">
+    <value>أوافق</value>
+  </data>
+  <data name="BankRepresetativeLabel" xml:space="preserve">
+    <value>سيقوم ممثل المصرف بالاتصال بك خلال يومي عمل</value>
+  </data>
+  <data name="MrMrsLabel" xml:space="preserve">
+    <value>عزيزي السيد / السيدة.</value>
+  </data>
+  <data name="ReferenceNumberLabel" xml:space="preserve">
+    <value>رقمك المرجعي هو</value>
+  </data>
+  <data name="LabelSendToMyMobile" xml:space="preserve">
+    <value>إذا أردت الحصول على الرقم المرجعي لهذه العملية من خلال البريد الإلكتروني أو خدمة الرسائل النصية الرجاء الإختيار ادناه أو اضغط استمرار</value>
+  </data>
+  <data name="ButtonSendToMyMobile" xml:space="preserve">
+    <value>أرسل إلى هاتفي المتحرك</value>
+  </data>
+  <data name="TermsConditionMsg1" xml:space="preserve">
+    <value>سوف یبدأ ھذا الطلب في عملیة الخلفیة وسوف یتصل بك ممثل أهب المرسل إلیك لمواصلة ھذه العملیة.</value>
+  </data>
+  <data name="TermsConditionMsg2" xml:space="preserve">
+    <value>الرجاء النقر فوق متابعة لبدء العملية وإنشاء رقم مرجعي.</value>
+  </data>
+  <data name="LabelServiceRequest" xml:space="preserve">
+    <value>طلب الشهادات و الرسائل</value>
+  </data>
+  <data name="ButtonContinue" xml:space="preserve">
+    <value>استمرار</value>
+  </data>
+  <data name="ButtonNonAHBChequeDeposit" xml:space="preserve">
+    <value>إيداع شيك من مصرف آخر</value>
+  </data>
+  <data name="ButtonSendOtp" xml:space="preserve">
+    <value>إرسال "كلمة مرور لمرة واحدة"</value>
+  </data>
+  <data name="ButtonValidate" xml:space="preserve">
+    <value>استمرار</value>
+  </data>
+  <data name="LabelChoseLanguage" xml:space="preserve">
+    <value>Please choose your language</value>
+  </data>
+  <data name="LabelInsertCard" xml:space="preserve">
+    <value>ادخل البطاقة المصرفية او بطاقة الهوية الإمراتية</value>
+  </data>
+  <data name="LabelOnlineAssistance" xml:space="preserve">
+    <value>مساعدة مباشرة</value>
+  </data>
+  <data name="LabelOR" xml:space="preserve">
+    <value>أو</value>
+  </data>
+  <data name="LabelSelectOrEnterAmount" xml:space="preserve">
+    <value>الرجاء اختيار المبلغ المراد سحبة من الخيارات ادناه او ادخل المبلغ المراد و اضغط استمرار</value>
+  </data>
+  <data name="ButtonSendRequest" xml:space="preserve">
+    <value>ارسل طلب</value>
+  </data>
+  <data name="LabelAmountCalculated" xml:space="preserve">
+    <value>المبلغ الذي تم تحديده حتى الآن</value>
+  </data>
+  <data name="LabelDoAnotherTransaction" xml:space="preserve">
+    <value>هلى ترغب بإنجاز معاملات أخرى؟</value>
+  </data>
+  <data name="LabelTransactionCompleted" xml:space="preserve">
+    <value>لقد تم إنجاز العملية بنجاح</value>
+  </data>
+  <data name="ErrorInvalidCheque" xml:space="preserve">
+    <value>إن الشيك المودع غير صالح</value>
+  </data>
+  <data name="LabelChequeConfirmation" xml:space="preserve">
+    <value>الرجاء مراجعة تفاصيل الشيك و المعلومات المدخلة ثم اضغط على أستمرار للمتابعة</value>
+  </data>
+  <data name="LabelChequeProcessingDays" xml:space="preserve">
+    <value>الرجاء ملاحظة انه سيتم تحصيل الشيك خلال فترة ثلاثة أيام عمل من تاريخه.</value>
+  </data>
+  <data name="LabelEnterChequeAmount" xml:space="preserve">
+    <value>أدخل مبلغ الشيك</value>
+  </data>
+  <data name="MessagePrintingIBAN" xml:space="preserve">
+    <value>جاري طباعة رسالة رقم الحساب الدولي (IBAN)</value>
+  </data>
+  <data name="ValidationInvalidMobileNo" xml:space="preserve">
+    <value>رقم الجوال غير صالح</value>
+  </data>
+  <data name="ButtonAccept" xml:space="preserve">
+    <value>أوافق</value>
+  </data>
+  <data name="ButtonReject" xml:space="preserve">
+    <value>لا أوافق</value>
+  </data>
+  <data name="LabelCallConfirmation" xml:space="preserve">
+    <value>عميلنا العزيز، سوف يتم اجراء المعاملة من خلال تقنية المحادثة عبر الفيديو مع الموظف المسؤول من مصرف الهلال و سوف يتم تسجيل المحادثة من خلال الفيديو لأغراض الجودة و التدريب
+
+للإستمرار يرجى اختيار موافق</value>
+  </data>
+  <data name="LabelChoseLanguageArabic" xml:space="preserve">
+    <value>يرجى اختيار اللغة</value>
+  </data>
+  <data name="LabelPrimaryAccountNumberColon" xml:space="preserve">
+    <value>رقم الحساب الرئيسي</value>
+  </data>
+  <data name="ErrorNoTellerAvailable" xml:space="preserve">
+    <value>إننا نقوم بخدمة عملاء آخرين في الوقت الحالي، الرجاء الإنتظار و سنقوم بخدمتك قريبا</value>
+  </data>
+  <data name="LabelEndDate" xml:space="preserve">
+    <value>تاريخ الانتهاء</value>
+  </data>
+  <data name="LabelStartDate" xml:space="preserve">
+    <value>تاريخ البدء</value>
+  </data>
+  <data name="ButtonSendToMyEmail" xml:space="preserve">
+    <value>إرسال إلى بريدي الإلكتروني</value>
+  </data>
+  <data name="LabelLast1Month" xml:space="preserve">
+    <value>آخر شهر</value>
+  </data>
+  <data name="LabelLast2Month" xml:space="preserve">
+    <value>آخر شهرين</value>
+  </data>
+  <data name="LabelLast3Month" xml:space="preserve">
+    <value>آخر ثلاثة أشهر</value>
+  </data>
+  <data name="LabelLast6Month" xml:space="preserve">
+    <value>آخر ستة أشهر</value>
+  </data>
+  <data name="LabelCheque" xml:space="preserve">
+    <value>الشيك</value>
+  </data>
+  <data name="LabelCheques" xml:space="preserve">
+    <value>الشيكات</value>
+  </data>
+  <data name="ButtonPrintStatement" xml:space="preserve">
+    <value>طباعة كشف الحساب</value>
+  </data>
+  <data name="ButtonSelectCard" xml:space="preserve">
+    <value>حدد البطاقة</value>
+  </data>
+  <data name="LabelCallHold" xml:space="preserve">
+    <value>الرجاء الانتظار بينما نقوم بمعالجة طلبك</value>
+  </data>
+  <data name="MessageTakeCoins" xml:space="preserve">
+    <value>قم بسحب القطع النقدية</value>
+  </data>
+  <data name="MessageTakeCashEncashment" xml:space="preserve">
+    <value>قم بسحب النقود الآن متبوعة بالقطع النقدية</value>
+  </data>
+  <data name="MessageCollectIBAN" xml:space="preserve">
+    <value>الرجاء استلام رسالة رقم الحساب الدولي (IBAN)  من المكان المخصص</value>
+  </data>
+  <data name="MessageCollectStatement" xml:space="preserve">
+    <value>يرجى استلام كشف الحساب من المكان المخصص</value>
+  </data>
+  <data name="ErrorInvalidDate" xml:space="preserve">
+    <value>الرجاء ملاحظة أن تاريخ الشيك  يجب أن لا يتعدى الستة أشهر الماضية لإيداعه من خلال هذا الجهاز</value>
+  </data>
+  <data name="ErrorNotAvailableService" xml:space="preserve">
+    <value>هذه الخدمة غير متوفرة في الوقت الحالي، يرجى زيارة أحد اجهزة مصرف الهلال الأخرى أو تفضل بزيارة الفرع</value>
+  </data>
+  <data name="LabelCanDispenseCoins" xml:space="preserve">
+    <value>سيتم صرف المبلغ وسيتم استبدال الباقي كقطع نقدية. يرجى الضغط على "نعم" للمتابعة و استلام القطع النقدية أو "لا" لإيداع الباقي في حسابك</value>
+  </data>
+  <data name="LabelCannotDispenseCoins" xml:space="preserve">
+    <value>سيتم صرف المبلغ ولكن سيتم إيداع الباقي في حسابك</value>
+  </data>
+  <data name="ErrorGenericUnavailableService" xml:space="preserve">
+    <value>هذه الخدمة غير متوفرة في الوقت الحالي، يرجى زيارة أحد اجهزة مصرف الهلال الأخرى أو تفضل بزيارة الفرع</value>
+  </data>
+  <data name="ErrorNoCheques" xml:space="preserve">
+    <value>تم إلغاء المعاملة</value>
+  </data>
+  <data name="ErrorNoTellerLoggedIn" xml:space="preserve">
+    <value>إن ساعات العمل هي من (8 صباحا و حتى 10) مساءً من السبت إلى الخميس.
+تستطيع القيام بمعاملاتك المصرفية من خلال هذا الجهاز أو من خلال خدمات الهلال عبر الإنترنت و تطبيقات الهاتف المتحرك.
+لمزيد من المعلومات، الرجاء الإتصال على 600599992</value>
+  </data>
+  <data name="LabelReceiptNotAvailable" xml:space="preserve">
+    <value>لا يمكن للآلة حاليا طباعة الإيصال لهذه المعاملة، هل ترغب في المتابعة؟</value>
+  </data>
+  <data name="MessageVATInclusive" xml:space="preserve">
+    <value>الرسوم المبينة تشمل ضريبة القيمة المضافة</value>
+  </data>
+  <data name="LabelDetailMessageAutoFinance" xml:space="preserve">
+    <value>•  مطابقة لأحكام الشريعة الإسلامية
+•  موافقات سريعة و معدلات ربح مغريبة
+•  مبالغ تمويل كبيرة و فترات سداد مرنة تصل حتى 5 سنوات
+•  لا توجد أي رسوم دراسة أو وثائق مخفية
+•  تأمين إسلامي تكافلي مع إمكانية التمويل
+•  لا حاجة لتحويل الراتب  </value>
+  </data>
+  <data name="LabelDetailMessageCreditCardLoan" xml:space="preserve">
+    <value>•  تذاكر الطيران و حجوزات الفنادق
+•  إستئجار السيارات
+•  التسوق و دفع الفواتير
+•  الأعمال الخيرية</value>
+  </data>
+  <data name="LabelDetailMessageHomeFinance" xml:space="preserve">
+    <value>•  مطابقة لأحكام الشريعة الإسلامية
+•  إجراءات سريعة و بسيطة للموافقة
+•  معدلات إيجار تنافسية
+•  مبالغ تمويلية تصل حتى 15 مليون درهم اماراتي
+•  فترة سداد حتى 25 عاما
+•  لا توجد أي رسوم خفية أو مفاجئة
+•  تأمين إسلامي تكافلي يدفع المصرف قسطه</value>
+  </data>
+  <data name="LabelForMoreInformationContactDetails" xml:space="preserve">
+    <value>للمزيد من المعلومات، ادخل التفاصيل ادناه الآن</value>
+  </data>
+  <data name="LabelHeadingMessageAutoFinance" xml:space="preserve">
+    <value>نقدم لكم في مصرف الهلال سيارة أحلامكم بأسرع و أسهل طريقة و بأفضل الأسعار و المزايا التي تناسب تطلعاتكم</value>
+  </data>
+  <data name="LabelHeadingMessageCreditCardLoan" xml:space="preserve">
+    <value>مجموعتنا الواسعة من بطاقات الإتمان توفر لك الراحة و المزايا الأفضل حيث أنها تتوافق كليا مع أحكام الشريعة الإسلامية، كما سوف تتمتع ببرنامج جود الذي صممناه ليقدم الكثير من المكافئات المجزية، حيث يمكن استبدال نقاطك بكل سهولة بطرق مختلفة:</value>
+  </data>
+  <data name="LabelHeadingMessageHomeFinance" xml:space="preserve">
+    <value>نقدم لكم منتجات التمويل العقاري التي تناسب احتياجاتكم التمويلية و تراعي أحكام الشريعة الإسلامية بحذافيرها</value>
+  </data>
+  <data name="LabelRepresentativeContact" xml:space="preserve">
+    <value>سيقوم مندوبنا بالإتصال بك قريبا</value>
+  </data>
+  <data name="ErrorCardsNotLinked" xml:space="preserve">
+    <value>البطاقات غير مرتبطة بهوية دولة الإمارات الخاصة بك</value>
+  </data>
+</root>

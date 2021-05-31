@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\Release\Omnia.Pie.Vtm.Communication.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\Release\Omnia.Pie.Vtm.Communication.ESpaceTerminalHost.resources
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\Release\Omnia.Pie.Vtm.Communication.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\Release\Omnia.Pie.Vtm.Communication.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\Release\Omnia.Pie.Vtm.Communication.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\Release\Omnia.Pie.Vtm.Communication.ESpaceTerminalHost.resources
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\Release\Omnia.Pie.Vtm.Communication.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\Release\Omnia.Pie.Vtm.Communication.csproj.CoreCompileInputs.cache

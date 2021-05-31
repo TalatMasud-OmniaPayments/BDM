@@ -1,0 +1,307 @@
+﻿<UserControl 
+	x:Class="Omnia.Pie.Supervisor.Shell.Views.Pages.DiagnosticsView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:c="clr-namespace:Omnia.Pie.Supervisor.UI.Themes.Controls.DateHelper;assembly=Omnia.Pie.Supervisor.UI.Themes"
+	xmlns:e="clr-namespace:Omnia.Pie.Supervisor.UI.Themes.Controls;assembly=Omnia.Pie.Supervisor.UI.Themes"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	xmlns:local="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Pages"
+	xmlns:ViewModels.Devices="clr-namespace:Omnia.Pie.Supervisor.Shell.ViewModels.Devices"
+	xmlns:Views.Devices="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Devices"
+	xmlns:Devices.Interface.Entities="clr-namespace:Omnia.Pie.Vtm.Devices.Interface.Entities;assembly=Omnia.Pie.Vtm.Devices.Interface"
+	xmlns:Devices.Interface.Exceptions="clr-namespace:Omnia.Pie.Vtm.Devices.Interface.Exceptions;assembly=Omnia.Pie.Vtm.Devices.Interface"
+	mc:Ignorable="d" 
+	d:DesignHeight="768" d:DesignWidth="800">
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Resources/Main.xaml"/>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Styles/Main.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<DataTemplate DataType="{x:Type ViewModels.Devices:CardReaderViewModel}">
+				<Views.Devices:CardReaderView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels.Devices:CashAcceptorViewModel}">
+				<Views.Devices:CashAcceptorView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels.Devices:CashDispenserViewModel}">
+				<Views.Devices:CashDispenserView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels.Devices:CheckAcceptorViewModel}">
+				<Views.Devices:CheckAcceptorView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels.Devices:EidScannerViewModel}">
+				<Views.Devices:EidScannerView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels.Devices:GuideLightsViewModel}">
+				<Views.Devices:GuideLightsView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels.Devices:PinPadViewModel}">
+				<Views.Devices:PinPadView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels.Devices:PrinterViewModel}">
+				<Views.Devices:PrinterView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels.Devices:SignPadViewModel}">
+				<Views.Devices:SignPadView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type Devices.Interface.Entities:Card}">
+				<StackPanel>
+					<TextBlock Text="{Binding AccountName}"/>
+					<TextBlock Text="{Binding CardNumber}"/>
+					<TextBlock Text="{Binding CardType}"/>
+					<TextBlock Text="{Binding EmiratesId.Id}"/>
+					<TextBlock Text="{Binding EmiratesId.FullName}"/>
+				</StackPanel>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type Devices.Interface.Exceptions:DeviceMalfunctionException}">
+				<TextBlock Text="{Binding Message}"/>
+			</DataTemplate>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="auto"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		<StackPanel DataContext="{Binding SelectedDevice}" Visibility="Collapsed">
+			<StackPanel.Resources>
+				<Style TargetType="TextBlock">
+					<Setter Property="Foreground" Value="{StaticResource foreground}"/>
+				</Style>
+			</StackPanel.Resources>
+			<ToggleButton Command="{Binding Connect}" HorizontalAlignment="Left">
+				<ToggleButton.Style>
+					<Style TargetType="ToggleButton" BasedOn="{StaticResource toggleButton}">
+						<Setter Property="IsChecked" Value="false"/>
+						<Setter Property="Content" Value="Connect"/>
+						<Style.Triggers>
+							<DataTrigger Binding="{Binding Connected}" Value="true">
+								<Setter Property="IsChecked" Value="True"/>
+								<Setter Property="Content" Value="Disconnect"/>
+							</DataTrigger>
+						</Style.Triggers>
+					</Style>
+				</ToggleButton.Style>
+			</ToggleButton>
+			<ListView ItemsSource="{Binding Operations}" HorizontalAlignment="Left" x:Name="operations" IsSynchronizedWithCurrentItem="True" ItemContainerStyle="{StaticResource listViewItem}" Margin="0,40,0,0">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<StackPanel>
+							<Button Command="{Binding Command}" Content="{Binding Id}" Margin="{StaticResource margin}"/>
+						</StackPanel>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<ContentControl HorizontalAlignment="Left" Content="{Binding ElementName=operations, Path=SelectedItem.Result}" Margin="{StaticResource margin}" />
+			<ContentControl HorizontalAlignment="Left" Content="{Binding ElementName=operations, Path=SelectedItem.Exception}" Margin="{StaticResource margin}" />
+			<ContentControl  HorizontalAlignment="Left" Content="{Binding}" Grid.Row="1"/>
+
+		</StackPanel>
+		<StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="170"/>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="170"/>
+					<ColumnDefinition Width="150"/>
+					<ColumnDefinition Width="auto"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition Height="auto" />
+				</Grid.RowDefinitions>
+
+				<Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0" Content="From Date" />
+				<TextBox Grid.Row="0" Grid.Column="1"
+					Text="{Binding StartDate, StringFormat=\{0:dd-MM-yyyy\}}"
+					x:Name="txtStartDate"
+					
+					Margin="0,20,0,0"
+					Padding="0"
+					Height="50"
+					Width="150"
+                    BorderThickness="3"
+					HorizontalContentAlignment="Left" 
+					VerticalContentAlignment="Center"
+                        />
+
+                <DatePicker Grid.Row="0" x:Name="dpStartDate" Grid.Column="1" SelectedDate="{Binding StartDate}" Focusable="False"  HorizontalAlignment="Left"
+                    Margin="35,5,0,0"
+                    VerticalAlignment="Center"
+                     DisplayDateEnd="{Binding EndDate}"
+                        CalendarStyle="{StaticResource CalendarStyle}" Width="150" Height="40">
+                    <DatePicker.Resources>
+                        <Style TargetType="DatePickerTextBox">
+                            <Setter Property="IsReadOnly" Value="False"/>
+                            <Setter Property="Text" Value=" "/>
+                            <Setter Property="Focusable" Value="True"/>
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                            
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox x:Name="PART_TextBox" Visibility="Hidden"
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" 
+                                             />
+                                    </ControlTemplate>
+                                </Setter.Value>
+
+                            </Setter>
+
+                        </Style>
+                        <Style TargetType="{x:Type DatePicker}">
+                           
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="Margin" Value="2" />
+                            
+                        </Style>
+                    </DatePicker.Resources>
+
+                </DatePicker>
+
+                <Button Content="Button" Grid.Row="0" Grid.Column="1" Visibility="Visible" Margin="5,20,0,0" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="150" Click="dpStartDate_Click" Opacity="0"/>
+
+                <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" Grid.Row="0" Content="To Date" />
+
+                <TextBox Grid.Row="0" Grid.Column="3"
+					x:Name="txtEndDate"
+					Text="{Binding EndDate, StringFormat=\{0:dd-MM-yyyy\}}"
+					
+					Margin="0,20,0,0"
+					Padding="0"
+					Height="50"
+					Width="150"
+					HorizontalContentAlignment="Left" 
+					VerticalContentAlignment="Center" 
+                          BorderThickness="3"/>
+                
+                <DatePicker Grid.Row="0" x:Name="dpEndDate" Grid.Column="3" SelectedDate="{Binding EndDate}"  HorizontalAlignment="Left"
+                    Margin="35,8,0,0"
+                    VerticalAlignment="Center"
+                        DisplayDateStart="{Binding StartDate}"
+                    DisplayDateEnd="{x:Static sys:DateTime.Today}"
+                        
+                        CalendarStyle="{StaticResource CalendarStyle}" Width="150" Height="40">
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="IsReadOnly" Value="False"/>
+                            <Setter Property="Text" Value=" "/>
+                            <Setter Property="Focusable" Value="True"/>
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Background" Value="{DynamicResource CtrlTextBackground}"/>
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate  TargetType="{x:Type DatePickerTextBox}">
+                                        
+                                        <TextBox x:Name="PART_TextBox" Visibility="Hidden" 
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" 
+                                             />
+
+                                    </ControlTemplate>
+                                </Setter.Value>
+
+                            </Setter>
+
+                            
+                        </Style>
+
+                        <Style TargetType="{x:Type DatePicker}">
+
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="Margin" Value="2" />
+
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+
+
+                <Button Content="Button" Grid.Row="0" Grid.Column="3" Margin="0,20,0,0" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="186" Click="dpEndDate_Click" Opacity="0"/>
+
+
+                <Button Grid.Row="0" Grid.Column="4" Command="{Binding ShowErrorHistory}" Content="Show errors" HorizontalAlignment="Center" Margin="0,0,20,0" Height="30" Width="100" />
+
+				<Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="{StaticResource margin.list}" >
+					<Grid.Resources>
+						<Style TargetType="Label" BasedOn="{StaticResource header}"/>
+					</Grid.Resources>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="150px"/>
+						<ColumnDefinition Width="150px"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Label Content="Source"  Grid.Column="0"/>
+					<Label Content="Date"  Grid.Column="1"/>
+					<Label Content="Message"  Grid.Column="2"/>
+				</Grid>
+
+				<ListView  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" 
+						   ItemsSource="{Binding DeviceErrors}" IsSynchronizedWithCurrentItem="True" ItemContainerStyle="{StaticResource listViewItem.list}" 
+						   MaxHeight="420px">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<Grid Margin="{StaticResource margin.list}">
+								<Grid.Resources>
+									<Style TargetType="Label" BasedOn="{StaticResource darkLabel}">
+										<Setter Property="Margin" Value="{StaticResource margin}"/>
+										<Setter Property="HorizontalAlignment" Value="Stretch"/>
+										<Setter Property="HorizontalContentAlignment" Value="Left"/>
+										<Setter Property="VerticalAlignment" Value="Center"/>
+									</Style>
+								</Grid.Resources>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="150px"/>
+									<ColumnDefinition Width="150px"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<Label Content="{Binding Source}" Grid.Column="0"/>
+								<Label Content="{Binding Created}" Grid.Column="1"/>
+								<Label Content="{Binding Message}" Grid.Column="2"/>
+							</Grid>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</Grid>
+		</StackPanel>
+		<Border BorderBrush="{StaticResource alarm}" BorderThickness="2" CornerRadius="{StaticResource corner}" VerticalAlignment="Stretch"
+		        Grid.Row="0" Grid.Column="1">
+			<StackPanel>
+				<Label Content="Last Device Errors" HorizontalAlignment="Stretch" Style="{StaticResource header}" Margin="0" Background="{StaticResource alarm}"/>
+				<ListView HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" ItemsSource="{Binding Errors}" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemContainerStyle="{StaticResource listViewItem.list}" Margin="{StaticResource margin}">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<Grid>
+								<Grid.Resources>
+									<Style TargetType="Label">
+										<Setter Property="Margin" Value="{StaticResource margin}"/>
+										<Setter Property="HorizontalAlignment" Value="Stretch"/>
+										<Setter Property="FontWeight" Value="Bold"/>
+									</Style>
+								</Grid.Resources>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition/>
+									<ColumnDefinition/>
+								</Grid.ColumnDefinitions>
+								<Label Content="{Binding Message}" Grid.Column="0" HorizontalAlignment="Left"/>
+								<Label Content="{Binding Code}" Grid.Column="1" HorizontalAlignment="Left"/>
+							</Grid>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</StackPanel>
+		</Border>
+	</Grid>
+</UserControl>

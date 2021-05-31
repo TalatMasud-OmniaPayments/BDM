@@ -1,0 +1,7 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Services.Interface\bin\1\Omnia.Pie.Vtm.Services.Interface.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Services.Interface\bin\1\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Services.Interface\bin\1\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Services.Interface\obj\1\Omnia.Pie.Vtm.Services.Interface.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Services.Interface\obj\1\Omnia.Pie.Vtm.Services.Interface.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Services.Interface\obj\1\Omnia.Pie.Vtm.Services.Interface.csproj.CopyComplete
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Services.Interface\obj\1\Omnia.Pie.Vtm.Services.Interface.dll

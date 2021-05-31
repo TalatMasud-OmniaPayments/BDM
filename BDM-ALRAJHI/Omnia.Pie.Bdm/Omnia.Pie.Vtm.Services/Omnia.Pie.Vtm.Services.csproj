@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87C5641C-4830-44E9-890B-5D9F79E0F304}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Vtm.Services</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\ContractExceptionManager.cs" />
+    <Compile Include="Base\ServiceEndpoint.cs" />
+    <Compile Include="Base\ServiceManager.cs" />
+    <Compile Include="ISO\Base\Acquirer.cs" />
+    <Compile Include="ISO\Base\Error.cs" />
+    <Compile Include="ISO\Base\RequestBase.cs" />
+    <Compile Include="ISO\Base\ResponseBase.cs" />
+    <Compile Include="ISO\Base\TransactionData.cs" />
+    <Compile Include="ISO\Base\VTMTerminal.cs" />
+    <Compile Include="ISO\Request\Authentication\AccountsRequest.cs" />
+    <Compile Include="ISO\Request\Authentication\EmiratesIdRequest.cs" />
+    <Compile Include="ISO\Request\Authentication\PinVerificationRequest.cs" />
+    <Compile Include="ISO\Request\Authentication\UserNamePasswordRequest.cs" />
+    <Compile Include="ISO\Request\ChannelManagement\InsertEventRequest.cs" />
+    <Compile Include="ISO\Request\CommunicationService\GenerateTSNRequest.cs" />
+    <Compile Include="ISO\Request\CommunicationService\RegisterCallRequest.cs" />
+    <Compile Include="ISO\Request\CommunicationService\SendEmailRequest.cs" />
+    <Compile Include="ISO\Request\CommunicationService\SendSMSRequest.cs" />
+    <Compile Include="ISO\Request\CommunicationService\UpdateCallRecordRequest.cs" />
+    <Compile Include="ISO\Request\Customer\AccountDetailRequest.cs" />
+    <Compile Include="ISO\Request\ChannelManagement\DeviceStatusRequest.cs" />
+    <Compile Include="ISO\Request\Customer\CustomerDetailsRequest.cs" />
+    <Compile Include="ISO\Request\Customer\CustomerIdentifierRequest.cs" />
+    <Compile Include="ISO\Request\Customer\DepositAccountRequest.cs" />
+    <Compile Include="ISO\Request\Customer\GetDebitCardsRequest.cs" />
+    <Compile Include="ISO\Request\Customer\GetLinkedAccountRequest.cs" />
+    <Compile Include="ISO\Request\Customer\LoanAccountsrequest.cs" />
+    <Compile Include="ISO\Request\Customer\ProductInfoRequest.cs" />
+    <Compile Include="ISO\Request\Customer\StatementItemRequest.cs" />
+    <Compile Include="ISO\Request\Customer\UserTransactionRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\ApplyStatementChargesRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\CardImagesRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\CashDepositRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\CashWithdrawalRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\CashWithDrawalReversalRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\ChequeDepositRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\CoordinationNumberRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\CreditCardDetailRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\CreditCardsRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\DeliverChequeBookRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\ExchangeRateRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\GetChequePrintingChargeRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\GetStatementChargesRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\IssueCheckBookRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\ReverseChargeRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\SendSMSOTPRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\TransactionNotificationRequest.cs" />
+    <Compile Include="ISO\Request\Transaction\ValidateSmsOtpRequest.cs" />
+    <Compile Include="ISO\Request\UserManagement\GetAllUsersRequest.cs" />
+    <Compile Include="ISO\Request\UserManagement\GetNewUsersRequest.cs" />
+    <Compile Include="ISO\Request\UserManagement\GetUserTypesRequest.cs" />
+    <Compile Include="ISO\Request\UserManagement\RegisterFingerprintRequest.cs" />
+    <Compile Include="ISO\Request\UserManagement\UpdateAccount.cs" />
+    <Compile Include="ISO\Request\UserManagement\UpdatePasswordRequest.cs" />
+    <Compile Include="ISO\Request\UserManagement\UserInfoRequest.cs" />
+    <Compile Include="ISO\Request\UserManagement\ValidateFingerprintRequest.cs" />
+    <Compile Include="ISO\Response\Authentication\EmiratesIdResponse.cs" />
+    <Compile Include="ISO\Response\Authentication\PinVerificationResponse.cs" />
+    <Compile Include="ISO\Response\Authentication\UserNamePasswordResponse.cs" />
+    <Compile Include="ISO\Response\ChannelManagement\DeviceStatusResponse.cs" />
+    <Compile Include="ISO\Response\ChannelManagement\InsertEventResponse.cs" />
+    <Compile Include="ISO\Response\CommunicationService\GenerateTSNResponse.cs" />
+    <Compile Include="ISO\Response\CommunicationService\RegisterCallResponse.cs" />
+    <Compile Include="ISO\Response\CommunicationService\SendEmailResponse.cs" />
+    <Compile Include="ISO\Response\CommunicationService\SendSMSResponse.cs" />
+    <Compile Include="ISO\Response\CommunicationService\UpdateCallRecordResponse.cs" />
+    <Compile Include="ISO\Response\Customer\AccountDetailResponse.cs" />
+    <Compile Include="ISO\Response\Customer\CustomerDetailsResponse.cs" />
+    <Compile Include="ISO\Response\Customer\CustomerIdentifierResponse.cs" />
+    <Compile Include="ISO\Response\Customer\DepositAccountResponse.cs" />
+    <Compile Include="ISO\Response\Customer\GetDebitCardsResponse.cs" />
+    <Compile Include="ISO\Response\Customer\GetLinkedAccountResponse.cs" />
+    <Compile Include="ISO\Response\Customer\LoanAccountsResponse.cs" />
+    <Compile Include="ISO\Response\Customer\ProductInfoResponse.cs" />
+    <Compile Include="ISO\Response\Customer\StatementItemResponse.cs" />
+    <Compile Include="ISO\Response\Customer\UserTransactionResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\ApplyStatementChargesResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\CardImagesResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\CashDepositResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\CashWithdrawalDebitCardReversalResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\CashWithdrawalResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\ChequeDepositResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\CoordinationNumberResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\CreditCardDetailResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\CreditCardsResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\DeliverChequeBookResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\ExchangeRateResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\GetChequePrintingChargeResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\GetStatementChargesResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\IssueCheckBookResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\ReverseChargeResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\SendSMSOTPResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\TransactionNotificationResponse.cs" />
+    <Compile Include="ISO\Response\Transaction\ValidateSmsOtpResponse.cs" />
+    <Compile Include="ISO\Response\UserManagement\GetAllUserInfoResponse.cs" />
+    <Compile Include="ISO\Response\UserManagement\GetNewUsersResponse.cs" />
+    <Compile Include="ISO\Response\UserManagement\GetUserTypesResponse.cs" />
+    <Compile Include="ISO\Response\UserManagement\UpdatePasswordResponse.cs" />
+    <Compile Include="ISO\Response\UserManagement\UserInfoResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ISO\Response\Authentication\AccountsResponse.cs" />
+    <Compile Include="Services\Authentication\AuthenticationService.cs" />
+    <Compile Include="Base\ServiceBase.cs" />
+    <Compile Include="Services\ChannelManagment\ChannelManagementService.cs" />
+    <Compile Include="Services\CommunicationService\CommunicationService.cs" />
+    <Compile Include="Services\Customer\CustomerService.cs" />
+    <Compile Include="Services\Transactions\TransactionService.cs" />
+    <Compile Include="Services\UserManagment\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Client.Journal.Interface\Omnia.Pie.Client.Journal.Interface.csproj">
+      <Project>{A1099D06-6C3F-4EB8-8097-709B178E6B32}</Project>
+      <Name>Omnia.Pie.Client.Journal.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Bootstrapper.Interface\Omnia.Pie.Vtm.Bootstrapper.Interface.csproj">
+      <Project>{05EF90B7-8B67-48B6-9FD8-E3BB39296807}</Project>
+      <Name>Omnia.Pie.Vtm.Bootstrapper.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework.Interface\Omnia.Pie.Vtm.Framework.Interface.csproj">
+      <Project>{2F83688E-BF17-4E7A-9EE2-222F6136FBBC}</Project>
+      <Name>Omnia.Pie.Vtm.Framework.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework\Omnia.Pie.Vtm.Framework.csproj">
+      <Project>{8DA717D8-8D26-4A89-954B-D7489FA73565}</Project>
+      <Name>Omnia.Pie.Vtm.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{A5802672-F8CB-490F-8566-02BFB616A0A3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

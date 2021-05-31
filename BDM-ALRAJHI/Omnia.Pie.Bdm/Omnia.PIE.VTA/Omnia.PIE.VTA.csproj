@@ -1,0 +1,1059 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7CAF8B94-F469-48B7-9627-56A2095E64C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.PIE.VTA</RootNamespace>
+    <AssemblyName>Omnia.PIE.VTA</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug.SIT|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug.SIT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug.QA|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug.QA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug.Dev|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug.Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug.UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug.UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AudioSwitcher.AudioApi, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AudioSwitcher.AudioApi.3.0.0\lib\net40\AudioSwitcher.AudioApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AudioSwitcher.AudioApi.CoreAudio, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AudioSwitcher.AudioApi.CoreAudio.3.0.0.1\lib\net40\AudioSwitcher.AudioApi.CoreAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.1\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.3\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.3\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.1\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\AudioSwitcherWrapper.cs" />
+    <Compile Include="Common\CallTimeObserver.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\GlobalInfo.cs" />
+    <Compile Include="Common\NetworkStatusObserver.cs" />
+    <Compile Include="Common\TellerAppSingleInstance.cs" />
+    <Compile Include="Common\UserActivityService.cs" />
+    <Compile Include="Common\WorkflowItems.cs" />
+    <Compile Include="Converters\CassetteAmountToVisibilityConverter.cs" />
+    <Compile Include="Converters\IntToVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\DateFormatConverter.cs" />
+    <Compile Include="Converters\DeviceStatusToImageConverter.cs" />
+    <Compile Include="Converters\TimeSpanFormatConverter.cs" />
+    <Compile Include="Core\Model\AccountHolder.cs" />
+    <Compile Include="Core\Model\AccountsAndDeposits.cs" />
+    <Compile Include="Core\Model\CallDuration.cs" />
+    <Compile Include="Core\Model\Card.cs" />
+    <Compile Include="Core\Model\Cassette.cs" />
+    <Compile Include="Core\Model\Customer.cs" />
+    <Compile Include="Core\Model\Device.cs" />
+    <Compile Include="Core\Model\LinkedAccount.cs" />
+    <Compile Include="Core\Model\Loan.cs" />
+    <Compile Include="Core\Model\TellerStatus.cs" />
+    <Compile Include="Core\Model\VideoInfo.cs" />
+    <Compile Include="Core\Model\WorkflowTracking.cs" />
+    <Compile Include="LanguagePack\LanResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\LoggerExtentions.cs" />
+    <Compile Include="Utilities\ApplicationVersion.cs" />
+    <Compile Include="ViewInterface\IMainWndViewModel.cs" />
+    <Compile Include="ViewInterface\IPageViewModel.cs" />
+    <Compile Include="ViewInterface\PageViewModelBase.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\WorkFlowViewModel.cs" />
+    <Compile Include="ViewModels\DevicesViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModelUtil\PageConstants.cs" />
+    <Compile Include="ViewModelUtil\RelayCommand.cs" />
+    <Compile Include="Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MsgBoxes\VerifySignature.xaml.cs">
+      <DependentUpon>VerifySignature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\AccountHolderInfo.xaml.cs">
+      <DependentUpon>AccountHolderInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AnimationControls\HorizontalLoader.xaml.cs">
+      <DependentUpon>HorizontalLoader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\AccountsAndDeposits.xaml.cs">
+      <DependentUpon>AccountsAndDeposits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\Cards.xaml.cs">
+      <DependentUpon>Cards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\CustomerInfo.xaml.cs">
+      <DependentUpon>CustomerInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\Devices.xaml.cs">
+      <DependentUpon>Devices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DevicesPopup.xaml.cs">
+      <DependentUpon>DevicesPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogOnWindow.xaml.cs">
+      <DependentUpon>LogOnWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MsgBoxes\AnswerIncomingCall.xaml.cs">
+      <DependentUpon>AnswerIncomingCall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MsgBoxes\WpfMessageBox.xaml.cs">
+      <DependentUpon>WpfMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RemoteWindow.xaml.cs">
+      <DependentUpon>RemoteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\Loans.xaml.cs">
+      <DependentUpon>Loans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\PagedItemControl.xaml.cs">
+      <DependentUpon>PagedItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WF\eSpaceMediaOcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WF\eSpaceMediaOcx.Designer.cs">
+      <DependentUpon>eSpaceMediaOcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AccountInquiry\AccountInquiry04.xaml.cs">
+      <DependentUpon>AccountInquiry04.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AccountInquiry\AccountInquiry01.xaml.cs">
+      <DependentUpon>AccountInquiry01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AccountInquiry\AccountInquiry02.xaml.cs">
+      <DependentUpon>AccountInquiry02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AccountInquiry\AccountInquiry03.xaml.cs">
+      <DependentUpon>AccountInquiry03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningCaptureSignature.xaml.cs">
+      <DependentUpon>AdditionalAccountOpeningCaptureSignature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningEIDScan.xaml.cs">
+      <DependentUpon>AdditionalAccountOpeningEIDScan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningEndSession.xaml.cs">
+      <DependentUpon>AdditionalAccountOpeningEndSession.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningInitiateOnScreenForm.xaml.cs">
+      <DependentUpon>AdditionalAccountOpeningInitiateOnScreenForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningSelectedAccount.xaml.cs">
+      <DependentUpon>AdditionalAccountOpeningSelectedAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AuthenticationFlow\AuthenticationFlowActivateOTP.xaml.cs">
+      <DependentUpon>AuthenticationFlowActivateOTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AuthenticationFlow\AuthenticationFlow.xaml.cs">
+      <DependentUpon>AuthenticationFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\AuthenticationFlow\AuthenticationFlowDebitCreditCard.xaml.cs">
+      <DependentUpon>AuthenticationFlowDebitCreditCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\BillPaymentWithAccount\BillPaymentWithAccountPayment.xaml.cs">
+      <DependentUpon>BillPaymentWithAccountPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\BillPaymentWithAccount\BillPaymentWithAccountPrintReceipt.xaml.cs">
+      <DependentUpon>BillPaymentWithAccountPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal12.xaml.cs">
+      <DependentUpon>CashWithdrawal12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequePrinting\ChequePrinting01.xaml.cs">
+      <DependentUpon>ChequePrinting01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequePrinting\ChequePrinting02.xaml.cs">
+      <DependentUpon>ChequePrinting02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\TransactionDeclined\TransactionDeclinedPrintReceipt.xaml.cs">
+      <DependentUpon>TransactionDeclinedPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashDepositAccount\CashDepositAccountActivateCashDeposit.xaml.cs">
+      <DependentUpon>CashDepositAccountActivateCashDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashDepositAccount\CashDepositAccountConfirmDeposit.xaml.cs">
+      <DependentUpon>CashDepositAccountConfirmDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashDepositAccount\CashDepositAccountExceedLimit.xaml.cs">
+      <DependentUpon>CashDepositAccountExceedLimit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashDepositAccount\CashDepositAccountPrintReceipt.xaml.cs">
+      <DependentUpon>CashDepositAccountPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashDepositAccount\CashDepositAccountSelectedCard.xaml.cs">
+      <DependentUpon>CashDepositAccountSelectedCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashDepositCreditCard\CashDepositCreditCard02.xaml.cs">
+      <DependentUpon>CashDepositCreditCard02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashDepositCreditCard\CashDepositCreditCard03.xaml.cs">
+      <DependentUpon>CashDepositCreditCard03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashDepositCreditCard\CashDepositCreditCard04.xaml.cs">
+      <DependentUpon>CashDepositCreditCard04.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawalSendAccountInformation.xaml.cs">
+      <DependentUpon>CashWithdrawalSendAccountInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal11.xaml.cs">
+      <DependentUpon>CashWithdrawal11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal01.xaml.cs">
+      <DependentUpon>CashWithdrawal01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal02.xaml.cs">
+      <DependentUpon>CashWithdrawal02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal03.xaml.cs">
+      <DependentUpon>CashWithdrawal03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal04.xaml.cs">
+      <DependentUpon>CashWithdrawal04.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal05.xaml.cs">
+      <DependentUpon>CashWithdrawal05.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal06.xaml.cs">
+      <DependentUpon>CashWithdrawal06.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal07.xaml.cs">
+      <DependentUpon>CashWithdrawal07.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal08.xaml.cs">
+      <DependentUpon>CashWithdrawal08.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal09.xaml.cs">
+      <DependentUpon>CashWithdrawal09.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CashWithdrawal\CashWithdrawal10.xaml.cs">
+      <DependentUpon>CashWithdrawal10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequeDepositAccount\ChequeDepositAccountActivateChequeDeposit.xaml.cs">
+      <DependentUpon>ChequeDepositAccountActivateChequeDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequeDepositAccount\ChequeDepositAccountConfirmDeposit.xaml.cs">
+      <DependentUpon>ChequeDepositAccountConfirmDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequeDepositAccount\ChequeDepositAccountPrintReceipt.xaml.cs">
+      <DependentUpon>ChequeDepositAccountPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequeDepositAccount\ChequeDepositAccountSelectedAccount.xaml.cs">
+      <DependentUpon>ChequeDepositAccountSelectedAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequeDepositCreditCard\ChequeDepositCreditCardConfirmDeposit.xaml.cs">
+      <DependentUpon>ChequeDepositCreditCardConfirmDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequeDepositCreditCard\ChequeDepositCreditCardActivateChequeDeposit.xaml.cs">
+      <DependentUpon>ChequeDepositCreditCardActivateChequeDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequeDepositCreditCard\ChequeDepositCreditCardPrintReceipt.xaml.cs">
+      <DependentUpon>ChequeDepositCreditCardPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\ChequeDepositCreditCard\ChequeDepositCreditCardSelectedCard.xaml.cs">
+      <DependentUpon>ChequeDepositCreditCardSelectedCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreateBeneficiary\CreateBeneficiaryAuthentication.xaml.cs">
+      <DependentUpon>CreateBeneficiaryAuthentication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreateBeneficiary\CreateBeneficiaryLinkedAccounts.xaml.cs">
+      <DependentUpon>CreateBeneficiaryLinkedAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\BillPaymentWithCreditCard\BillPaymentWithCreditCardPayment.xaml.cs">
+      <DependentUpon>BillPaymentWithCreditCardPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\BillPaymentWithCreditCard\BillPaymentWithCreditCardPrintReceipt.xaml.cs">
+      <DependentUpon>BillPaymentWithCreditCardPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreditCardPaymentWithAccount\CreditCardPaymentWithAccountPayment.xaml.cs">
+      <DependentUpon>CreditCardPaymentWithAccountPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreditCardPaymentWithAccount\CreditCardPaymentWithAccountPrintReceipt.xaml.cs">
+      <DependentUpon>CreditCardPaymentWithAccountPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashExceedLimit.xaml.cs">
+      <DependentUpon>CreditCardPaymentWithCashExceedLimit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashConfirmDeposit.xaml.cs">
+      <DependentUpon>CreditCardPaymentWithCashConfirmDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashActivateCashDeposit.xaml.cs">
+      <DependentUpon>CreditCardPaymentWithCashActivateCashDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashPrintReceipt.xaml.cs">
+      <DependentUpon>CreditCardPaymentWithCashPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashSelectedCard.xaml.cs">
+      <DependentUpon>CreditCardPaymentWithCashSelectedCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\FundsTransferOtherAccount\FundsTransferOtherAccountAuthentication.xaml.cs">
+      <DependentUpon>FundsTransferOtherAccountAuthentication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\FundsTransferOtherAccount\FundsTransferOtherAccountLinkedAccounts.xaml.cs">
+      <DependentUpon>FundsTransferOtherAccountLinkedAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\FundsTransferOtherAccount\FundsTransferOtherAccountPrintReceipt.xaml.cs">
+      <DependentUpon>FundsTransferOtherAccountPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\FundsTransferOwnAccount\FundsTransferOwnAccountLinkedAccounts.xaml.cs">
+      <DependentUpon>FundsTransferOwnAccountLinkedAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\FundsTransferOwnAccount\FundsTransferOwnAccountPrintReceipt.xaml.cs">
+      <DependentUpon>FundsTransferOwnAccountPrintReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\FundsTransferOwnAccount\FundsTransferOwnAccountAuthentication.xaml.cs">
+      <DependentUpon>FundsTransferOwnAccountAuthentication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\LinkedAccountControl.xaml.cs">
+      <DependentUpon>LinkedAccountControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\SelectedAccountControl.xaml.cs">
+      <DependentUpon>SelectedAccountControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\NewLead\LeadCustomerForm.xaml.cs">
+      <DependentUpon>LeadCustomerForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\UpdateCustomerDetails\UpdateCustomerDetailsWithOTP.xaml.cs">
+      <DependentUpon>UpdateCustomerDetailsWithOTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workflow\UpdateCustomerDetails\UpdateCustomerDetailsEIDScan.xaml.cs">
+      <DependentUpon>UpdateCustomerDetailsEIDScan.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LanguagePack\EN-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Styles\Miscellaneous.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ScrollStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MsgBoxes\VerifySignature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Views\UserControls\AccountHolderInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AnimationControls\HorizontalLoader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\AccountsAndDeposits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\Cards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\CustomerInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\Devices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DevicesPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogOnWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MsgBoxes\AnswerIncomingCall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MsgBoxes\WpfMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RemoteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\Loans.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\PagedItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AccountInquiry\AccountInquiry04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AccountInquiry\AccountInquiry01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AccountInquiry\AccountInquiry02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AccountInquiry\AccountInquiry03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningCaptureSignature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningEIDScan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningEndSession.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningInitiateOnScreenForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AdditionalAccountOpening\AdditionalAccountOpeningSelectedAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AuthenticationFlow\AuthenticationFlowActivateOTP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AuthenticationFlow\AuthenticationFlow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\AuthenticationFlow\AuthenticationFlowDebitCreditCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\BillPaymentWithAccount\BillPaymentWithAccountPayment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Workflow\BillPaymentWithAccount\BillPaymentWithAccountPrintReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal12.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Workflow\ChequePrinting\ChequePrinting01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequePrinting\ChequePrinting02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\TransactionDeclined\TransactionDeclinedPrintReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Workflow\CashDepositAccount\CashDepositAccountActivateCashDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashDepositAccount\CashDepositAccountConfirmDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashDepositAccount\CashDepositAccountExceedLimit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashDepositAccount\CashDepositAccountPrintReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashDepositAccount\CashDepositAccountSelectedCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashDepositCreditCard\CashDepositCreditCard02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashDepositCreditCard\CashDepositCreditCard03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashDepositCreditCard\CashDepositCreditCard04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawalSendAccountInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal05.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal06.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal07.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal08.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal09.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CashWithdrawal\CashWithdrawal10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequeDepositAccount\ChequeDepositAccountActivateChequeDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequeDepositAccount\ChequeDepositAccountConfirmDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequeDepositAccount\ChequeDepositAccountPrintReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequeDepositAccount\ChequeDepositAccountSelectedAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequeDepositCreditCard\ChequeDepositCreditCardConfirmDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequeDepositCreditCard\ChequeDepositCreditCardActivateChequeDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequeDepositCreditCard\ChequeDepositCreditCardPrintReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\ChequeDepositCreditCard\ChequeDepositCreditCardSelectedCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CreateBeneficiary\CreateBeneficiaryAuthentication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CreateBeneficiary\CreateBeneficiaryLinkedAccounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\BillPaymentWithCreditCard\BillPaymentWithCreditCardPayment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Workflow\BillPaymentWithCreditCard\BillPaymentWithCreditCardPrintReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Workflow\CreditCardPaymentWithAccount\CreditCardPaymentWithAccountPayment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CreditCardPaymentWithAccount\CreditCardPaymentWithAccountPrintReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashExceedLimit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashConfirmDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashActivateCashDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashPrintReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\CreditCardPaymentWithCash\CreditCardPaymentWithCashSelectedCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\FundsTransferOtherAccount\FundsTransferOtherAccountAuthentication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\FundsTransferOtherAccount\FundsTransferOtherAccountLinkedAccounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\FundsTransferOtherAccount\FundsTransferOtherAccountPrintReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\FundsTransferOwnAccount\FundsTransferOwnAccountLinkedAccounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\FundsTransferOwnAccount\FundsTransferOwnAccountPrintReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\FundsTransferOwnAccount\FundsTransferOwnAccountAuthentication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\LinkedAccountControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\SelectedAccountControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workflow\NewLead\LeadCustomerForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Workflow\UpdateCustomerDetails\UpdateCustomerDetailsWithOTP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Workflow\UpdateCustomerDetails\UpdateCustomerDetailsEIDScan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="LanguagePack\LanResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WF\eSpaceMediaOcx.resx">
+      <DependentUpon>eSpaceMediaOcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Libs\Resource\Data\qt" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Debug.Dev.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Debug.QA.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Debug.SIT.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Debug.UAT.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\1.png" />
+    <Resource Include="Images\10.png" />
+    <Resource Include="Images\2.png" />
+    <Resource Include="Images\3.png" />
+    <Resource Include="Images\4.png" />
+    <Resource Include="Images\5.png" />
+    <Resource Include="Images\6.png" />
+    <Resource Include="Images\7.png" />
+    <Resource Include="Images\8.png" />
+    <Resource Include="Images\9.png" />
+    <Resource Include="Images\AccountPic.png" />
+    <Resource Include="Images\active.png" />
+    <Resource Include="Images\FGB.png" />
+    <Resource Include="Images\idle.png" />
+    <Resource Include="Images\offline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logout.png" />
+    <Resource Include="Images\settings.png" />
+    <Resource Include="Images\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BtnBelowTriangle.png" />
+    <Resource Include="Images\StateCalledBusy.png" />
+    <Resource Include="Images\StateCalledIdle.png" />
+    <Resource Include="Images\StateCalledRest.png" />
+    <Resource Include="Images\StateClearUp.png" />
+    <Resource Include="Images\StateLeave.png" />
+    <Resource Include="Images\Close.png" />
+    <Resource Include="Images\CloseMouseOver.png" />
+    <Resource Include="Images\ClosePress.png" />
+    <Resource Include="Images\LoginHead.png" />
+    <Resource Include="icon.ico" />
+    <Resource Include="Images\loader.gif" />
+    <Content Include="Libs\Resource\Sound\play.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxeSpaceMediaLib">
+      <Guid>{B82327E4-D0C6-4BFF-B282-06FCD0374840}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxVRCCONTROLLib">
+      <Guid>{AB2DE422-220B-46FE-9692-71D637D79E8F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="eSpaceMediaLib">
+      <Guid>{B82327E4-D0C6-4BFF-B282-06FCD0374840}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VRCCONTROLLib">
+      <Guid>{AB2DE422-220B-46FE-9692-71D637D79E8F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework.Interface\Omnia.Pie.Vtm.Framework.Interface.csproj">
+      <Project>{2f83688e-bf17-4e7a-9ee2-222f6136fbbc}</Project>
+      <Name>Omnia.Pie.Vtm.Framework.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework\Omnia.Pie.Vtm.Framework.csproj">
+      <Project>{8da717d8-8d26-4a89-954b-d7489fa73565}</Project>
+      <Name>Omnia.Pie.Vtm.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{A5802672-F8CB-490F-8566-02BFB616A0A3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services\Omnia.Pie.Vtm.Services.csproj">
+      <Project>{87c5641c-4830-44e9-890b-5d9f79e0f304}</Project>
+      <Name>Omnia.Pie.Vtm.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="AfterCompile" Condition="exists('App.$(Configuration).config')">
+    <!-- Generate transformed app config in the intermediate directory -->
+    <TransformXml Source="App.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="App.$(Configuration).config" />
+    <!-- Force build process to use the transformed configuration file from now on. -->
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="App.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+</Project>

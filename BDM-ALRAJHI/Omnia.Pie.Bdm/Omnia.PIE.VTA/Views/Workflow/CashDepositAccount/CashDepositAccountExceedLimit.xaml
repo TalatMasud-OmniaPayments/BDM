@@ -1,0 +1,79 @@
+﻿<Page x:Class="Omnia.PIE.VTA.Views.Workflow.CashDepositAccountExceedLimit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Omnia.PIE.VTA.Views.Workflow"
+      mc:Ignorable="d" 
+      xmlns:controls="clr-namespace:Omnia.PIE.VTA.Converters"
+      xmlns:Account="clr-namespace:Omnia.PIE.VTA.Views.Workflow"
+      d:DesignHeight="400" d:DesignWidth="600"
+      Title="CreditCardPaymentWithCashExceedLimit"
+      Loaded="Page_Loaded">
+
+    <Grid Background="{StaticResource GridGrayBG}">
+        <Grid.Resources>
+            <controls:BoolToVisibilityConverter x:Key="BoolConverter"/>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="grdAccounts" Visibility="Visible" Margin="0,0,5,0">
+            <ScrollViewer Background="White">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Title}" Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Message}" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding CardNumber}" Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <TextBlock Margin="5" TextWrapping="Wrap" Text="Cash Breakdown" Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Visibility="{Binding OneHundredNote, Converter={StaticResource BoolConverter}}">
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="100     x   " Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding OneHundredNote}" Visibility="{Binding OneHundredNote, Converter={StaticResource BoolConverter}}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Visibility="{Binding TwoHundredNote, Converter={StaticResource BoolConverter}}">
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="200     x   " Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding TwoHundredNote}" Visibility="{Binding TwoHundredNote, Converter={StaticResource BoolConverter}}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Visibility="{Binding FiveHundredNote, Converter={StaticResource BoolConverter}}">
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="500     x   " Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding FiveHundredNote}" Visibility="{Binding FiveHundredNote, Converter={StaticResource BoolConverter}}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Visibility="{Binding OneThousandNote, Converter={StaticResource BoolConverter}}">
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="1000   x   " Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding OneThousandNote}" Visibility="{Binding OneThousandNote, Converter={StaticResource BoolConverter}}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Visibility="{Binding Amount, Converter={StaticResource BoolConverter}}">
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="Total        " Foreground="Gray" HorizontalAlignment="Center" Visibility="{Binding Amount, Converter={StaticResource BoolConverter}}" VerticalAlignment="Center"/>
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Amount}" Visibility="{Binding Amount, Converter={StaticResource BoolConverter}}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <ScrollViewer Background="White" Grid.Column="1" Margin="5,0,0,0">
+            <StackPanel VerticalAlignment="Center">
+                <Button Name="btnSourceOfFunds" IsEnabled="False" CommandParameter="112" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Source Of Funds" VerticalAlignment="Top"/>
+                </Button>
+                <Button Name="btnActivateEID" CommandParameter="118" IsEnabled="False" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Activate EID Scanner" VerticalAlignment="Top"/>
+                </Button>
+                <Button Name="btnConfirmEID" CommandParameter="115" IsEnabled="False" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="EID Confirmed" VerticalAlignment="Top"/>
+                </Button>
+                <Button CommandParameter="999000" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="End Current Session" VerticalAlignment="Top"/>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

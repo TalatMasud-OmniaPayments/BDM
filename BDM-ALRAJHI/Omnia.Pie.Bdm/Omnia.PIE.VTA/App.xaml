@@ -1,0 +1,23 @@
+﻿<Application 
+	x:Class="Omnia.PIE.VTA.App"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:Omnia.PIE.VTA"
+	DispatcherUnhandledException="OnDispatcherUnhandledException">
+	
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary>
+					<SolidColorBrush x:Key="TitleBlueBackground" Color="#002035"/>
+					<SolidColorBrush x:Key="ButtonBackground" Color="#FF767676"/>
+					<SolidColorBrush x:Key="GridGrayBG" Color="#FFF3F1F1"/>
+					<SolidColorBrush x:Key="Text.Forground" Color="#0288cf"/>
+				</ResourceDictionary>
+				<ResourceDictionary Source="Styles/Miscellaneous.xaml"/>
+				<ResourceDictionary Source="Styles/ScrollStyle.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

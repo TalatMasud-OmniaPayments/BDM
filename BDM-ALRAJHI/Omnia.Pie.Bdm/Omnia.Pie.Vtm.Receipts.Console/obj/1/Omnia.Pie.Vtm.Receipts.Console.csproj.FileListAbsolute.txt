@@ -1,0 +1,16 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Omnia.Pie.Vtm.Receipts.Console.exe.config
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Omnia.Pie.Vtm.Receipts.Console.exe
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.Unity.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Omnia.Pie.Vtm.Framework.Interface.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Omnia.Pie.Vtm.Framework.Interface.pdb
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.Unity.xml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\bin\1\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\obj\1\Omnia.Pie.Vtm.Receipts.Console.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\obj\1\Omnia.Pie.Vtm.Receipts.Console.csproj.CopyComplete
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Receipts.Console\obj\1\Omnia.Pie.Vtm.Receipts.Console.exe

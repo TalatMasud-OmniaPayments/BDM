@@ -1,0 +1,13 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Omnia.Pie.Vtm.Communication.Interface.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Omnia.Pie.Vtm.Framework.Interface.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Microsoft.Practices.Unity.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Omnia.Pie.Vtm.Framework.Interface.pdb
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Microsoft.Practices.Unity.xml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\bin\1\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\obj\1\Omnia.Pie.Vtm.Communication.Interface.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\obj\1\Omnia.Pie.Vtm.Communication.Interface.csproj.CopyComplete
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication.Interface\obj\1\Omnia.Pie.Vtm.Communication.Interface.dll

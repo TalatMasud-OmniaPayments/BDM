@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C47DC6B7-9B1D-4479-9509-CC75C4D8E366}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Vtm.Workflow</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Workflow</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication\Steps\ChangePasswordStep.cs" />
+    <Compile Include="Authentication\Steps\EnterCifStep.cs" />
+    <Compile Include="Authentication\Steps\EnterOtpStep.cs" />
+    <Compile Include="Authentication\Steps\GetCardsStep.cs" />
+    <Compile Include="Authentication\Steps\LoginStep.cs" />
+    <Compile Include="Authentication\Steps\PrintUserStep.cs" />
+    <Compile Include="Authentication\Steps\RegisterNewUserSuccessStep.cs" />
+    <Compile Include="Authentication\Steps\SelectCardStep.cs" />
+    <Compile Include="Authentication\Steps\SendSelectedCardStep.cs" />
+    <Compile Include="Authentication\Steps\SendSmsOtpStep.cs" />
+    <Compile Include="Authentication\Steps\UpdatePasswordSuccessStep.cs" />
+    <Compile Include="Authentication\Steps\ValidateCustomerStep.cs" />
+    <Compile Include="Authentication\Steps\EnterUsernamePasswordStep.cs" />
+    <Compile Include="Authentication\Steps\FingerprintScanningStep.cs" />
+    <Compile Include="Authentication\Steps\ValidateUsernamePasswordStep.cs" />
+    <Compile Include="Authentication\Steps\ValidateOtpStep.cs" />
+    <Compile Include="Authentication\Steps\ValidatePinEidNdcStep.cs" />
+    <Compile Include="Authentication\Steps\ValidatePinNdcStep.cs" />
+    <Compile Include="Authentication\Steps\ValidateFingerprintStep.cs" />
+    <Compile Include="Authentication\Steps\ValidatePinStep.cs" />
+    <Compile Include="Common\Context\AuthDataContext.cs" />
+    <Compile Include="Common\Context\IAuthDataContext.cs" />
+    <Compile Include="Authentication\Workflow\BusinessUserMainMenuWorkFlow.cs" />
+    <Compile Include="Authentication\Steps\CaptureCardStep.cs" />
+    <Compile Include="Authentication\Steps\EnterPinStep.cs" />
+    <Compile Include="Authentication\Steps\ReadCardStep.cs" />
+    <Compile Include="Authentication\Steps\ReturnCardStep.cs" />
+    <Compile Include="Authentication\Workflow\CITWorkFlow.cs" />
+    <Compile Include="Authentication\Workflow\UsernamePassword\AuthenticationLoginWorkflow.cs" />
+    <Compile Include="Authentication\Workflow\UsernamePassword\RegisterNewUserWorkflow.cs" />
+    <Compile Include="BalanceEnquiry\BalanceEnquiryWorkFlow.cs" />
+    <Compile Include="BalanceEnquiry\Context\BalanceEnquiryContext.cs" />
+    <Compile Include="BalanceEnquiry\Context\IBalanceEnquiryContext.cs" />
+    <Compile Include="BalanceEnquiry\Steps\ConfirmationBalanceEnquiryStep.cs" />
+    <Compile Include="BalanceEnquiry\Steps\GetTransactionNoStep.cs" />
+    <Compile Include="BalanceEnquiry\Steps\LoadAccountDetailStep.cs" />
+    <Compile Include="BalanceEnquiry\Steps\LoadAccountStep.cs" />
+    <Compile Include="BalanceEnquiry\Steps\PrintingStep.cs" />
+    <Compile Include="BalanceEnquiry\Steps\SubmitRequestStep.cs" />
+    <Compile Include="Base\BaseContext.cs" />
+    <Compile Include="Base\BaseFlow.cs" />
+    <Compile Include="Base\DataContext.cs" />
+    <Compile Include="Base\IDataContext.cs" />
+    <Compile Include="Base\Workflow.cs" />
+    <Compile Include="Base\WorkflowStep.cs" />
+    <Compile Include="CashDeposit\Account\CashDepositToAccountWorkflow.cs" />
+    <Compile Include="CashDeposit\Account\Steps\AccountConfirmationStep.cs" />
+    <Compile Include="CashDeposit\Account\Steps\CashDepositAccountSelectionStep.cs" />
+    <Compile Include="CashDeposit\Account\Steps\CashDepositResultStep.cs" />
+    <Compile Include="CashDeposit\Account\Steps\DepositConfirmationStep.cs" />
+    <Compile Include="CashDeposit\Account\Steps\ManualAccountEntryCardlessStep.cs" />
+    <Compile Include="CashDeposit\Account\Steps\ManualAccountEntryStep.cs" />
+    <Compile Include="CashDeposit\Context\CashDepositContext.cs" />
+    <Compile Include="CashDeposit\Context\CashDepositCreditCardContext.cs" />
+    <Compile Include="CashDeposit\Context\ICashDepositContext.cs" />
+    <Compile Include="CashDeposit\Context\ICashDepositCreditCardContext.cs" />
+    <Compile Include="CashDeposit\CreditCard\CashDepositToCreditCardWorkflow.cs" />
+    <Compile Include="CashDeposit\CreditCard\Steps\CreditCardDetailsStep.cs" />
+    <Compile Include="CashDeposit\Offline\CashDepositOfflineWorkflow.cs" />
+    <Compile Include="Common\Context\ICommonContext.cs" />
+    <Compile Include="Common\Context\IReceiptContext.cs" />
+    <Compile Include="Common\Context\ISessionContext.cs" />
+    <Compile Include="Common\Context\SessionContext.cs" />
+    <Compile Include="Common\Steps\CheckPinpadStep.cs" />
+    <Compile Include="Common\Steps\CheckCardReaderStep.cs" />
+    <Compile Include="Common\Steps\CheckCashAcceptorStep.cs" />
+    <Compile Include="Common\Steps\CheckCashDispenserStep.cs" />
+    <Compile Include="Common\Steps\CheckReceiptPrinterStep.cs" />
+    <Compile Include="Common\Steps\PrintReceiptStep.cs" />
+    <Compile Include="Common\UploadOfflineTransactions.cs" />
+    <Compile Include="MainMenu\MainWorkflow.cs" />
+    <Compile Include="MainMenu\Steps\LanguageSelectionStep.cs" />
+    <Compile Include="MainMenu\Steps\ProductSelectionStep.cs" />
+    <Compile Include="MainMenu\Steps\ProductSubmitSuccessStep.cs" />
+    <Compile Include="MainMenu\Steps\SendMoreInfoStep.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestIBAN\Context\IRequestIBANContext.cs" />
+    <Compile Include="RequestIBAN\Context\RequestIBANContext.cs" />
+    <Compile Include="RequestIBAN\RequestIBANWorkFlow.cs" />
+    <Compile Include="RequestIBAN\Steps\AccountSelectionStep.cs" />
+    <Compile Include="RequestIBAN\Steps\ConfirmationStep.cs" />
+    <Compile Include="RequestIBAN\Steps\GetAccountDetailStep.cs" />
+    <Compile Include="RequestIBAN\Steps\GetAccountStep.cs" />
+    <Compile Include="RequestIBAN\Steps\GetTransactionNoStep.cs" />
+    <Compile Include="RequestIBAN\Steps\LoadCustomerDetailStep.cs" />
+    <Compile Include="RequestIBAN\Steps\PrintStep.cs" />
+    <Compile Include="RequestIBAN\Steps\SendEmailStep.cs" />
+    <Compile Include="RequestIBAN\Steps\SendSmsStep.cs" />
+    <Compile Include="RequestLC\Context\IRequestLCContext.cs" />
+    <Compile Include="RequestLC\Context\RequestLCContext.cs" />
+    <Compile Include="RequestLC\RequestLCWorkFlowcs.cs" />
+    <Compile Include="RequestLC\Steps\CaptureSignatureStep.cs" />
+    <Compile Include="RequestLC\Steps\ConfirmationLCStep.cs" />
+    <Compile Include="RequestLC\Steps\ConfirmSignatureStep.cs" />
+    <Compile Include="RequestLC\Steps\LoadCustomerDetailStep.cs" />
+    <Compile Include="RequestLC\Steps\PrintingStep.cs" />
+    <Compile Include="RequestLC\Steps\SendEmailStep.cs" />
+    <Compile Include="RequestLC\Steps\SendSmsStep.cs" />
+    <Compile Include="RequestLC\Steps\TermsAndConditionsStep.cs" />
+    <Compile Include="RequestNLC\Context\IRequestNLCContext.cs" />
+    <Compile Include="RequestNLC\Context\RequestNLCContext.cs" />
+    <Compile Include="RequestNLC\RequestNLCWorkFlow.cs" />
+    <Compile Include="RequestNLC\Steps\CaptureSignatureStep.cs" />
+    <Compile Include="RequestNLC\Steps\ConfirmationNLCStep.cs" />
+    <Compile Include="RequestNLC\Steps\ConfirmSignatureStep.cs" />
+    <Compile Include="RequestNLC\Steps\LoadCustomerDetailStep.cs" />
+    <Compile Include="RequestNLC\Steps\PrintingStep.cs" />
+    <Compile Include="RequestNLC\Steps\SendEmailStep.cs" />
+    <Compile Include="RequestNLC\Steps\SendSmsStep.cs" />
+    <Compile Include="RequestNLC\Steps\TermsAndConditionsStep.cs" />
+    <Compile Include="StatementPrinting\Context\IStatementPrintingContext.cs" />
+    <Compile Include="StatementPrinting\Context\StatementPrintingContext.cs" />
+    <Compile Include="StatementPrinting\StatementPrintingWorkFlow.cs" />
+    <Compile Include="StatementPrinting\Steps\AccountSelectionStep.cs" />
+    <Compile Include="StatementPrinting\Steps\ChargesDeductionStep.cs" />
+    <Compile Include="StatementPrinting\Steps\ConfirmationStep.cs" />
+    <Compile Include="StatementPrinting\Steps\GetChargesStep.cs" />
+    <Compile Include="StatementPrinting\Steps\GetTransactionHistoryStep.cs" />
+    <Compile Include="StatementPrinting\Steps\LoadAccountDetailStep.cs" />
+    <Compile Include="StatementPrinting\Steps\LoadAccountStep.cs" />
+    <Compile Include="StatementPrinting\Steps\LoadCustomerDetailStep.cs" />
+    <Compile Include="StatementPrinting\Steps\StatementPrintingStep.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Client.Journal.Interface\Omnia.Pie.Client.Journal.Interface.csproj">
+      <Project>{A1099D06-6C3F-4EB8-8097-709B178E6B32}</Project>
+      <Name>Omnia.Pie.Client.Journal.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Supervisor.Shell\Omnia.Pie.Supervisor.Shell.csproj">
+      <Project>{C4E05B84-023E-4957-AFCC-136038784894}</Project>
+      <Name>Omnia.Pie.Supervisor.Shell</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Supervisor.UI.Themes\Omnia.Pie.Supervisor.UI.Themes.csproj">
+      <Project>{b6d2823a-5d87-44c4-9d13-8a83f2e5ad48}</Project>
+      <Name>Omnia.Pie.Supervisor.UI.Themes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Bootstrapper.Interface\Omnia.Pie.Vtm.Bootstrapper.Interface.csproj">
+      <Project>{05ef90b7-8b67-48b6-9fd8-e3bb39296807}</Project>
+      <Name>Omnia.Pie.Vtm.Bootstrapper.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.DataAccess.Interface\Omnia.Pie.Vtm.DataAccess.Interface.csproj">
+      <Project>{f5e2ca67-7440-44cd-bcaf-8f4068699663}</Project>
+      <Name>Omnia.Pie.Vtm.DataAccess.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.DataAccess\Omnia.Pie.Vtm.DataAccess.csproj">
+      <Project>{82788099-841a-4a82-8800-3f0d15326bca}</Project>
+      <Name>Omnia.Pie.Vtm.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices.Interface\Omnia.Pie.Vtm.Devices.Interface.csproj">
+      <Project>{81c8ec3b-b030-4a57-bb0f-0f52f099a3ca}</Project>
+      <Name>Omnia.Pie.Vtm.Devices.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices\Omnia.Pie.Vtm.Devices.csproj">
+      <Project>{000cf3f2-33b0-4563-aad9-41a27c7353d1}</Project>
+      <Name>Omnia.Pie.Vtm.Devices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework.Interface\Omnia.Pie.Vtm.Framework.Interface.csproj">
+      <Project>{2F83688E-BF17-4E7A-9EE2-222F6136FBBC}</Project>
+      <Name>Omnia.Pie.Vtm.Framework.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework\Omnia.Pie.Vtm.Framework.csproj">
+      <Project>{8da717d8-8d26-4a89-954b-d7489fa73565}</Project>
+      <Name>Omnia.Pie.Vtm.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{a5802672-f8cb-490f-8566-02bfb616a0a3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.ServicesNDC.Interface\Omnia.Pie.Vtm.ServicesNdc.Interface.csproj">
+      <Project>{0827CC3B-9117-4CF4-8700-60662B1A3874}</Project>
+      <Name>Omnia.Pie.Vtm.ServicesNdc.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services\Omnia.Pie.Vtm.Services.csproj">
+      <Project>{87c5641c-4830-44e9-890b-5d9f79e0f304}</Project>
+      <Name>Omnia.Pie.Vtm.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Authentication\DataContext\" />
+    <Folder Include="Billers\" />
+    <Folder Include="CreditCardBalanceEnquiry\" />
+    <Folder Include="MainMenu\DataContext\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.ar-AE.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,16 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\MainWindow.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\CardReaderView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\CoinDispenserView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\FingerPrintScannerView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\PrinterView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\CashDeviceView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\SignpadScannerView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\EmiratesIdScannerView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\ChequeAcceptorView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\CashDispenserView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\CashAcceptorView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Views\DeviceView.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\App.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Omnia.Pie.Vtm.Devices.Test_MarkupCompile.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Test\obj\1\Omnia.Pie.Vtm.Devices.Test_MarkupCompile.lref

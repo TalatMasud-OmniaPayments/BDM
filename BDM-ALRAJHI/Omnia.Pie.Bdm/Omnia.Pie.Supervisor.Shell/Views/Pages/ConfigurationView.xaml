@@ -1,0 +1,179 @@
+﻿<UserControl x:Class="Omnia.Pie.Supervisor.Shell.Views.Pages.ConfigurationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Pages"
+			 xmlns:c="clr-namespace:Omnia.Pie.Supervisor.UI.Themes.Controls.DateTimeHelper;assembly=Omnia.Pie.Supervisor.UI.Themes"
+			 xmlns:e="clr-namespace:Omnia.Pie.Supervisor.UI.Themes.Controls;assembly=Omnia.Pie.Supervisor.UI.Themes"
+			 xmlns:converter="clr-namespace:Omnia.Pie.Supervisor.Shell.Utilities"
+			 mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Resources/Main.xaml"/>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Styles/Main.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<converter:ConfigurationConverter x:Key="Converter" />
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+	<Grid Width="450" Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="2*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="auto" />
+		</Grid.RowDefinitions>
+		<Grid.Resources>
+			<Style BasedOn="{StaticResource textBox}" TargetType="TextBox">
+				<Setter Property="Margin" Value="0 0 0 5"/>
+			</Style>
+			<Style BasedOn="{StaticResource button}" TargetType="Button">
+				<Setter Property="Margin" Value="0 3 0 15"/>
+				<Setter Property="HorizontalAlignment" Value="Center"/>
+				<Setter Property="Padding" Value="0"/>
+				<Setter Property="Content" Value="Apply"/>
+			</Style>
+			<Style BasedOn="{StaticResource label}" TargetType="Label">
+				<Setter Property="HorizontalAlignment" Value="Left"/>
+				<Setter Property="VerticalAlignment" Value="Center"/>
+			</Style>
+		</Grid.Resources>
+		<!-- Server Configuration Section -->
+		<Label Grid.Row="0" Grid.Column="0" Content="Server IP" />
+		<Grid Grid.Row="0" Grid.Column="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.Resources>
+				<Style BasedOn="{StaticResource label}" TargetType="Label">
+					<Setter Property="HorizontalAlignment" Value="Left"/>
+					<Setter Property="VerticalAlignment" Value="Bottom"/>
+					<Setter Property="Content" Value="."/>
+				</Style>
+			</Grid.Resources>
+			<TextBox	Grid.Column="0" x:Name="txtServerIP1" Text="{Binding ServerIpAddress1}" c:TextBoxHelper.DataType="Numeric" />
+			<Label		Grid.Column="1"/>
+			<TextBox	Grid.Column="2" x:Name="txtServerIP2" Text="{Binding ServerIpAddress2}" c:TextBoxHelper.DataType="Numeric" />
+			<Label		Grid.Column="3"/>
+			<TextBox	Grid.Column="4" x:Name="txtServerIP3" Text="{Binding ServerIpAddress3}" c:TextBoxHelper.DataType="Numeric" />
+			<Label		Grid.Column="5"/>
+			<TextBox	Grid.Column="6" x:Name="txtServerIP4" Text="{Binding ServerIpAddress4}" c:TextBoxHelper.DataType="Numeric" />
+		</Grid>
+
+		<Label Grid.Row="1" Grid.Column="0" Content="Server Port" />
+		<TextBox x:Name="txtServerPort" Grid.Row="1" Grid.Column="1" Text="{Binding ServerPort}" c:TextBoxHelper.DataType="Numeric" />
+
+		<Button Grid.Row="2" Grid.Column="1" Command="{Binding ApplyServerSettings}">
+			<Button.CommandParameter>
+				<MultiBinding Converter="{StaticResource Converter}">
+					<Binding Path="Text" ElementName="txtServerIP"/>
+					<Binding Path="Text" ElementName="txtServerPort"/>
+				</MultiBinding>
+			</Button.CommandParameter>
+		</Button>
+		<!-- Server Configuration Section -->
+
+		<!-- Machine IP Configuration Section -->
+		<Label Grid.Row="3" Grid.Column="0" Content="Terminal IP"/>
+		<Grid Grid.Row="3" Grid.Column="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.Resources>
+				<Style BasedOn="{StaticResource label}" TargetType="Label">
+					<Setter Property="HorizontalAlignment" Value="Left"/>
+					<Setter Property="VerticalAlignment" Value="Bottom"/>
+					<Setter Property="Content" Value="."/>
+				</Style>
+			</Grid.Resources>
+			<TextBox	Grid.Column="0" x:Name="txtMachineIP1" Text="{Binding LocalIpAddress1}" c:TextBoxHelper.DataType="Numeric" />
+			<Label		Grid.Column="1"/>
+			<TextBox	Grid.Column="2" x:Name="txtMachineIP2" Text="{Binding LocalIpAddress2}" c:TextBoxHelper.DataType="Numeric" />
+			<Label		Grid.Column="3"/>
+			<TextBox	Grid.Column="4" x:Name="txtMachineIP3" Text="{Binding LocalIpAddress3}" c:TextBoxHelper.DataType="Numeric" />
+			<Label		Grid.Column="5"/>
+			<TextBox	Grid.Column="6" x:Name="txtMachineIP4" Text="{Binding LocalIpAddress4}" c:TextBoxHelper.DataType="Numeric" />
+		</Grid>
+
+		<Button Grid.Row="4" Grid.Column="1" Command="{Binding ApplyMachineIP}">
+			<Button.CommandParameter>
+				<MultiBinding Converter="{StaticResource Converter}">
+					<Binding Path="Text" ElementName="txtMachineIP"/>
+				</MultiBinding>
+			</Button.CommandParameter>
+		</Button>
+		<!-- Machine IP Configuration Section -->
+
+		<!-- Machine Date & Time Configuration Section -->
+		<Label Grid.Column="0" Grid.Row="5" Content="Time Zone"/>
+		<ComboBox Grid.Column="1" Grid.Row="5" x:Name="txtTimeZone" 
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center"
+					ItemsSource="{Binding TimeZones}"
+					DisplayMemberPath="{Binding StandardName}"
+					SelectedItem="{Binding SelectedTimeZone, UpdateSourceTrigger=PropertyChanged}"
+					Margin="0 0 0 5"/>
+		<Label Grid.Column="0" Grid.Row="6" Content="Date"/>
+		<TextBox 
+				Grid.Row="6"
+				Grid.Column="1"
+				x:Name="txtSelectedDate"
+				c:TextBoxHelper.SelectedDate="{Binding MachineDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+				e:Keyboard.Title="Date Selection"
+				c:TextBoxHelper.DataType="Date"
+				c:TextBoxHelper.HandleEnter="False"/>
+		<Button Grid.Row="7" Grid.Column="1" Command="{Binding ApplyMachineDateTime}">
+			<Button.CommandParameter>
+				<MultiBinding Converter="{StaticResource Converter}">
+					<Binding Path="SelectedValue" ElementName="txtTimeZone"/>
+					<Binding Path="SelectedValue" ElementName="txtSelectedDate"/>
+				</MultiBinding>
+			</Button.CommandParameter>
+		</Button>
+		<!-- Machine Date & Time Configuration Section -->
+		<!-- Machine Common Configuration Section -->
+		<Label Grid.Row="8" Grid.Column="0" Content="Terminal ID"/>
+		<TextBox x:Name="txtTerminalID" Grid.Row="8" Grid.Column="1" Text="{Binding TerminalID}" e:TextBoxHelper.DataType="Alphanumeric" />
+
+		<Label Grid.Row="9" Grid.Column="0" Content="Branch ID" HorizontalAlignment="Left" />
+		<TextBox x:Name="txtBranchID" Grid.Row="9" Grid.Column="1" Text="{Binding BranchID}" c:TextBoxHelper.DataType="Numeric" />
+
+		<Button Grid.Row="10" Grid.Column="1" Command="{Binding ApplyMachineCommon}">
+			<Button.CommandParameter>
+				<MultiBinding Converter="{StaticResource Converter}">
+					<Binding Path="Text" ElementName="txtTerminalID"/>
+					<Binding Path="Text" ElementName="txtBranchID"/>
+				</MultiBinding>
+			</Button.CommandParameter>
+		</Button>
+		<!-- Machine Common Configuration Section -->
+	</Grid>
+</UserControl>

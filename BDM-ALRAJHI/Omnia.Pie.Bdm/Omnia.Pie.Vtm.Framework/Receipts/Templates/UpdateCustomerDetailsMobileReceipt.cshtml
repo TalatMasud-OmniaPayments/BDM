@@ -1,0 +1,5 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@{
+	Layout = "UpdateCustomerDetailsLayout";
+}
+@Model.Output.WriteRow(@Resources.UpdatedMobileNumberColon, @Model.Binding(@Model.Receipt.MobileNumber, @Resources.NotSpecified))

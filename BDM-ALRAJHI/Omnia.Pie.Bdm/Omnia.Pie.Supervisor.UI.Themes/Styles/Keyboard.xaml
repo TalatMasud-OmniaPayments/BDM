@@ -1,0 +1,561 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:c="clr-namespace:Omnia.Pie.Supervisor.UI.Themes.Controls"
+					xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="../Resources/Main.xaml"/>
+		<ResourceDictionary Source="Button.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+	<Style x:Key="Keyboard.Button.Normal.Style" TargetType="{x:Type Button}" BasedOn="{StaticResource Button.Normal.Style}">
+		<Setter Property="MinWidth" Value="85"/>
+		<Setter Property="Width" Value="85"/>
+		<Setter Property="Height" Value="68"/>
+		<Setter Property="Margin" Value="3"/>
+		<Setter Property="FontSize" Value="24"/>
+		<Setter Property="Padding" Value="0 0 0 3"/>
+		<Setter Property="Focusable" Value="False"/>
+	</Style>
+
+	<Style x:Key="Keyboard.Button.Numeric.Style" TargetType="{x:Type Button}" BasedOn="{StaticResource Keyboard.Button.Normal.Style}">
+		<Setter Property="Height" Value="42"/>
+	</Style>
+
+	<Style x:Key="Keyboard.Button.Negative.Style" TargetType="{x:Type Button}" BasedOn="{StaticResource Button.Negative.Style}">
+		<Setter Property="MinWidth" Value="85"/>
+		<Setter Property="Width" Value="85"/>
+		<Setter Property="Height" Value="68"/>
+		<Setter Property="Margin" Value="3"/>
+		<Setter Property="FontSize" Value="24"/>
+		<Setter Property="Padding" Value="0 0 0 3"/>
+		<Setter Property="Focusable" Value="False"/>
+	</Style>
+
+	<Style x:Key="Keyboard.Button.Positive.Style" TargetType="{x:Type Button}" BasedOn="{StaticResource Button.Positive.Style}">
+		<Setter Property="MinWidth" Value="85"/>
+		<Setter Property="Width" Value="85"/>
+		<Setter Property="Height" Value="68"/>
+		<Setter Property="Margin" Value="3"/>
+		<Setter Property="FontSize" Value="24"/>
+		<Setter Property="Padding" Value="0 0 0 3"/>
+		<Setter Property="Focusable" Value="False"/>
+	</Style>
+
+	<Style TargetType="{x:Type c:Keyboard}">
+		<Setter Property="FlowDirection" Value="LeftToRight"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type c:Keyboard}">
+					<Grid>
+						<Grid.Resources>
+							<Style TargetType="{x:Type Button}" BasedOn="{StaticResource Keyboard.Button.Normal.Style}">
+								<Setter Property="Command" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</Style>
+						</Grid.Resources>
+
+						<!--#region Keypad-->
+
+						<UniformGrid x:Name="PART_Keypad" Visibility="Collapsed" Columns="3" Rows="4">
+							<Button Content="1" CommandParameter="1"/>
+							<Button Content="2" CommandParameter="2"/>
+							<Button Content="3" CommandParameter="3"/>
+							<Button Content="4" CommandParameter="4"/>
+							<Button Content="5" CommandParameter="5"/>
+							<Button Content="6" CommandParameter="6"/>
+							<Button Content="7" CommandParameter="7"/>
+							<Button Content="8" CommandParameter="8"/>
+							<Button Content="9" CommandParameter="9"/>
+							<Button Style="{StaticResource Keyboard.Button.Negative.Style}" Content="Clear" 
+									CommandParameter="{}{BACKSPACE}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							<Button Content="0" CommandParameter="0"/>
+							<Button Style="{StaticResource Keyboard.Button.Positive.Style}" Content="Enter" 
+									CommandParameter="{}{ENTER}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+						</UniformGrid>
+
+						<!--#endregion-->
+
+						<!--#region AlphabeticLower-->
+
+						<StackPanel x:Name="PART_AlphabeticLower" Visibility="Collapsed">
+							<StackPanel Orientation="Horizontal">
+								<Button Content="q" CommandParameter="q"/>
+								<Button Content="w" CommandParameter="w"/>
+								<Button Content="e" CommandParameter="e"/>
+								<Button Content="r" CommandParameter="r"/>
+								<Button Content="t" CommandParameter="t"/>
+								<Button Content="y" CommandParameter="y"/>
+								<Button Content="u" CommandParameter="u"/>
+								<Button Content="i" CommandParameter="i"/>
+								<Button Content="o" CommandParameter="o"/>
+								<Button Content="p" CommandParameter="p"/>
+							</StackPanel>
+
+							<StackPanel Margin="48 0 0 0" Orientation="Horizontal">
+								<Button Content="a" CommandParameter="a"/>
+								<Button Content="s" CommandParameter="s"/>
+								<Button Content="d" CommandParameter="d"/>
+								<Button Content="f" CommandParameter="f"/>
+								<Button Content="g" CommandParameter="g"/>
+								<Button Content="h" CommandParameter="h"/>
+								<Button Content="j" CommandParameter="j"/>
+								<Button Content="k" CommandParameter="k"/>
+								<Button Content="l" CommandParameter="l"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Content="Shift" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetShiftCommand}">
+									<Button.CommandParameter>
+										<s:Boolean>True</s:Boolean>
+									</Button.CommandParameter>
+								</Button>
+
+								<Button Content="z" CommandParameter="z"/>
+								<Button Content="x" CommandParameter="x"/>
+								<Button Content="c" CommandParameter="c"/>
+								<Button Content="v" CommandParameter="v"/>
+								<Button Content="b" CommandParameter="b"/>
+								<Button Content="n" CommandParameter="n"/>
+								<Button Content="m" CommandParameter="m"/>
+
+								<Button Width="176" Content="Clear" Style="{StaticResource Keyboard.Button.Negative.Style}"
+										CommandParameter="{}{BACKSPACE}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Width="119" Content="123"
+										CommandParameter="{x:Static c:KeyboardView.Numeric}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetKeyboardViewCommand}"/>
+
+								<Button Width="645" Content="Space" CommandParameter=" "/>
+
+								<Button Width="128" Content="Enter" Style="{StaticResource Keyboard.Button.Positive.Style}"  
+										CommandParameter="{}{ENTER}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+						</StackPanel>
+
+						<!--#endregion-->
+
+						<!--#region AlphabeticUpper-->
+
+						<StackPanel x:Name="PART_AlphabeticUpper" Visibility="Collapsed">
+							<StackPanel Orientation="Horizontal">
+								<Button Content="Q" CommandParameter="Q"/>
+								<Button Content="W" CommandParameter="W"/>
+								<Button Content="E" CommandParameter="E"/>
+								<Button Content="R" CommandParameter="R"/>
+								<Button Content="T" CommandParameter="T"/>
+								<Button Content="Y" CommandParameter="Y"/>
+								<Button Content="U" CommandParameter="U"/>
+								<Button Content="I" CommandParameter="I"/>
+								<Button Content="O" CommandParameter="O"/>
+								<Button Content="P" CommandParameter="P"/>
+							</StackPanel>
+
+							<StackPanel Margin="48 0 0 0" Orientation="Horizontal">
+								<Button Content="A" CommandParameter="A"/>
+								<Button Content="S" CommandParameter="S"/>
+								<Button Content="D" CommandParameter="D"/>
+								<Button Content="F" CommandParameter="F"/>
+								<Button Content="G" CommandParameter="G"/>
+								<Button Content="H" CommandParameter="H"/>
+								<Button Content="J" CommandParameter="J"/>
+								<Button Content="K" CommandParameter="K"/>
+								<Button Content="L" CommandParameter="L"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Content="Shift" Style="{StaticResource Keyboard.Button.Positive.Style}"						
+										Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetShiftCommand}">
+									<Button.CommandParameter>
+										<s:Boolean>False</s:Boolean>
+									</Button.CommandParameter>
+								</Button>
+
+								<Button Content="Z" CommandParameter="Z"/>
+								<Button Content="X" CommandParameter="X"/>
+								<Button Content="C" CommandParameter="C"/>
+								<Button Content="V" CommandParameter="V"/>
+								<Button Content="B" CommandParameter="B"/>
+								<Button Content="N" CommandParameter="N"/>
+								<Button Content="M" CommandParameter="M"/>
+
+								<Button Width="176" Content="Clear" Style="{StaticResource Keyboard.Button.Negative.Style}"						
+										CommandParameter="{}{BACKSPACE}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Width="119" Content="123"						
+										CommandParameter="{x:Static c:KeyboardView.Numeric}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetKeyboardViewCommand}"/>
+
+								<Button Width="645" Content="Space" CommandParameter=" "/>
+
+								<Button Width="128" Content="Enter" Style="{StaticResource Keyboard.Button.Positive.Style}"  						
+										CommandParameter="{}{ENTER}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+						</StackPanel>
+
+						<!--#endregion-->
+
+						<!--#region Numeric-->
+
+						<StackPanel x:Name="PART_Numeric" Visibility="Collapsed">
+							<StackPanel Orientation="Horizontal">
+								<Button Content="1" CommandParameter="1"/>
+								<Button Content="2" CommandParameter="2"/>
+								<Button Content="3" CommandParameter="3"/>
+								<Button Content="4" CommandParameter="4"/>
+								<Button Content="5" CommandParameter="5"/>
+								<Button Content="6" CommandParameter="6"/>
+								<Button Content="7" CommandParameter="7"/>
+								<Button Content="8" CommandParameter="8"/>
+								<Button Content="9" CommandParameter="9"/>
+								<Button Content="0" CommandParameter="0"/>
+							</StackPanel>
+
+							<StackPanel Margin="48 0 0 0" Orientation="Horizontal">
+								<Button Content="-" CommandParameter="-"/>
+								<Button Content="/" CommandParameter="/"/>
+								<Button Content=":" CommandParameter=":"/>
+								<Button Content=";" CommandParameter=";"/>
+								<Button Content="(" CommandParameter="{}{(}"/>
+								<Button Content=")" CommandParameter="{}{)}"/>
+								<Button Content="$" CommandParameter="$"/>
+								<Button Content="&amp;" CommandParameter="&amp;"/>
+								<Button Content="@" CommandParameter="@"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Width="176" Content="#+="
+										CommandParameter="{x:Static c:KeyboardView.Symbols}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetKeyboardViewCommand}"/>
+
+								<Button Content="&quot;" CommandParameter="&quot;"/>
+								<Button Content="." CommandParameter="."/>
+								<Button Content="," CommandParameter=","/>
+								<Button Content="?" CommandParameter="?"/>
+								<Button Content="!" CommandParameter="!"/>
+								<Button Content="'" CommandParameter="'"/>
+
+								<Button Width="176" Content="Clear" Style="{StaticResource Keyboard.Button.Negative.Style}"
+										CommandParameter="{}{BACKSPACE}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Width="119" Content="ABC"
+										CommandParameter="{x:Static c:KeyboardView.Alphabetic}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetKeyboardViewCommand}"/>
+
+								<Button Width="645" Content="Space" CommandParameter=" "/>
+
+								<Button Width="128" Content="Enter" Style="{StaticResource Keyboard.Button.Positive.Style}"  
+										CommandParameter="{}{ENTER}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+						</StackPanel>
+
+						<!--#endregion-->
+
+						<!--#region Symbols-->
+
+						<StackPanel x:Name="PART_Symbols" Visibility="Collapsed">
+							<StackPanel Orientation="Horizontal">
+								<Button Content="[" CommandParameter="{}{[}"/>
+								<Button Content="]" CommandParameter="{}{]}"/>
+								<Button Content="{}{" CommandParameter="{}{{}"/>
+								<Button Content="{}}" CommandParameter="{}{}}"/>
+								<Button Content="#" CommandParameter="#"/>
+								<Button Content="%" CommandParameter="{}{%}"/>
+								<Button Content="^" CommandParameter="{}{^}"/>
+								<Button Content="*" CommandParameter="*"/>
+								<Button Content="+" CommandParameter="{}{+}"/>
+								<Button Content="=" CommandParameter="="/>
+							</StackPanel>
+
+							<StackPanel Margin="48 0 0 0" Orientation="Horizontal">
+								<Button Content="_" CommandParameter="_"/>
+								<Button Content="\" CommandParameter="\"/>
+								<Button Content="|" CommandParameter="|"/>
+								<Button Content="~" CommandParameter="{}{~}"/>
+								<Button Content="&lt;" CommandParameter="&lt;"/>
+								<Button Content="&gt;" CommandParameter="&gt;"/>
+								<Button Content="$" CommandParameter="$"/>
+								<Button Content="€" CommandParameter="€"/>
+								<Button Content="£" CommandParameter="£"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Width="176" Content="123"
+										CommandParameter="{x:Static c:KeyboardView.Numeric}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetKeyboardViewCommand}"/>
+
+								<Button Content="•" CommandParameter="•"/>
+								<Button Content="." CommandParameter="."/>
+								<Button Content="," CommandParameter=","/>
+								<Button Content="?" CommandParameter="?"/>
+								<Button Content="!" CommandParameter="!"/>
+								<Button Content="'" CommandParameter="'"/>
+
+								<Button Width="176" Content="Clear" Style="{StaticResource Keyboard.Button.Negative.Style}"
+										CommandParameter="{}{BACKSPACE}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Width="119" Content="ABC"
+										CommandParameter="{x:Static c:KeyboardView.Alphabetic}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetKeyboardViewCommand}"/>
+
+								<Button Width="645" Content="Space" CommandParameter=" "/>
+
+								<Button Width="128" Content="Enter" Style="{StaticResource Keyboard.Button.Positive.Style}"  
+										CommandParameter="{}{ENTER}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+						</StackPanel>
+
+						<!--#endregion-->
+
+						<!--#region AlphanumericLower-->
+
+						<StackPanel x:Name="PART_AlphanumericLower" Visibility="Collapsed">
+							<StackPanel Orientation="Horizontal">
+								<StackPanel.Resources>
+									<Style TargetType="{x:Type Button}" BasedOn="{StaticResource Keyboard.Button.Numeric.Style}">
+										<Setter Property="Command" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+									</Style>
+								</StackPanel.Resources>
+
+								<Button Content="1" CommandParameter="1"/>
+								<Button Content="2" CommandParameter="2"/>
+								<Button Content="3" CommandParameter="3"/>
+								<Button Content="4" CommandParameter="4"/>
+								<Button Content="5" CommandParameter="5"/>
+								<Button Content="6" CommandParameter="6"/>
+								<Button Content="7" CommandParameter="7"/>
+								<Button Content="8" CommandParameter="8"/>
+								<Button Content="9" CommandParameter="9"/>
+								<Button Content="0" CommandParameter="0"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Content="q" CommandParameter="q"/>
+								<Button Content="w" CommandParameter="w"/>
+								<Button Content="e" CommandParameter="e"/>
+								<Button Content="r" CommandParameter="r"/>
+								<Button Content="t" CommandParameter="t"/>
+								<Button Content="y" CommandParameter="y"/>
+								<Button Content="u" CommandParameter="u"/>
+								<Button Content="i" CommandParameter="i"/>
+								<Button Content="o" CommandParameter="o"/>
+								<Button Content="p" CommandParameter="p"/>
+							</StackPanel>
+
+							<StackPanel Margin="48 0 0 0" Orientation="Horizontal">
+								<Button Content="a" CommandParameter="a"/>
+								<Button Content="s" CommandParameter="s"/>
+								<Button Content="d" CommandParameter="d"/>
+								<Button Content="f" CommandParameter="f"/>
+								<Button Content="g" CommandParameter="g"/>
+								<Button Content="h" CommandParameter="h"/>
+								<Button Content="j" CommandParameter="j"/>
+								<Button Content="k" CommandParameter="k"/>
+								<Button Content="l" CommandParameter="l"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Content="Shift" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetShiftCommand}">
+									<Button.CommandParameter>
+										<s:Boolean>True</s:Boolean>
+									</Button.CommandParameter>
+								</Button>
+
+								<Button Content="z" CommandParameter="z"/>
+								<Button Content="x" CommandParameter="x"/>
+								<Button Content="c" CommandParameter="c"/>
+								<Button Content="v" CommandParameter="v"/>
+								<Button Content="b" CommandParameter="b"/>
+								<Button Content="n" CommandParameter="n"/>
+								<Button Content="m" CommandParameter="m"/>
+
+								<Button Width="176" Content="Clear" Style="{StaticResource Keyboard.Button.Negative.Style}"
+										CommandParameter="{}{BACKSPACE}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Width="770" Content="Space" CommandParameter=" "/>
+
+								<Button Width="128" Content="Enter" Style="{StaticResource Keyboard.Button.Positive.Style}"  
+										CommandParameter="{}{ENTER}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+						</StackPanel>
+
+						<!--#endregion-->
+
+						<!--#region AlphanumericUpper-->
+
+						<StackPanel x:Name="PART_AlphanumericUpper" Visibility="Collapsed">
+							<StackPanel Orientation="Horizontal">
+								<StackPanel.Resources>
+									<Style TargetType="{x:Type Button}" BasedOn="{StaticResource Keyboard.Button.Numeric.Style}">
+										<Setter Property="Command" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+									</Style>
+								</StackPanel.Resources>
+
+								<Button Content="1" CommandParameter="1"/>
+								<Button Content="2" CommandParameter="2"/>
+								<Button Content="3" CommandParameter="3"/>
+								<Button Content="4" CommandParameter="4"/>
+								<Button Content="5" CommandParameter="5"/>
+								<Button Content="6" CommandParameter="6"/>
+								<Button Content="7" CommandParameter="7"/>
+								<Button Content="8" CommandParameter="8"/>
+								<Button Content="9" CommandParameter="9"/>
+								<Button Content="0" CommandParameter="0"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Content="Q" CommandParameter="Q"/>
+								<Button Content="W" CommandParameter="W"/>
+								<Button Content="E" CommandParameter="E"/>
+								<Button Content="R" CommandParameter="R"/>
+								<Button Content="T" CommandParameter="T"/>
+								<Button Content="Y" CommandParameter="Y"/>
+								<Button Content="U" CommandParameter="U"/>
+								<Button Content="I" CommandParameter="I"/>
+								<Button Content="O" CommandParameter="O"/>
+								<Button Content="P" CommandParameter="P"/>
+							</StackPanel>
+
+							<StackPanel Margin="48 0 0 0" Orientation="Horizontal">
+								<Button Content="A" CommandParameter="A"/>
+								<Button Content="S" CommandParameter="S"/>
+								<Button Content="D" CommandParameter="D"/>
+								<Button Content="F" CommandParameter="F"/>
+								<Button Content="G" CommandParameter="G"/>
+								<Button Content="H" CommandParameter="H"/>
+								<Button Content="J" CommandParameter="J"/>
+								<Button Content="K" CommandParameter="K"/>
+								<Button Content="L" CommandParameter="L"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Content="Shift" Style="{StaticResource Keyboard.Button.Positive.Style}"						
+										Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SetShiftCommand}">
+									<Button.CommandParameter>
+										<s:Boolean>False</s:Boolean>
+									</Button.CommandParameter>
+								</Button>
+
+								<Button Content="Z" CommandParameter="Z"/>
+								<Button Content="X" CommandParameter="X"/>
+								<Button Content="C" CommandParameter="C"/>
+								<Button Content="V" CommandParameter="V"/>
+								<Button Content="B" CommandParameter="B"/>
+								<Button Content="N" CommandParameter="N"/>
+								<Button Content="M" CommandParameter="M"/>
+
+								<Button Width="176" Content="Clear" Style="{StaticResource Keyboard.Button.Negative.Style}"						
+										CommandParameter="{}{BACKSPACE}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal">
+								<Button Width="770" Content="Space" CommandParameter=" "/>
+
+								<Button Width="128" Content="Enter" Style="{StaticResource Keyboard.Button.Positive.Style}"  						
+										CommandParameter="{}{ENTER}" Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SendKeyCommand}"/>
+							</StackPanel>
+						</StackPanel>
+
+						<!--#endregion-->
+					</Grid>
+
+					<ControlTemplate.Triggers>
+						<Trigger Property="KeyboardView" Value="Keypad">
+							<Setter TargetName="PART_Keypad" Property="Visibility" Value="Visible"/>
+							<Setter TargetName="PART_AlphabeticLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticUpper" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Numeric" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Symbols" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericUpper" Property="Visibility" Value="Collapsed"/>
+						</Trigger>
+
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="KeyboardView" Value="Alphabetic"/>
+								<Condition Property="IsShift" Value="False"/>
+							</MultiTrigger.Conditions>
+
+							<Setter TargetName="PART_Keypad" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticLower" Property="Visibility" Value="Visible"/>
+							<Setter TargetName="PART_AlphabeticUpper" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Numeric" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Symbols" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericUpper" Property="Visibility" Value="Collapsed"/>
+						</MultiTrigger>
+
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="KeyboardView" Value="Alphabetic"/>
+								<Condition Property="IsShift" Value="True"/>
+							</MultiTrigger.Conditions>
+
+							<Setter TargetName="PART_Keypad" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticUpper" Property="Visibility" Value="Visible"/>
+							<Setter TargetName="PART_Numeric" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Symbols" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericUpper" Property="Visibility" Value="Collapsed"/>
+						</MultiTrigger>
+
+						<Trigger Property="KeyboardView" Value="Numeric">
+							<Setter TargetName="PART_Keypad" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticUpper" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Numeric" Property="Visibility" Value="Visible"/>
+							<Setter TargetName="PART_Symbols" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericUpper" Property="Visibility" Value="Collapsed"/>
+						</Trigger>
+
+						<Trigger Property="KeyboardView" Value="Symbols">
+							<Setter TargetName="PART_Keypad" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticUpper" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Numeric" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Symbols" Property="Visibility" Value="Visible"/>
+							<Setter TargetName="PART_AlphanumericLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericUpper" Property="Visibility" Value="Collapsed"/>
+						</Trigger>
+
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="KeyboardView" Value="Alphanumeric"/>
+								<Condition Property="IsShift" Value="False"/>
+							</MultiTrigger.Conditions>
+
+							<Setter TargetName="PART_Keypad" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticUpper" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Numeric" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Symbols" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericLower" Property="Visibility" Value="Visible"/>
+							<Setter TargetName="PART_AlphanumericUpper" Property="Visibility" Value="Collapsed"/>
+						</MultiTrigger>
+
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="KeyboardView" Value="Alphanumeric"/>
+								<Condition Property="IsShift" Value="True"/>
+							</MultiTrigger.Conditions>
+
+							<Setter TargetName="PART_Keypad" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphabeticUpper" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Numeric" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_Symbols" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericLower" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="PART_AlphanumericUpper" Property="Visibility" Value="Visible"/>
+						</MultiTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</ResourceDictionary>

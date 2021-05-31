@@ -1,0 +1,38 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface.Receipts
+@using Omnia.Pie.Vtm.Framework.Interface.Configuration
+@{
+	Layout = "Layout";
+}
+@if (@Model.Receipt.IsEmiratesIdAuthentication)
+{
+    @Model.Output.WriteRow(@Resources.EmiratesIdAuthentication);
+    WriteLiteral("\r\n");
+}
+else
+{
+    @Model.Output.WriteRow(@Resources.CardNumberColon, @Model.Binding(@Model.Receipt.CardNumber, @Model.MaskedCardNumber, @Resources.NotSpecified));
+    WriteLiteral("\r\n");
+}
+@Model.Output.WriteRow(@Resources.AccountNumberColon, @Model.Binding(@Model.Receipt.AccountNumber, @Model.MaskedCardNumber, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.Blank, @Model.Receipt.CustomerName)
+@Model.Output.WriteRow(@Resources.TransactionNumberColon, @Model.Binding(@Model.Receipt.TransactionNumber, @Resources.NotSpecified))
+
+@Model.Output.WriteHeaderRow(@Resources.Date, @Resources.Description, @Resources.Amount)
+@if (Model.Receipt.Items != null && Model.Receipt.Items.Count > 0)
+{
+	foreach (var item in Model.Receipt.Items)
+	{
+		var amountType = item.DebitAmount != null ? "D" : item.CreditAmount != null ? "C" : null;
+		var amount = item.DebitAmount ?? item.CreditAmount;
+		@Model.Output.WriteRow(@Model.Binding(@item.PostingDate, @ReceiptsConfiguration.DateFormat, @Resources.NotSpecified), @Model.Binding(@item.Description, @Resources.NotSpecified), @amount == null || @amountType == null ? @Resources.NotSpecified : (@Model.Binding(@amount.Value, "N2") + @amountType));
+		WriteLiteral("\r\n");
+	}
+}
+else
+{
+	@Model.Output.WriteRowCenter(@Resources.NoTransactionsAvailable)
+	WriteLiteral("\r\n");
+}
+
+@Model.Output.WriteRow(@Resources.AvailableBalanceColon, @String.Format("{0} {1}", @Model.Receipt.Currency, @Model.Binding(@Model.Receipt.AvailableBalance, "N2", @Resources.NotSpecified)))

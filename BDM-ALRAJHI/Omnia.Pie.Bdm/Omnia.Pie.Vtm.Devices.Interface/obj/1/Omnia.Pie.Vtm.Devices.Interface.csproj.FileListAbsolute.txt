@@ -1,0 +1,7 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Interface\bin\1\Omnia.Pie.Vtm.Devices.Interface.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Interface\bin\1\Omnia.Pie.Vtm.Services.Interface.dll
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Interface\bin\1\Omnia.Pie.Vtm.Services.Interface.pdb
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Interface\obj\1\Omnia.Pie.Vtm.Devices.Interface.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Interface\obj\1\Omnia.Pie.Vtm.Devices.Interface.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Interface\obj\1\Omnia.Pie.Vtm.Devices.Interface.csproj.CopyComplete
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Devices.Interface\obj\1\Omnia.Pie.Vtm.Devices.Interface.dll

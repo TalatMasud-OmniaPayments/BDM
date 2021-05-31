@@ -1,0 +1,294 @@
+﻿<UserControl x:Class="Omnia.Pie.Bdm.Bootstrapper.Views.ChequeDeposit.EncashDenominationConfirmationView"
+             xmlns:local="clr-namespace:Omnia.Pie.Bdm.Bootstrapper.Views.ChequeDeposit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:con="clr-namespace:Omnia.Pie.Vtm.Framework.Converters;assembly=Omnia.Pie.Vtm.Framework"
+			 xmlns:p="clr-namespace:Omnia.Pie.Bdm.Bootstrapper.Properties"
+			 xmlns:s="clr-namespace:System;assembly=mscorlib"
+			 mc:Ignorable="d" 
+             d:DesignWidth="1024" d:DesignHeight="768"
+			 Style="{StaticResource BaseView.Style}">
+	<UserControl.Resources>
+		<con:NullToVisibilityConverter x:Key="NullToVisibility"/>
+		<con:ZeroToVisibilityConverter x:Key="ZeroToVisibility"/>
+	</UserControl.Resources>
+	<Grid>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="4.1*" />
+			<RowDefinition Height="2*" />
+			<RowDefinition Height="auto" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="3*" />
+			<ColumnDefinition Width="7*" />
+		</Grid.ColumnDefinitions>
+
+		<StackPanel Margin="5.2,22,0,2.6" Orientation="Vertical" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+			<WrapPanel Visibility="Collapsed" HorizontalAlignment="Left">
+				<Button Style="{StaticResource Button.Base.Style.Rectangle}" IsEnabled="False">
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="8*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Black">
+							<TextBlock Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,0" Text="{x:Static p:Resources.LabelAccountNumberColon}" Style="{StaticResource TextBlock.Detail20.Style}" />
+						</Border>
+						<StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+							<TextBlock Text="{Binding SelectedAccount.Number}" Style="{StaticResource TextBlock.Normal18.Style}" />
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+								<TextBlock Text="{Binding SelectedAccount.Currency}" Style="{StaticResource TextBlock.Normal18.Style}" />
+								<TextBlock Text="{Binding SelectedAccount.AvailableBalance}" Style="{StaticResource TextBlock.Normal18.Style}" />
+							</StackPanel>
+						</StackPanel>
+					</Grid>
+				</Button>
+				<Button Style="{StaticResource Button.Base.Style.Rectangle}" IsEnabled="False">
+					<Button.CommandParameter>
+						<s:Int16>0</s:Int16>
+					</Button.CommandParameter>
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="8*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<Border Grid.Row="0" BorderThickness="0,0,0,1" BorderBrush="Black">
+							<TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,0" Text="{x:Static p:Resources.LabelAmount}" Style="{StaticResource TextBlock.Detail20.Style}" />
+						</Border>
+
+						<StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" TextAlignment="Center" Height="50" Width="100" Text="{Binding Amount}" Style="{StaticResource TextBlock.Normal20.Style}" />
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" TextAlignment="Center" Height="50" Width="50" Text="AED" Style="{StaticResource TextBlock.Normal20.Style}" />
+						</StackPanel>
+					</Grid>
+				</Button>
+			</WrapPanel>
+			<StackPanel Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Left">
+				<Button Visibility="{Binding Denominations[0], Converter={StaticResource NullToVisibility}}" Style="{StaticResource Button.Base.Style.Rectangle}" Command="{Binding DenominationSelected}">
+					<Button.CommandParameter>
+						<s:Int16>0</s:Int16>
+					</Button.CommandParameter>
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="4*" />
+							<RowDefinition Height="4*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" BorderBrush="Black">
+							<TextBlock Margin="2,0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Denomination 1" Style="{StaticResource TextBlock.Detail20.Style}" />
+						</Border>
+
+
+						<StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[0][0].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[0][0].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[0][1].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[0][1].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[0][2].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[0][2].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[0][3].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[0][3].Count}" />
+						</StackPanel>
+					</Grid>
+				</Button>
+				<Button Visibility="{Binding Denominations[1], Converter={StaticResource NullToVisibility}}" Style="{StaticResource Button.Base.Style.Rectangle}" Command="{Binding DenominationSelected}">
+					<Button.CommandParameter>
+						<s:Int16>1</s:Int16>
+					</Button.CommandParameter>
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="4*" />
+							<RowDefinition Height="4*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" BorderBrush="Black">
+							<TextBlock Margin="2,0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Denomination 2" Style="{StaticResource TextBlock.Detail20.Style}" />
+						</Border>
+
+						<StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[1][0].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[1][0].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[1][1].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[1][1].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[1][2].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[1][2].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[1][3].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[1][3].Count}" />
+						</StackPanel>
+					</Grid>
+				</Button>
+				<Button Visibility="{Binding Denominations[2], Converter={StaticResource NullToVisibility}}" Style="{StaticResource Button.Base.Style.Rectangle}" Command="{Binding DenominationSelected}">
+					<Button.CommandParameter>
+						<s:Int16>2</s:Int16>
+					</Button.CommandParameter>
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="4*" />
+							<RowDefinition Height="4*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" BorderBrush="Black">
+							<TextBlock Margin="2,0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Denomination 3" Style="{StaticResource TextBlock.Detail20.Style}" />
+						</Border>
+						<StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[2][0].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[2][0].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[2][1].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[2][1].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[2][2].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[2][2].Count}" />
+						</StackPanel>
+						<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[2][3].Amount}" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="x" />
+							<TextBlock Style="{StaticResource TextBlock.Highlighted24.Style.Center}" Text="{Binding Denominations[2][3].Count}" />
+						</StackPanel>
+					</Grid>
+				</Button>
+			</StackPanel>
+			<StackPanel Width="750" Height="450" Orientation="Vertical" HorizontalAlignment="Left" Margin="6,5,0,0">
+				<Border>
+					<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" IsEnabled="{Binding HundredAvailable}">
+						<StackPanel Style="{StaticResource StackPanelDisabledStyle}" Orientation="Horizontal" Margin="20, 6">
+							<Image Source="{DynamicResource Image100}" Width="200" Height="80" />
+							<RepeatButton Style="{StaticResource Style.RepeatButton}" Width="70" FontSize="50" x:Name="btn100Add" Content="+"  Command="{Binding Denom100}" CommandParameter="{Binding ElementName=btn100Add, Path=Content}" />
+							<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="110" Text="{Binding Denominations[0][0].Amount}" />
+							<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="30" Text="x" />
+							<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="100" Text="{Binding Denom100Count}" />
+							<RepeatButton Style="{StaticResource Style.RepeatButton}" Width="70" FontSize="50" x:Name="btn100Remove" Content="-"  Command="{Binding Denom100}" CommandParameter="{Binding ElementName=btn100Remove, Path=Content}" />
+							<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="30" Text="=" />
+							<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="100" Text="{Binding Denom100Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+						</StackPanel>
+					</StackPanel>
+				</Border>
+				<Border>
+					<StackPanel Style="{StaticResource StackPanelDisabledStyle}" HorizontalAlignment="Center" Orientation="Horizontal" Margin="20, 6" IsEnabled="{Binding TwoHundredAvailable}">
+						<Image Source="{DynamicResource Image200}" Width="200" Height="80" />
+						<RepeatButton Style="{StaticResource Style.RepeatButton}" Width="70" FontSize="50" x:Name="btn200Add" Content="+"  Command="{Binding Denom200}" CommandParameter="{Binding ElementName=btn200Add, Path=Content}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="110" Text="{Binding Denominations[0][1].Amount}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="30" Text="x" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="100" Text="{Binding Denom200Count}" />
+						<RepeatButton Style="{StaticResource Style.RepeatButton}" Width="70" FontSize="50" x:Name="btn200Remove" Content="-"  Command="{Binding Denom200}" CommandParameter="{Binding ElementName=btn200Remove, Path=Content}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="30" Text="=" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="100" Text="{Binding Denom200Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+					</StackPanel>
+				</Border>
+				<Border>
+					<!--{Binding FiveHundredAvailable}-->
+					<StackPanel Style="{StaticResource StackPanelDisabledStyle}" HorizontalAlignment="Center" Orientation="Horizontal" Margin="20, 6" IsEnabled="{Binding FiveHundredAvailable}" >
+						<Image Source="{DynamicResource Image500}" Width="200" Height="80" />
+						<RepeatButton Style="{StaticResource Style.RepeatButton}" Width="70" FontSize="50" x:Name="btn500Add" Content="+"  Command="{Binding Denom500}" CommandParameter="{Binding ElementName=btn500Add, Path=Content}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="110" Text="{Binding Denominations[0][2].Amount}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="30" Text="x" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="100" Text="{Binding Denom500Count}" />
+						<RepeatButton Style="{StaticResource Style.RepeatButton}" Width="70" FontSize="50" x:Name="btn500Remove" Content="-"  Command="{Binding Denom500}" CommandParameter="{Binding ElementName=btn500Remove, Path=Content}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="30" Text="=" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="100" Text="{Binding Denom500Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+					</StackPanel>
+				</Border>
+				<Border>
+					<StackPanel Style="{StaticResource StackPanelDisabledStyle}" HorizontalAlignment="Center" Orientation="Horizontal" Margin="20, 6" IsEnabled="{Binding ThousandAvailable}">
+						<Image Source="{DynamicResource Image1000}" Width="200" Height="80" />
+						<RepeatButton Style="{StaticResource Style.RepeatButton}" Width="70" FontSize="50" x:Name="btn1000Add" Content="+"  Command="{Binding Denom1000}" CommandParameter="{Binding ElementName=btn1000Add, Path=Content}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="110" Text="{Binding Denominations[0][3].Amount}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="30" Text="x" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="100" Text="{Binding Denom1000Count}" />
+						<RepeatButton Style="{StaticResource Style.RepeatButton}" Width="70" FontSize="50" x:Name="btn1000Remove" Content="-"  Command="{Binding Denom1000}" CommandParameter="{Binding ElementName=btn1000Remove, Path=Content}" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="30" Text="=" />
+						<TextBlock TextAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlock.Highlighted34.Style}" Width="100" Text="{Binding Denom1000Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+					</StackPanel>
+				</Border>
+				<Border BorderBrush="White" BorderThickness="1" Height="58" Margin="0,0,0.4,0">
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+						<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Style="{StaticResource TextBlock.Detail24.Style}" Text="{x:Static p:Resources.LabelAmountCalculated}" />
+						<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" TextAlignment="Center" Style="{StaticResource TextBlock.Detail24.Style}" Width="200" Margin="20, 0">
+							<TextBlock.Text>
+								<MultiBinding StringFormat="{}{0} {1:N2}">
+									<Binding Source="{x:Static p:Resources.LabelAed}"/>
+									<Binding Path="DenomAmount"/>
+								</MultiBinding>
+							</TextBlock.Text>
+						</TextBlock>
+						<TextBlock Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Style="{StaticResource TextBlock.Detail24.Style}" Width="60" Text="{x:Static p:Resources.LabelAed}" />
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</StackPanel>
+
+		<Grid Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0 24 0 10">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="2.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="1.5*"/>
+			</Grid.ColumnDefinitions>
+
+			<Button Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonBack}" Command="{Binding BackCommand}"
+					Visibility="{Binding BackVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}" />
+
+			<Button Grid.Column="2" Style="{StaticResource Button.Positive.Style}"
+					Content="{x:Static p:Resources.ButtonApprove}" Focusable="False" IsDefault="True" Command="{Binding DenominationSelected}"
+					Visibility="{Binding DefaultVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}">
+				<Button.CommandParameter>
+					<s:Int16>100</s:Int16>
+				</Button.CommandParameter>
+			</Button>
+
+			<Button Grid.Column="4" Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonCancel}" Focusable="False" IsCancel="True" Command="{Binding CancelCommand}"
+					Visibility="{Binding CancelVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+		</Grid>
+	</Grid>
+</UserControl>

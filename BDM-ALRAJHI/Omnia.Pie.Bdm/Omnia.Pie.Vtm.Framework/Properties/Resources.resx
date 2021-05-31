@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AadcAccountBillPaymentReceipt" xml:space="preserve">
+    <value>AADC BILL PAYMENT</value>
+  </data>
+  <data name="AadcCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>AADC BILL PAYMENT</value>
+  </data>
+  <data name="AccountNumberColon" xml:space="preserve">
+    <value>ACCOUNT NO:</value>
+  </data>
+  <data name="AddcAccountBillPaymentReceipt" xml:space="preserve">
+    <value>ADDC BILL PAYMENT</value>
+  </data>
+  <data name="AddCashReceipt" xml:space="preserve">
+    <value>ADD CASH</value>
+  </data>
+  <data name="AddcCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>ADDC BILL PAYMENT</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>AMOUNT</value>
+  </data>
+  <data name="AmountTotalColon" xml:space="preserve">
+    <value>AMOUNT TOTAL:</value>
+  </data>
+  <data name="ApplicationIdColon" xml:space="preserve">
+    <value>APPLICATION ID:</value>
+  </data>
+  <data name="ApplicationLabelColon" xml:space="preserve">
+    <value>APPLICATION LABEL:</value>
+  </data>
+  <data name="AuthCodeColon" xml:space="preserve">
+    <value>AUTH CODE:</value>
+  </data>
+  <data name="AvailableBalanceColon" xml:space="preserve">
+    <value>AVAILABLE BALANCE:</value>
+  </data>
+  <data name="BalanceInquiryReceipt" xml:space="preserve">
+    <value>BALANCE INQUIRY</value>
+  </data>
+  <data name="UpdateInfoReceipt" xml:space="preserve">
+    <value>Information Updated Successfully</value>
+  </data>
+  <data name="Blank" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="CardCaptured" xml:space="preserve">
+    <value>Your card has been captured</value>
+  </data>
+  <data name="CardlessCashWithdrawalReceipt" xml:space="preserve">
+    <value>CARDLESS WITHDRAWAL</value>
+  </data>
+  <data name="CardNumberColon" xml:space="preserve">
+    <value>CARD NO:</value>
+  </data>
+  <data name="CashDepositToAccountReceipt" xml:space="preserve">
+    <value>CASH DEPOSIT</value>
+  </data>
+  <data name="CashDepositToCreditCardReceipt" xml:space="preserve">
+    <value>CREDIT CARD PAYMENT</value>
+  </data>
+  <data name="CashInReceipt" xml:space="preserve">
+    <value>[ BNA COUNT INFO ]</value>
+  </data>
+  <data name="CashWithdrawalUsingCreditCardReceipt" xml:space="preserve">
+    <value>CASH WITHDRAWAL</value>
+  </data>
+  <data name="CashWithdrawalUsingDebitCardReceipt" xml:space="preserve">
+    <value>CASH WITHDRAWAL</value>
+  </data>
+  <data name="CashWithdrawalUsingOffusCardReceipt" xml:space="preserve">
+    <value>CASH WITHDRAWAL</value>
+  </data>
+  <data name="ChequeBookRequestReceipt" xml:space="preserve">
+    <value>CHEQUE BOOK REQUEST</value>
+  </data>
+  <data name="ChequeBookRequestSuccess" xml:space="preserve">
+    <value>Cheque book will be delivered through courier after 2 working days subject to your eligibility</value>
+  </data>
+  <data name="ChequeDepositSuccessMessage" xml:space="preserve">
+    <value>Your cheque deposit has been accepted and will be processed within 4 working days subject to verification</value>
+  </data>
+  <data name="ChequeDepositToAccountReceiptFooter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChequeDepositToAccountReceiptHeader" xml:space="preserve">
+    <value>CHEQUE DEPOSIT</value>
+  </data>
+  <data name="ChequeDepositToCreditCardReceiptFooter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChequeDepositToCreditCardReceiptHeader" xml:space="preserve">
+    <value>CHEQUE DEPOSIT</value>
+  </data>
+  <data name="ClearAddCashReceipt" xml:space="preserve">
+    <value>CLEAR ADD CASH</value>
+  </data>
+  <data name="ClearCardsReceipt" xml:space="preserve">
+    <value>CLEAR CARDS</value>
+  </data>
+  <data name="ClearCashInReceipt" xml:space="preserve">
+    <value>CLEAR CASH DEPOSIT</value>
+  </data>
+  <data name="ClearChequesReceipt" xml:space="preserve">
+    <value>CLEAR CHEQUES</value>
+  </data>
+  <data name="ConsumerNumberColon" xml:space="preserve">
+    <value>CONSUMER NO:</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>COUNT</value>
+  </data>
+  <data name="CreditCardBalanceReceipt" xml:space="preserve">
+    <value>CREDIT CARD BALANCE</value>
+  </data>
+  <data name="CreditCardNumberColon" xml:space="preserve">
+    <value>CREDIT CARD NO:</value>
+  </data>
+  <data name="CreditCardPaymentReceipt" xml:space="preserve">
+    <value>CREDIT CARD PAYMENT</value>
+  </data>
+  <data name="CreditLimitColon" xml:space="preserve">
+    <value>CREDIT LIMIT:</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>DATE</value>
+  </data>
+  <data name="Denomination" xml:space="preserve">
+    <value>DENOMINATION</value>
+  </data>
+  <data name="DepositAccountNumberColon" xml:space="preserve">
+    <value>DEPOSIT ACCOUNT:</value>
+  </data>
+  <data name="DepositAmountColon" xml:space="preserve">
+    <value>DEPOSIT AMOUNT:</value>
+  </data>
+  <data name="DepositCount" xml:space="preserve">
+    <value>DEPOSIT COUNT</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>DESCRIPTION</value>
+  </data>
+  <data name="DewaAccountBillPaymentReceipt" xml:space="preserve">
+    <value>DEWA BILL PAYMENT</value>
+  </data>
+  <data name="DewaCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>DEWA BILL PAYMENT</value>
+  </data>
+  <data name="Disclaimer" xml:space="preserve">
+    <value>Fees displayed are inclusive of VAT amount</value>
+  </data>
+  <data name="DuPostpaidAccountBillPaymentReceipt" xml:space="preserve">
+    <value>DU POSTPAID</value>
+  </data>
+  <data name="DuPostpaidCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>DU POSTPAID</value>
+  </data>
+  <data name="DuPrepaidAccountBillPaymentReceipt" xml:space="preserve">
+    <value>DU PREPAID</value>
+  </data>
+  <data name="DuPrepaidCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>DU PREPAID</value>
+  </data>
+  <data name="EmiratesIdAuthentication" xml:space="preserve">
+    <value>EID AUTHENTICATION</value>
+  </data>
+  <data name="EtisalatElifeAccountBillPaymentReceipt" xml:space="preserve">
+    <value>ETISALAT E-LIFE</value>
+  </data>
+  <data name="EtisalatElifeCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>ETISALAT E-LIFE</value>
+  </data>
+  <data name="EtisalatPostpaidAccountBillPaymentReceipt" xml:space="preserve">
+    <value>ETISALAT POSTPAID</value>
+  </data>
+  <data name="EtisalatPostpaidCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>ETISALAT POSTPAID</value>
+  </data>
+  <data name="EtisalatWaselAccountBillPaymentReceipt" xml:space="preserve">
+    <value>ETISALAT WASEL</value>
+  </data>
+  <data name="EtisalatWaselCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>ETISALAT WASEL</value>
+  </data>
+  <data name="InterimBalanceDisclaimer" xml:space="preserve">
+    <value>THIS IS AN INTERIM BALANCE ONLY SUBJECT TO CONFIRMATION</value>
+  </data>
+  <data name="MediaTypeColon" xml:space="preserve">
+    <value>MEDIA TYPE:</value>
+  </data>
+  <data name="MicrColon" xml:space="preserve">
+    <value>MICR:</value>
+  </data>
+  <data name="MinistatementReceipt" xml:space="preserve">
+    <value>MINI STATEMENT</value>
+  </data>
+  <data name="MobileNumberColon" xml:space="preserve">
+    <value>MOBILE NO:</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>NO RECORDS</value>
+  </data>
+  <data name="NoTransactionsAvailable" xml:space="preserve">
+    <value>No transactions available</value>
+  </data>
+  <data name="NotSpecified" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="OffusCardBalanceReceipt" xml:space="preserve">
+    <value>BALANCE INQUIRY</value>
+  </data>
+  <data name="OutstandingAmountColon" xml:space="preserve">
+    <value>OUTSTANDING AMOUNT:</value>
+  </data>
+  <data name="PaymentAmountColon" xml:space="preserve">
+    <value>PAYMENT AMOUNT:</value>
+  </data>
+  <data name="RechargeAmountColon" xml:space="preserve">
+    <value>RECHARGE:</value>
+  </data>
+  <data name="ReferenceNumberColon" xml:space="preserve">
+    <value>Reference Number:</value>
+  </data>
+  <data name="SalikAccountBillPaymentReceipt" xml:space="preserve">
+    <value>SALIK BILL PAYMENT</value>
+  </data>
+  <data name="SalikCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>SALIK BILL PAYMENT</value>
+  </data>
+  <data name="SewaAccountBillPaymentReceipt" xml:space="preserve">
+    <value>SEWA BILL PAYMENT</value>
+  </data>
+  <data name="SewaCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>SEWA BILL PAYMENT</value>
+  </data>
+  <data name="SourceAccountColon" xml:space="preserve">
+    <value>FROM ACCOUNT:</value>
+  </data>
+  <data name="TargetAccountColon" xml:space="preserve">
+    <value>TO ACCOUNT:</value>
+  </data>
+  <data name="Terminal" xml:space="preserve">
+    <value>DEVICE ID</value>
+  </data>
+  <data name="TestCashReceipt" xml:space="preserve">
+    <value>TEST CASH</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>THANK YOU FOR USING AL RAJHI DIGITAL BANKING SERVICES</value>
+  </data>
+  <data name="ThankYouUAESwitch" xml:space="preserve">
+    <value>THANK YOU FOR USING UAE SWITCH ATM</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>TIME</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>TOTAL</value>
+  </data>
+  <data name="TransactionAmountColon" xml:space="preserve">
+    <value>TRANSFER AMOUNT:</value>
+  </data>
+  <data name="TransactionDeclined" xml:space="preserve">
+    <value>Transaction declined</value>
+  </data>
+  <data name="TransactionDeclinedHardwareError" xml:space="preserve">
+    <value>Unable to process the transaction. Hardware Failure</value>
+  </data>
+  <data name="TransactionNumberColon" xml:space="preserve">
+    <value>TSN:</value>
+  </data>
+  <data name="TransferFundsReceipt" xml:space="preserve">
+    <value>FUND TRANSFER</value>
+  </data>
+  <data name="UpdateCustomerDetailsAddressReceipt" xml:space="preserve">
+    <value>UPDATE CUSTOMER DETAILS</value>
+  </data>
+  <data name="UpdateCustomerDetailsEmailReceipt" xml:space="preserve">
+    <value>UPDATE CUSTOMER DETAILS</value>
+  </data>
+  <data name="UpdateCustomerDetailsEmiratesIdReceipt" xml:space="preserve">
+    <value>UPDATE CUSTOMER DETAILS</value>
+  </data>
+  <data name="UpdateCustomerDetailsMobileReceipt" xml:space="preserve">
+    <value>UPDATE CUSTOMER DETAILS</value>
+  </data>
+  <data name="UpdateCustomerDetailsSuccess" xml:space="preserve">
+    <value>Your Customer Details have been updated successfully.</value>
+  </data>
+  <data name="UpdatedAddressColon" xml:space="preserve">
+    <value>UPDATED ADDRESS:</value>
+  </data>
+  <data name="UpdatedEmailColon" xml:space="preserve">
+    <value>UPDATED EMAIL:</value>
+  </data>
+  <data name="UpdatedEmiratesIdExpiryDateColon" xml:space="preserve">
+    <value>UPDATED EXPIRY DATE:</value>
+  </data>
+  <data name="UpdatedEmiratesIdNumberColon" xml:space="preserve">
+    <value>UPDATED EID NO:</value>
+  </data>
+  <data name="UpdatedMobileNumberColon" xml:space="preserve">
+    <value>UPDATED MOBILE NO:</value>
+  </data>
+  <data name="ViewAddCashReceipt" xml:space="preserve">
+    <value>VIEW ADD CASH</value>
+  </data>
+  <data name="WithdrawalAmountColon" xml:space="preserve">
+    <value>WITHDRAWAL AMOUNT:</value>
+  </data>
+  <data name="TransactionSuccess" xml:space="preserve">
+    <value>SUCCESSFULL TRANSACTION</value>
+  </data>
+  <data name="BlockedCardExceptionMessage" xml:space="preserve">
+    <value>The card is blocked.</value>
+  </data>
+  <data name="CardCaptureExceptionMessage" xml:space="preserve">
+    <value>The card should be captured.</value>
+  </data>
+  <data name="ChequeBookPendingExceptionMessage" xml:space="preserve">
+    <value>Cheque book pending.</value>
+  </data>
+  <data name="DuplicateBeneficiaryExceptionMessage" xml:space="preserve">
+    <value>Beneficiary ID already exists.</value>
+  </data>
+  <data name="DuplicateLeadExceptionMessage" xml:space="preserve">
+    <value>Lead already exists.</value>
+  </data>
+  <data name="ExceededOtpExceptionMessage" xml:space="preserve">
+    <value>Maximum number of OTP count exceeded.</value>
+  </data>
+  <data name="ExceededPinExceptionMessage" xml:space="preserve">
+    <value>Maximum number of PIN count exceeded.</value>
+  </data>
+  <data name="ExceededWithdrawalLimitExceptionMessage" xml:space="preserve">
+    <value>The customer has exceeded his withdrawal limit.</value>
+  </data>
+  <data name="ExpiredCardExceptionMessage" xml:space="preserve">
+    <value>The card is expired.</value>
+  </data>
+  <data name="InsufficientAccountBalanceExceptionMessage" xml:space="preserve">
+    <value>Insufficient balance in the account.</value>
+  </data>
+  <data name="InsufficientCreditCardBalanceExceptionMessage" xml:space="preserve">
+    <value>The customer has exceeded his credit limit.</value>
+  </data>
+  <data name="InvalidAccountExceptionMessage" xml:space="preserve">
+    <value>The account is invalid.</value>
+  </data>
+  <data name="InvalidLoginExceptionMessage" xml:space="preserve">
+    <value>The username or password is incorrect.</value>
+  </data>
+  <data name="OutOfServiceExceptionMessage" xml:space="preserve">
+    <value>The username or password is incorrect.</value>
+  </data>
+  <data name="InvalidCreditCardExceptionMessage" xml:space="preserve">
+    <value>The credit card is invalid.</value>
+  </data>
+  <data name="InvalidCustomerExceptionMessage" xml:space="preserve">
+    <value>The customer is invalid.</value>
+  </data>
+  <data name="InvalidOtpExceptionMessage" xml:space="preserve">
+    <value>OTP is invalid.</value>
+  </data>
+  <data name="InvalidPinExceptionMessage" xml:space="preserve">
+    <value>PIN is invalid.</value>
+  </data>
+  <data name="InvalidTransactionExceptionMessage" xml:space="preserve">
+    <value>The transaction is invalid.</value>
+  </data>
+  <data name="RepositoryExceptionMessage" xml:space="preserve">
+    <value>Unknown error.</value>
+  </data>
+  <data name="TimeoutExceptionMessage" xml:space="preserve">
+    <value>The connection has timed out.</value>
+  </data>
+  <data name="InvalidEmiratesIDExceptionMessage" xml:space="preserve">
+    <value>Invalid Emirates ID</value>
+  </data>
+  <data name="StatementPrintDeductionReceipt" xml:space="preserve">
+    <value>Statement Printing</value>
+  </data>
+  <data name="ContactedMessage" xml:space="preserve">
+    <value>You will be contacted within 2 business days</value>
+  </data>
+  <data name="MonthsRequested" xml:space="preserve">
+    <value>Months Requested</value>
+  </data>
+  <data name="TotalFees" xml:space="preserve">
+    <value>Total Fees</value>
+  </data>
+  <data name="YourRequestRefnumberis" xml:space="preserve">
+    <value>Your Request Ref Number Is</value>
+  </data>
+  <data name="IBANPrinting" xml:space="preserve">
+    <value>IBAN Printing</value>
+  </data>
+  <data name="LiabilityCertificateRequest" xml:space="preserve">
+    <value>Liability Certificate request</value>
+  </data>
+  <data name="NonLiabilityCertificateRequest" xml:space="preserve">
+    <value>Non-Liability Certificate request</value>
+  </data>
+  <data name="StatementPrinting" xml:space="preserve">
+    <value>Statement Printing</value>
+  </data>
+  <data name="ChequePrinting" xml:space="preserve">
+    <value>Cheque Leaves Issuance</value>
+  </data>
+  <data name="NumberOfLeaves" xml:space="preserve">
+    <value>Number of leaves requested</value>
+  </data>
+  <data name="EmailColon" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="MobileColon" xml:space="preserve">
+    <value>Mobile:</value>
+  </data>
+  <data name="UsernameColon" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="NameColon" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="RegisterFingerprintReceipt" xml:space="preserve">
+    <value>Fingerprint registered successfully.</value>
+  </data>
+  <data name="PrintUsersReceipt" xml:space="preserve">
+    <value>Print Users</value>
+  </data>
+  <data name="EmailExistExceptionMessage" xml:space="preserve">
+    <value>This email address is already registered. </value>
+  </data>
+  <data name="MobileExistExceptionMessage" xml:space="preserve">
+    <value>This mobile number is already registered.</value>
+  </data>
+  <data name="UsernameExistExceptionMessage" xml:space="preserve">
+    <value>This username is already registered.</value>
+  </data>
+  <data name="PasswordFailExceptionMessage" xml:space="preserve">
+    <value>Unable to change password. Please try again later.</value>
+  </data>
+  <data name="UpdateInfoExceptionMessage" xml:space="preserve">
+    <value>Unable to update information. Please try again later.</value>
+  </data>
+  <data name="UserCreateExcetionMessage" xml:space="preserve">
+    <value>Unable to create the user. Please try again later.</value>
+  </data>
+  <data name="DepositByColon" xml:space="preserve">
+    <value>Deposit By:</value>
+  </data>
+  <data name="TransactionDateColon" xml:space="preserve">
+    <value>Transaction Date:</value>
+  </data>
+</root>

@@ -1,0 +1,20 @@
+<FontFamily 
+			xmlns="http://schemas.microsoft.com/winfx/2006/xaml/composite-font"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:s="clr-namespace:System;assembly=mscorlib"
+			Baseline="1.0">
+
+	<FontFamily.FamilyNames>
+		<s:String x:Key="ar-AE">Custom GE SS Text</s:String>
+	</FontFamily.FamilyNames>
+
+	<FontFamily.FamilyMaps>
+		<FontFamilyMap Scale="1.0"
+										Target="/Omnia.Pie.Vtm.Bootstrapper;component/Resources/Fonts/#FS Matthew"
+										Unicode="0041-005A,0061-007A" />
+
+		<FontFamilyMap Scale="1.0"
+										Target="/Omnia.Pie.Vtm.Bootstrapper;component/Resources/Fonts/#GE SS Text"
+										Unicode="0000-0040,005B-0060,007B-FFFF" />
+	</FontFamily.FamilyMaps>
+</FontFamily>

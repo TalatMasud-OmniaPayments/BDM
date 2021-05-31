@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5802672-F8CB-490F-8566-02BFB616A0A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Vtm.Services.Interface</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Services.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\Authentication\Account.cs" />
+    <Compile Include="Entities\Acquirer.cs" />
+    <Compile Include="Entities\Authentication\CardBalance.cs" />
+    <Compile Include="Entities\Authentication\EmiratesIdResult.cs" />
+    <Compile Include="Entities\Authentication\Finger.cs" />
+    <Compile Include="Entities\Authentication\PinVerification.cs" />
+    <Compile Include="Entities\Authentication\SendSMSOTP.cs" />
+    <Compile Include="Entities\Authentication\UserTypes.cs" />
+    <Compile Include="Entities\Authentication\ValidateSmsOtpResult.cs" />
+    <Compile Include="Entities\Authentication\UserNamePassword.cs" />
+    <Compile Include="Entities\ChannelManagement\InsertEventResult.cs" />
+    <Compile Include="Entities\CommunicationService\SendSMSResult.cs" />
+    <Compile Include="Entities\Customer\UserTransaction.cs" />
+    <Compile Include="Entities\TerminalAccountInfo.cs" />
+    <Compile Include="Entities\Transaction\CashDeposited.cs" />
+    <Compile Include="Entities\UserManagement\UpdatePassword.cs" />
+    <Compile Include="Entities\UserManagement\UserInfo.cs" />
+    <Compile Include="Enums\BillerType.cs" />
+    <Compile Include="Enums\EmailType.cs" />
+    <Compile Include="Entities\CommunicationService\GenerateTSNResult.cs" />
+    <Compile Include="Entities\CommunicationService\RegisterCallResult.cs" />
+    <Compile Include="Entities\CommunicationService\SendEmailResult.cs" />
+    <Compile Include="Entities\CommunicationService\UpdateCallRecordResult.cs" />
+    <Compile Include="Entities\Customer\AccountDetailResult.cs" />
+    <Compile Include="Entities\ChannelManagement\DeviceStatusRequest.cs" />
+    <Compile Include="Entities\Customer\CreditCard.cs" />
+    <Compile Include="Entities\Customer\CustomerDetail.cs" />
+    <Compile Include="Entities\Customer\CustomerIdentifierResult.cs" />
+    <Compile Include="Entities\Customer\Deposit.cs" />
+    <Compile Include="Entities\Customer\DepositAccountResult.cs" />
+    <Compile Include="Entities\Customer\GetDebitCardsResult.cs" />
+    <Compile Include="Entities\Customer\GetLinkedAccountResult.cs" />
+    <Compile Include="Entities\Customer\LoanAccountResult.cs" />
+    <Compile Include="Entities\Customer\ProductInfoResult.cs" />
+    <Compile Include="Entities\Customer\StatementItem.cs" />
+    <Compile Include="Entities\Denomination.cs" />
+    <Compile Include="Entities\LoanAccount.cs" />
+    <Compile Include="Entities\Terminal.cs" />
+    <Compile Include="Entities\Transaction\AccountCriterion.cs" />
+    <Compile Include="Entities\Authentication\CardImage.cs" />
+    <Compile Include="Entities\Transaction\ApplyStatementChargesResult.cs" />
+    <Compile Include="Entities\Transaction\CashDepositResult.cs" />
+    <Compile Include="Entities\Transaction\CashWithdrawal.cs" />
+    <Compile Include="Entities\Transaction\ChargeType.cs" />
+    <Compile Include="Entities\Transaction\ChequeDepositResult.cs" />
+    <Compile Include="Entities\Transaction\CoordinationNumberResult.cs" />
+    <Compile Include="Entities\Transaction\CreditCardDetailResult.cs" />
+    <Compile Include="Entities\Transaction\CreditCardResult.cs" />
+    <Compile Include="Entities\Transaction\DeliverChequeBookResult.cs" />
+    <Compile Include="Entities\Transaction\ExchangeRateResult.cs" />
+    <Compile Include="Entities\Transaction\GetChequePrintingChargeResult.cs" />
+    <Compile Include="Entities\Transaction\GetStatementChargesResult.cs" />
+    <Compile Include="Entities\Transaction\IssueCheckBookResult.cs" />
+    <Compile Include="Entities\Transaction\OffUsCashWithdrawal.cs" />
+    <Compile Include="Entities\Transaction\ReversalReason.cs" />
+    <Compile Include="Entities\Transaction\ReverseChargeResult.cs" />
+    <Compile Include="Entities\Transaction\TransactionNotificationResult.cs" />
+    <Compile Include="Enums\ChargeIndicator.cs" />
+    <Compile Include="Enums\SmsType.cs" />
+    <Compile Include="Enums\TransactionStatus.cs" />
+    <Compile Include="Enums\TransactionType.cs" />
+    <Compile Include="Interfaces\Base\IContractExceptionManager.cs" />
+    <Compile Include="Interfaces\IAuthenticationService.cs" />
+    <Compile Include="Interfaces\IChannelManagementService.cs" />
+    <Compile Include="Interfaces\ICommunicationService.cs" />
+    <Compile Include="Interfaces\ICustomerService.cs" />
+    <Compile Include="Interfaces\Base\IServiceEndpoint.cs" />
+    <Compile Include="Interfaces\Base\IServiceManager.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\ITransactionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

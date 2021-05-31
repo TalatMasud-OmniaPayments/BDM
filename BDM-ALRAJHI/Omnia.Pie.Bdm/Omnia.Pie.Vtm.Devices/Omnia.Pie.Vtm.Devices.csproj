@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{000CF3F2-33B0-4563-AAD9-41A27C7353D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Vtm.Devices</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Devices</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.NHMwiEmv, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NHMwiEmv.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NITGENFINGERLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\AxInterop.NITGENFINGERLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXAuxiliariesXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXAuxiliariesXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXCardReaderXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXCardReaderXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXCashAcceptorXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXCashAcceptorXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXCashDispenserXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXCashDispenserXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXCoinDispenserXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXCoinDispenserXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXDoorsXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXDoorsXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXFINGERSCANNERXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXFINGERSCANNERXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXGuidLightsXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXGuidLightsXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXIDScannerPrinterXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXIDScannerPrinterXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXItemProcessorXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXItemProcessorXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXJournalPrinterXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXJournalPrinterXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXPinXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXPinXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXReceiptPrinterXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXReceiptPrinterXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXSignpadScannerXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXSignpadScannerXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.NXStatementPrinterXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.NXStatementPrinterXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxNXSensorsXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxNXSensorsXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AxFingerNW, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.AxFingerNW.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXAuxiliariesXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXAuxiliariesXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXCardReaderXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXCardReaderXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXCashAcceptorXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXCashAcceptorXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXCashDispenserXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXCashDispenserXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXCoinDispenserXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXCoinDispenserXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXDoorsXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXDoorsXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXFINGERSCANNERXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXFINGERSCANNERXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXGuidLightsXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXGuidLightsXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXIDScannerPrinterXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXIDScannerPrinterXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXItemProcessorXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXItemProcessorXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXJournalPrinterXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXJournalPrinterXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXPinXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXPinXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXReceiptPrinterXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXReceiptPrinterXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXSignpadScannerXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXSignpadScannerXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NXStatementPrinterXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.NXStatementPrinterXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NXSensorsXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\NXSensorsXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auxiliaries\Auxiliaries.cs" />
+    <Compile Include="Base\Device.cs" />
+    <Compile Include="Base\PrinterScanner.cs" />
+    <Compile Include="CardDispenser\CardDispenser.cs" />
+    <Compile Include="CardReader\CardReader.cs" />
+    <Compile Include="CardReader\Emv.cs" />
+    <Compile Include="CardReader\EmvData.cs" />
+    <Compile Include="CardReader\EMVProcessHelper.cs" />
+    <Compile Include="CardReader\InitChipOperation.cs" />
+    <Compile Include="CardReader\PowerOffChipOperation.cs" />
+    <Compile Include="CardReader\ProcessEmv.cs" />
+    <Compile Include="CardReader\ReadChipDataOperation.cs" />
+    <Compile Include="CardReader\SystemRegistry.cs" />
+    <Compile Include="CardType.cs" />
+    <Compile Include="CashDevice\CashAcceptor.cs" />
+    <Compile Include="CashDevice\CashDevice.cs" />
+    <Compile Include="CashDevice\CashDispenser.cs" />
+    <Compile Include="CashDevice\DenominateOperation.cs" />
+    <Compile Include="ChequeAcceptor\ChequeAcceptor.cs" />
+    <Compile Include="CoinDispenser\CoinDispenser.cs" />
+    <Compile Include="CoinDispenser\DenominateOperation.cs" />
+    <Compile Include="DeviceActivityService.cs" />
+    <Compile Include="DeviceOperation.cs" />
+    <Compile Include="Doors\Doors.cs" />
+    <Compile Include="EmiratesIdScanner\EmiratesIdScanner.cs" />
+    <Compile Include="EmiratesIdScanner\EmiratesIdScannerStub.cs" />
+    <Compile Include="FingerScanner\FingerPrintScanner.cs" />
+    <Compile Include="FingerScanner\FingerPrintScannerStub.cs" />
+    <Compile Include="GuideLights\GuideLight.cs" />
+    <Compile Include="GuideLights\GuideLights.cs" />
+    <Compile Include="ImageHelper.cs" />
+    <Compile Include="PinPad\BuildPinBlockOperation.cs" />
+    <Compile Include="PinPad\PinPad.cs" />
+    <Compile Include="Printers\JournalPrinter.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Printers\ReceiptPrinter.cs" />
+    <Compile Include="Sensors\DeviceSensors.cs" />
+    <Compile Include="SignpadScanner\SignpadScanner.cs" />
+    <Compile Include="SignpadScanner\SignpadScannerStub.cs" />
+    <Compile Include="Printers\StatementPrinter.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="eidBack.bmp" />
+    <Content Include="eidFront.bmp" />
+    <Content Include="Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="sign.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Client.Journal.Interface\Omnia.Pie.Client.Journal.Interface.csproj">
+      <Project>{a1099d06-6c3f-4eb8-8097-709b178e6b32}</Project>
+      <Name>Omnia.Pie.Client.Journal.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Supervisor.Shell\Omnia.Pie.Supervisor.Shell.csproj">
+      <Project>{c4e05b84-023e-4957-afcc-136038784894}</Project>
+      <Name>Omnia.Pie.Supervisor.Shell</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.DataAccess.Interface\Omnia.Pie.Vtm.DataAccess.Interface.csproj">
+      <Project>{f5e2ca67-7440-44cd-bcaf-8f4068699663}</Project>
+      <Name>Omnia.Pie.Vtm.DataAccess.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices.Interface\Omnia.Pie.Vtm.Devices.Interface.csproj">
+      <Project>{81c8ec3b-b030-4a57-bb0f-0f52f099a3ca}</Project>
+      <Name>Omnia.Pie.Vtm.Devices.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework.Interface\Omnia.Pie.Vtm.Framework.Interface.csproj">
+      <Project>{2f83688e-bf17-4e7a-9ee2-222f6136fbbc}</Project>
+      <Name>Omnia.Pie.Vtm.Framework.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework\Omnia.Pie.Vtm.Framework.csproj">
+      <Project>{8da717d8-8d26-4a89-954b-d7489fa73565}</Project>
+      <Name>Omnia.Pie.Vtm.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{a5802672-f8cb-490f-8566-02bfb616a0a3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

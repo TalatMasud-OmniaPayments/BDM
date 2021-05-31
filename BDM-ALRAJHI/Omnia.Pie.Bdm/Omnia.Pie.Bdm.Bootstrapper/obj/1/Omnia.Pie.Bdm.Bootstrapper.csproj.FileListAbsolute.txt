@@ -1,0 +1,2 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Bdm.Bootstrapper\obj\1\Omnia.Pie.Bdm.Bootstrapper.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Bdm.Bootstrapper\obj\1\Omnia.Pie.Bdm.Bootstrapper.exe.config

@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Omnia.Pie.Vtm.Bootstrapper.Views.TermsAndConditions.TermsAndConditionsView"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	xmlns:l="clr-namespace:Omnia.Pie.Vtm.Bootstrapper"
+	xmlns:c="clr-namespace:Omnia.Pie.Vtm.Framework.ControlExtenders;assembly=Omnia.Pie.Vtm.Framework"
+	xmlns:p="clr-namespace:Omnia.Pie.Vtm.Bootstrapper.Properties"
+	mc:Ignorable="d"
+	d:DesignWidth="1024" d:DesignHeight="768"
+	Style="{StaticResource BaseView.Style}">
+
+	<UserControl.Resources>
+	</UserControl.Resources>
+
+	<Grid>
+		<i:Interaction.Behaviors>
+			<l:FocusBehavior/>
+		</i:Interaction.Behaviors>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="2.5*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"  VerticalAlignment="Center" Text="{x:Static p:Resources.MrMrsLabel}" Style="{StaticResource TextBlock.Highlighted34.Style}"/>
+		<TextBlock Grid.Row="0" Grid.Column="1"  Text="{Binding CustomerName}" VerticalAlignment="Center"  HorizontalAlignment="Center" 
+				   Style="{StaticResource TextBlock.Highlighted30.Style}"/>
+		<TextBlock Grid.Row="1" Grid.ColumnSpan="3"  Margin="0 20 24 0"  Text="{x:Static p:Resources.TermsConditionMsg1}" Style="{StaticResource TextBlock.Highlighted30.Style}"/>
+		<TextBlock Grid.Row="2" Grid.ColumnSpan="2"  Margin="0 20 24 0"  Text="{x:Static p:Resources.TermsConditionMsg2}" Style="{StaticResource TextBlock.Highlighted30.Style}"/>
+
+		<CheckBox Content="{x:Static p:Resources.AcceptLabel}" IsChecked="{Binding IsChecked, Mode=TwoWay}" Margin="15" Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" >
+			<CheckBox.Style>
+				<Style TargetType="CheckBox" BasedOn="{StaticResource CheckBox.Input.Style}">
+					<Setter Property="IsChecked" Value="false" />
+				</Style>
+			</CheckBox.Style>
+		</CheckBox>
+		
+		<Grid Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="0 24 0 0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="2*"/>
+			</Grid.ColumnDefinitions>
+
+			<Button Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonBack}" Command="{Binding BackCommand}"
+					Visibility="{Binding BackVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}" />
+
+			<Button Grid.Column="2" Style="{StaticResource Button.Positive.Style}"
+					Content="{x:Static p:Resources.ProceedButton}" IsDefault="True" Command="{Binding AcceptCommand}"
+					Visibility="{Binding DefaultVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+
+			<Button Grid.Column="4" Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonCancel}" IsCancel="True" Command="{Binding CancelCommand}"
+					Visibility="{Binding CancelVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+		</Grid>
+	</Grid>
+</UserControl>

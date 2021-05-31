@@ -1,0 +1,125 @@
+﻿<UserControl 
+	x:Class="Omnia.Pie.Bdm.Bootstrapper.Views.ChequeDeposit.ChequeDepositConfirmationView"
+	xmlns:local="clr-namespace:Omnia.Pie.Bdm.Bootstrapper.Views.ChequeDeposit"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:p="clr-namespace:Omnia.Pie.Bdm.Bootstrapper.Properties"
+	xmlns:converter="clr-namespace:Omnia.Pie.Supervisor.Shell.Utilities;assembly=Omnia.Pie.Supervisor.Shell"
+	mc:Ignorable="d" 
+	d:DesignWidth="1024" d:DesignHeight="768"
+	Style="{StaticResource BaseView.Style}" >
+
+	<UserControl.Resources>
+		<converter:ConfigurationConverter x:Key="Converter" />
+	</UserControl.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+
+		<Grid VerticalAlignment="Center">
+			<Grid.Resources>
+				<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Info24.Style}">
+					<Setter Property="Margin" Value="12 6"/>
+					<Setter Property="HorizontalAlignment" Value="Right"/>
+				</Style>
+
+				<Style x:Key="TextBlock.Detail.Style" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Detail24.Style}">
+					<Setter Property="Margin" Value="12 6"/>
+					<Setter Property="HorizontalAlignment" Value="Left"/>
+					<Setter Property="FlowDirection" Value="LeftToRight"/>
+				</Style>
+			</Grid.Resources>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0" Foreground="White" Text="{x:Static p:Resources.LabelAccountNameColon}"/>
+			<TextBlock Grid.Row="1" Foreground="White" Text="{x:Static p:Resources.LabelAccountNumberColon}"/>
+			<!--<TextBlock Grid.Row="2" Foreground="White" Text="{x:Static p:Resources.LabelAccountTypeColon}"/>-->
+			<TextBlock Grid.Row="2" Foreground="White" Text="{x:Static p:Resources.LabelPostingDate}" Visibility="{Binding DateVisibile}"/>
+			<TextBlock Grid.Row="3" Foreground="White" Text="{x:Static p:Resources.LabelAmount}" />
+
+			<TextBlock Grid.Row="0" Foreground="White" Grid.Column="1" Style="{StaticResource TextBlock.Detail.Style}" Text="{Binding SelectedAccount.Name, Converter={StaticResource ObjectToString}, TargetNullValue={x:Static p:Resources.NotSpecified}}"/>
+			<TextBlock Grid.Row="1" Foreground="White" Grid.Column="1" Style="{StaticResource TextBlock.Detail.Style}" Text="{Binding SelectedAccount.Number}"/>
+			<!--<TextBlock Grid.Row="2" Foreground="White" Grid.Column="1" Style="{StaticResource TextBlock.Detail.Style}" Text="{Binding SelectedAccount.Type}"/>-->
+			<TextBlock Grid.Row="2" Foreground="White" Grid.Column="1" Style="{StaticResource TextBlock.Detail.Style}" Text="{Binding ChequeDate}" Visibility="{Binding DateVisibile}"/>
+			<TextBlock Grid.Row="3" Foreground="White" Grid.Column="1" Style="{StaticResource TextBlock.Detail.Style}">
+				<TextBlock.Text>
+					<MultiBinding StringFormat="{}{0} {1:N2}">
+						<Binding Source="{x:Static p:Resources.LabelAed}"/>
+						<Binding Path="ChequeAmount"/>
+					</MultiBinding>
+				</TextBlock.Text>
+			</TextBlock>
+
+			<ListView Height="220" x:Name="lstVwImages" Grid.Row="4" Grid.ColumnSpan="2" ItemsSource="{Binding DepositedCheques, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalAlignment="Center" Margin="20" ScrollViewer.CanContentScroll="False" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<Grid Margin="10">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 0 0 3" Text="{x:Static p:Resources.LabelRotateCheque}" Style="{StaticResource TextBlock.Info20.Style}" />
+							<Button Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding ElementName=lstVwImages, Path=DataContext.RotateCommand}">
+								<Button.CommandParameter>
+									<Binding Path="MediaId" />
+								</Button.CommandParameter>
+
+								<Image Source="{Binding FrontImage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" RenderTransformOrigin=".5,.5" RenderTransform="{Binding ChequeImageTransform}" />
+							</Button>
+						</Grid>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+				<ListView.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"></StackPanel>
+					</ItemsPanelTemplate>
+				</ListView.ItemsPanel>
+			</ListView>
+			<TextBlock Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Foreground="White" Text="{x:Static p:Resources.LabelChequeProcessingDays}" Visibility="{Binding DaysVisible}"/>
+			<StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalAlignment="Center">
+				<TextBlock Foreground="White" Text="{x:Static p:Resources.LabelChequeConfirmation}" />
+
+			</StackPanel>
+		</Grid>
+
+		<Grid Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="0 24 0 10">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="2.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="1.5*"/>
+			</Grid.ColumnDefinitions>
+
+			<Button Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonBack}" Command="{Binding BackCommand}"
+					Visibility="{Binding BackVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}" />
+
+			<Button Grid.Column="2" Style="{StaticResource Button.Positive.Style}"
+					Content="{x:Static p:Resources.ButtonContinue}" Command="{Binding DefaultCommand}"
+					Visibility="{Binding DefaultVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+
+			<Button Grid.Column="4" Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonCancel}" Command="{Binding CancelCommand}"
+					Visibility="{Binding CancelVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+		</Grid>
+	</Grid>
+</UserControl>

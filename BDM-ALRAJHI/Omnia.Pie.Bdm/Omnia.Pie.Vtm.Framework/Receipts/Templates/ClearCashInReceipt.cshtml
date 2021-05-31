@@ -1,0 +1,58 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface.Receipts
+@using Omnia.Pie.Vtm.Framework.Interface.Engine
+@{
+    Layout = "LayoutHeader";
+    byte CURRENCY_COLUMN_WIDTH = 4;
+    byte COUNT_COLUMN_WIDTH = 11;
+    byte COLUMN_WIDTH = 7;
+    var Receipt = (ClearCashInReceipt)Model.Receipt;
+}
+
+@if (Receipt.IsView)
+{
+    @Model.Output.WriteRow("VIEW ONLY")
+    WriteLiteral("\r\n");
+}
+
+@Model.Output.WriteRow(
+    Column.Create("CASS", TextAlignment.Left),
+    Column.Create("CUR", CURRENCY_COLUMN_WIDTH),
+    Column.Create("DEP COUNT", COUNT_COLUMN_WIDTH)
+)
+@if (Receipt.CashInUnits != null && Receipt.CashInUnits.Any())
+{
+    foreach (var unit in Receipt.CashInUnits)
+    {
+        @Model.Output.WriteRow(
+            Column.Create(unit.Name, TextAlignment.Left),
+            Column.Create(unit.Currency, CURRENCY_COLUMN_WIDTH),
+            Column.Create(Model.Binding(unit.Count, "D5", Resources.NotSpecified), COUNT_COLUMN_WIDTH)
+        )
+        WriteLiteral("\r\n");
+    }
+}
+
+@Model.Output.WriteRow("Total denomination count:")
+
+@Model.Output.WriteRow(
+    Column.Create("DENO", TextAlignment.Left),
+    Column.Create("COUNT", COLUMN_WIDTH),
+    Column.Create("RET", COLUMN_WIDTH),
+    Column.Create("REJ", COLUMN_WIDTH),
+    Column.Create("TOTAL", COLUMN_WIDTH)
+)
+@if (Receipt.DenominationRecords != null && Receipt.DenominationRecords.Any())
+{
+    foreach (var record in Receipt.DenominationRecords)
+    {
+        @Model.Output.WriteRow(
+            Column.Create(Model.Binding(record.Value, "D4", Resources.NotSpecified), TextAlignment.Left),
+            Column.Create(Model.Binding(record.Count, "D5", Resources.NotSpecified), COLUMN_WIDTH),
+            Column.Create(Model.Binding(record.Retracted, "D5", Resources.NotSpecified), COLUMN_WIDTH),
+            Column.Create(Model.Binding(record.Rejected, "D5", Resources.NotSpecified), COLUMN_WIDTH),
+            Column.Create(Model.Binding(record.Total, "D5", Resources.NotSpecified), COLUMN_WIDTH)
+        )
+        WriteLiteral("\r\n");
+    }
+}

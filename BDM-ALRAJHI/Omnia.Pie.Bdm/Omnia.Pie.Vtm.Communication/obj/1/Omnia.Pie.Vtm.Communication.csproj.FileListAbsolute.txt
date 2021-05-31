@@ -1,0 +1,4 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\1\Omnia.Pie.Vtm.Communication.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\1\Omnia.Pie.Vtm.Communication.ESpaceTerminalHost.resources
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\1\Omnia.Pie.Vtm.Communication.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Communication\obj\1\Omnia.Pie.Vtm.Communication.csproj.CoreCompileInputs.cache

@@ -1,0 +1,319 @@
+﻿<UserControl 
+	x:Class="Omnia.Pie.Vtm.Bootstrapper.Views.CashWithdrawal.DebitCard.AccountSelectionView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:p="clr-namespace:Omnia.Pie.Vtm.Bootstrapper.Properties"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	xmlns:c="clr-namespace:Omnia.Pie.Vtm.Framework.ControlExtenders;assembly=Omnia.Pie.Vtm.Framework"
+	xmlns:e="clr-namespace:Omnia.Pie.Vtm.Services.Interface.Entities;assembly=Omnia.Pie.Vtm.Services.Interface"
+	mc:Ignorable="d" 
+	xmlns:s="clr-namespace:System;assembly=mscorlib"
+	d:DesignWidth="1024" d:DesignHeight="768"
+	Style="{StaticResource BaseView.Style}" >
+	<!--FocusManager.FocusedElement="{Binding ElementName=txtAmount}"-->
+	
+	<UserControl.Resources>
+		<DataTemplate x:Key="Account.Preview.Template" DataType="{x:Type e:Account}">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+				</Grid.RowDefinitions>
+				<TextBlock Text="{Binding Number}"/>
+				<TextBlock Grid.Row="1" FontSize="14" Opacity="0.8" FontStyle="Italic" Text="{Binding Type}"/>
+			</Grid>
+		</DataTemplate>
+
+		<DataTemplate x:Key="Account.Template" DataType="{x:Type e:Account}">
+			<Grid Margin="6">
+				<Grid.Resources>
+					<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Normal.Base.Style}">
+						<Setter Property="TextWrapping" Value="NoWrap"/>
+					</Style>
+				</Grid.Resources>
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+				</Grid.RowDefinitions>
+				<TextBlock FontSize="18" Text="{Binding Number}"/>
+				<TextBlock Grid.Row="1" FontSize="13" Opacity="0.7" FontStyle="Italic" Text="{Binding Type}"/>
+				<TextBlock Grid.Row="2" FontSize="16" HorizontalAlignment="Right" >
+					<TextBlock.Text>
+						<MultiBinding StringFormat="{}{0} {1:N2}">
+							<Binding Path="Currency"/>
+							<Binding Path="AvailableBalance"/>
+						</MultiBinding>
+					</TextBlock.Text>
+				</TextBlock>
+			</Grid>
+		</DataTemplate>
+		<DataTemplate x:Key="SelectAccountView.Account.Template" DataType="{x:Type e:Account}">
+			<Border CornerRadius="6" BorderThickness="0" Background="{StaticResource ColorScheme.TopBorder}">
+				<Grid>
+					<Grid x:Name="PART_Content" Margin="12 6 12 10">
+						<Grid.Resources>
+							<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Info20.Style}">
+								<Setter Property="Margin" Value="5 3"/>
+								<Setter Property="HorizontalAlignment" Value="Left"/>
+								<Setter Property="TextWrapping" Value="NoWrap"/>
+							</Style>
+							<Style x:Key="TextBlock.Detail.Style" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Detail20.Style}">
+								<Setter Property="Margin" Value="5 3"/>
+								<Setter Property="HorizontalAlignment" Value="Left"/>
+								<Setter Property="FlowDirection" Value="LeftToRight"/>
+								<Setter Property="TextWrapping" Value="NoWrap"/>
+							</Style>
+						</Grid.Resources>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+						</Grid.RowDefinitions>
+
+						<TextBlock Grid.Row="0" Text="{x:Static p:Resources.LabelNameColon}"/>
+						<TextBlock Grid.Row="1" Text="{x:Static p:Resources.LabelAccountTypeColon}"/>
+
+						<TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource TextBlock.Detail.Style}" Text="{Binding Name}"/>
+						<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource TextBlock.Detail.Style}" Text="{Binding Type}"/>
+
+					</Grid>
+
+					<TextBlock x:Name="PART_EmptyMessage" VerticalAlignment="Center" Margin="12 0" Visibility="Collapsed" TextAlignment="Center" Style="{StaticResource TextBlock.Info20.Style}"
+								   Text="{x:Static p:Resources.LabelSelectAccountWatermark}"/>
+				</Grid>
+			</Border>
+			<DataTemplate.Triggers>
+				<DataTrigger Binding="{Binding}" Value="{x:Null}">
+					<Setter TargetName="PART_Content" Property="Visibility" Value="Hidden"/>
+					<Setter TargetName="PART_EmptyMessage" Property="Visibility" Value="Visible"/>
+				</DataTrigger>
+			</DataTemplate.Triggers>
+		</DataTemplate>
+
+		<Style x:Key="SelectAccountView.AccountDetails.Style" TargetType="{x:Type ContentControl}">
+			<Setter Property="Validation.ErrorTemplate">
+				<Setter.Value>
+					<ControlTemplate>
+						<AdornedElementPlaceholder/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="ContentTemplate" Value="{StaticResource SelectAccountView.Account.Template}"/>
+		</Style>
+
+		<DataTemplate x:Key="AccountTemplate">
+			<Border BorderThickness="0 0 0 1">
+				<Grid Margin="12 6">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="auto"/>
+					</Grid.ColumnDefinitions>
+
+					<StackPanel>
+						<TextBlock HorizontalAlignment="Left" Text="{Binding Number}" FontWeight="SemiBold" Style="{StaticResource TextBlock.Detail20.Style}"/>
+						<TextBlock HorizontalAlignment="Left" Text="{Binding Type}" FontStyle="Italic" Style="{StaticResource TextBlock.Detail20.Style}"/>
+					</StackPanel>
+
+					<StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+						<TextBlock Margin="0 0 6 0" Text="{Binding Currency}" Style="{StaticResource TextBlock.Detail20.Style}"/>
+						<TextBlock Text="{Binding AvailableBalance}" Style="{StaticResource TextBlock.Detail20.Style}"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+		</DataTemplate>
+	</UserControl.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="4.1*" />
+			<RowDefinition Height="auto" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="7*" />
+		</Grid.ColumnDefinitions>
+		<StackPanel Orientation="Vertical" Grid.Row="0" Margin="5,22,34,4.8">
+			<WrapPanel Width="850" HorizontalAlignment="Center" Orientation="Horizontal">
+				<Button Width="450" Style="{StaticResource Button.Base.Style.Rectangle}" >
+					<Grid Width="450" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="8*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+
+						<Border BorderThickness="0,0,0,1" BorderBrush="Black">
+							<TextBlock HorizontalAlignment="Center" Margin="3,0" Grid.Row="0" VerticalAlignment="Top" Text="{x:Static p:Resources.LabelSelectAccount}" Style="{StaticResource TextBlock.Detail20.Style}" />
+						</Border>
+						<c:ComboBoxExtender IsEnabled="{Binding AccountSelection}" Height="100" Width="450" Grid.Row="1" Margin="0,0.4,0,0" Title="{x:Static p:Resources.LabelSelectAccount}"
+						VerticalAlignment="Top"
+						HorizontalAlignment="Left"
+						ItemsSource="{Binding Accounts}"
+						SelectedItem="{Binding SelectedAccount, Mode=TwoWay}"
+						ItemTemplate="{StaticResource Account.Template}"
+						SelectedItemTemplate="{StaticResource Account.Preview.Template}"/>
+					</Grid>
+				</Button>
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<TextBlock Grid.Column="0" Margin="20 0 20 3" HorizontalAlignment="Center" Style="{StaticResource TextBlock.Normal24.Style}" 
+						Text="{x:Static p:Resources.LabelCurrency}"/>
+
+					<TextBlock Grid.Row="1" Grid.Column="0" Margin="0 20 0 0" HorizontalAlignment="Center" Style="{StaticResource TextBlock.Normal24.Style}"
+					   Text="{Binding SelectedAccount.Currency, TargetNullValue={x:Static p:Resources.NotSpecified}, FallbackValue={x:Static p:Resources.NotSpecified}}"/>
+
+					<TextBlock Grid.Column="1" Margin="20 0 20 3" HorizontalAlignment="Center" Style="{StaticResource TextBlock.Normal24.Style}"
+						Text="{x:Static p:Resources.LabelBalance}"/>
+
+					<TextBlock Grid.Row="1" Grid.Column="1" Margin="0 20 0 0" HorizontalAlignment="Center" Style="{StaticResource TextBlock.Highlighted24.Style}"
+					   Text="{Binding SelectedAccount.AvailableBalance, StringFormat=N2, TargetNullValue={x:Static p:Resources.NotSpecified}, FallbackValue={x:Static p:Resources.NotSpecified}}"/>
+				</Grid>
+			</WrapPanel>
+			<StackPanel>
+				<TextBlock Margin="50,10,0,10" Style="{StaticResource TextBlock.Detail24.Style}" HorizontalAlignment="Center" Text="{x:Static p:Resources.LabelSelectOrEnterAmount}" />
+			</StackPanel>
+			<WrapPanel Width="850" HorizontalAlignment="Center" Orientation="Horizontal">
+				<Button Style="{StaticResource Button.Base.Style.Rectangle}" Command="{Binding QuickCashCommand}" Focusable="False">
+					<Button.CommandParameter>
+						<s:Double>100</s:Double>
+					</Button.CommandParameter>
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="8*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
+							<TextBlock Style="{StaticResource TextBlock.Detail40.Style}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="100" />
+							<TextBlock Margin="0,50,0,37" Style="{StaticResource TextBlock.Detail16.Style}" HorizontalAlignment="Center" Text="{x:Static p:Resources.LabelAed}" Width="64" />
+						</StackPanel>
+					</Grid>
+				</Button>
+
+				<Button Style="{StaticResource Button.Base.Style.Rectangle}" Command="{Binding QuickCashCommand}" Focusable="False">
+					<Button.CommandParameter>
+						<s:Double>200</s:Double>
+					</Button.CommandParameter>
+
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="8*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						
+						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
+							<TextBlock Style="{StaticResource TextBlock.Detail40.Style}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="200" />
+							<TextBlock Margin="0,50,0,37" Style="{StaticResource TextBlock.Detail16.Style}" HorizontalAlignment="Center" Text="{x:Static p:Resources.LabelAed}" Width="64" />
+						</StackPanel>
+					</Grid>
+				</Button>
+
+				<Button Style="{StaticResource Button.Base.Style.Rectangle}" Command="{Binding QuickCashCommand}" Focusable="False">
+					<Button.CommandParameter>
+						<s:Double>500</s:Double>
+					</Button.CommandParameter>
+
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="8*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
+							<TextBlock Style="{StaticResource TextBlock.Detail40.Style}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="500" />
+							<TextBlock Margin="0,50,0,37" Style="{StaticResource TextBlock.Detail16.Style}" HorizontalAlignment="Center" Text="{x:Static p:Resources.LabelAed}" Width="64" />
+						</StackPanel>
+					</Grid>
+				</Button>
+
+				<Button Style="{StaticResource Button.Base.Style.Rectangle}" Command="{Binding QuickCashCommand}" Focusable="False">
+					<Button.CommandParameter>
+						<s:Double>1000</s:Double>
+					</Button.CommandParameter>
+
+					<Grid Width="200" Height="130">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="8*" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
+							<TextBlock Style="{StaticResource TextBlock.Detail40.Style}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="1000" />
+							<TextBlock Margin="0,50,0,37" Style="{StaticResource TextBlock.Detail16.Style}" HorizontalAlignment="Center" Text="{x:Static p:Resources.LabelAed}" Width="64" />
+						</StackPanel>
+					</Grid>
+				</Button>
+			</WrapPanel>
+			<Button HorizontalAlignment="Left" Margin="50,10,0,0" Width="450" Style="{StaticResource Button.Base.Style.Rectangle}" Focusable="False">
+				<Grid Width="450" Height="130">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="2*" />
+						<RowDefinition Height="8*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+
+					<Border BorderThickness="0,0,0,1" BorderBrush="Black">
+						<TextBlock HorizontalAlignment="Center" Margin="3,0" Grid.Row="0" Style="{StaticResource TextBlock.Detail20.Style}" VerticalAlignment="Top" Text="{x:Static p:Resources.ButtonOtherAmount}" />
+					</Border>
+					<StackPanel Grid.Row="1" Orientation="Horizontal" Height="100" Width="350" VerticalAlignment="Top" Margin="0">
+						<TextBox Style="{StaticResource TextBox.Input}" MaxLength="7" VerticalAlignment="Top"
+								 x:Name="txtAmount" Text="{Binding AmountString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True,NotifyOnValidationError=True}" Width="300" HorizontalAlignment="Center" />
+						<TextBlock Text="{x:Static p:Resources.LabelAed}" Style="{DynamicResource TextBlock.Detail20.Style}"
+										HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5 20"/>
+					</StackPanel>
+				</Grid>
+			</Button>
+		</StackPanel>
+
+		<Grid Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0 24 0 10" >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="2.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="1.5*"/>
+			</Grid.ColumnDefinitions>
+
+			<Button Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonBack}" Focusable="False" Command="{Binding BackCommand}"
+					Visibility="{Binding BackVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}" />
+
+			<Button Grid.Column="2" Style="{StaticResource Button.Positive.Style}"
+					Content="{x:Static p:Resources.ButtonContinue}" Focusable="False" IsDefault="True" Command="{Binding DefaultCommand}"
+					Visibility="{Binding DefaultVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+
+			<Button Grid.Column="4" Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonCancel}" Focusable="False" IsCancel="True" Command="{Binding CancelCommand}"
+					Visibility="{Binding CancelVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+		</Grid>
+	</Grid>
+</UserControl>

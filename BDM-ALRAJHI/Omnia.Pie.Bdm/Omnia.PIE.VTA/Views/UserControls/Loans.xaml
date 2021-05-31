@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="Omnia.PIE.VTA.Views.Loans"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Omnia.PIE.VTA.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" 
+             d:DesignWidth="600"
+             Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="LoansTemplate">
+            <Grid Style="{StaticResource TableContent}">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Border}" BasedOn="{StaticResource TableBorder}"/>
+                    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTableHeader}">
+                        <Setter Property="Margin" Value="12"/>
+                    </Style>
+                </Grid.Resources>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderThickness="1 0 1 1">
+                    <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LoanType}" 
+                               ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+                </Border>
+
+                <Border Grid.Column="1" BorderThickness="0 0 1 1">
+                    <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LoanAccountNumber}" 
+                               ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+                </Border>
+
+                <Border Grid.Column="2" BorderThickness="0 0 1 1">
+                    <TextBlock Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding OutstandingBalance}" 
+                               ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+                </Border>
+
+                <Border Grid.Column="3" BorderThickness="0 0 1 1">
+                    <TextBlock Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Currency}" 
+                               ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+                </Border>
+
+            </Grid>
+
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Style="{StaticResource TableHeader}">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Border}" BasedOn="{StaticResource TableBorder}"/>
+                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTableHeader}">
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                </Style>
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderThickness="1">
+                <TextBlock Text="Loan Type"/>
+            </Border>
+
+            <Border Grid.Column="1" BorderThickness="0 1 1 1">
+                <TextBlock Text="Loan Account Number"/>
+            </Border>
+
+            <Border Grid.Column="2" BorderThickness="0 1 1 1">
+                <TextBlock Text="Outstanding Balance"/>
+            </Border>
+
+            <Border Grid.Column="3" BorderThickness="0 1 1 1">
+                <TextBlock Text="Currency"/>
+            </Border>
+
+        </Grid>
+
+        <local:PagedItemControl 
+            Grid.Row="1"
+            x:Name="lstBoxCustomerLoans" 
+            PageSize="5" 
+            IsSelectionActive="True" 
+            ItemTemplate="{StaticResource LoansTemplate}"/>
+    </Grid>
+</UserControl>

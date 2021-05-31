@@ -1,0 +1,612 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Style TargetType="Button">
+		<Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
+	</Style>
+
+	<Style x:Key="TransparentIconToggleButton" TargetType="ToggleButton">
+		<Setter Property="Background" Value="White" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="Black"/>
+		<Setter Property="BorderBrush" Value="LightGray" />
+		<Setter Property="Effect" >
+			<Setter.Value>
+				<DropShadowEffect Color="#002035" ShadowDepth="2" />
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ToggleButton}">
+					<Border x:Name="RootGrid" RenderTransformOrigin="0.5,0.5" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Padding="2" CornerRadius="2">
+						<ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True" >
+							<Setter TargetName="RootGrid" Property="RenderTransform">
+								<Setter.Value>
+									<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Foreground" Value="White" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsChecked" Value="True">
+				<Setter Property="Background" Value="#FF54C554"/>
+				<Setter Property="Foreground" Value="White" />
+				<Setter Property="FontWeight" Value="Bold" />
+			</Trigger>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#FF54C554"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Background" Value="#FFDCDCDC"/>
+			</Trigger>
+		</Style.Triggers>
+		<Style.Resources>
+			<Style TargetType="Image">
+				<Style.Triggers>
+					<Trigger Property="IsEnabled" Value="False">
+						<Setter Property="Opacity" Value="0.5" />
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+		</Style.Resources>
+	</Style>
+
+	<Style x:Key="TransparentIconButton" TargetType="Button">
+		<Setter Property="Background" Value="White" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="Black"/>
+		<Setter Property="BorderBrush" Value="LightGray" />
+		<Setter Property="Effect" >
+			<Setter.Value>
+				<DropShadowEffect Color="#002035" ShadowDepth="2" />
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border x:Name="RootGrid" RenderTransformOrigin="0.5,0.5" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Padding="2" CornerRadius="2">
+						<ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True" >
+							<Setter TargetName="RootGrid" Property="RenderTransform">
+								<Setter.Value>
+									<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Foreground" Value="White" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#FF54C554"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Background" Value="#FFDCDCDC"/>
+			</Trigger>
+		</Style.Triggers>
+		<Style.Resources>
+			<Style TargetType="Image">
+				<Style.Triggers>
+					<Trigger Property="IsEnabled" Value="False">
+						<Setter Property="Opacity" Value="0.5" />
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+		</Style.Resources>
+	</Style>
+
+	<Style x:Key="CloseButton" TargetType="Button">
+		<Setter Property="Background" Value="Red"/>
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="BorderBrush" Value="Red" />
+		<Setter Property="Effect" >
+			<Setter.Value>
+				<DropShadowEffect Color="#002035" ShadowDepth="2" />
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border x:Name="RootGrid" RenderTransformOrigin="0.5,0.5" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="50">
+						<ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True" >
+							<Setter TargetName="RootGrid" Property="RenderTransform">
+								<Setter.Value>
+									<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Foreground" Value="White" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="Maroon"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Background" Value="#FFC35B5B"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="RoundIconButton" TargetType="Button">
+		<Setter Property="Background" Value="{StaticResource TitleBlueBackground}"/>
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="BorderBrush" Value="{StaticResource Text.Forground}" />
+		<Setter Property="Effect" >
+			<Setter.Value>
+				<DropShadowEffect Color="#002035" ShadowDepth="2" RenderingBias="Quality" />
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border x:Name="RootGrid" RenderTransformOrigin="0.5,0.5" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="50">
+						<ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True" >
+							<Setter TargetName="RootGrid" Property="RenderTransform">
+								<Setter.Value>
+									<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Foreground" Value="White" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="{StaticResource Text.Forground}"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Background" Value="#FF90A1BD"/>
+				<Setter Property="BorderBrush" Value="#FF90A1BD" />
+			</Trigger>
+		</Style.Triggers>
+		<Style.Resources>
+			<Style TargetType="Image">
+				<Style.Triggers>
+					<Trigger Property="IsEnabled" Value="False">
+						<Setter Property="Opacity" Value="0.5" />
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+		</Style.Resources>
+	</Style>
+
+	<Style x:Key="FGBButton" TargetType="Button">
+		<Setter Property="Background" Value="{StaticResource TitleBlueBackground}"/>
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="FontSize" Value="16" />
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="BorderBrush" Value="{StaticResource Text.Forground}" />
+		<Setter Property="Effect" >
+			<Setter.Value>
+				<DropShadowEffect Color="#002035" ShadowDepth="2" />
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border x:Name="RootGrid" RenderTransformOrigin="0.5,0.5" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1">
+						<ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True" >
+							<Setter TargetName="RootGrid" Property="RenderTransform">
+								<Setter.Value>
+									<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Foreground" Value="White" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="{StaticResource Text.Forground}"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Background" Value="#FF90A1BD"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="FGBRoundCornerButton" TargetType="Button">
+		<Setter Property="Background" Value="{StaticResource TitleBlueBackground}"/>
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="FontSize" Value="20" />
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="BorderBrush" Value="{StaticResource Text.Forground}" />
+		<Setter Property="Effect" >
+			<Setter.Value>
+				<DropShadowEffect Color="#002035" ShadowDepth="2" />
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border x:Name="RootGrid" RenderTransformOrigin="0.5,0.5" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="3"
+                            BorderThickness="1">
+						<ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True" >
+							<Setter TargetName="RootGrid" Property="RenderTransform">
+								<Setter.Value>
+									<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Foreground" Value="White" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="{StaticResource Text.Forground}"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Background" Value="#FF90A1BD"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="FGBCloseButton" TargetType="{x:Type Button}">
+		<Setter Property="Background" Value="Red"/>
+		<Setter Property="BorderBrush" Value="{StaticResource Text.Forground}" />
+		<Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="FontSize" Value="15" />
+		<Setter Property="FontWeight" Value="Bold" />
+		<Setter Property="Effect" >
+			<Setter.Value>
+				<DropShadowEffect Color="#002035" ShadowDepth="2" />
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border x:Name="RootGrid" RenderTransformOrigin="0.5,0.5" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}" Padding="2" Margin="2">
+						<ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True" >
+							<Setter TargetName="RootGrid" Property="RenderTransform">
+								<Setter.Value>
+									<ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Foreground" Value="White" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="Maroon"/>
+			</Trigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Background" Value="#FFC35B5B"/>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="WorkFlowStatusStyle" TargetType="{x:Type Button}" >
+		<Setter Property="Background" Value="LightBlue"/>
+		<Setter Property="BorderBrush" Value="{StaticResource Text.Forground}" />
+		<Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="FontSize" Value="15" />
+		<Setter Property="Effect" >
+			<Setter.Value>
+				<DropShadowEffect Color="#002035" ShadowDepth="2" />
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid>
+						<Path x:Name="Shape"  Stretch="Fill" Data="F1 M831.53087,323.36337 L886.62699,472.21593 831.2454,623.90855 244.3145,623.07326 299.55338,474.38774 244.9806,324.19664 z" 
+                                  Height="Auto" Width="Auto" VerticalAlignment="Top" Fill="{TemplateBinding Background}" />
+						<ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="PlaceHolderTextbox" TargetType="TextBox">
+		<Setter Property="Validation.ErrorTemplate" Value="{DynamicResource ErrorToolTipTemplate}" />
+		<Setter Property="Padding" Value="5" />
+		<Setter Property="MinWidth" Value="160" />
+		<Setter Property="Width" Value="200" />
+		<Setter Property="MaxWidth" Value="250" />
+		<Setter Property="MinHeight" Value="25" />
+		<Setter Property="Height" Value="27" />
+		<Setter Property="MaxHeight" Value="30" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TextBox}">
+					<Grid>
+						<TextBox Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, 
+                                                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="textSource" Background="Transparent" Panel.ZIndex="2" />
+						<TextBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+							<TextBox.Style>
+								<Style TargetType="{x:Type TextBox}">
+									<Setter Property="Foreground" Value="Transparent"/>
+									<Style.Triggers>
+										<Trigger Property="Validation.HasError" Value="true">
+											<Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+										</Trigger>
+										<Trigger Property="IsKeyboardFocused" Value="True">
+											<Setter Property="Background" Value="LightBlue"></Setter>
+										</Trigger>
+										<DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
+											<Setter Property="Foreground" Value="LightGray"/>
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</TextBox.Style>
+						</TextBox>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="PasswordBox">
+		<Style.Triggers>
+			<Trigger Property="IsKeyboardFocused" Value="True">
+				<Setter Property="Background" Value="LightBlue"></Setter>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<ControlTemplate x:Key="ErrorToolTipTemplate">
+		<StackPanel Orientation="Horizontal">
+			<Border x:Name="border" BorderThickness="1.25" BorderBrush="#FFDC000C">
+				<Grid>
+					<Polygon x:Name="toolTipCorner" Grid.ZIndex="2" Margin="-1" Points="9,9 9,0 0,0" Fill="#FFDC000C" HorizontalAlignment="Right" VerticalAlignment="Top" IsHitTestVisible="True"/>
+					<Polyline Grid.ZIndex="3" Points="10,10 0,0" Margin="-1" HorizontalAlignment="Right" StrokeThickness="1.5" StrokeEndLineCap="Round" StrokeStartLineCap="Round" Stroke="White" VerticalAlignment="Top" IsHitTestVisible="True"/>
+					<AdornedElementPlaceholder x:Name="adorner"/>
+				</Grid>
+			</Border>
+			<Popup x:Name="placard" AllowsTransparency="True" PopupAnimation="Fade" Placement="Top" PlacementTarget="{Binding ElementName=toolTipCorner}" PlacementRectangle="10,-1,0,0">
+				<!-- Used to reposition Popup when dialog moves or resizes -->
+				<!--<i:Interaction.Behaviors>
+                    <behaviors:RepositionPopupBehavior/>
+                </i:Interaction.Behaviors>-->
+				<Popup.Style>
+					<Style TargetType="{x:Type Popup}">
+						<Style.Triggers>
+							<DataTrigger Binding="{Binding ElementName=adorner, Path=AdornedElement.IsFocused}" Value="True">
+								<Setter Property="IsOpen" Value="True"/>
+							</DataTrigger>
+							<DataTrigger Binding="{Binding ElementName=toolTipCorner, Path=IsMouseOver}" Value="True">
+								<Setter Property="IsOpen" Value="True"/>
+							</DataTrigger>
+							<DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=IsActive}" Value="False">
+								<Setter Property="IsOpen" Value="False"/>
+							</DataTrigger>
+						</Style.Triggers>
+					</Style>
+				</Popup.Style>
+				<Border x:Name="errorBorder" Background="#FFDC000C" Margin="0,0,8,8" Opacity="1" CornerRadius="4" IsHitTestVisible="False" MinHeight="24" MaxWidth="267">
+					<Border.Effect>
+						<DropShadowEffect ShadowDepth="4" Color="Black" Opacity="0.6" Direction="315" BlurRadius="4"/>
+					</Border.Effect>
+					<TextBlock Text="{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}" Foreground="White" Margin="8,3,8,3" TextWrapping="Wrap"/>
+				</Border>
+			</Popup>
+		</StackPanel>
+	</ControlTemplate>
+
+	<Style x:Key="ListBoxStyle" TargetType="{x:Type ListBox}">
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ListBox}">
+					<ControlTemplate.Resources>
+						<Style TargetType="{x:Type ListBoxItem}">
+							<Setter Property="Padding" Value="0"/>
+							<Setter Property="Margin" Value="0"/>
+							<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+							<Setter Property="BorderThickness" Value="1"/>
+							<Setter Property="BorderBrush" Value="Transparent"/>
+							<Setter Property="Background" Value="Transparent"/>
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="{x:Type ListBoxItem}">
+										<Grid>
+											<Border Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+												<ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                                                  Content="{TemplateBinding Content}" 
+                                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}" 
+                                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+											</Border>
+											<Border x:Name="Bd" 
+                                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                                    Background="{TemplateBinding Background}" 
+                                                    Padding="{TemplateBinding Padding}" 
+                                                    SnapsToDevicePixels="True"/>
+										</Grid>
+										<ControlTemplate.Triggers>
+											<MultiTrigger>
+												<MultiTrigger.Conditions>
+													<Condition Property="IsMouseOver" Value="True"/>
+												</MultiTrigger.Conditions>
+												<Setter Property="Background" TargetName="Bd" Value="#1F26A0DA"/>
+												<Setter Property="BorderBrush" TargetName="Bd" Value="#A826A0DA"/>
+											</MultiTrigger>
+											<MultiTrigger>
+												<MultiTrigger.Conditions>
+													<Condition Property="Selector.IsSelectionActive" Value="False"/>
+													<Condition Property="IsSelected" Value="True"/>
+												</MultiTrigger.Conditions>
+												<Setter Property="Background" TargetName="Bd" Value="#3DDADADA"/>
+												<Setter Property="BorderBrush" TargetName="Bd" Value="#FFDADADA"/>
+											</MultiTrigger>
+											<MultiTrigger>
+												<MultiTrigger.Conditions>
+													<Condition Property="Selector.IsSelectionActive" Value="True"/>
+													<Condition Property="IsSelected" Value="True"/>
+												</MultiTrigger.Conditions>
+												<Setter Property="Background" TargetName="Bd" Value="#3D26A0DA"/>
+												<Setter Property="BorderBrush" TargetName="Bd" Value="#FF26A0DA"/>
+											</MultiTrigger>
+										</ControlTemplate.Triggers>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+						</Style>
+					</ControlTemplate.Resources>
+
+					<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" 
+                            Padding="0" 
+                            SnapsToDevicePixels="True">
+						<ScrollViewer Focusable="False" Padding="{TemplateBinding Padding}" HorizontalScrollBarVisibility="Disabled">
+							<ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+						</ScrollViewer>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Background" TargetName="Bd" Value="White"/>
+							<Setter Property="BorderBrush" TargetName="Bd" Value="#FFD9D9D9"/>
+						</Trigger>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="IsGrouping" Value="True"/>
+								<Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="False"/>
+							</MultiTrigger.Conditions>
+							<Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+						</MultiTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="TableBorder" TargetType="{x:Type Border}">
+		<Setter Property="BorderBrush" Value="#FFF19C00"/>
+		<Setter Property="Background" Value="#FFE7EAFF"/>
+	</Style>
+
+	<Style x:Key="TableContent" TargetType="{x:Type Grid}">
+		<Setter Property="Background" Value="#FFF19C00"/>
+	</Style>
+
+	<Style x:Key="TableHeader" TargetType="{x:Type Grid}">
+		<Setter Property="Background" Value="#FFF5F7F7"/>
+	</Style>
+
+	<Style x:Key="TextBlockTableHeader" TargetType="TextBlock">
+		<Setter Property="Foreground" Value="#FFF19C00" />
+		<Setter Property="TextAlignment" Value="Center" />
+		<Setter Property="FontStretch" Value="Normal" />
+		<Setter Property="FontSize" Value="14" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+	</Style>
+
+	<Style x:Key="SelectableTextBlockStyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+		<Setter Property="IsReadOnly" Value="True"/>
+		<Setter Property="IsTabStop" Value="False"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Padding" Value="-2,0,0,0"/>
+		<Setter Property="Margin" Value="5,0,0,0" />
+		<Style.Triggers>
+			<MultiTrigger>
+				<MultiTrigger.Conditions>
+					<Condition Property="IsMouseOver" Value="False" />
+					<Condition Property="IsFocused" Value="False" />
+				</MultiTrigger.Conditions>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type TextBox}">
+							<TextBlock Text="{TemplateBinding Text}" 
+                             FontSize="{TemplateBinding FontSize}"
+                             FontStyle="{TemplateBinding FontStyle}"
+                             FontFamily="{TemplateBinding FontFamily}"
+                             FontWeight="{TemplateBinding FontWeight}"
+                             TextWrapping="{TemplateBinding TextWrapping}"
+                             Foreground="{DynamicResource NormalText}"
+                             Padding="0,0,0,0"
+                                       />
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</MultiTrigger>
+		</Style.Triggers>
+	</Style>
+
+</ResourceDictionary>

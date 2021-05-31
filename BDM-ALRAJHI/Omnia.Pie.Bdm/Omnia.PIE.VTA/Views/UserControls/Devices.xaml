@@ -1,0 +1,220 @@
+﻿<UserControl 
+	x:Class="Omnia.PIE.VTA.Views.Devices"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:converters="clr-namespace:Omnia.PIE.VTA.Converters"
+	xmlns:local="clr-namespace:Omnia.PIE.VTA.Views"
+	mc:Ignorable="d" 
+	d:DesignHeight="1200" 
+	d:DesignWidth="300"
+	Loaded="UserControl_Loaded">
+
+	<StackPanel>
+
+		<StackPanel.Resources>
+			<converters:DeviceStatusToImageConverter x:Key="ImageConverter"/>
+			<converters:TimeSpanFormatConverter x:Key="TimeSpanConverter"/>
+			<converters:CassetteAmountToVisibilityConverter x:Key="CassetteAmountToVisibilityConverter"/>
+			<ItemsPanelTemplate x:Key="BarChartItemsPanel">
+				<VirtualizingStackPanel IsItemsHost="True">
+					<VirtualizingStackPanel.LayoutTransform>
+						<TransformGroup>
+							<RotateTransform Angle="90" />
+							<ScaleTransform ScaleX="-1" ScaleY="1" />
+						</TransformGroup>
+					</VirtualizingStackPanel.LayoutTransform>
+				</VirtualizingStackPanel>
+			</ItemsPanelTemplate>
+			<DataTemplate x:Key="BarChartItemTemplate">
+				<Border Width="200" Height="50">
+					<Grid>
+
+						<!--<TextBlock Margin="20" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Text="{Binding CurrencyNoteQuantity}">
+                            <TextBlock.LayoutTransform>
+                                <ScaleTransform ScaleX="-1" ScaleY="1" />
+                            </TextBlock.LayoutTransform>
+                        </TextBlock>-->
+
+						<Rectangle Fill="#FFE0C437" StrokeThickness="0" Height="40" Width="{Binding CurrencyNotePercentage}" Margin="3" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+							<Rectangle.LayoutTransform>
+								<ScaleTransform ScaleX="20" />
+							</Rectangle.LayoutTransform>
+						</Rectangle>
+
+						<StackPanel Margin="0,20,20,0" Orientation="Horizontal">
+							<StackPanel.LayoutTransform>
+								<ScaleTransform ScaleX="-1" ScaleY="1" />
+							</StackPanel.LayoutTransform>
+							<TextBlock FontWeight="Bold" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Text="{Binding CurrenceyNoteName}">
+							</TextBlock>
+							<TextBlock FontWeight="Bold" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Text="(" Visibility="{Binding CurrenceyNoteName, Converter={StaticResource CassetteAmountToVisibilityConverter}}">
+							</TextBlock>
+							<TextBlock FontWeight="Bold" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Text="{Binding CurrenceyAmount}" Visibility="{Binding CurrenceyNoteName, Converter={StaticResource CassetteAmountToVisibilityConverter}}">
+							</TextBlock>
+							<TextBlock FontWeight="Bold" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center" Text=" AED)" Visibility="{Binding CurrenceyNoteName, Converter={StaticResource CassetteAmountToVisibilityConverter}}">
+							</TextBlock>
+						</StackPanel>
+					</Grid>
+				</Border>
+			</DataTemplate>
+		</StackPanel.Resources>
+
+		<Grid Margin="5,5,0,5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Network Status:" VerticalAlignment="Center"/>
+			<Button Grid.Column="1" Name="InterNet" Background="GreenYellow" ToolTip="Internet Connection Status" HorizontalAlignment="Left"
+						BorderBrush="Transparent" Width="20" Height="20" FontSize="15" FontFamily="Segoe MDL2 Assets" 
+						Margin="5,0" Style="{StaticResource RoundIconButton}" ContextMenuService.IsEnabled="False" 
+						VerticalAlignment="Center">
+			</Button>
+			<Button Grid.Column="1" Name="VPN" Background="GreenYellow" ToolTip="VPN Connection Status" Visibility="Collapsed"
+						BorderBrush="Transparent" Width="20" Height="20" FontSize="15" FontFamily="Segoe MDL2 Assets" 
+						Margin="35,0" Style="{StaticResource RoundIconButton}" ContextMenuService.IsEnabled="False" 
+						VerticalAlignment="Center" HorizontalAlignment="Left">
+			</Button>
+			<Button Grid.Column="3" Style="{StaticResource RoundIconButton}" BorderBrush="Transparent" Visibility="Collapsed"
+					Width="28" Height="28" HorizontalAlignment="Right" Name="btnPopout" Click="btnPopout_Click" Margin="2">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock FontSize="12" Foreground="White" Margin="6" HorizontalAlignment="Center" FontWeight="ExtraBold" FontFamily="Segoe MDL2 Assets" Text="&#xE2B4;"/>
+				</StackPanel>
+			</Button>
+
+		</Grid>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Duration:" VerticalAlignment="Top"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="{Binding CallDuration.Duration, Converter={StaticResource TimeSpanConverter},ConverterParameter=\{0:dd-MMM-yyyy\}}" VerticalAlignment="Top"/>
+		</StackPanel>
+		<Grid Height="250" Background="#FF0097B4">
+			<TextBlock HorizontalAlignment="Center" Margin="2" Foreground="White" TextWrapping="Wrap" Text="CASSETTES" VerticalAlignment="Top"/>
+			<ListBox Name="lstCashCassettes" HorizontalAlignment="Stretch" Background="Transparent"
+                        VerticalAlignment="Stretch"
+                        Width="auto"
+                        Height="auto"
+                        Margin="0,20,0,0" 
+                        ItemTemplate="{DynamicResource BarChartItemTemplate}"
+                        ItemsPanel="{DynamicResource BarChartItemsPanel}">
+			</ListBox>
+		</Grid>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding A4Printer.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="A4 Printer:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding A4Printer.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding A4Scanner.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="A4 Scanner:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding A4Scanner.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding Auxiliaries.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Auxiliaries:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding Auxiliaries.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding Camera.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Camera:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding Camera.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding CardReader.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Card Reader:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding CardReader.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding CashAcceptor.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Cash Acceptor:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding CashAcceptor.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding CashDispenser.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Cash Dispenser:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding CashDispenser.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding ChequeScanner.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Cheque Scanner:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding ChequeScanner.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding Doors.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Doors:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding Doors.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding DVCSignal.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="DVC Signal:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding DVCSignal.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding IDScanner.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="ID Scanner:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding IDScanner.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding Indicators.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Indicators:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding Indicators.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding JournalPrinter.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Journal Printer:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding JournalPrinter.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding PinPad.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="PIN Pad:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding PinPad.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding ReceiptPrinter.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Receipt Printer:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding ReceiptPrinter.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding RFIDReader.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="RFID Reader:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding RFIDReader.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding Scanner.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Scanner:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding Scanner.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding Sensors.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Sensors:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding Sensors.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding SignPad.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Sign Pad:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding SignPad.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding StatementPrinter.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Statement Printer:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding StatementPrinter.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding TMD.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="TMD:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding TMD.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding VDM.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="VDM:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding VDM.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Visibility="Collapsed" Orientation="Horizontal" Margin="5,5,0,5">
+			<Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding VFD.DeviceStatus, Converter={StaticResource ImageConverter}}" Margin="5,0,2,0"/>
+			<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="VFD:" VerticalAlignment="Center"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" Text="{Binding VFD.DeviceStatus}" VerticalAlignment="Center"/>
+		</StackPanel>
+	</StackPanel>
+</UserControl>

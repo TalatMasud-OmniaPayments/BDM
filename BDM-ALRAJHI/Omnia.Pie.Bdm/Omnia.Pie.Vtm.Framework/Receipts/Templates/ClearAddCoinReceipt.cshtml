@@ -1,0 +1,30 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface.Receipts
+@using Omnia.Pie.Vtm.Framework.Interface.Engine
+@{
+	Layout = "LayoutHeader";
+	byte CURRENCY_COLUMN_WIDTH = 4;
+	byte DENOMINATION_COLUMN_WIDTH = 6;
+	byte COUNT_COLUMN_WIDTH = 7;
+	var Receipt = (ClearAddCoinReceipt)Model.Receipt;
+}
+
+@Model.Output.WriteRow(
+	Column.Create("CASS", TextAlignment.Left),
+	Column.Create("CUR", CURRENCY_COLUMN_WIDTH),
+	Column.Create("DENO", DENOMINATION_COLUMN_WIDTH),
+	Column.Create("COUNT", COUNT_COLUMN_WIDTH)
+)
+@if (Receipt.Units != null && Receipt.Units.Any())
+{
+	foreach (var unit in Receipt.Units)
+	{
+		@Model.Output.WriteRow(
+			Column.Create(unit.Name, TextAlignment.Left),
+			Column.Create(unit.Currency, CURRENCY_COLUMN_WIDTH),
+			Column.Create(Model.Binding(unit.Denomination, "D4", Resources.NotSpecified), DENOMINATION_COLUMN_WIDTH),
+			Column.Create(Model.Binding(unit.Count, "D5", Resources.NotSpecified), COUNT_COLUMN_WIDTH)
+		)
+		WriteLiteral("\r\n");
+	}
+}

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F83688E-BF17-4E7A-9EE2-222F6136FBBC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Vtm.Framework.Interface</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Framework.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Container\IResolver.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Logger\EventsLogger.cs" />
+    <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Module\IModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receipts\IReceiptFormatter.cs" />
+    <Compile Include="Receipts\ReceiptFormattingOptions.cs" />
+    <Compile Include="Receipts\ReceiptMetadata.cs" />
+    <Compile Include="Receipts\ReceiptsConfiguration.cs" />
+    <Compile Include="Receipts\Receipts\AadcAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\AadcCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\AccountBillPaymentReceiptBase.cs" />
+    <Compile Include="Receipts\Receipts\AddcAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\AddCashReceipt.cs" />
+    <Compile Include="Receipts\Receipts\AddcCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\BalanceInquiryReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CardlessCashWithdrawalReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CardRetainedReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CashDepositToAccountReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CashDepositToCreditCardReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CashInReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CashWithdrawalUsingCreditCardReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CashWithdrawalUsingDebitCardReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CashWithdrawalUsingOffusCardReceipt.cs" />
+    <Compile Include="Receipts\Receipts\ChequeBookRequestReceipt.cs" />
+    <Compile Include="Receipts\Receipts\ChequeDepositToAccountReceiptFooter.cs" />
+    <Compile Include="Receipts\Receipts\ChequeDepositToAccountReceiptHeader.cs" />
+    <Compile Include="Receipts\Receipts\ChequeDepositToCreditCardReceiptFooter.cs" />
+    <Compile Include="Receipts\Receipts\ChequeDepositToCreditCardReceiptHeader.cs" />
+    <Compile Include="Receipts\Receipts\ChequePrintingReceipt.cs" />
+    <Compile Include="Receipts\Receipts\ClearAddCashReceipt.cs" />
+    <Compile Include="Receipts\Receipts\ClearCardsReceipt.cs" />
+    <Compile Include="Receipts\Receipts\ClearCashInReceipt.cs" />
+    <Compile Include="Receipts\Receipts\ClearChequesReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CreditCardBalanceReceipt.cs" />
+    <Compile Include="Receipts\Receipts\CreditCardBillPaymentReceiptBase.cs" />
+    <Compile Include="Receipts\Receipts\CreditCardPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\Denomination.cs" />
+    <Compile Include="Receipts\Receipts\DewaAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\DewaCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\DuPostpaidAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\DuPostpaidCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\DuPrepaidAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\DuPrepaidCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\EtisalatElifeAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\EtisalatElifeCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\EtisalatPostpaidAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\EtisalatPostpaidCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\EtisalatWaselAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\EtisalatWaselCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\MinistatementReceipt.cs" />
+    <Compile Include="Receipts\Receipts\OffusCardBalanceReceipt.cs" />
+    <Compile Include="Receipts\Receipts\PostpaidAccountBillPaymentReceiptBase.cs" />
+    <Compile Include="Receipts\Receipts\PostpaidCreditCardBillPaymentReceiptBase.cs" />
+    <Compile Include="Receipts\Receipts\PrepaidAccountBillPaymentReceiptBase.cs" />
+    <Compile Include="Receipts\Receipts\PrepaidCreditCardBillPaymentReceiptBase.cs" />
+    <Compile Include="Receipts\Receipts\RegisterFingerprintReceipt.cs" />
+    <Compile Include="Receipts\Receipts\RequestIBANReceipt.cs" />
+    <Compile Include="Receipts\Receipts\RequestLCReceipt.cs" />
+    <Compile Include="Receipts\Receipts\RequestNLCReceipt.cs" />
+    <Compile Include="Receipts\Receipts\SalikAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\SalikCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\SewaAccountBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\SewaCreditCardBillPaymentReceipt.cs" />
+    <Compile Include="Receipts\Receipts\StatementPrintDeductionReceipt.cs" />
+    <Compile Include="Receipts\Receipts\TestCashReceipt.cs" />
+    <Compile Include="Receipts\Receipts\TransferFundsReceipt.cs" />
+    <Compile Include="Receipts\Receipts\UpdateCustomerDetailsAddressReceipt.cs" />
+    <Compile Include="Receipts\Receipts\UpdateCustomerDetailsEmailReceipt.cs" />
+    <Compile Include="Receipts\Receipts\UpdateCustomerDetailsEmiratesIdReceipt.cs" />
+    <Compile Include="Receipts\Receipts\UpdateCustomerDetailsMobileReceipt.cs" />
+    <Compile Include="Receipts\Receipts\UpdateInfoReceipt.cs" />
+    <Compile Include="Receipts\Receipts\ViewAddCashReceipt.cs" />
+    <Compile Include="Receipts\TransactionStatus.cs" />
+    <Compile Include="Reports\Data\AccountDetailReportData.cs" />
+    <Compile Include="Reports\Data\ChequePrintTemplateReportData.cs" />
+    <Compile Include="Reports\Data\LCAndNLCReportData.cs" />
+    <Compile Include="Reports\Data\NewAccountReportData.cs" />
+    <Compile Include="Reports\Data\StatementReportData.cs" />
+    <Compile Include="Reports\IReport.cs" />
+    <Compile Include="Reports\IReportInternal.cs" />
+    <Compile Include="Reports\IReportsManager.cs" />
+    <Compile Include="Tcp\ISSLClient.cs" />
+    <Compile Include="Tcp\ITcpClient.cs" />
+    <Compile Include="UserTypes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Journal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices.Interface\Omnia.Pie.Vtm.Devices.Interface.csproj">
+      <Project>{81c8ec3b-b030-4a57-bb0f-0f52f099a3ca}</Project>
+      <Name>Omnia.Pie.Vtm.Devices.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{A5802672-F8CB-490F-8566-02BFB616A0A3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

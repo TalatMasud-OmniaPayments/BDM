@@ -1,0 +1,9 @@
+diff a/Omnia.Pie.Bdm/Omnia.Pie.Vtm.Workflow/Authentication/Workflow/UsernamePassword/AuthenticationLoginWorkflow.cs b/Omnia.Pie.Bdm/Omnia.Pie.Vtm.Workflow/Authentication/Workflow/UsernamePassword/AuthenticationLoginWorkflow.cs	(rejected hunks)
+@@ -27,7 +27,6 @@
+             _fingerprintScanningStep = _container.Resolve<FingerprintScanningStep>();
+             _validateFingerprintStep = _container.Resolve<ValidateFingerprintStep>();
+             
+-            Context = _enterUsrPwdStep.Context = _fingerprintScanningStep.Context = _validateFingerprintStep.Context = CreateContext(typeof(AuthDataContext));
+             Context = _enterUsrPwdStep.Context = _validateUsrPwdStep.Context = _fingerprintScanningStep.Context = _validateFingerprintStep.Context = CreateContext(typeof(AuthDataContext));
+ 
+ 			AddSteps($"{Properties.Resources.StepReadCard},{Properties.Resources.StepEnterPin},{Properties.Resources.StepPinValidation}");

@@ -1,0 +1,18 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface.Receipts
+@using Omnia.Pie.Vtm.Framework.Interface.Engine
+@{
+	Layout = "LayoutHeader";
+	var Receipt = (TestCashReceipt)Model.Receipt;
+}
+
+@if (@Model.Receipt.IsSuccess)
+{
+	@Model.Output.WriteRowCenter("SUCCESS");
+	WriteLiteral("\r\n");
+}
+else
+{
+	@Model.Output.WriteRowCenter("FAILED");
+	WriteLiteral("\r\n");
+}

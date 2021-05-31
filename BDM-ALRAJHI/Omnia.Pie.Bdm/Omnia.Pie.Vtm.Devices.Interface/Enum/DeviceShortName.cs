@@ -1,0 +1,38 @@
+﻿namespace Omnia.Pie.Vtm.Devices.Interface
+{
+	public enum DeviceShortName
+	{
+		A4PTR,
+		A4S,
+		AUX,
+		AxVFD,
+		BarCode,
+		BNA,
+		BRM,
+		CAM,
+		CCIM,
+		CDM,
+		CHDU,
+		COD,
+		CRD,
+		CRD2,
+		DOR,
+		EDU,
+		GUD,
+		IDC,
+		IDC2,
+		IDS,
+		IND,
+		IPM,
+		JPR,
+		PINPAD,
+		RFD,
+		SIGN,
+		SIU,
+		SNS,
+		SPR,
+		TLT,
+		TTU,
+        FGR,
+	}
+}

@@ -1,0 +1,39 @@
+﻿<Page x:Class="Omnia.PIE.VTA.Views.Workflow.CashDepositCreditCard04"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Omnia.PIE.VTA.Views.Workflow"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="500" Loaded="Page_Loaded">
+
+    <Grid Background="{StaticResource GridGrayBG}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Background="White" Margin="0,0,5,0">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Margin="5" TextWrapping="Wrap" Text="CARD INFORMATION" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Margin="5" TextWrapping="Wrap" Text="Robert Padbury" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Margin="5" TextWrapping="Wrap" Text="1234 5678 9012 3456" Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Margin="5" TextWrapping="Wrap" Text="CASH BREAKDOWN" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <ScrollViewer Background="White" Grid.Column="1" Margin="5,0,0,0">
+            <StackPanel VerticalAlignment="Center">
+                <Button CommandParameter="208" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Confirm Cash Deposit" VerticalAlignment="Top"/>
+                </Button>
+                <Button CommandParameter="202" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Cancel Cash Deposit" VerticalAlignment="Top"/>
+                </Button>
+                <Button CommandParameter="999000" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}" Visibility="Hidden">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="End Current Session" VerticalAlignment="Top"/>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

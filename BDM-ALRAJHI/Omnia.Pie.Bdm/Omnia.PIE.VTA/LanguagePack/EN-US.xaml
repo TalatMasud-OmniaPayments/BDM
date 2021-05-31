@@ -1,0 +1,291 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <sys:String x:Key="About">
+        About
+    </sys:String>
+    <sys:String x:Key="Logout">
+        Logout
+    </sys:String>
+    <sys:String x:Key="Upgrade">
+        Upgrade
+    </sys:String>
+    <sys:String x:Key="Information">
+        Information
+    </sys:String>
+    <sys:String x:Key="0">
+        Success
+    </sys:String>
+    <sys:String x:Key="1">
+        System error.
+    </sys:String>
+    <sys:String x:Key="2">
+        General error.
+    </sys:String>
+    <sys:String x:Key="3">
+        No response (network errors).
+    </sys:String>
+    <sys:String x:Key="4">
+        No peer end is found.
+    </sys:String>
+    <sys:String x:Key="5">
+        The requested operation is denied.
+    </sys:String>
+    <sys:String x:Key="6">
+        You have not logged in.
+    </sys:String>
+    <sys:String x:Key="7">
+        The account or password is incorrect.
+    </sys:String>
+    <sys:String x:Key="8">
+        You have logged in.
+    </sys:String>
+    <sys:String x:Key="9">
+        Parameter error.
+    </sys:String>
+    <sys:String x:Key="10">
+        The configuration file cannot be found.
+    </sys:String>
+    <sys:String x:Key="11">
+        Status error.
+    </sys:String>
+    <sys:String x:Key="12">
+        You have logged out.
+    </sys:String>
+    <sys:String x:Key="13">
+        The called party does not answer the call.
+    </sys:String>
+    <sys:String x:Key="14">
+        The called party does not exist.
+    </sys:String>
+    <sys:String x:Key="15">
+        No document is being opened.
+    </sys:String>
+    <sys:String x:Key="16">
+        No call is being placed on hold.
+    </sys:String>
+    <sys:String x:Key="17">
+        No call is available for answering.
+    </sys:String>
+    <sys:String x:Key="18">
+        No call is available for releasing.
+    </sys:String>
+    <sys:String x:Key="19">
+        No video device is detected.
+    </sys:String>
+    <sys:String x:Key="20">
+        The window handle for display does not exist.
+    </sys:String>
+    <sys:String x:Key="21">
+        The file does not exist.
+    </sys:String>
+    <sys:String x:Key="22">
+        No call is held for three-party calling.
+    </sys:String>
+    <sys:String x:Key="23">
+        Success
+    </sys:String>
+    <sys:String x:Key="24">
+        Success
+    </sys:String>
+    <sys:String x:Key="25">
+        Success
+    </sys:String>
+    <sys:String x:Key="26">
+        Success
+    </sys:String>
+    <sys:String x:Key="27">
+        Success
+    </sys:String>
+    <sys:String x:Key="28">
+        Success
+    </sys:String>
+    <sys:String x:Key="29">
+        Success
+    </sys:String>
+    <sys:String x:Key="30">
+        Success
+    </sys:String>
+    <sys:String x:Key="31">
+        Success
+    </sys:String>
+    <sys:String x:Key="32">
+        Success
+    </sys:String>
+    <sys:String x:Key="33">
+        Success
+    </sys:String>
+    <sys:String x:Key="34">
+        Success
+    </sys:String>
+    <sys:String x:Key="35">
+        Success
+    </sys:String>
+    <sys:String x:Key="36">
+        Success
+    </sys:String>
+    <sys:String x:Key="37">
+        Success
+    </sys:String>
+    <sys:String x:Key="38">
+        Success
+    </sys:String>
+    <sys:String x:Key="39">
+        Success
+    </sys:String>
+    <sys:String x:Key="40">
+        Success
+    </sys:String>
+    <sys:String x:Key="41">
+        Success
+    </sys:String>
+    <sys:String x:Key="42">
+        Success
+    </sys:String>
+    <sys:String x:Key="43">
+        Success
+    </sys:String>
+    <sys:String x:Key="44">
+        Success
+    </sys:String>
+    <sys:String x:Key="45">
+        Success
+    </sys:String>
+    <sys:String x:Key="46">
+        Success
+    </sys:String>
+    <sys:String x:Key="47">
+        Success
+    </sys:String>
+    <sys:String x:Key="48">
+        Success
+    </sys:String>
+    <sys:String x:Key="49">
+        Success
+    </sys:String>
+    <sys:String x:Key="50">
+        Success
+    </sys:String>
+    <sys:String x:Key="51">
+        Success
+    </sys:String>
+    <sys:String x:Key="52">
+        Success
+    </sys:String>
+    <sys:String x:Key="53">
+        Success
+    </sys:String>
+    <sys:String x:Key="54">
+        Success
+    </sys:String>
+    <sys:String x:Key="55">
+        Success
+    </sys:String>
+    <sys:String x:Key="56">
+        Success
+    </sys:String>
+    <sys:String x:Key="57">
+        Success
+    </sys:String>
+    <sys:String x:Key="58">
+        Success
+    </sys:String>
+    <sys:String x:Key="59">
+        Success
+    </sys:String>
+    <sys:String x:Key="60">
+        Success
+    </sys:String>
+    <sys:String x:Key="61">
+        Success
+    </sys:String>
+    <sys:String x:Key="62">
+        Success
+    </sys:String>
+    <sys:String x:Key="63">
+        Success
+    </sys:String>
+    <sys:String x:Key="64">
+        Success
+    </sys:String>
+    <sys:String x:Key="65">
+        Success
+    </sys:String>
+    <sys:String x:Key="66">
+        Success
+    </sys:String>
+    <sys:String x:Key="67">
+        Success
+    </sys:String>
+    <sys:String x:Key="68">
+        Success
+    </sys:String>
+    <sys:String x:Key="69">
+        Success
+    </sys:String>
+    <sys:String x:Key="70">
+        Success
+    </sys:String>
+    <sys:String x:Key="71">
+        Success
+    </sys:String>
+    <sys:String x:Key="72">
+        Success
+    </sys:String>
+    <sys:String x:Key="73">
+        Success
+    </sys:String>
+    <sys:String x:Key="74">
+        Success
+    </sys:String>
+    <sys:String x:Key="75">
+        Success
+    </sys:String>
+
+    <sys:String x:Key="300">
+        Success
+    </sys:String>
+    <sys:String x:Key="1904">
+        Success
+    </sys:String>
+    <sys:String x:Key="3015">
+        Success
+    </sys:String>
+    <sys:String x:Key="3021">
+        Success
+    </sys:String>
+    <sys:String x:Key="5002">
+        Success
+    </sys:String>
+    <sys:String x:Key="5060">
+        Success
+    </sys:String>
+    <sys:String x:Key="5061">
+        Success
+    </sys:String>
+    <sys:String x:Key="7005">
+        Success
+    </sys:String>
+    <sys:String x:Key="7405">
+        Success
+    </sys:String>
+    <sys:String x:Key="8107">
+        Success
+    </sys:String>
+    <sys:String x:Key="8801">
+        Success
+    </sys:String>
+    <sys:String x:Key="8806">
+        Success
+    </sys:String>
+    <sys:String x:Key="8808">
+        Success
+    </sys:String>
+    <sys:String x:Key="9001">
+        Success
+    </sys:String>
+    <sys:String x:Key="9025">
+        Success
+    </sys:String>
+</ResourceDictionary>

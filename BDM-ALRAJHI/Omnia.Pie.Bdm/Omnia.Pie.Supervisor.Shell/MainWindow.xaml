@@ -1,0 +1,153 @@
+﻿<Window x:Class="Omnia.Pie.Supervisor.Shell.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Views="clr-namespace:Omnia.Pie.Supervisor.Shell.Views"
+        xmlns:ViewModels="clr-namespace:Omnia.Pie.Supervisor.Shell.ViewModels"
+        xmlns:b="clr-namespace:Omnia.Pie.Supervisor.UI.Themes.Behaviors;assembly=Omnia.Pie.Supervisor.UI.Themes"
+        xmlns:ViewModelsPages="clr-namespace:Omnia.Pie.Supervisor.Shell.ViewModels.Pages"
+        xmlns:ViewsPages="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Pages"
+        mc:Ignorable="d"
+        Style="{DynamicResource SupervisorWindow.Style}"
+		ContentRendered="Window_ContentRendered">
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Resources/Main.xaml"/>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Styles/Main.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<DataTemplate DataType="{x:Type ViewModels:MachineDateTimeViewModel}">
+				<Views:MachineDateTimeView/>
+			</DataTemplate>
+            
+            <DataTemplate DataType="{x:Type ViewModelsPages:LoginViewModel}">
+				<ViewsPages:LoginView/>
+			</DataTemplate>
+            
+			<DataTemplate DataType="{x:Type ViewModelsPages:ClearCashInViewModel}">
+				<ViewsPages:ClearCashInView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:ClearChecksViewModel}">
+				<ViewsPages:ClearChecksView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:ClearCardsViewModel}">
+				<ViewsPages:ClearCardsView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:DisplayCashOutViewModel}">
+				<ViewsPages:DisplayCashOutView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:AddCashViewModel}">
+				<ViewsPages:AddCashView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:AddCoinViewModel}">
+				<ViewsPages:AddCoinView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:DiagnosticsViewModel}">
+				<ViewsPages:DiagnosticsView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:ConfigurationViewModel}">
+				<ViewsPages:ConfigurationView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:VdmViewModel}">
+				<ViewsPages:VdmView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:DashboardViewModel}">
+				<ViewsPages:DashboardView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:DeviceConfigurationViewModel}">
+				<ViewsPages:DeviceConfigurationView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:ChangePasswordViewModel}">
+				<ViewsPages:ChangePassword/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:StandardCashViewModel}">
+				<ViewsPages:StandardCashView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels:StatusViewModel}">
+				<Views:StatusView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModels:CashStatusViewModel}">
+				<Views:CashStatusView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:CopyLogsViewModel}">
+				<ViewsPages:CopyLogsView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:RebootViewModel}">
+				<ViewsPages:RebootView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type ViewModelsPages:SystemParametersViewModel}">
+				<ViewsPages:SystemParametersView/>
+			</DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModelsPages:UserRolesViewModel}">
+                <ViewsPages:UserRolesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModelsPages:LoadingViewModel}">
+                <ViewsPages:LoadingView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModelsPages:ConnectionLostModel}">
+                <ViewsPages:ConnectionLost/>
+            </DataTemplate>
+        </ResourceDictionary>
+	</Window.Resources>
+	<Window.Background>
+		<SolidColorBrush Color="{StaticResource background }"/>
+	</Window.Background>
+	<Grid>
+		<Grid.Resources>
+			<BooleanToVisibilityConverter x:Key="visibilityConverter" />
+		</Grid.Resources>
+		<Grid>
+			<i:Interaction.Behaviors>
+				<b:StealFocusBehavior/>
+			</i:Interaction.Behaviors>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+				<RowDefinition/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+			<ListView x:Name="pages" Margin="0,0,0,0" 
+					  Grid.Column="0" 
+					  Grid.Row="1" 
+					  VerticalAlignment="Center" 
+					  ItemsSource="{Binding Pages}" 
+					  IsSynchronizedWithCurrentItem="True" 
+					  SelectedItem="{Binding SelectedPage}" 
+					  ItemContainerStyle="{StaticResource listViewItem}">
+				<ListView.ItemTemplate>
+					<DataTemplate DataType="ViewModelsPages:PageViewModel">
+						<Label Content="{Binding Id}" Margin="10 10" Visibility="{Binding IsEnabled, Converter={StaticResource visibilityConverter}}"/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<ListView  Grid.Row="0" Grid.Column="1" x:Name="devices" ItemsSource="{Binding Devices}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Path=SelectedDevice, Mode=OneWayToSource}" ItemContainerStyle="{StaticResource listViewItem}">
+				<ListView.ItemsPanel>
+					<ItemsPanelTemplate>
+						<UniformGrid Columns="5"/>
+					</ItemsPanelTemplate>
+				</ListView.ItemsPanel>
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<Views:MonitorView/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Border Grid.Row="1" Grid.Column="1" Background="{StaticResource selected}" BorderThickness="0" Padding="{StaticResource margin}" Margin="0 0 5 0" SnapsToDevicePixels="True">
+				<ContentControl  Content="{Binding ElementName=pages, Path=SelectedItem}"/>
+			</Border>
+
+			<ContentControl Grid.Row="2" Grid.Column="1" Content="{Binding Status}"/>
+			<ContentControl Grid.Row="0" Grid.Column="0" Content="{Binding MachineDateTime}"/>
+			<ContentControl Grid.Row="0" Grid.Column="0" Content="{Binding CashStatus}"/>
+		</Grid>
+		<Grid Background="#66FFFFFF" Visibility="{Binding Context.DisplayProgress, Converter={StaticResource visibilityConverter}}">
+			<ViewsPages:Animation HorizontalAlignment="Center" Size="15.0" VerticalAlignment="Center" Margin="60"></ViewsPages:Animation>
+		</Grid>
+	</Grid>
+</Window>

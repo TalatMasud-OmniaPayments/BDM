@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Omnia.Pie.Vtm.Bootstrapper.Views.ChequeDeposit.VerifyChequeSecurityView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 mc:Ignorable="d" 
+             xmlns:converter="clr-namespace:Omnia.Pie.Supervisor.Shell.Utilities;assembly=Omnia.Pie.Supervisor.Shell"
+			 d:DesignWidth="1024" d:DesignHeight="768"
+			 Style="{StaticResource BaseView.Style}" >
+
+	<UserControl.Resources>
+		<converter:ConfigurationConverter x:Key="Converter" />
+	</UserControl.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+
+		<Grid VerticalAlignment="Center">
+			<Grid.Resources>
+				<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Info24.Style}">
+					<Setter Property="Margin" Value="12 6"/>
+					<Setter Property="HorizontalAlignment" Value="Right"/>
+				</Style>
+
+				<Style x:Key="TextBlock.Detail.Style" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Detail24.Style}">
+					<Setter Property="Margin" Value="12 6"/>
+					<Setter Property="HorizontalAlignment" Value="Left"/>
+					<Setter Property="FlowDirection" Value="LeftToRight"/>
+				</Style>
+			</Grid.Resources>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+			<ListView Margin="0,-680,0,0" Width="900" Height="1300" x:Name="lstVwImages" Grid.Row="0" Grid.ColumnSpan="2" ItemsSource="{Binding DepositedCheques, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalAlignment="Center" ScrollViewer.CanContentScroll="False" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<Grid Margin="10">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 0 0 3" Text="{x:Static p:Resources.LabelRotateCheque}" Style="{StaticResource TextBlock.Info20.Style}" />-->
+							<Button Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="900" Height="900">
+								<Button.CommandParameter>
+									<Binding Path="MediaId" />
+								</Button.CommandParameter>
+								<Button.Background>
+									<!--<ImageBrush ImageSource="C:\ScannedCheques\UV_IR_Image_1.jpg">-->
+									<ImageBrush Stretch="Fill" ImageSource="{Binding ValidationImage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+										<!--<ImageBrush.Transform>
+											<RotateTransform Angle="90" />
+										</ImageBrush.Transform>-->
+									</ImageBrush>
+								</Button.Background>
+								<!--<Image Stretch="Fill" StretchDirection="Both" Width="900" Height="400" Source="{Binding ValidationImage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" >
+									<Image.RenderTransform>
+										<RotateTransform Angle="90" />
+									</Image.RenderTransform>
+								</Image>-->
+							</Button>
+						</Grid>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+				<ListView.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"></StackPanel>
+					</ItemsPanelTemplate>
+				</ListView.ItemsPanel>
+			</ListView>
+		</Grid>
+	</Grid>
+</UserControl>

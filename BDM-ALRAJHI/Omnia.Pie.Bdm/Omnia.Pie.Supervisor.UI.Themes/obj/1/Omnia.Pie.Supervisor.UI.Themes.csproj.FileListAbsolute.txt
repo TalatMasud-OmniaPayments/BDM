@@ -1,0 +1,11 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Omnia.Pie.Supervisor.UI.Themes.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Resources\Fonts.baml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Resources\Main.baml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Styles\Button.baml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Styles\ColorScheme.baml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Styles\Controls.baml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Styles\Main.baml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Styles\TextBlock.baml
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Omnia.Pie.Supervisor.UI.Themes_MarkupCompile.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Supervisor.UI.Themes\obj\1\Omnia.Pie.Supervisor.UI.Themes_MarkupCompile.lref

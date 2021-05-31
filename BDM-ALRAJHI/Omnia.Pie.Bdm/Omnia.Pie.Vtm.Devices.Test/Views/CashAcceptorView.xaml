@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Omnia.Pie.Vtm.Devices.Test.Views.CashAcceptorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Omnia.Pie.Vtm.Devices.Test.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<StackPanel>
+		<Button Command="{Binding AcceptCash.Execute, IsAsync=True}" Content="accept cash"/>
+		<Button Command="{Binding AcceptMoreCash.Execute, IsAsync=True}" Content="accept more cash"/>
+		<Button Command="{Binding CancelAcceptCash.Execute}" Content="cancel"/>
+		<Button Command="{Binding StoreCash.Execute, IsAsync=True}" Content="store cash"/>
+		<Button Command="{Binding RollbackCash.Execute, IsAsync=True}" Content="rollback cash"/>
+		<Button Command="{Binding RetractCash.Execute, IsAsync=True}" Content="retract cash"/>
+		<TextBlock Text="{Binding IsCashInRunning}"/>
+		<TextBlock Text="{Binding HasMediaInserted}"/>
+	</StackPanel>
+</UserControl>

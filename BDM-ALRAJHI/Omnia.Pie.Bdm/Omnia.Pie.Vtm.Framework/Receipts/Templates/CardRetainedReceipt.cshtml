@@ -1,0 +1,12 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@{
+    Layout = "Layout";
+}
+@Model.Output.WriteRow(@Resources.CardNumberColon, @Model.Binding(@Model.Receipt.CardNumber, @Model.MaskedCardNumber, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.TransactionNumberColon, @Model.Binding(@Model.Receipt.TransactionNumber, @Resources.NotSpecified))
+@if (Model.Receipt.IsCardCaptured)
+{
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.CardCaptured)
+	WriteLiteral("\r\n");
+}

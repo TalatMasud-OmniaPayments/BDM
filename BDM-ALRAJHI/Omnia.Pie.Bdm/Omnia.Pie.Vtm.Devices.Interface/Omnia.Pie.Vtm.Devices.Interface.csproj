@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81C8EC3B-B030-4A57-BB0F-0F52F099A3CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Vtm.Devices.Interface</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Devices.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\CashAcceptorUnitType.cs" />
+    <Compile Include="Constants\DeviceResult.cs" />
+    <Compile Include="Constants\PinPadKeys.cs" />
+    <Compile Include="Constants\Timeout.cs" />
+    <Compile Include="DevicesInterfaces\IAuxiliaries.cs" />
+    <Compile Include="DevicesInterfaces\ICoinDispenser.cs" />
+    <Compile Include="DevicesInterfaces\IDeviceSensors.cs" />
+    <Compile Include="DevicesInterfaces\IFingerPrintScanner.cs" />
+    <Compile Include="Entities\CardChipTags.cs" />
+    <Compile Include="Entities\Cash.cs" />
+    <Compile Include="Entities\CashCassette.cs" />
+    <Compile Include="Entities\CashDenomination.cs" />
+    <Compile Include="Constants\CurrencyName.cs" />
+    <Compile Include="Entities\CashItemType.cs" />
+    <Compile Include="Entities\ChequeAcceptorBin.cs" />
+    <Compile Include="Entities\DepositDenomination.cs" />
+    <Compile Include="Entities\DeviceError.cs" />
+    <Compile Include="Entities\DispenserUnitType.cs" />
+    <Compile Include="Entities\EmiratesId.cs" />
+    <Compile Include="Entities\EmvTransactionCode.cs" />
+    <Compile Include="Entities\FingerPrint.cs" />
+    <Compile Include="Entities\MixAlgorithm.cs" />
+    <Compile Include="Entities\SignPadImage.cs" />
+    <Compile Include="Entities\UserInfo.cs" />
+    <Compile Include="Enum\CardDataType.cs" />
+    <Compile Include="Enum\CardReaderResetAction.cs" />
+    <Compile Include="Enum\CardType.cs" />
+    <Compile Include="Entities\Card.cs" />
+    <Compile Include="Entities\ScannedEmiratesId.cs" />
+    <Compile Include="Enum\CashAcceptorRetractArea.cs" />
+    <Compile Include="Enum\CashDispenserOutputPosition.cs" />
+    <Compile Include="Enum\CashDispenserRetractArea.cs" />
+    <Compile Include="Enum\ChequeAcceptorBinType.cs" />
+    <Compile Include="Enum\ChequeAcceptorResetAction.cs" />
+    <Compile Include="Enum\ChequeRetractArea.cs" />
+    <Compile Include="Enum\DeviceShortName.cs" />
+    <Compile Include="Enum\DoorStatus.cs" />
+    <Compile Include="Entities\Door.cs" />
+    <Compile Include="Enum\DeviceStatus.cs" />
+    <Compile Include="Entities\Cheque.cs" />
+    <Compile Include="Entities\MediaUnit.cs" />
+    <Compile Include="Enum\EmvTag.cs" />
+    <Compile Include="DevicesInterfaces\ICardDispenser.cs" />
+    <Compile Include="DevicesInterfaces\ICardReader.cs" />
+    <Compile Include="DevicesInterfaces\ICardTypeResolver.cs" />
+    <Compile Include="DevicesInterfaces\ICashAcceptor.cs" />
+    <Compile Include="DevicesInterfaces\ICashDevice.cs" />
+    <Compile Include="DevicesInterfaces\ICashDispenser.cs" />
+    <Compile Include="DevicesInterfaces\IChequeAcceptor.cs" />
+    <Compile Include="DevicesInterfaces\IDevice.cs" />
+    <Compile Include="DevicesInterfaces\IDeviceActivityService.cs" />
+    <Compile Include="DevicesInterfaces\IDeviceObserver.cs" />
+    <Compile Include="DevicesInterfaces\IDoors.cs" />
+    <Compile Include="DevicesInterfaces\IEmiratesIdScanner.cs" />
+    <Compile Include="DevicesInterfaces\IEmvData.cs" />
+    <Compile Include="DevicesInterfaces\IGuideLight.cs" />
+    <Compile Include="DevicesInterfaces\IGuideLights.cs" />
+    <Compile Include="DevicesInterfaces\IJournalPrinter.cs" />
+    <Compile Include="DevicesInterfaces\IMediaDevice.cs" />
+    <Compile Include="DevicesInterfaces\IMediaInDevice.cs" />
+    <Compile Include="Enum\OperationType.cs" />
+    <Compile Include="DevicesInterfaces\IMediaOutDevice.cs" />
+    <Compile Include="DevicesInterfaces\IPinPad.cs" />
+    <Compile Include="DevicesInterfaces\IPrinter.cs" />
+    <Compile Include="DevicesInterfaces\IReceiptPrinter.cs" />
+    <Compile Include="DevicesInterfaces\ISignpadScanner.cs" />
+    <Compile Include="DevicesInterfaces\IStatementPrinter.cs" />
+    <Compile Include="Enum\MediaType.cs" />
+    <Compile Include="Enum\PaperSource.cs" />
+    <Compile Include="Enum\PrinterScannerResetAction.cs" />
+    <Compile Include="Enum\PrinterStatus.cs" />
+    <Compile Include="Enum\SensorsStatus.cs" />
+    <Compile Include="Exceptions\CardDeclinedException.cs" />
+    <Compile Include="Exceptions\CryptogramFailureException.cs" />
+    <Compile Include="Exceptions\DenominateException.cs" />
+    <Compile Include="Exceptions\DeviceDataValidationExeption.cs" />
+    <Compile Include="Exceptions\DeviceMalfunctionException.cs" />
+    <Compile Include="Exceptions\DeviceOperationCanceledException.cs" />
+    <Compile Include="Exceptions\DeviceTimeoutException.cs" />
+    <Compile Include="Exceptions\IDeviceException.cs" />
+    <Compile Include="Exceptions\NoteErrorException.cs" />
+    <Compile Include="Exceptions\UnexpectedChipReadException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{A5802672-F8CB-490F-8566-02BFB616A0A3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

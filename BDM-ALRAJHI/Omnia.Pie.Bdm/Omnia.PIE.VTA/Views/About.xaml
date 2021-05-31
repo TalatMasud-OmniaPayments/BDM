@@ -1,0 +1,52 @@
+﻿<Window x:Class="Omnia.PIE.VTA.Views.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Omnia.PIE.VTA.Views"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="{x:Null}" 
+        BorderBrush="{x:Null}" 
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        Title="About" 
+        Height="300" 
+        Width="421">
+
+    <Border Background="White" BorderBrush="DarkBlue" BorderThickness="1">
+        <StackPanel Orientation="Vertical">
+            <Border BorderBrush="DarkBlue" Grid.Row="0" Grid.ColumnSpan="3" Background="{StaticResource TitleBlueBackground}">
+                <DockPanel Name="dplMainHead" Background="Transparent" LastChildFill="False" MouseLeftButtonDown="dplMainHead_MouseLeftButtonDown">
+                    <Border Background="DarkBlue" VerticalAlignment="Center" BorderBrush="Black" HorizontalAlignment="Left" Margin="2,0,0,0" CornerRadius="2">
+                        <Image Margin="0" Width="32" Height="32" Source="/Omnia.PIE.VTA;component/icon.ico" Stretch="Fill" ></Image>
+                    </Border>
+                    <TextBlock Margin="5" VerticalAlignment="Center" Foreground="White">Teller Assistant</TextBlock>
+                    <Button x:Name="btnClose" Width="28" Height="28" Margin="0,0,1,0"
+                            DockPanel.Dock="Right" Background="Red" Style="{StaticResource CloseButton}"
+                            Click="btnClose_Click">
+                        <Grid>
+                            <TextBlock FontSize="14" Foreground="White" Margin="6" HorizontalAlignment="Center" FontWeight="ExtraBold" FontFamily="Segoe MDL2 Assets" Text="&#xE8BB;"/>
+                        </Grid>
+                    </Button>
+                </DockPanel>
+            </Border>
+            <Border Margin="5,10" BorderThickness="0.8" BorderBrush="White">
+                <Border BorderThickness="0.7" BorderBrush="#cacaca"  Background="LightBlue" Margin="0.5"   Height="70">
+                    <TextBlock  Text="Omnia Logo Image"  TextWrapping="Wrap"></TextBlock>
+                </Border>
+            </Border>
+            <StackPanel Margin="5">
+                <StackPanel Margin="5" Orientation="Horizontal">
+                    <!--<TextBlock  Text="Version: v"  TextWrapping="Wrap"></TextBlock>-->
+                    <TextBlock  Name="txtVersion" Text=""  TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+
+                <TextBlock Margin="5" Text="Copyrights: Omnia Payments LLC. 2016. All rights reserved."  TextWrapping="Wrap"></TextBlock>
+                <TextBlock Margin="5" Text="Warning: This program is protected by copyright laws and architecture laws. Unauthorized duplication is subject to civil or criminal liabilities."  TextWrapping="Wrap"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+
+</Window>

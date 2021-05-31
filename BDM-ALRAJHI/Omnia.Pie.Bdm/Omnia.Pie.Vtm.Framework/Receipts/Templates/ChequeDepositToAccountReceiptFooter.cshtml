@@ -1,0 +1,28 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface
+
+@Model.Output.WriteRow(@Resources.AccountNumberColon, @Model.Binding(@Model.Receipt.AccountNumber, @Model.MaskedCardNumber, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.Blank, @Model.Receipt.CustomerName)
+@Model.Output.WriteRow(@Resources.SourceAccountColon, @Model.Binding(@Model.Receipt.SourceAccountNumber, @Model.MaskedCardNumber, @Resources.NotSpecified))
+
+@if (Model.Receipt.TransactionStatus == TransactionStatus.Declined)
+{
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.TransactionDeclined)
+	WriteLiteral("\r\n");
+}
+else if (Model.Receipt.TransactionStatus == TransactionStatus.HardwareFailure)
+{
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.TransactionDeclinedHardwareError)
+	WriteLiteral("\r\n");
+}
+
+@if (Model.Receipt.TransactionStatus == TransactionStatus.Succeeded && Model.Receipt.SelfService == true)
+{
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.ChequeDepositSuccessMessage)
+}
+
+@Model.Output.WriteRowCenter(@Resources.ThankYou)
+@Model.Output.WriteRow(@Resources.Disclaimer)

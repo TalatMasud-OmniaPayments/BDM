@@ -1,0 +1,34 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface
+@{
+	Layout = "Layout";
+}
+@*@Model.Output.WriteRow(@Resources.AccountNumberColon, @Model.Binding(@Model.Receipt.AccountNumber, @Model.MaskedCardNumber, @Resources.NotSpecified))*@
+@if (Model.Receipt.TransactionStatus == TransactionStatus.Succeeded)
+{
+	@Model.Output.WriteRowCenter(@Model.Output.Bold(@Resources.IBANPrinting))
+	WriteLiteral("\r\n");
+	WriteLiteral("\r\n");
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.AccountNumberColon, @Model.Binding(@Model.Receipt.AccountNumber, @Model.MaskedCardNumber, @Resources.NotSpecified));
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.AvailableBalanceColon, @String.Format("{0} {1}", @Model.Receipt.Currency, @Model.Binding(@Model.Receipt.AvailableBalance, "N2", @Resources.NotSpecified)))
+	WriteLiteral("\r\n");
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRowCenter(@Resources.TransactionSuccess)
+	WriteLiteral("\r\n");
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRowCenter(@Resources.ThankYou)
+}
+else if (Model.Receipt.TransactionStatus == TransactionStatus.Declined)
+{
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.TransactionDeclined)
+	WriteLiteral("\r\n");
+}
+else if (Model.Receipt.TransactionStatus == TransactionStatus.HardwareFailure)
+{
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.TransactionDeclinedHardwareError)
+	WriteLiteral("\r\n");
+}

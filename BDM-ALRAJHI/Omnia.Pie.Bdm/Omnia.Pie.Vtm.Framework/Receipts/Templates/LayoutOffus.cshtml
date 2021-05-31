@@ -1,0 +1,14 @@
+@using Omnia.Pie.Vtm.Framework.Properties
+@{ Layout = "LayoutHeader"; }@RenderBody()
+@if (@Model.Receipt.IsUaeSwitchTransaction ?? false)
+{
+    @Model.Output.WriteRowCenter(@Resources.ThankYouUAESwitch);
+    WriteLiteral("\r\n");
+}
+else
+{
+    @Model.Output.WriteRowCenter(@Resources.ThankYou);
+    WriteLiteral("\r\n");
+}
+
+@*@Model.Output.WriteRow(@Resources.Disclaimer)*@

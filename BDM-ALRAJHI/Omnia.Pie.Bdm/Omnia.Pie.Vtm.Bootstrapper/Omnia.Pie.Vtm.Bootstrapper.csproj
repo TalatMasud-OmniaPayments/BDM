@@ -1,0 +1,1121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6266E944-1458-4CF0-B1AC-F4AED6E6C330}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Omnia.Pie.Vtm.Bootstrapper</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Bootstrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug.SIT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug.SIT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug.QA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug.QA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug.UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug.UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetty.Buffers, Version=0.5.0.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetty.Buffers.0.5.0\lib\net45\DotNetty.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Codecs, Version=0.5.0.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetty.Codecs.0.5.0\lib\net45\DotNetty.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Common, Version=0.5.0.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetty.Common.0.5.0\lib\net45\DotNetty.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Handlers, Version=0.5.0.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetty.Handlers.0.5.0\lib\net45\DotNetty.Handlers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetty.Transport, Version=0.5.0.0, Culture=neutral, PublicKeyToken=bc13ca065fa06c29, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetty.Transport.0.5.0\lib\net45\DotNetty.Transport.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MohammadDayyanCalendar">
+      <HintPath>..\..\..\Libs\Dependancies\MohammadDayyanCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net462\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.4.0\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\Libs\Dependancies\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="XamlAnimatedGif, Version=1.1.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XamlAnimatedGif.1.1.10\lib\net45\XamlAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Configurations\ActivityObserver.cs" />
+    <Compile Include="Configurations\FocusBehavior.cs" />
+    <Compile Include="Configurations\KeyboardBehavior.cs" />
+    <Compile Include="Configurations\LanguageObserver.cs" />
+    <Compile Include="Configurations\Module.cs" />
+    <Compile Include="Configurations\NavigationObserver.cs" />
+    <Compile Include="Properties\Resources.ar-AE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ar-AE.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ViewModels\Authentication\AuthenticatedCreditCardStandbyViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\AuthenticatedDebitCardStandbyViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\AuthenticatedDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\AuthenticatedEnquiryViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\AuthenticatedOffUsStandbyViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\AuthenticatedRTStandbyViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\CardImageViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\EnterCifViewModel.cs" />
+    <Compile Include="ViewModels\BalanceEnquiry\BalanceEnquiryViewModel.cs" />
+    <Compile Include="ViewModels\BalanceEnquiry\ConfirmationBalanceEnquiryViewModel.cs" />
+    <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Base\ExpirableBaseViewModel.cs" />
+    <Compile Include="ViewModels\Call\CallRecordingConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\AccountConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\CashDepositAccountSelectionViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\CashDepositResultViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\CreditCardDetailsViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\DepositConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\ManualAccountEntryViewModel.cs" />
+    <Compile Include="ViewModels\CashWithdrawal\CreditCard\CreditCardSelectionViewModel.cs" />
+    <Compile Include="ViewModels\CashWithdrawal\DebitCard\AccountSelectionViewModel.cs" />
+    <Compile Include="ViewModels\CashWithdrawal\DebitCard\DenominationSelectionViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\AccountConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\ChequeDepositAccountSelectionViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\ChequeDepositConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\ChequeDepositEncashConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\ChequeDepositResultViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\EncashDenominationConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\EnterAmountViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\ManualAccountEntryViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\SignatureVerificationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\VerifyChequeSecurityViewModel.cs" />
+    <Compile Include="ViewModels\ChequePrinting\AccountSelectionViewModel.cs" />
+    <Compile Include="ViewModels\ChequePrinting\ChargesConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Common\ActiveConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Common\AnimationViewModel.cs" />
+    <Compile Include="ViewModels\Common\AnotherTransactionConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Common\CallTellerViewModel.cs" />
+    <Compile Include="ViewModels\Common\DeviceNotAvailableViewModel.cs" />
+    <Compile Include="ViewModels\Common\EnterOtpViewModel.cs" />
+    <Compile Include="ViewModels\Common\EnterPinViewModel.cs" />
+    <Compile Include="ViewModels\Common\TimedErrorViewModel.cs" />
+    <Compile Include="ViewModels\Common\ErrorViewModel.cs" />
+    <Compile Include="ViewModels\CreditCardBalanceEnquiry\CreditCardDetailViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\BankingServicesViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\CardlessDepositViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\LanguageSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Common\OffUsCardViewModel.cs" />
+    <Compile Include="ViewModels\Common\ReceiptPrintOptionsViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\ProductsInfoViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\ServiceTypeSelectionViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Products\ProductInfoSubmitSuccessViewModel.cs" />
+    <Compile Include="ViewModels\RequestIBAN\ConfirmationRequestIBANViewModel.cs" />
+    <Compile Include="ViewModels\RequestIBAN\RequestIBANViewModel.cs" />
+    <Compile Include="ViewModels\RequestLC\ConfirmationLCViewModel.cs" />
+    <Compile Include="ViewModels\RequestLC\SignatureConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\RequestLC\SignaturesViewModel.cs" />
+    <Compile Include="ViewModels\Common\TermsAndConditionsViewModel.cs" />
+    <Compile Include="ViewModels\RequestNLC\SignatureConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\RequestNLC\SignaturesViewModel.cs" />
+    <Compile Include="ViewModels\Products\SendMoreInfoViewModel.cs" />
+    <Compile Include="Views\Authentication\AuthenticatedDocumentsView.xaml.cs">
+      <DependentUpon>AuthenticatedDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Authentication\AuthenticatedEnquiryView.xaml.cs">
+      <DependentUpon>AuthenticatedEnquiryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BalanceEnquiry\BalanceEnquiryView.xaml.cs">
+      <DependentUpon>BalanceEnquiryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BalanceEnquiry\ConfirmationBalanceEnquiryView.xaml.cs">
+      <DependentUpon>ConfirmationBalanceEnquiryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Call\CallRecordingConfirmationView.xaml.cs">
+      <DependentUpon>CallRecordingConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashDeposit\CreditCardDetailsView.xaml.cs">
+      <DependentUpon>CreditCardDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashWithdrawal\CreditCard\CreditCardSelectionView.xaml.cs">
+      <DependentUpon>CreditCardSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\ChequeDepositEncashConfirmationView.xaml.cs">
+      <DependentUpon>ChequeDepositEncashConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\EncashDenominationConfirmationView.xaml.cs">
+      <DependentUpon>EncashDenominationConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\EnterAmountView.xaml.cs">
+      <DependentUpon>EnterAmountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\SignatureVerificationView.xaml.cs">
+      <DependentUpon>SignatureVerificationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\VerifyChequeSecurityView.xaml.cs">
+      <DependentUpon>VerifyChequeSecurityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequePrinting\AccountSelectionView.xaml.cs">
+      <DependentUpon>AccountSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequePrinting\ChargesConfirmationView.xaml.cs">
+      <DependentUpon>ChargesConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\DeviceNotAvailableView.xaml.cs">
+      <DependentUpon>DeviceNotAvailableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\TimedErrorView.xaml.cs">
+      <DependentUpon>TimedErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreditCardBalanceEnquiry\CreditCardDetailView.xaml.cs">
+      <DependentUpon>CreditCardDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\BankingServicesView.xaml.cs">
+      <DependentUpon>BankingServicesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\CardlessDepositView.xaml.cs">
+      <DependentUpon>CardlessDepositView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\LanguageSelectionView.xaml.cs">
+      <DependentUpon>LanguageSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainMenu\ServiceTypeSelectionView.xaml.cs">
+      <DependentUpon>ServiceTypeSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Products\ProductInfoSubmitSuccessView.xaml.cs">
+      <DependentUpon>ProductInfoSubmitSuccessView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Products\ProductsView.xaml.cs">
+      <DependentUpon>ProductsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestIBAN\ConfirmationRequestIBANView.xaml.cs">
+      <DependentUpon>ConfirmationRequestIBANView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestLC\SignatureConfirmationView.xaml.cs">
+      <DependentUpon>SignatureConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestLC\SignaturesView.xaml.cs">
+      <DependentUpon>SignaturesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\RequestNLC\ConfirmationNLCViewModel.cs" />
+    <Compile Include="ViewModels\StatementPrinting\ConfirmationStatementPrintingViewModel.cs" />
+    <Compile Include="ViewModels\StatementPrinting\StatementPrintingViewModel.cs" />
+    <Compile Include="ViewModels\TopVideoWindowViewModel.cs" />
+    <Compile Include="Views\Authentication\AuthenticatedCreditCardStandbyView.xaml.cs">
+      <DependentUpon>AuthenticatedCreditCardStandbyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Authentication\AuthenticatedDebitCardStandbyView.xaml.cs">
+      <DependentUpon>AuthenticatedDebitCardStandbyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Authentication\AuthenticatedOffUsStandbyView.xaml.cs">
+      <DependentUpon>AuthenticatedOffUsStandbyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Authentication\AuthenticatedRTStandbyView.xaml.cs">
+      <DependentUpon>AuthenticatedRTStandbyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Authentication\CardImageListView.xaml.cs">
+      <DependentUpon>CardImageListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Authentication\EnterCifView.xaml.cs">
+      <DependentUpon>EnterCifView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Call\CustomerVideo.xaml.cs">
+      <DependentUpon>CustomerVideo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Call\TellerVideo.xaml.cs">
+      <DependentUpon>TellerVideo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashDeposit\AccountConfirmationView.xaml.cs">
+      <DependentUpon>AccountConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashDeposit\CashDepositAccountSelectionView.xaml.cs">
+      <DependentUpon>CashDepositAccountSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashDeposit\CashDepositResultView.xaml.cs">
+      <DependentUpon>CashDepositResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashDeposit\DepositConfirmationView.xaml.cs">
+      <DependentUpon>DepositConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashDeposit\ManualAccountEntryView.xaml.cs">
+      <DependentUpon>ManualAccountEntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashWithdrawal\DebitCard\AccountSelectionView.xaml.cs">
+      <DependentUpon>AccountSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\AccountConfirmationView.xaml.cs">
+      <DependentUpon>AccountConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\ChequeDepositAccountSelectionView.xaml.cs">
+      <DependentUpon>ChequeDepositAccountSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\ChequeDepositConfirmationView.xaml.cs">
+      <DependentUpon>ChequeDepositConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\ChequeDepositResultView.xaml.cs">
+      <DependentUpon>ChequeDepositResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChequeDeposit\ManualAccountEntryView.xaml.cs">
+      <DependentUpon>ManualAccountEntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\ActiveConfirmationView.xaml.cs">
+      <DependentUpon>ActiveConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\AnalogClock.xaml.cs">
+      <DependentUpon>AnalogClock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashWithdrawal\DebitCard\DenominationSelectionView.xaml.cs">
+      <DependentUpon>DenominationSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\AnimationView.xaml.cs">
+      <DependentUpon>AnimationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\AnotherTransactionConfirmation.xaml.cs">
+      <DependentUpon>AnotherTransactionConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\EnterOtpView.xaml.cs">
+      <DependentUpon>EnterOtpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\EnterPinView.xaml.cs">
+      <DependentUpon>EnterPinView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\ErrorView.xaml.cs">
+      <DependentUpon>ErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\OffUsCardView.xaml.cs">
+      <DependentUpon>OffUsCardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\ReceiptPrintOptionsView.xaml.cs">
+      <DependentUpon>ReceiptPrintOptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestIBAN\RequestIBANView.xaml.cs">
+      <DependentUpon>RequestIBANView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestLC\ConfirmationLCView.xaml.cs">
+      <DependentUpon>ConfirmationLCView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestNLC\ConfirmationNLCView.xaml.cs">
+      <DependentUpon>ConfirmationNLCView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestNLC\SignaturesView.xaml.cs">
+      <DependentUpon>SignaturesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RequestNLC\SignautreConfirmationView.xaml.cs">
+      <DependentUpon>SignautreConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Products\SendMoreInfoView.xaml.cs">
+      <DependentUpon>SendMoreInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatementPrinting\ConfirmationStatementPrintingView.xaml.cs">
+      <DependentUpon>ConfirmationStatementPrintingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatementPrinting\StatementPrintingView.xaml.cs">
+      <DependentUpon>StatementPrintingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\TermsAndConditionsView.xaml.cs">
+      <DependentUpon>TermsAndConditionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopVideoWindow.xaml.cs">
+      <DependentUpon>TopVideoWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ApplicationResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authentication\AuthenticatedDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authentication\AuthenticatedEnquiryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BalanceEnquiry\BalanceEnquiryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BalanceEnquiry\ConfirmationBalanceEnquiryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Call\CallRecordingConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashDeposit\CreditCardDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashWithdrawal\CreditCard\CreditCardSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\ChequeDepositEncashConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\EncashDenominationConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\EnterAmountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\SignatureVerificationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\VerifyChequeSecurityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequePrinting\AccountSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequePrinting\ChargesConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\DeviceNotAvailableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\TimedErrorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CreditCardBalanceEnquiry\CreditCardDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\BankingServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\CardlessDepositView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\LanguageSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainMenu\ServiceTypeSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Products\ProductInfoSubmitSuccessView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Products\ProductsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RequestIBAN\ConfirmationRequestIBANView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RequestLC\SignatureConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RequestLC\SignaturesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authentication\AuthenticatedCreditCardStandbyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authentication\AuthenticatedDebitCardStandbyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authentication\AuthenticatedOffUsStandbyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authentication\AuthenticatedRTStandbyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authentication\CardImageListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Authentication\EnterCifView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Call\CustomerVideo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Call\TellerVideo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashDeposit\AccountConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashDeposit\CashDepositAccountSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashDeposit\CashDepositResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashDeposit\DepositConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashDeposit\ManualAccountEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashWithdrawal\DebitCard\AccountSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\AccountConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\ChequeDepositAccountSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\ChequeDepositConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\ChequeDepositResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChequeDeposit\ManualAccountEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\ActiveConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\AnalogClock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashWithdrawal\DebitCard\DenominationSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\AnimationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\AnotherTransactionConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\EnterOtpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\EnterPinView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\ErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\OffUsCardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\ReceiptPrintOptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RequestIBAN\RequestIBANView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RequestLC\ConfirmationLCView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RequestNLC\ConfirmationNLCView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RequestNLC\SignaturesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RequestNLC\SignautreConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Products\SendMoreInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StatementPrinting\ConfirmationStatementPrintingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StatementPrinting\StatementPrintingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\TermsAndConditionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopVideoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.ar-AE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ar-AE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="App.Debug.config">
+      <SubType>Designer</SubType>
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Debug.QA.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Debug.SIT.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Debug.UAT.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\Fonts\GenerisSansCom-Bold.ttf" />
+    <Resource Include="Resources\Fonts\CustomGESSText.CompositeFont" />
+    <Resource Include="Resources\Fonts\FS Matthew-Bold Italic.otf" />
+    <Resource Include="Resources\Fonts\FS Matthew-Bold.otf" />
+    <Resource Include="Resources\Fonts\FS Matthew-Italic.otf" />
+    <Resource Include="Resources\Fonts\FS Matthew-Light Italic.otf" />
+    <Resource Include="Resources\Fonts\FS Matthew-Light.otf" />
+    <Resource Include="Resources\Fonts\FS Matthew-Medium Italic.otf" />
+    <Resource Include="Resources\Fonts\FS Matthew-Medium.otf" />
+    <Resource Include="Resources\Fonts\FS Matthew-Regular.otf" />
+    <Resource Include="Resources\Fonts\GESSTextBold-Bold.otf" />
+    <Resource Include="Resources\Fonts\GESSTextItalic-LightItalic.otf" />
+    <Resource Include="Resources\Fonts\GESSTextLight-Light.otf" />
+    <Resource Include="Resources\Fonts\GESSTextMedium-Medium.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ButtonIcons\homefinance.png" />
+    <Content Include="Resources\Images\Cards\572.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\573.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\Images\logo_big.png" />
+    <Resource Include="Resources\Images\logo_small.png" />
+    <Resource Include="Resources\Images\clock.png" />
+    <Resource Include="Resources\Images\Headphone.png" />
+    <Resource Include="Resources\Images\bg_app.jpg" />
+    <Resource Include="Resources\Animations\calling.gif" />
+    <Resource Include="Resources\Animations\insert_card.gif" />
+    <Resource Include="Resources\Animations\insert_cash.gif" />
+    <Resource Include="Resources\Animations\insert_cheque.gif" />
+    <Resource Include="Resources\Animations\insert_eid.gif" />
+    <Resource Include="Resources\Animations\printing_receipt.gif" />
+    <Resource Include="Resources\Animations\printing_statement.gif" />
+    <Resource Include="Resources\Animations\take_card.gif" />
+    <Resource Include="Resources\Animations\take_cash.gif" />
+    <Resource Include="Resources\Animations\take_cheque.gif" />
+    <Resource Include="Resources\Animations\take_eid.gif" />
+    <Resource Include="Resources\Animations\take_receipt.gif" />
+    <Resource Include="Resources\Animations\wait.gif" />
+    <Resource Include="Resources\Images\topAdd.png" />
+    <Resource Include="Resources\Images\langAdd.png" />
+    <Resource Include="Resources\Images\ButtonIcons\cardloan.png" />
+    <Resource Include="Resources\Images\ButtonIcons\alhilalstar.png" />
+    <Resource Include="Resources\Images\ButtonIcons\autofinance.png" />
+    <Resource Include="Resources\Images\ButtonIcons\joudreward.png" />
+    <Resource Include="Resources\Images\100.png" />
+    <Resource Include="Resources\Images\1000.png" />
+    <Resource Include="Resources\Images\200.png" />
+    <Resource Include="Resources\Images\500.png" />
+    <Resource Include="Resources\Images\ButtonIcons\products.png" />
+    <Resource Include="Resources\Images\ButtonIcons\bankingservices.png" />
+    <Resource Include="Resources\Images\ButtonIcons\ahbchkdeposit.png" />
+    <Resource Include="Resources\Images\ButtonIcons\chekissuance.png" />
+    <Resource Include="Resources\Images\ButtonIcons\cashwithdrawal.png" />
+    <Resource Include="Resources\Images\ButtonIcons\servicerequest.png" />
+    <Resource Include="Resources\Images\ButtonIcons\instantahbchkdeposit.png" />
+    <Resource Include="Resources\Images\ButtonIcons\instantchekissuance.png" />
+    <Resource Include="Resources\Images\ButtonIcons\document.png" />
+    <Resource Include="Resources\Animations\take_coins.png" />
+    <Content Include="Resources\Images\Cards\550.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\551.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\552.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\553.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\554.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\555.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\556.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\558.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\574.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\575.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\576.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Cards\577.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Products\AutoFinance.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Products\CreditCardLoan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\Products\HomeFinance.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\click.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\slam.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Animations\scanning.gif" />
+    <Resource Include="Resources\Animations\sign.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Client.Journal.Interface\Omnia.Pie.Client.Journal.Interface.csproj">
+      <Project>{A1099D06-6C3F-4EB8-8097-709B178E6B32}</Project>
+      <Name>Omnia.Pie.Client.Journal.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Client.Journal\Omnia.Pie.Client.Journal.csproj">
+      <Project>{ff7f2721-761f-4d37-8e82-e434168de720}</Project>
+      <Name>Omnia.Pie.Client.Journal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Supervisor.Shell\Omnia.Pie.Supervisor.Shell.csproj">
+      <Project>{c4e05b84-023e-4957-afcc-136038784894}</Project>
+      <Name>Omnia.Pie.Supervisor.Shell</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Supervisor.UI.Themes\Omnia.Pie.Supervisor.UI.Themes.csproj">
+      <Project>{b6d2823a-5d87-44c4-9d13-8a83f2e5ad48}</Project>
+      <Name>Omnia.Pie.Supervisor.UI.Themes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Bootstrapper.Interface\Omnia.Pie.Vtm.Bootstrapper.Interface.csproj">
+      <Project>{05ef90b7-8b67-48b6-9fd8-e3bb39296807}</Project>
+      <Name>Omnia.Pie.Vtm.Bootstrapper.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Communication.Interface\Omnia.Pie.Vtm.Communication.Interface.csproj">
+      <Project>{8e9fb737-ca04-4821-bc89-ae4fcbca3e2f}</Project>
+      <Name>Omnia.Pie.Vtm.Communication.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Communication\Omnia.Pie.Vtm.Communication.csproj">
+      <Project>{cd54b361-f8a1-414b-89aa-43c89d3dc7ca}</Project>
+      <Name>Omnia.Pie.Vtm.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.DataAccess.Interface\Omnia.Pie.Vtm.DataAccess.Interface.csproj">
+      <Project>{f5e2ca67-7440-44cd-bcaf-8f4068699663}</Project>
+      <Name>Omnia.Pie.Vtm.DataAccess.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.DataAccess\Omnia.Pie.Vtm.DataAccess.csproj">
+      <Project>{82788099-841a-4a82-8800-3f0d15326bca}</Project>
+      <Name>Omnia.Pie.Vtm.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices.Interface\Omnia.Pie.Vtm.Devices.Interface.csproj">
+      <Project>{81c8ec3b-b030-4a57-bb0f-0f52f099a3ca}</Project>
+      <Name>Omnia.Pie.Vtm.Devices.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices\Omnia.Pie.Vtm.Devices.csproj">
+      <Project>{000cf3f2-33b0-4563-aad9-41a27c7353d1}</Project>
+      <Name>Omnia.Pie.Vtm.Devices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework.Interface\Omnia.Pie.Vtm.Framework.Interface.csproj">
+      <Project>{2f83688e-bf17-4e7a-9ee2-222f6136fbbc}</Project>
+      <Name>Omnia.Pie.Vtm.Framework.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework\Omnia.Pie.Vtm.Framework.csproj">
+      <Project>{8da717d8-8d26-4a89-954b-d7489fa73565}</Project>
+      <Name>Omnia.Pie.Vtm.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{a5802672-f8cb-490f-8566-02bfb616a0a3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.ServicesNDC.Interface\Omnia.Pie.Vtm.ServicesNdc.Interface.csproj">
+      <Project>{0827cc3b-9117-4cf4-8700-60662b1a3874}</Project>
+      <Name>Omnia.Pie.Vtm.ServicesNdc.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.ServicesNDC\Omnia.Pie.Vtm.ServicesNdc.csproj">
+      <Project>{0068e8cd-518f-4ef2-90a0-04ad40e80d53}</Project>
+      <Name>Omnia.Pie.Vtm.ServicesNdc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services\Omnia.Pie.Vtm.Services.csproj">
+      <Project>{87c5641c-4830-44e9-890b-5d9f79e0f304}</Project>
+      <Name>Omnia.Pie.Vtm.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Workflow\Omnia.Pie.Vtm.Workflow.csproj">
+      <Project>{c47dc6b7-9b1d-4479-9509-cc75c4d8e366}</Project>
+      <Name>Omnia.Pie.Vtm.Workflow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Billers\" />
+    <Folder Include="Views\Billers\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="AfterCompile" Condition="exists('App.$(Configuration).config')">
+    <!-- Generate transformed app config in the intermediate directory -->
+    <TransformXml Source="App.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="App.$(Configuration).config" />
+    <!-- Force build process to use the transformed configuration file from now on. -->
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="App.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+  </Target>
+</Project>

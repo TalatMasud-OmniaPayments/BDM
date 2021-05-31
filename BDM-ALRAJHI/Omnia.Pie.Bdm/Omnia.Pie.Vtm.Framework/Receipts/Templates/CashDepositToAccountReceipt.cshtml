@@ -1,0 +1,42 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface
+@{
+    Layout = "Layout";
+}
+@Model.Output.WriteRow(@Resources.DepositByColon, @Model.Binding(@Model.Receipt.UserId, @Model.MaskedCardNumber, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.DepositAccountNumberColon, @Model.Binding(@Model.Receipt.AccountNumber, @Model.MaskedCardNumber, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.TransactionDateColon, @Model.Binding(@Model.Receipt.TransactionDate, @Resources.NotSpecified))
+
+@*@Model.Output.WriteRow(@Resources.TransactionNumberColon, @Model.Binding(@Model.Receipt.TransactionNumber, @Resources.NotSpecified))*@
+@Model.Output.WriteRow(@Resources.ReferenceNumberColon, @Model.Binding(@Model.Receipt.AuthCode, @Resources.NotSpecified))
+
+@Model.Output.WriteRow(@Resources.DepositCount)
+@Model.Output.WriteRowSeparator()
+@Model.Output.WriteRow(@Resources.Denomination, @Resources.Count, @Resources.Total)
+@if (Model.Receipt.Denominations != null && Model.Receipt.Denominations.Count > 0)
+{
+    foreach (var item in Model.Receipt.Denominations)
+    {
+        @Model.Output.WriteRow(@item.Value.ToString(), @item.Count.ToString(), @String.Format("{0} {1}", @Model.Receipt.Currency, @Model.Binding((double)(@item.Value * @item.Count), "N2")))
+        WriteLiteral("\r\n");
+    }
+}
+else
+{
+    @Model.Output.WriteRowCenter(@Resources.NoRecords)
+    WriteLiteral("\r\n");
+}
+@Model.Output.WriteRowSeparator()
+@Model.Output.WriteRow(@Resources.AmountTotalColon, @String.Format("{0} {1}", @Model.Receipt.Currency, @Model.Binding(@Model.Receipt.TotalAmount, "N2", @Resources.NotSpecified)))
+@if (Model.Receipt.TransactionStatus == TransactionStatus.Declined)
+{
+    WriteLiteral("\r\n");
+    @Model.Output.WriteRow(@Resources.TransactionDeclined)
+    WriteLiteral("\r\n");
+}
+else if (Model.Receipt.TransactionStatus == TransactionStatus.HardwareFailure)
+{
+    WriteLiteral("\r\n");
+    @Model.Output.WriteRow(@Resources.TransactionDeclinedHardwareError)
+    WriteLiteral("\r\n");
+}

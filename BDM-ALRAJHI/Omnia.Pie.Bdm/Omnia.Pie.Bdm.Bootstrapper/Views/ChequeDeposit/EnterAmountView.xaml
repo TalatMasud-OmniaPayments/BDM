@@ -1,0 +1,65 @@
+﻿<UserControl 
+	x:Class="Omnia.Pie.Bdm.Bootstrapper.Views.ChequeDeposit.EnterAmountView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:local="clr-namespace:Omnia.Pie.Bdm.Bootstrapper.Views.ChequeDeposit"
+	mc:Ignorable="d" 
+	xmlns:p="clr-namespace:Omnia.Pie.Bdm.Bootstrapper.Properties"
+	xmlns:c="clr-namespace:Omnia.Pie.Vtm.Framework.ControlExtenders;assembly=Omnia.Pie.Vtm.Framework"
+	d:DesignWidth="1024" d:DesignHeight="768"
+	Style="{StaticResource BaseView.Style}">
+	
+	<Grid Margin="2,0,-2,0.2">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="2*"/>
+			<RowDefinition Height="2*"/>
+			<RowDefinition Height="2*"/>
+			<RowDefinition Height="2*"/>
+			<RowDefinition Height="5*"/>
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<TextBlock Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="0 50 0 0" TextAlignment="Center" Style="{StaticResource TextBlock.Normal34.Style}"
+				   Text="{x:Static p:Resources.LabelEnterChequeAmount}" />
+
+		<TextBox Grid.Row="1" x:Name="txtAmount" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" Style="{StaticResource TextBox.Input.Style}"
+				 Text="{Binding EnteredAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+				 c:TextBoxExtender.DataType="Numeric" 
+				 MaxLength="20"/>
+
+		<TextBlock Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="0 50 0 0" TextAlignment="Center" Style="{StaticResource TextBlock.Normal34.Style}"
+				   Text="{x:Static p:Resources.LabelPostingDate}" />
+
+		<TextBox Grid.Row="3" x:Name="txtDate" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" Style="{StaticResource TextBox.Input.Style}"
+				 Text="{Binding ChequeDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+				 c:TextBoxExtender.DataType="Date"
+				 c:TextBoxExtender.ClearWhenBackspace="True"/>
+
+		<Grid Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="0 24 0 10">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="2.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="1.5*"/>
+			</Grid.ColumnDefinitions>
+
+			<Button Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonBack}" Focusable="False" Command="{Binding BackCommand}"
+					Visibility="{Binding BackVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}" />
+			<Button Grid.Column="2" Style="{StaticResource Button.Positive.Style}"
+					Content="{x:Static p:Resources.ButtonProceed}" Focusable="False" IsDefault="True" Command="{Binding DefaultCommand}"
+					Visibility="{Binding DefaultVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}" />
+			<Button Grid.Column="4" Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonCancel}" Focusable="False" Command="{Binding CancelCommand}"
+					Visibility="{Binding CancelVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+		</Grid>
+	</Grid>
+</UserControl>

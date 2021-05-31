@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Omnia.Pie.Bdm.Bootstrapper.Views.LoginView.SupervisorLoginSuccessView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Omnia.Pie.Bdm.Bootstrapper.Views.LoginView"
+            xmlns:p="clr-namespace:Omnia.Pie.Bdm.Bootstrapper.Properties"
+             xmlns:l="clr-namespace:Omnia.Pie.Vtm.Framework.Interface;assembly=Omnia.Pie.Vtm.Framework.Interface"
+             mc:Ignorable="d" 
+            d:DesignWidth="1024" d:DesignHeight="768"
+            Style="{StaticResource BaseView.Style}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Top"   TextAlignment="Center" FontFamily="{DynamicResource Fonts.Primary.en-US}" Style="{StaticResource TextBlock.Normal34.Style}"
+				   Text="{x:Static p:Resources.LabelSupervisorLoginSuccess}" />
+
+
+        <Grid Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="0 24 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="4" Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonLogout}" IsCancel="True" Focusable="False" Command="{Binding CancelCommand}"
+					Visibility="{Binding CancelVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+        </Grid>
+    </Grid>
+</UserControl>

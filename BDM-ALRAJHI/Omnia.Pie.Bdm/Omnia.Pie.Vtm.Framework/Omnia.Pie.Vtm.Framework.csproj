@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DA717D8-8D26-4A89-954B-D7489FA73565}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Vtm.Framework</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseReport.cs" />
+    <Compile Include="Base\BindableBase.cs" />
+    <Compile Include="Base\CustomValidation.cs" />
+    <Compile Include="Base\ErrorsContainer.cs" />
+    <Compile Include="Base\ValidatableBindableBase.cs" />
+    <Compile Include="Configurations\BootstrapperConfiguration.cs" />
+    <Compile Include="Configurations\CardTypeBinsElement.cs" />
+    <Compile Include="Configurations\ContractExceptionSection.cs" />
+    <Compile Include="Configurations\EndpointsSection.cs" />
+    <Compile Include="Configurations\DatabaseSection.cs" />
+    <Compile Include="Configurations\DevicesSection.cs" />
+    <Compile Include="Configurations\ModuleConfiguration.cs" />
+    <Compile Include="Configurations\ReportsSection.cs" />
+    <Compile Include="Configurations\SystemParameters.cs" />
+    <Compile Include="Configurations\TerminalConfiguration.cs" />
+    <Compile Include="Configurations\TopVideoConfiguration.cs" />
+    <Compile Include="Configurations\UserRoles.cs" />
+    <Compile Include="Configurations\WindowsServiceElement.cs" />
+    <Compile Include="Container\UnityResolver.cs" />
+    <Compile Include="ControlExtenders\ArcExtender.cs" />
+    <Compile Include="ControlExtenders\BitmapExtender.cs" />
+    <Compile Include="ControlExtenders\ComboBoxExtender.cs" />
+    <Compile Include="ControlExtenders\KeyboardExtender.cs" />
+    <Compile Include="ControlExtenders\ListBoxExtender.cs" />
+    <Compile Include="ControlExtenders\MediaElementExtender.cs" />
+    <Compile Include="ControlExtenders\MicrExtender.cs" />
+    <Compile Include="ControlExtenders\PasswordBoxExtender.cs" />
+    <Compile Include="ControlExtenders\TcpClient.cs" />
+    <Compile Include="ControlExtenders\TextBoxExtender.cs" />
+    <Compile Include="ControlExtenders\UIElementExtender.cs" />
+    <Compile Include="Converters\BooleanInverseVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\EqualityToVisibilityConverter.cs" />
+    <Compile Include="Converters\MaskedCardNumberConverter.cs" />
+    <Compile Include="Converters\NullOrEmptyToBooleanConverter.cs" />
+    <Compile Include="Converters\NullToBooleanConverter.cs" />
+    <Compile Include="Converters\NullToUnsetConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\ObjectToStringConverter.cs" />
+    <Compile Include="Converters\ProgressToAngleConverter.cs" />
+    <Compile Include="Converters\ToUpperConverter.cs" />
+    <Compile Include="Converters\ValueConverter.cs" />
+    <Compile Include="Converters\ValueConverterGroup.cs" />
+    <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
+    <Compile Include="DelegateCommand\DelegateCommand.cs" />
+    <Compile Include="Exceptions\ESpaceExceptions.cs" />
+    <Compile Include="Exceptions\ServicesExceptions.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\ExtendedAttachedProperties.cs" />
+    <Compile Include="Extensions\LoggerExtenstions.cs" />
+    <Compile Include="Extensions\MaskingExtensions.cs" />
+    <Compile Include="Extensions\RegistryExtension.cs" />
+    <Compile Include="Extensions\SecurityExtensions.cs" />
+    <Compile Include="Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TaskExtensions.cs" />
+    <Compile Include="Extensions\UIExtensions.cs" />
+    <Compile Include="Logger\EnterpriseLibraryLogger.cs" />
+    <Compile Include="Logger\LoggerFormatter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.ar-AE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ar-AE.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Receipts\MaskedCardNumberConverter.cs" />
+    <Compile Include="Receipts\ReceiptFormatter.cs" />
+    <Compile Include="Receipts\ReceiptModel.cs" />
+    <Compile Include="Receipts\ReceiptOutput.cs" />
+    <Compile Include="Receipts\Templates\ReceiptTemplateReader.cs" />
+    <Compile Include="Base\ReportsManager.cs" />
+    <Compile Include="Reports\AccountDetailReport.cs" />
+    <Compile Include="Reports\ChequePrintTemplate.cs" />
+    <Compile Include="Reports\LCAndNLCReport.cs" />
+    <Compile Include="Reports\LCReport.cs" />
+    <Compile Include="Reports\NewAccountReport.cs" />
+    <Compile Include="Reports\StatementPrintReport.cs" />
+    <Compile Include="Reports\StatementReport.cs" />
+    <Compile Include="Reports\Template\AccountDetailData.cs" />
+    <Compile Include="Reports\Template\ChequePrintTemplateData.cs" />
+    <Compile Include="Reports\Template\LCAndNLCData.cs" />
+    <Compile Include="Reports\Template\NewAccountData.cs" />
+    <Compile Include="Reports\Template\StatementData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices.Interface\Omnia.Pie.Vtm.Devices.Interface.csproj">
+      <Project>{81C8EC3B-B030-4A57-BB0F-0F52F099A3CA}</Project>
+      <Name>Omnia.Pie.Vtm.Devices.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework.Interface\Omnia.Pie.Vtm.Framework.Interface.csproj">
+      <Project>{2F83688E-BF17-4E7A-9EE2-222F6136FBBC}</Project>
+      <Name>Omnia.Pie.Vtm.Framework.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{A5802672-F8CB-490F-8566-02BFB616A0A3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Properties\Resources.ar-AE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ar-AE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipts\Templates\AadcAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\AadcCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\AccountBillPaymentReceiptLayout.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\AddcAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\AddCashReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\AddcCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\BalanceInquiryReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CardlessCashWithdrawalReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CardRetainedReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CashDepositToAccountReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CashDepositToCreditCardReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CashInReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CashWithdrawalUsingCreditCardReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CashWithdrawalUsingDebitCardReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CashWithdrawalUsingOffusCardReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ChequeBookRequestReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ChequeDepositToAccountReceiptFooter.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ChequeDepositToAccountReceiptHeader.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ChequeDepositToCreditCardReceiptFooter.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ChequeDepositToCreditCardReceiptHeader.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ClearAddCashReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ClearCardsReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ClearCashInReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ClearChequesReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CreditCardBalanceReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CreditCardBillPaymentReceiptLayout.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\CreditCardPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\DewaAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\DewaCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\DuPostpaidAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\DuPostpaidCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\DuPrepaidAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\DuPrepaidCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\EtisalatElifeAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\EtisalatElifeCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\EtisalatPostpaidAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\EtisalatPostpaidCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\EtisalatWaselAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\EtisalatWaselCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\Layout.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\LayoutHeader.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\LayoutOffus.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\MinistatementReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\OffusCardBalanceReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\PostpaidAccountBillPaymentReceiptLayout.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\PostpaidCreditCardBillPaymentReceiptLayout.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\PrepaidAccountBillPaymentReceiptLayout.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\PrepaidCreditCardBillPaymentReceiptLayout.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\SalikAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\SalikCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\SewaAccountBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\SewaCreditCardBillPaymentReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\TestCashReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\UpdateCustomerDetailsAddressReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\UpdateCustomerDetailsEmailReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\UpdateCustomerDetailsEmiratesIdReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\UpdateCustomerDetailsLayout.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\UpdateCustomerDetailsMobileReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ViewAddCashReceipt.cshtml" />
+    <EmbeddedResource Include="Reports\Template\AccountDetailReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Template\ChequePrintTemplate.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Template\LCAndNLCReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Template\LCReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Template\StatementPrintReport.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receipts\Templates\RequestNLCReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\StatementPrintDeductionReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\RequestIBANReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ChequePrintingReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\AddCoinReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ViewAddCoinReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\ClearAddCoinReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\RegisterFingerprintReceipt.cshtml" />
+    <EmbeddedResource Include="Receipts\Templates\UpdateInfoReceipt.cshtml" />
+    <EmbeddedResource Include="Reports\Template\NewAccountReport.rdlc" />
+    <EmbeddedResource Include="Reports\Template\NewAccountReport_ar-AE.rdlc" />
+    <EmbeddedResource Include="Reports\Template\StatementReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Journal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Receipts\Templates\RequestLCReceipt.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

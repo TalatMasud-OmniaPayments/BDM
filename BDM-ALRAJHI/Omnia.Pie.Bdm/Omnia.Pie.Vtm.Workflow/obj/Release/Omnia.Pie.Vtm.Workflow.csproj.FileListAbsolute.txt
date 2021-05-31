@@ -1,0 +1,10 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.Properties.Resources.resources
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.Properties.Resources.ar-AE.resources
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.Properties.Resources.resources
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.Properties.Resources.ar-AE.resources
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP1\Omnia.Pie.Bdm\Omnia.Pie.Vtm.Workflow\obj\Release\Omnia.Pie.Vtm.Workflow.csproj.CoreCompileInputs.cache

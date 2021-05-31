@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Omnia.PIE.VTA.Views.Workflow.LinkedAccountControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Omnia.PIE.VTA.Views.Workflow"
+             xmlns:controls="clr-namespace:Omnia.PIE.VTA.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" 
+             d:DesignWidth="300" 
+             Loaded="UserControl_Loaded">
+
+    <StackPanel HorizontalAlignment="Stretch" Margin="2">
+        <StackPanel.Resources>
+            <controls:BoolToVisibilityConverter x:Key="BoolConverter"/>
+        </StackPanel.Resources>
+        <ListView Name="lstLinkedAccounts" 
+                  Visibility="{Binding LinkedAccounts, Converter={StaticResource BoolConverter}}" 
+                  HorizontalAlignment="Stretch" 
+                  Height="Auto" 
+                  BorderBrush="{x:Null}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding AccountType}" Margin="2" Foreground="Blue"></TextBlock>
+                        <TextBlock Text="{Binding AccountNumber}" Margin="2" Foreground="SeaGreen"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+    
+</UserControl>

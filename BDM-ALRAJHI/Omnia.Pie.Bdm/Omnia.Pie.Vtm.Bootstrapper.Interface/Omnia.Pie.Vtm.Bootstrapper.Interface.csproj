@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05EF90B7-8B67-48B6-9FD8-E3BB39296807}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Vtm.Bootstrapper.Interface</RootNamespace>
+    <AssemblyName>Omnia.Pie.Vtm.Bootstrapper.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IActivityObserver.cs" />
+    <Compile Include="ILanguageObserver.cs" />
+    <Compile Include="INavigationObserver.cs" />
+    <Compile Include="INetworkObserver.cs" />
+    <Compile Include="ITopVideoObserver.cs" />
+    <Compile Include="ViewModels\Authentication\IAuthenticatedCreditCardStandbyViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\IAuthenticatedDebitCardStandbyViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\IAuthenticatedDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\IAuthenticatedEnquiryViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\IAuthenticatedOffUsStandbyViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\ICardImageListViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\IEnterCifViewModel.cs" />
+    <Compile Include="ViewModels\BalanceEnquiry\IBalanceEnquiryViewModel.cs" />
+    <Compile Include="ViewModels\BalanceEnquiry\IConfirmationBalanceEnquiryViewModel.cs" />
+    <Compile Include="ViewModels\Base\IBaseViewModel.cs" />
+    <Compile Include="ViewModels\Base\IExpirableBaseViewModel.cs" />
+    <Compile Include="ViewModels\Call\ICallRecordingConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\IAccountConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\ICashDepositAccountSelectionViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\ICashDepositResultViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\ICreditCardDetailsViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\IDepositConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\CashDeposit\IManualAccountEntryViewModel.cs" />
+    <Compile Include="ViewModels\CashWithdrawal\CreditCard\ICreditCardSelectionViewModel.cs" />
+    <Compile Include="ViewModels\CashWithdrawal\DebitCard\IAccountSelectionViewModel.cs" />
+    <Compile Include="ViewModels\CashWithdrawal\DebitCard\IDenominationSelectionViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IAccountConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IChequeDepositAccountSelectionViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IChequeDepositConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IChequeDepositEncashConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IChequeDepositResultViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IEncashDenominationConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IEnterAmountViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IManualAccountEntryViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\ISignatureVerificationViewModel.cs" />
+    <Compile Include="ViewModels\ChequeDeposit\IVerifyChequeSecurityViewModel.cs" />
+    <Compile Include="ViewModels\ChequePrinting\IAccountSelectionViewModel.cs" />
+    <Compile Include="ViewModels\ChequePrinting\IChargesConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Common\IActiveConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Common\IAnimationViewModel.cs" />
+    <Compile Include="ViewModels\Common\IAnotherTransactionConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Common\IDeviceNotAvailableViewModel.cs" />
+    <Compile Include="ViewModels\Common\IEnterOtpViewModel.cs" />
+    <Compile Include="ViewModels\Common\IEnterPinViewModel.cs" />
+    <Compile Include="ViewModels\Common\ITimedErrorViewModel.cs" />
+    <Compile Include="ViewModels\Common\IErrorViewModel.cs" />
+    <Compile Include="ViewModels\Authentication\IOffUsCardViewModel.cs" />
+    <Compile Include="ViewModels\CreditCardBalanceEnquiry\ICreditCardDetailViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\IBusinessUserMainMenuViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\IChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\ICreateUserViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\IFingerprintScanningViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\ILoginView.cs" />
+    <Compile Include="ViewModels\LoginView\ILoginViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\IPrintUserViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\IRegisterNewUserSuccessViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\ISupervisorLoginSuccessViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\IUpdatePasswordSuccessViewModel.cs" />
+    <Compile Include="ViewModels\LoginView\IReprintViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\IBankingServicesViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\ICardlessDepositViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\ILanguageSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Common\IReceiptPrintOptionsViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MainMenu\IProductsInfoViewModel.cs" />
+    <Compile Include="ViewModels\Products\IProductInfoSubmitSuccessViewModel.cs" />
+    <Compile Include="ViewModels\RequestLC\ISignatureConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\RequestLC\ISignaturesViewModel.cs" />
+    <Compile Include="ViewModels\RequestNLC\ISignatureConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\RequestNLC\ISignaturesViewModel.cs" />
+    <Compile Include="ViewModels\Products\ISendMoreInfoViewModel.cs" />
+    <Compile Include="ViewModels\StatementPrinting\IConfirmationStatementPrintingViewModel.cs" />
+    <Compile Include="ViewModels\StatementPrinting\IStatementPrintingViewModel.cs" />
+    <Compile Include="ViewModels\RequestIBAN\IConfirmationRequestIBANViewModel.cs" />
+    <Compile Include="ViewModels\RequestIBAN\IRequestIBANViewModel.cs" />
+    <Compile Include="ViewModels\RequestLC\IConfirmationLCViewModel.cs" />
+    <Compile Include="ViewModels\RequestNLC\IConfirmationNLCViewModel.cs" />
+    <Compile Include="ViewModels\Common\ITermsAndConditionsViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices.Interface\Omnia.Pie.Vtm.Devices.Interface.csproj">
+      <Project>{81C8EC3B-B030-4A57-BB0F-0F52F099A3CA}</Project>
+      <Name>Omnia.Pie.Vtm.Devices.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework.Interface\Omnia.Pie.Vtm.Framework.Interface.csproj">
+      <Project>{2F83688E-BF17-4E7A-9EE2-222F6136FBBC}</Project>
+      <Name>Omnia.Pie.Vtm.Framework.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework\Omnia.Pie.Vtm.Framework.csproj">
+      <Project>{8DA717D8-8D26-4A89-954B-D7489FA73565}</Project>
+      <Name>Omnia.Pie.Vtm.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{a5802672-f8cb-490f-8566-02bfb616a0a3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.ServicesNDC.Interface\Omnia.Pie.Vtm.ServicesNdc.Interface.csproj">
+      <Project>{0827CC3B-9117-4CF4-8700-60662B1A3874}</Project>
+      <Name>Omnia.Pie.Vtm.ServicesNdc.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

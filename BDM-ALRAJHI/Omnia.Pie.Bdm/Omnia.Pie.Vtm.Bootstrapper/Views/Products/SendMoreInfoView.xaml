@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="Omnia.Pie.Vtm.Bootstrapper.Views.Products.SendMoreInfoView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:s="clr-namespace:System;assembly=mscorlib"
+	xmlns:e="clr-namespace:Omnia.Pie.Vtm.Services.Interface.Entities;assembly=Omnia.Pie.Vtm.Services.Interface"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	xmlns:l="clr-namespace:Omnia.Pie.Vtm.Bootstrapper"
+	xmlns:c="clr-namespace:Omnia.Pie.Vtm.Framework.ControlExtenders;assembly=Omnia.Pie.Vtm.Framework"
+	xmlns:p="clr-namespace:Omnia.Pie.Vtm.Bootstrapper.Properties"
+	mc:Ignorable="d"
+	d:DesignWidth="1024" 
+	d:DesignHeight="768"
+	Style="{StaticResource BaseView.Style}">
+
+	<Grid>
+		<Grid.Resources>
+			<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Info24.Style}">
+				<Setter Property="Margin" Value="12 6"/>
+				<Setter Property="HorizontalAlignment" Value="Right"/>
+			</Style>
+
+			<Style x:Key="TextBlock.Detail.Style" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlock.Detail24.Style}">
+				<Setter Property="Margin" Value="12 6"/>
+				<Setter Property="HorizontalAlignment" Value="Left"/>
+				<Setter Property="FlowDirection" Value="LeftToRight"/>
+			</Style>
+		</Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<Grid Grid.Row="0">
+			<i:Interaction.Behaviors>
+				<l:FocusBehavior/>
+			</i:Interaction.Behaviors>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource TextBlock.Highlighted22.Style}"
+					   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12 6"
+					   Text="{Binding HeadingMessage}"/>
+
+			<TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource TextBlock.Highlighted20.Style}"
+					   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12 6"
+					   Text="{Binding DetailMessage}"/>
+
+			<Image Grid.Row="0" Grid.Column="2" Stretch="Uniform" Height="250" HorizontalAlignment="Center" VerticalAlignment="Top" StretchDirection="Both" 
+				   Source="{Binding Source}" />
+
+			<TextBlock Grid.Row="0" Grid.ColumnSpan="3" Margin="0,38" Style="{StaticResource TextBlock.Highlighted20.Style}"
+					   VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="Orange"
+					   Text="{x:Static p:Resources.LabelForMoreInformationContactDetails}"/>
+
+			<TextBlock Grid.Row="0" Grid.ColumnSpan="3" Margin="0,15" Style="{StaticResource TextBlock.Highlighted20.Style}"
+					   VerticalAlignment="Bottom" HorizontalAlignment="Center"
+					   Text="{x:Static p:Resources.LabelRepresentativeContact}"/>
+
+			<TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.Column="0" 
+					   Text="{x:Static p:Resources.LabelEmailAddress}"/>
+			<TextBox Style="{StaticResource TextBox.Input.Style}" Margin="0,5"
+					 HorizontalAlignment="Left" Width="450" Grid.Column="1" Grid.Row="1"
+					 Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+					 c:Keyboard.Title="{x:Static p:Resources.LabelEmailAddress}"
+					 c:TextBoxExtender.DataType="None"
+					 c:TextBoxExtender.Placeholder="example@abc.com"/>
+
+			<TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" 
+					   Text="{x:Static p:Resources.LabelMobileNo}" />
+			<TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBox.Input.Style}" 
+					 HorizontalAlignment="Left" Width="450" Margin="0,5"
+					 MaxLength="10" Text="{Binding Mobile, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+					 c:Keyboard.Title="{x:Static p:Resources.LabelMobileNumber}"
+					 c:TextBoxExtender.DataType="Numeric"/>
+		</Grid>
+
+		<Grid Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="0 24 0 0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="2*"/>
+			</Grid.ColumnDefinitions>
+
+			<Button Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonBack}" Command="{Binding BackCommand}"
+					Visibility="{Binding BackVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}" />
+
+			<Button Grid.Column="2" Style="{StaticResource Button.Positive.Style}"
+					Content="{x:Static p:Resources.ButtonSendRequest}" IsDefault="True" Command="{Binding SendMoreInfoCommand}"
+					Visibility="{Binding DefaultVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+
+			<Button Grid.Column="4" Style="{StaticResource Button.Negative.Style}"
+					Content="{x:Static p:Resources.ButtonCancel}" IsCancel="True" Command="{Binding CancelCommand}"
+					Visibility="{Binding CancelVisibility, Converter={StaticResource BooleanToVisibility}, FallbackValue=Collapsed}"/>
+		</Grid>
+	</Grid>
+</UserControl>

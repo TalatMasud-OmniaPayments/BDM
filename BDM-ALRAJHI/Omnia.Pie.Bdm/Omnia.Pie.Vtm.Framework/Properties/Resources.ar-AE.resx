@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AadcAccountBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة شركة العين للتوزيع</value>
+  </data>
+  <data name="AadcCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة شركة العين للتوزيع</value>
+  </data>
+  <data name="AccountNumberColon" xml:space="preserve">
+    <value>رقم الحساب</value>
+  </data>
+  <data name="AddcAccountBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة شركة العين للتوزيع</value>
+  </data>
+  <data name="AddCashReceipt" xml:space="preserve">
+    <value>ADD CASH</value>
+  </data>
+  <data name="AddcCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة شركة العين للتوزيع</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>المبلغ</value>
+  </data>
+  <data name="AmountTotalColon" xml:space="preserve">
+    <value>المبلغ الإجمالي</value>
+  </data>
+  <data name="ApplicationIdColon" xml:space="preserve">
+    <value>رقم الطلب</value>
+  </data>
+  <data name="ApplicationLabelColon" xml:space="preserve">
+    <value>اسم الطلب</value>
+  </data>
+  <data name="AuthCodeColon" xml:space="preserve">
+    <value>رمز التفويض</value>
+  </data>
+  <data name="AvailableBalanceColon" xml:space="preserve">
+    <value>الرصيد المتاح</value>
+  </data>
+  <data name="BalanceInquiryReceipt" xml:space="preserve">
+    <value>الاستفسار عن الرصيد</value>
+  </data>
+  <data name="UpdateInfoReceipt" xml:space="preserve">
+    <value>تم تحديث المعلومات بنجاح</value>
+  </data>
+  <data name="Blank" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="CardCaptured" xml:space="preserve">
+    <value>لقد تم حجز بطاقتك. يرجى التواصل مع البنك الخاص بك.</value>
+  </data>
+  <data name="CardlessCashWithdrawalReceipt" xml:space="preserve">
+    <value>السحب النقدي بدون بطاقة</value>
+  </data>
+  <data name="CardNumberColon" xml:space="preserve">
+    <value>رقم البطاقة</value>
+  </data>
+  <data name="CashDepositToAccountReceipt" xml:space="preserve">
+    <value>دفعة إيداع نقدي</value>
+  </data>
+  <data name="CashDepositToCreditCardReceipt" xml:space="preserve">
+    <value>الدفع من خلال بطاقة الائتمان</value>
+  </data>
+  <data name="CashInReceipt" xml:space="preserve">
+    <value>[ BNA COUNT INFO ]</value>
+  </data>
+  <data name="CashWithdrawalUsingCreditCardReceipt" xml:space="preserve">
+    <value>السحب النقدي</value>
+  </data>
+  <data name="CashWithdrawalUsingDebitCardReceipt" xml:space="preserve">
+    <value>السحب النقدي</value>
+  </data>
+  <data name="CashWithdrawalUsingOffusCardReceipt" xml:space="preserve">
+    <value>السحب النقدي</value>
+  </data>
+  <data name="ChequeBookRequestReceipt" xml:space="preserve">
+    <value>طلب دفتر شيكات</value>
+  </data>
+  <data name="ChequeBookRequestSuccess" xml:space="preserve">
+    <value>،سيتم إرسال دفتر الشيكات عبر شركة الشحن وذلك بعد يومي عمل، بعد التحقق من صلاحية المعاملة</value>
+    <comment>Comma at the end of text is the fix of issue https://jira.network.ae/jira/browse/VTM-4145</comment>
+  </data>
+  <data name="ChequeDepositSuccessMessage" xml:space="preserve">
+    <value>تم قبول إيداع الشيك، وسيتم معالجة المعاملة خلال 4 أيام عمل بعد التحقق من تفاصيل المعاملة</value>
+  </data>
+  <data name="ChequeDepositToAccountReceiptFooter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChequeDepositToAccountReceiptHeader" xml:space="preserve">
+    <value>إيداع الشيك</value>
+  </data>
+  <data name="ChequeDepositToCreditCardReceiptFooter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChequeDepositToCreditCardReceiptHeader" xml:space="preserve">
+    <value>إيداع الشيك</value>
+  </data>
+  <data name="ClearAddCashReceipt" xml:space="preserve">
+    <value>CLEAR ADD CASH</value>
+  </data>
+  <data name="ClearCardsReceipt" xml:space="preserve">
+    <value>CLEAR CARDS</value>
+  </data>
+  <data name="ClearCashInReceipt" xml:space="preserve">
+    <value>CLEAR CASH DEPOSIT</value>
+  </data>
+  <data name="ClearChequesReceipt" xml:space="preserve">
+    <value>CLEAR CHEQUES</value>
+  </data>
+  <data name="ConsumerNumberColon" xml:space="preserve">
+    <value>رقم المستهلك</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>العدد</value>
+  </data>
+  <data name="CreditCardBalanceReceipt" xml:space="preserve">
+    <value>رصيد بطاقة الائتمان</value>
+  </data>
+  <data name="CreditCardNumberColon" xml:space="preserve">
+    <value>رقم بطاقة الائتمان</value>
+  </data>
+  <data name="CreditCardPaymentReceipt" xml:space="preserve">
+    <value>الدفع من خلال بطاقة الائتمان</value>
+  </data>
+  <data name="CreditLimitColon" xml:space="preserve">
+    <value>الحد الائتماني</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="Denomination" xml:space="preserve">
+    <value>الفئة</value>
+  </data>
+  <data name="DepositAccountNumberColon" xml:space="preserve">
+    <value>حساب الإيداع</value>
+  </data>
+  <data name="DepositAmountColon" xml:space="preserve">
+    <value>المبلغ المودع</value>
+  </data>
+  <data name="DepositCount" xml:space="preserve">
+    <value>عدد الإيداعات</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="DewaAccountBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة هيئة كهرباء ومياه دبي</value>
+  </data>
+  <data name="DewaCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة هيئة كهرباء ومياه دبي</value>
+  </data>
+  <data name="Disclaimer" xml:space="preserve">
+    <value>الرسوم المبينة تشمل ضريبة القيمة المضافة</value>
+    <comment>Positin of "FGB" and brackets is the fix of issue https://jira.network.ae/jira/browse/VTM-2839</comment>
+  </data>
+  <data name="DuPostpaidAccountBillPaymentReceipt" xml:space="preserve">
+    <value>دو مسبق الدفع</value>
+  </data>
+  <data name="DuPostpaidCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>دو مسبق الدفع</value>
+  </data>
+  <data name="DuPrepaidAccountBillPaymentReceipt" xml:space="preserve">
+    <value>دو - الدفع المسبق</value>
+  </data>
+  <data name="DuPrepaidCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>دو - الدفع المسبق</value>
+  </data>
+  <data name="EmiratesIdAuthentication" xml:space="preserve">
+    <value>تعريف الهوية الإماراتية</value>
+  </data>
+  <data name="EtisalatElifeAccountBillPaymentReceipt" xml:space="preserve">
+    <value>ETISALAT E-LIFE</value>
+  </data>
+  <data name="EtisalatElifeCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>ETISALAT E-LIFE</value>
+  </data>
+  <data name="EtisalatPostpaidAccountBillPaymentReceipt" xml:space="preserve">
+    <value>اتصالات مسبقة الدفع</value>
+  </data>
+  <data name="EtisalatPostpaidCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>اتصالات مسبقة الدفع</value>
+  </data>
+  <data name="EtisalatWaselAccountBillPaymentReceipt" xml:space="preserve">
+    <value>اتصالات واصل</value>
+  </data>
+  <data name="EtisalatWaselCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>اتصالات واصل</value>
+  </data>
+  <data name="InterimBalanceDisclaimer" xml:space="preserve">
+    <value>الرصيد المتاح مؤقت ويخضع للتأكيد لاحقاً</value>
+  </data>
+  <data name="MediaTypeColon" xml:space="preserve">
+    <value>MEDIA TYPE:</value>
+  </data>
+  <data name="MicrColon" xml:space="preserve">
+    <value>بيانات رموز الحبر الممغنط (MICR)</value>
+  </data>
+  <data name="MinistatementReceipt" xml:space="preserve">
+    <value>كشف حساب مصغر</value>
+  </data>
+  <data name="MobileNumberColon" xml:space="preserve">
+    <value>رقم الهاتف الجوال</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>لا توجد قيود</value>
+  </data>
+  <data name="NoTransactionsAvailable" xml:space="preserve">
+    <value>لا توجد عمليات متاحة</value>
+  </data>
+  <data name="NotSpecified" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="OffusCardBalanceReceipt" xml:space="preserve">
+    <value>الاستفسار عن الرصيد</value>
+  </data>
+  <data name="OutstandingAmountColon" xml:space="preserve">
+    <value>المبلغ المستحق</value>
+  </data>
+  <data name="PaymentAmountColon" xml:space="preserve">
+    <value>المبلغ المدفوع</value>
+  </data>
+  <data name="RechargeAmountColon" xml:space="preserve">
+    <value>إعادة شحن</value>
+  </data>
+  <data name="ReferenceNumberColon" xml:space="preserve">
+    <value>رقم المرجع</value>
+  </data>
+  <data name="SalikAccountBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة سالك</value>
+  </data>
+  <data name="SalikCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة سالك</value>
+  </data>
+  <data name="SewaAccountBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة هيئة كهرباء ومياه الشارقة</value>
+  </data>
+  <data name="SewaCreditCardBillPaymentReceipt" xml:space="preserve">
+    <value>دفع فاتورة هيئة كهرباء ومياه الشارقة</value>
+  </data>
+  <data name="SourceAccountColon" xml:space="preserve">
+    <value>من حساب</value>
+  </data>
+  <data name="TargetAccountColon" xml:space="preserve">
+    <value>إلى حساب</value>
+  </data>
+  <data name="Terminal" xml:space="preserve">
+    <value>الجهاز</value>
+  </data>
+  <data name="TestCashReceipt" xml:space="preserve">
+    <value>TEST CASH</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>شكرا لاستخدامكم خدمات مصرف الراجحي الرقمية</value>
+  </data>
+  <data name="ThankYouUAESwitch" xml:space="preserve">
+    <value>شكراً لاستخدامك خدمة صراف الإمارات الآلي</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>الوقت</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>الإجمالي</value>
+  </data>
+  <data name="TransactionAmountColon" xml:space="preserve">
+    <value>مبلغ التحويل</value>
+  </data>
+  <data name="TransactionDeclined" xml:space="preserve">
+    <value>المعاملة مرفوضة</value>
+  </data>
+  <data name="TransactionDeclinedHardwareError" xml:space="preserve">
+    <value>Unable to process the transaction. Hardware Failure</value>
+  </data>
+  <data name="TransactionNumberColon" xml:space="preserve">
+    <value>رقم السجل</value>
+  </data>
+  <data name="TransferFundsReceipt" xml:space="preserve">
+    <value>تحويل التمويلات</value>
+  </data>
+  <data name="UpdateCustomerDetailsAddressReceipt" xml:space="preserve">
+    <value>تحديث بيانات العميل</value>
+  </data>
+  <data name="UpdateCustomerDetailsEmailReceipt" xml:space="preserve">
+    <value>تحديث بيانات العميل</value>
+  </data>
+  <data name="UpdateCustomerDetailsEmiratesIdReceipt" xml:space="preserve">
+    <value>تحديث بيانات العميل</value>
+  </data>
+  <data name="UpdateCustomerDetailsMobileReceipt" xml:space="preserve">
+    <value>تحديث بيانات العميل</value>
+  </data>
+  <data name="UpdateCustomerDetailsSuccess" xml:space="preserve">
+    <value>تم تحديث معلوماتك بنجاح</value>
+  </data>
+  <data name="UpdatedAddressColon" xml:space="preserve">
+    <value>العنوان الجديد</value>
+  </data>
+  <data name="UpdatedEmailColon" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني الجديد</value>
+  </data>
+  <data name="UpdatedEmiratesIdExpiryDateColon" xml:space="preserve">
+    <value>تاريخ انتهاء الصلاحية</value>
+  </data>
+  <data name="UpdatedEmiratesIdNumberColon" xml:space="preserve">
+    <value>رقم الهوية الإماراتية</value>
+  </data>
+  <data name="UpdatedMobileNumberColon" xml:space="preserve">
+    <value>رقم الهاتف المتحرك الجديد</value>
+  </data>
+  <data name="ViewAddCashReceipt" xml:space="preserve">
+    <value>VIEW ADD CASH</value>
+  </data>
+  <data name="WithdrawalAmountColon" xml:space="preserve">
+    <value>مبلغ السحب</value>
+  </data>
+  <data name="TransactionSuccess" xml:space="preserve">
+    <value>الصفقة ناجحة</value>
+  </data>
+  <data name="BlockedCardExceptionMessage" xml:space="preserve">
+    <value>The card is blocked.</value>
+  </data>
+  <data name="CardCaptureExceptionMessage" xml:space="preserve">
+    <value>The card should be captured.</value>
+  </data>
+  <data name="ChequeBookPendingExceptionMessage" xml:space="preserve">
+    <value>Cheque book pending.</value>
+  </data>
+  <data name="DuplicateBeneficiaryExceptionMessage" xml:space="preserve">
+    <value>Beneficiary ID already exists.</value>
+  </data>
+  <data name="DuplicateLeadExceptionMessage" xml:space="preserve">
+    <value>Lead already exists.</value>
+  </data>
+  <data name="ExceededOtpExceptionMessage" xml:space="preserve">
+    <value>Maximum number of OTP count exceeded.</value>
+  </data>
+  <data name="ExceededPinExceptionMessage" xml:space="preserve">
+    <value>Maximum number of PIN count exceeded.</value>
+  </data>
+  <data name="ExceededWithdrawalLimitExceptionMessage" xml:space="preserve">
+    <value>The customer has exceeded his withdrawal limit.</value>
+  </data>
+  <data name="ExpiredCardExceptionMessage" xml:space="preserve">
+    <value>The card is expired.</value>
+  </data>
+  <data name="InsufficientAccountBalanceExceptionMessage" xml:space="preserve">
+    <value>Insufficient balance in the account.</value>
+  </data>
+  <data name="InsufficientCreditCardBalanceExceptionMessage" xml:space="preserve">
+    <value>The customer has exceeded his credit limit.</value>
+  </data>
+  <data name="InvalidAccountExceptionMessage" xml:space="preserve">
+    <value>The account is invalid.</value>
+  </data>
+  <data name="InvalidCreditCardExceptionMessage" xml:space="preserve">
+    <value>The credit card is invalid.</value>
+  </data>
+  <data name="InvalidCustomerExceptionMessage" xml:space="preserve">
+    <value>The customer is invalid.</value>
+  </data>
+  <data name="InvalidOtpExceptionMessage" xml:space="preserve">
+    <value>OTP is invalid.</value>
+  </data>
+  <data name="InvalidPinExceptionMessage" xml:space="preserve">
+    <value>PIN is invalid.</value>
+  </data>
+  <data name="InvalidTransactionExceptionMessage" xml:space="preserve">
+    <value>The transaction is invalid.</value>
+  </data>
+  <data name="RepositoryExceptionMessage" xml:space="preserve">
+    <value>Unknown error.</value>
+  </data>
+  <data name="TimeoutExceptionMessage" xml:space="preserve">
+    <value>The connection has timed out.</value>
+  </data>
+  <data name="StatementPrintDeductionReceipt" xml:space="preserve">
+    <value>طباعة كشف حساب</value>
+  </data>
+  <data name="ContactedMessage" xml:space="preserve">
+    <value>سنقوم بالإتصال بك خلال يومي عمل</value>
+  </data>
+  <data name="MonthsRequested" xml:space="preserve">
+    <value>أشهر المطلوبة</value>
+  </data>
+  <data name="TotalFees" xml:space="preserve">
+    <value>الرسوم الكلية</value>
+  </data>
+  <data name="YourRequestRefnumberis" xml:space="preserve">
+    <value>رقم مرجع الطلب هو</value>
+  </data>
+  <data name="IBANPrinting" xml:space="preserve">
+    <value>طباعة رقم الحساب الدولي</value>
+  </data>
+  <data name="LiabilityCertificateRequest" xml:space="preserve">
+    <value>طلب شهادة مديونية</value>
+  </data>
+  <data name="NonLiabilityCertificateRequest" xml:space="preserve">
+    <value>طلب شهادة عدم مديونية</value>
+  </data>
+  <data name="StatementPrinting" xml:space="preserve">
+    <value>طباعة كشف حساب</value>
+  </data>
+  <data name="ChequePrinting" xml:space="preserve">
+    <value>اصدار أوراق شيك</value>
+  </data>
+  <data name="NumberOfLeaves" xml:space="preserve">
+    <value>عدد الأوراق المطبوعة</value>
+  </data>
+  <data name="EmailColon" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="MobileColon" xml:space="preserve">
+    <value>Mobile:</value>
+  </data>
+  <data name="UsernameColon" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="NameColon" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="RegisterFingerprintReceipt" xml:space="preserve">
+    <value>بصمة مسجلة بنجاح.</value>
+  </data>
+  <data name="PrintUsersReceipt" xml:space="preserve">
+    <value>طباعة المستخدمين</value>
+  </data>
+  <data name="EmailExistExceptionMessage" xml:space="preserve">
+    <value>هذا البريد الالكتروني مسجل سابقا.</value>
+  </data>
+  <data name="MobileExistExceptionMessage" xml:space="preserve">
+    <value>رقم الهاتف المحمول هذا مسجل بالفعل.</value>
+  </data>
+  <data name="UsernameExistExceptionMessage" xml:space="preserve">
+    <value>وسجلت بالفعل اسم المستخدم هذا.</value>
+  </data>
+  <data name="PasswordFailExceptionMessage" xml:space="preserve">
+    <value>غير قادر على تغيير كلمة المرور. الرجاء معاودة المحاولة في وقت لاحق.</value>
+  </data>
+  <data name="UpdateInfoExceptionMessage" xml:space="preserve">
+    <value>تعذر تحديث المعلومات ، يرجى المحاولة مرة أخرى في وقت لاحق.</value>
+  </data>
+  <data name="UserCreateExcetionMessage" xml:space="preserve">
+    <value>غير قادر على إنشاء المستخدم. الرجاء معاودة المحاولة في وقت لاحق.</value>
+  </data>
+  <data name="DepositByColon" xml:space="preserve">
+    <value>إيداع بواسطة</value>
+  </data>
+  <data name="TransactionDateColon" xml:space="preserve">
+    <value>تاريخ الصفقة</value>
+  </data>
+</root>

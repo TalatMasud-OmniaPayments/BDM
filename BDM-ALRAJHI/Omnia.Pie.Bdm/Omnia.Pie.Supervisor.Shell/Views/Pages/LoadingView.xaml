@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Omnia.Pie.Supervisor.Shell.Views.Pages.LoadingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Pages"
+             xmlns:ViewsPages="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1500">
+    <Grid>
+
+        <Grid Background="#66FFFFFF" Visibility="Visible">
+            <ViewsPages:Animation HorizontalAlignment="Center" Size="15.0" VerticalAlignment="Center" Margin="60"></ViewsPages:Animation>
+        </Grid>
+
+    </Grid>
+</UserControl>

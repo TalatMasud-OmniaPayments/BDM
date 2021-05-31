@@ -1,0 +1,50 @@
+﻿<Page x:Class="Omnia.PIE.VTA.Views.Workflow.CashWithdrawal09"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Omnia.PIE.VTA.Views.Workflow"
+      xmlns:controls="clr-namespace:Omnia.PIE.VTA.Converters"
+      xmlns:Account="clr-namespace:Omnia.PIE.VTA.Views.Workflow"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" 
+      d:DesignWidth="500" 
+      Loaded="Page_Loaded">
+
+    <Grid Background="{StaticResource GridGrayBG}">
+        <Grid.Resources>
+            <controls:BoolToVisibilityConverter x:Key="BoolConverter"/>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Background="White" Margin="0,0,5,0">
+            <StackPanel>
+                <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Message}" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Title}" Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Account:SelectedAccountControl></Account:SelectedAccountControl>
+                
+                <TextBlock Margin="5" TextWrapping="Wrap" Text="Entered Amount" Foreground="Blue" HorizontalAlignment="Center" Visibility="{Binding Amount, Converter={StaticResource BoolConverter}}" VerticalAlignment="Center"/>
+                <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Amount}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBlock TextWrapping="Wrap" Text="Financial Transaction No." Foreground="DarkBlue" Margin="15,5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox Name="txtTransactionNumber" Margin="15,5" Text="{Binding TransactionNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Stretch" MinWidth="160" MaxWidth="250" ToolTip="Financial Transaction Reference #" Padding="5"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <ScrollViewer Background="White" Grid.Column="1" Margin="5,0,0,0">
+            <StackPanel>
+                <Button CommandParameter="528" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Dispense" VerticalAlignment="Top"/>
+                </Button>
+                <Button CommandParameter="999000" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+                    <TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Reject" VerticalAlignment="Top"/>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

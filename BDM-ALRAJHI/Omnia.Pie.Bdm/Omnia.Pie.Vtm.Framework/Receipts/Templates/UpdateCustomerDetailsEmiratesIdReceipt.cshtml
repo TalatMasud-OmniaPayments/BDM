@@ -1,0 +1,7 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface.Configuration
+@{
+	Layout = "UpdateCustomerDetailsLayout";
+}
+@Model.Output.WriteRow(@Resources.UpdatedEmiratesIdNumberColon, @Model.Binding(@Model.Receipt.EmiratesIdNumber, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.UpdatedEmiratesIdExpiryDateColon, @Model.Binding(@Model.Receipt.EmiratesIdExpiryDate, @ReceiptsConfiguration.DateFormat, @Resources.NotSpecified))

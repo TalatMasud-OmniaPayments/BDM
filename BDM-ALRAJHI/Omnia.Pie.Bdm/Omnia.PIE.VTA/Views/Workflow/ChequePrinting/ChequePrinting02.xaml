@@ -1,0 +1,54 @@
+﻿<Page 
+	x:Class="Omnia.PIE.VTA.Views.Workflow.ChequePrinting02"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:local="clr-namespace:Omnia.PIE.VTA.Views.Workflow"
+	xmlns:Account="clr-namespace:Omnia.PIE.VTA.Views.Workflow"
+	xmlns:controls="clr-namespace:Omnia.PIE.VTA.Converters"
+	mc:Ignorable="d" 
+	d:DesignHeight="300" d:DesignWidth="500"
+	Title="ChequePrinting02"
+	Loaded="Page_Loaded">
+
+	<Grid Background="{StaticResource GridGrayBG}">
+		<Grid.Resources>
+			<controls:BoolToVisibilityConverter x:Key="BoolConverter"/>
+		</Grid.Resources>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+
+		<Grid Name="grdMessage" Background="White" Margin="0,0,5,0">
+			<TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Message}" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		</Grid>
+
+		<ScrollViewer Margin="0,0,5,0">
+			<Grid Background="White" Margin="0,5,5,0">
+				<StackPanel>
+					<TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Message}" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Title}" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+					<Account:SelectedAccountControl x:Name="SelectedAccountNumber"></Account:SelectedAccountControl>
+					<Account:LinkedAccountControl x:Name="LinkedAccounts"></Account:LinkedAccountControl>
+
+					<TextBlock Margin="5" TextWrapping="Wrap" Text="Charges:" Foreground="Gray" HorizontalAlignment="Center" Visibility="{Binding Charges, Converter={StaticResource BoolConverter}}" VerticalAlignment="Center"/>
+					<TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding Charges}" Visibility="{Binding Charges, Converter={StaticResource BoolConverter}}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</StackPanel>
+			</Grid>
+		</ScrollViewer>
+
+		<ScrollViewer Background="White" Grid.Column="1" Margin="5,0,0,0">
+			<StackPanel VerticalAlignment="Center">
+				<Button CommandParameter="1555" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+					<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Print Cheque/s" VerticalAlignment="Top"/>
+				</Button>
+				<Button CommandParameter="999000" Margin="5" Width="140" Height="55" Style="{StaticResource TransparentIconButton}">
+					<TextBlock HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="End Current Session" VerticalAlignment="Top"/>
+				</Button>
+			</StackPanel>
+		</ScrollViewer>
+	</Grid>
+</Page>

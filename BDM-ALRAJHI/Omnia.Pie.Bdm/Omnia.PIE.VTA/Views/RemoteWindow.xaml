@@ -1,0 +1,85 @@
+﻿<Window x:Class="Omnia.PIE.VTA.Views.RemoteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:WinForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:local="clr-namespace:Omnia.PIE.VTA.Views"
+        mc:Ignorable="d"
+        ShowInTaskbar="False"
+        Background="{x:Null}" 
+        BorderBrush="{x:Null}" 
+        Topmost="True"
+        Title="Customer" 
+        Height="400" Width="400"
+        MinHeight="300" MinWidth="301" 
+        Loaded="Window_Loaded"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing">
+
+    <Border Background="White" BorderBrush="DarkBlue" BorderThickness="1">
+        <Grid ShowGridLines="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Border Name="titleBorder" BorderBrush="DarkBlue" Grid.Row="0" Grid.ColumnSpan="3" Background="{StaticResource TitleBlueBackground}">
+                <DockPanel Name="dplMainHead" Background="Transparent" LastChildFill="False" MouseLeftButtonDown="DplMainHead_MouseLeftButtonDown">
+                    <TextBlock FontSize="32" Background="Transparent" Name="txt3" Foreground="Red" FontFamily="Segoe MDL2 Assets" Text="&#xE7C8;">
+                        <TextBlock.Triggers>
+                            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                    Storyboard.TargetName="txt3" 
+                                    Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                    From="1.0" To="0.0" Duration="0:0:0.3" 
+                                    AutoReverse="True" RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </TextBlock.Triggers>
+                    </TextBlock>
+
+                    <Border Background="DarkBlue" VerticalAlignment="Center" BorderBrush="Black" HorizontalAlignment="Left" Margin="2,0,0,0" CornerRadius="2">
+                        <Image Margin="0" Width="32" Height="32" Source="/Omnia.PIE.VTA;component/icon.ico" Stretch="Fill" ></Image>
+                    </Border>
+                    <TextBlock Margin="5" VerticalAlignment="Center" Name="txtTitle" Foreground="White">Customer Video</TextBlock>
+                    
+                    <Button x:Name="BtnClose" Width="28" Height="28" Margin="0,0,1,0"
+                            DockPanel.Dock="Right" Background="Red" Style="{StaticResource CloseButton}" Visibility="Collapsed"
+                            Click="BtnClose_Click">
+                        <Grid>
+                            <TextBlock FontSize="14" Foreground="White" Margin="6" HorizontalAlignment="Center" FontWeight="ExtraBold" FontFamily="Segoe MDL2 Assets" Text="&#xE8BB;"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="btnMaximize" Width="28" Height="28" Margin="0,0,1,0" Click="btnMaximize_Click"
+                            DockPanel.Dock="Right" Background="Green" Style="{StaticResource CloseButton}">
+                        <Grid>
+                            <TextBlock FontSize="14" Foreground="White" Margin="6" HorizontalAlignment="Center" FontWeight="ExtraBold" FontFamily="Segoe MDL2 Assets" Text="&#xE739;"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="btnMinimize" Width="28" Height="28" Margin="0,0,1,0" Click="btnMinimize_Click"
+                            DockPanel.Dock="Right" Background="Green" Style="{StaticResource CloseButton}">
+                        <Grid>
+                            <TextBlock FontSize="14" Foreground="White" Margin="6" HorizontalAlignment="Center" FontWeight="ExtraBold" FontFamily="Segoe MDL2 Assets" Text="&#xE108;"/>
+                        </Grid>
+                    </Button>
+                </DockPanel>
+            </Border>
+
+            <DockPanel LastChildFill="true" Grid.Row="1">
+                <WindowsFormsHost VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <WinForms:Panel x:Name="videoPanel" Dock="Fill"></WinForms:Panel>
+                </WindowsFormsHost>
+            </DockPanel>
+
+        </Grid>
+    </Border>
+</Window>

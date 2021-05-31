@@ -1,0 +1,193 @@
+﻿<Window 
+	x:Class="Omnia.PIE.VTA.Views.LogOnWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:VWAnimation="clr-namespace:Omnia.PIE.VTA.Views.AnimationControls"
+	xmlns:local="clr-namespace:Omnia.PIE.VTA.Views"
+	mc:Ignorable="d"
+	Title="LogOnWindow" Height="693" Width="266" 
+	WindowStyle="None" 
+	PreviewKeyDown="Window_PreviewKeyDown"
+	Loaded="Window_Loaded" 
+	AllowsTransparency="True"
+	Background="{x:Null}" 
+	BorderBrush="{x:Null}" 
+	ResizeMode="NoResize" 
+	WindowStartupLocation="CenterScreen">
+
+	<!--<Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="A" Command="{Binding Login}"></KeyBinding>
+    </Window.InputBindings>-->
+
+	<Border Background="White" BorderBrush="{StaticResource Text.Forground}" BorderThickness="1">
+		<Grid ShowGridLines="False">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="32"/>
+				<RowDefinition Height="110"/>
+				<RowDefinition Height="52"/>
+				<RowDefinition Height="24"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="115"/>
+				<RowDefinition Height="40"/>
+				<RowDefinition Height="20"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="20"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="20"/>
+			</Grid.ColumnDefinitions>
+
+			<Border BorderBrush="{StaticResource Text.Forground}" Grid.Row="0" Grid.ColumnSpan="3" Background="{StaticResource TitleBlueBackground}">
+				<DockPanel Name="dplMainHead" Background="Transparent" LastChildFill="False" MouseLeftButtonDown="DplMainHead_MouseLeftButtonDown">
+					<Border Background="{StaticResource Text.Forground}" VerticalAlignment="Center" BorderBrush="Black" HorizontalAlignment="Left" Margin="2,0,0,0" CornerRadius="2">
+						<Image Margin="0" Width="32" Height="32" Source="/Omnia.PIE.VTA;component/icon.ico" Stretch="Fill" ></Image>
+					</Border>
+					<TextBlock Margin="5" VerticalAlignment="Center" Foreground="White">Teller Assistant</TextBlock>
+					<Button x:Name="btnClose" Width="28" Height="28" Margin="0,0,1,0" DockPanel.Dock="Right" Background="Red" Style="{StaticResource CloseButton}" Click="btnClose_Click">
+						<Grid>
+							<TextBlock FontSize="14" Foreground="White" Margin="6" HorizontalAlignment="Center" FontWeight="ExtraBold" FontFamily="Segoe MDL2 Assets" Text="&#xE8BB;"/>
+						</Grid>
+					</Button>
+				</DockPanel>
+			</Border>
+
+			<Image Grid.Row="1" Grid.ColumnSpan="3" Source="/Omnia.PIE.VTA;component/Images/LoginHead.png" Stretch="Uniform"></Image>
+			<Grid Name="LoginGrid" Grid.Row="4" Grid.ColumnSpan="3" Visibility="Visible">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="20"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="50"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition Height="52"/>
+					<RowDefinition Height="55"/>
+					<RowDefinition Height="55"/>
+					<RowDefinition Height="35"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center">
+					<TextBlock Foreground="{StaticResource Text.Forground}" Text="Teller Number:" HorizontalAlignment="Left" Padding="0,3,0,0" TextAlignment="Center" Margin="0,0,5,5"></TextBlock>
+					<Grid>
+						<TextBox Margin="2,0,2,0" Text="" Name="txtTellerNumber" Tag="Teller Number" Width="203" BorderThickness="1" BorderBrush="{StaticResource Text.Forground}" ToolTip="Teller Number" MaxLength="30" 
+							 Foreground="{StaticResource Text.Forground}" FontSize="15" InputMethod.IsInputMethodEnabled="False"></TextBox>
+						<StackPanel VerticalAlignment="Stretch" Background="{StaticResource Text.Forground}" HorizontalAlignment="Right">
+							<TextBlock FontSize="16" Foreground="White" Margin="3" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" Text="&#xE13D;"/>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
+					<TextBlock Foreground="{StaticResource Text.Forground}"  Text="Password:" HorizontalAlignment="Left" Padding="0,3,0,0" TextAlignment="Center" Margin="0,0,5,5"></TextBlock>
+					<Grid>
+						<PasswordBox Margin="2,0,2,0" Password="" Name="txtPassword" Width="203" BorderThickness="1" BorderBrush="{StaticResource Text.Forground}" ToolTip="Password" MaxLength="30" Foreground="{StaticResource Text.Forground}" FontSize="15" InputMethod.IsInputMethodEnabled="False"></PasswordBox>
+						<StackPanel VerticalAlignment="Stretch" Background="{StaticResource Text.Forground}" HorizontalAlignment="Right">
+							<TextBlock FontSize="16" Foreground="White" HorizontalAlignment="Right" Margin="3" FontFamily="Segoe MDL2 Assets" Text="&#xE192;"/>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center">
+					<TextBlock Foreground="{StaticResource Text.Forground}" Text="Phone Number:" HorizontalAlignment="Left" Padding="0,3,0,0" TextAlignment="Center" Margin="0,0,5,5"></TextBlock>
+					<Grid>
+						<TextBox Margin="2,0,2,0" Text="" Name="txtPhoneNumber" Tag="Phone Number" Width="203" BorderThickness="1" BorderBrush="{StaticResource Text.Forground}" ToolTip="Phone Number" MaxLength="30" Foreground="{StaticResource Text.Forground}" FontSize="15" InputMethod.IsInputMethodEnabled="False"></TextBox>
+						<StackPanel VerticalAlignment="Stretch" Background="{StaticResource Text.Forground}" HorizontalAlignment="Right">
+							<TextBlock FontSize="16" Foreground="White" HorizontalAlignment="Right" Margin="3" FontFamily="Segoe MDL2 Assets" Text="&#xE13A;"/>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center">
+					<TextBlock Foreground="{StaticResource Text.Forground}" Text="Phone Password:" HorizontalAlignment="Left" Padding="0,3,0,0" TextAlignment="Center" Margin="0,0,5,5"></TextBlock>
+					<Grid>
+						<PasswordBox Margin="2,0,2,0" Width="203" BorderThickness="1" BorderBrush="{StaticResource Text.Forground}" Name="txtPhonePassword" Foreground="{StaticResource Text.Forground}" MaxLength="30"  FontSize="15" InputMethod.IsInputMethodEnabled="False" ></PasswordBox>
+						<StackPanel VerticalAlignment="Stretch" Background="{StaticResource Text.Forground}" HorizontalAlignment="Right">
+							<TextBlock FontSize="16" Foreground="White" HorizontalAlignment="Right" Margin="3" FontFamily="Segoe MDL2 Assets" Text="&#xE192;"/>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+
+				<Button Name="btnLogin" Style="{StaticResource FGBButton}" Content="Login" Grid.Column="1" Grid.Row="6" Width="120" Click="BtnLogin_Click" HorizontalAlignment="Center" />
+
+				<StackPanel Name="loader" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center" Visibility="Collapsed">
+					<VWAnimation:HorizontalLoader HorizontalAlignment="Center" DefaultSize="10" />
+				</StackPanel>
+			</Grid>
+
+			<Grid Name="ChangePasswordGrid" Grid.Row="4" Grid.ColumnSpan="3" Visibility="Collapsed">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="20"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="50"/>
+					<RowDefinition Height="10"/>
+					<RowDefinition Height="52"/>
+					<RowDefinition Height="55"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center">
+					<TextBlock Foreground="{StaticResource Text.Forground}"  Text="Old Password:" HorizontalAlignment="Left" Padding="0,3,0,0" TextAlignment="Center" Margin="0,0,5,5"></TextBlock>
+					<Grid>
+						<PasswordBox Margin="2,0,2,0" Password="" Name="txtOldPassword" Width="203" BorderThickness="1" BorderBrush="{StaticResource Text.Forground}" ToolTip="Password" MaxLength="30" Foreground="{StaticResource Text.Forground}" FontSize="15" InputMethod.IsInputMethodEnabled="False"></PasswordBox>
+						<StackPanel VerticalAlignment="Stretch" Background="{StaticResource Text.Forground}" HorizontalAlignment="Right">
+							<TextBlock FontSize="16" Foreground="White" HorizontalAlignment="Right" Margin="3" FontFamily="Segoe MDL2 Assets" Text="&#xE192;"/>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
+					<TextBlock Foreground="{StaticResource Text.Forground}"  Text="New Password:" HorizontalAlignment="Left" Padding="0,3,0,0" TextAlignment="Center" Margin="0,0,5,5"></TextBlock>
+					<Grid>
+						<PasswordBox Margin="2,0,2,0" Password="" Name="txtNewPassword" Width="203" BorderThickness="1" BorderBrush="{StaticResource Text.Forground}" ToolTip="Password" MaxLength="30" Foreground="{StaticResource Text.Forground}" FontSize="15" InputMethod.IsInputMethodEnabled="False"></PasswordBox>
+						<StackPanel VerticalAlignment="Stretch" Background="{StaticResource Text.Forground}" HorizontalAlignment="Right">
+							<TextBlock FontSize="16" Foreground="White" HorizontalAlignment="Right" Margin="3" FontFamily="Segoe MDL2 Assets" Text="&#xE192;"/>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center">
+					<TextBlock Foreground="{StaticResource Text.Forground}"  Text="Confirm New Password:" HorizontalAlignment="Left" Padding="0,3,0,0" TextAlignment="Center" Margin="0,0,5,5"></TextBlock>
+					<Grid>
+						<PasswordBox Margin="2,0,2,0" Password="" Name="txtConfirmNewPassword" Width="203" BorderThickness="1" BorderBrush="{StaticResource Text.Forground}" ToolTip="Password" MaxLength="30" Foreground="{StaticResource Text.Forground}" FontSize="15" InputMethod.IsInputMethodEnabled="False"></PasswordBox>
+						<StackPanel VerticalAlignment="Stretch" Background="{StaticResource Text.Forground}" HorizontalAlignment="Right">
+							<TextBlock FontSize="16" Foreground="White" HorizontalAlignment="Right" Margin="3" FontFamily="Segoe MDL2 Assets" Text="&#xE192;"/>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+
+				<Button Name="btnChangePassword" Style="{StaticResource FGBButton}" Content="Change Password" Grid.Column="1" Grid.Row="4" Width="170" Height="35" Click="btnChangePassword_Click" HorizontalAlignment="Center" />
+
+			</Grid>
+
+			<StackPanel Grid.Row="5" Grid.Column="1">
+				<TextBlock TextAlignment="Center" Name="loginMsg" Grid.Row="9" Grid.Column="1" Grid.RowSpan="2" Foreground="Red" TextWrapping="Wrap" Margin="0,10,0,0"/>
+				<StackPanel Orientation="Horizontal">
+					<Button Name="InterNet" Background="Red" ToolTip="Internet Connection Status" BorderBrush="Transparent" Width="20" Height="20" FontSize="15" FontFamily="Segoe MDL2 Assets" Margin="5,0" Style="{StaticResource RoundIconButton}" ContextMenuService.IsEnabled="False" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+					<TextBlock TextAlignment="Left" VerticalAlignment="Center" Margin="5" Grid.RowSpan="2" Foreground="{StaticResource Text.Forground}" TextWrapping="Wrap">Internet Connection Status</TextBlock>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Visibility="Collapsed">
+					<Button Name="VPN" Background="Red" ToolTip="VPN Connection Status" BorderBrush="Transparent" Width="20" Height="20" FontSize="15" FontFamily="Segoe MDL2 Assets" Margin="5,0" Style="{StaticResource RoundIconButton}" ContextMenuService.IsEnabled="False" VerticalAlignment="Center" HorizontalAlignment="Left">
+					</Button>
+					<TextBlock TextAlignment="Left" Grid.Row="9" Grid.Column="1" Grid.RowSpan="2" Foreground="{StaticResource Text.Forground}" TextWrapping="Wrap" Margin="5">VPN Connection Status</TextBlock>
+				</StackPanel>
+			</StackPanel>
+			
+			<StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="0" Grid.ColumnSpan="3">
+				<TextBlock Text="Copyrights © "  Foreground="{StaticResource Text.Forground}" FontSize="13"  />
+				<TextBlock Cursor="Hand">
+					<Hyperlink NavigateUri="http://www.omniapay.com" FontSize="13" RequestNavigate="Hyperlink_RequestNavigate" Foreground="{StaticResource Text.Forground}">
+						Omnia Payments
+					</Hyperlink>
+				</TextBlock>
+			</StackPanel>
+			<TextBlock Text="" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Name="txtVersion" Foreground="{StaticResource Text.Forground}" FontSize="10"  />
+		</Grid>
+	</Border>
+</Window>

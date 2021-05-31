@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Omnia.Pie.Supervisor.Shell.Views.Pages.VdmView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Omnia.Pie.Supervisor.Shell.Views.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Resources/Main.xaml"/>
+				<ResourceDictionary Source="/Omnia.Pie.Supervisor.UI.Themes;component/Styles/Main.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	
+	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+		<ToggleButton Width="400" Height="150" Margin="{StaticResource margin}" Command="{Binding RunVdm}" FontSize="{StaticResource bigFont}" Grid.Row="1" VerticalAlignment="Bottom">
+			<ToggleButton.Style>
+				<Style TargetType="ToggleButton" BasedOn="{StaticResource supervisorMode}">
+					<Setter Property="Content" Value="Switch to Vendor Dependent Mode"/>
+					<Setter Property="IsChecked" Value="False"/>
+					<Style.Triggers>
+						<DataTrigger Binding="{Binding IsVdmRunning}" Value="true">
+							<Setter Property="IsEnabled" Value="False"/>
+							<Setter Property="Content" Value="Exit Vendor Dependent Mode"/>
+							<Setter Property="IsChecked" Value="True"/>
+						</DataTrigger>
+						<Trigger Property="IsChecked" Value="True">
+							<Setter Property="Background" Value="{StaticResource alarm}"/>
+						</Trigger>
+					</Style.Triggers>
+				</Style>
+			</ToggleButton.Style>
+		</ToggleButton>
+	</StackPanel>
+</UserControl>

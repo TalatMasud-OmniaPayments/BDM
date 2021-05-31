@@ -1,0 +1,66 @@
+﻿<UserControl 
+	x:Class="Omnia.PIE.VTA.Views.AccountHolderInfo"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:local="clr-namespace:Omnia.PIE.VTA.Views"
+	xmlns:converters="clr-namespace:Omnia.PIE.VTA.Converters"
+	mc:Ignorable="d" 
+	d:DesignHeight="400" 
+	d:DesignWidth="300" 
+	Loaded="UserControl_Loaded">
+
+	<Grid>
+		<Grid.Resources>
+			<converters:DateFormatConverter x:Key="DateConverter"/>
+			<converters:DeviceStatusToImageConverter x:Key="ImageConverter"/>
+			<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockTableHeader}">
+				<Setter Property="Margin" Value="5"/>
+			</Style>
+		</Grid.Resources>
+		<StackPanel Margin="3,0,0,0">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Account Name:" FontWeight="Bold" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+				<TextBox Text="{Binding Name}" HorizontalAlignment="Left" Margin="0,5,5,5" Foreground="{StaticResource TitleBlueBackground}" 
+                         Style="{StaticResource SelectableTextBlockStyle}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Passport No:" FontWeight="Bold" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+				<TextBox Text="{Binding PassportNumber}" HorizontalAlignment="Left" Margin="0,5,5,5" Foreground="{StaticResource TitleBlueBackground}"
+                          Style="{StaticResource SelectableTextBlockStyle}"  TextWrapping="Wrap" VerticalAlignment="Top"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Passport Expiry:" FontWeight="Bold" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+				<TextBox Text="{Binding PassportExpiry}" HorizontalAlignment="Left" 
+                         Style="{StaticResource SelectableTextBlockStyle}"   Margin="0,5,5,5" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="{StaticResource TitleBlueBackground}"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Visa No:" FontWeight="Bold" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+				<TextBox Text="{Binding VisaNumber}" HorizontalAlignment="Left" Margin="0,5,5,5" Foreground="{StaticResource TitleBlueBackground}"
+                         Style="{StaticResource SelectableTextBlockStyle}"   TextWrapping="Wrap" VerticalAlignment="Top"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Visa Expiry:" FontWeight="Bold" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+				<TextBox Text="{Binding VisaExpiry}" HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" VerticalAlignment="Top" 
+						   Style="{StaticResource SelectableTextBlockStyle}" Foreground="{StaticResource TitleBlueBackground}" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Emirates Id:" FontWeight="Bold" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+				<TextBox Text="{Binding EmiratesId}" HorizontalAlignment="Left" Margin="0,5,5,5" Foreground="{StaticResource TitleBlueBackground}"
+						Style="{StaticResource SelectableTextBlockStyle}"  TextWrapping="Wrap" VerticalAlignment="Top"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Visibility="Collapsed">
+				<TextBlock Text="Emirates Id Expiry:" FontWeight="Bold" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+				<TextBox Text="{Binding EmiratesIdExpiry}" HorizontalAlignment="Left" Margin="0,5,5,5" TextWrapping="Wrap" VerticalAlignment="Top"
+						   Style="{StaticResource SelectableTextBlockStyle}" Foreground="{StaticResource TitleBlueBackground}"/>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</UserControl>

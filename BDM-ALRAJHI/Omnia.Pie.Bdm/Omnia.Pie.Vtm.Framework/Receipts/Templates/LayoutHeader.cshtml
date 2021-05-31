@@ -1,0 +1,20 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface.Configuration
+@{
+    var metadata = @Model.Metadata;
+    var currentDate = @DateTime.Now.ToString(@ReceiptsConfiguration.DateFormat);
+    var currentTime = @DateTime.Now.ToString("HH:mm:ss");
+    var header = @metadata.TerminalLocation.ToUpper();
+}
+
+
+
+@Model.Output.WriteRowCenter(@Model.Output.Bold(@header))
+
+@Model.Output.WriteHeaderRow(@Resources.Date, @Resources.Time, @Resources.Terminal)
+@Model.Output.WriteHeaderRow(currentDate, currentTime, @metadata.TerminalId)
+
+
+@Model.Output.WriteRowCenter(@Model.Output.Bold(@Resources.ResourceManager.GetString(@Model.Receipt.GetType().Name, @Resources.Culture)))@RenderBody()
+
+@*@Model.Output.WriteRow(@Resources.Disclaimer)*@

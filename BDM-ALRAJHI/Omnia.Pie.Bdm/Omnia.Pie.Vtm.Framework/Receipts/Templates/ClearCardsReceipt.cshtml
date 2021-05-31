@@ -1,0 +1,22 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface.Receipts
+@{
+	Layout = "LayoutHeader";
+	var Receipt = (ClearCardsReceipt)Model.Receipt;
+}
+
+@if (Receipt.IsView)
+{
+	@Model.Output.WriteRow("VIEW ONLY")
+	WriteLiteral("\r\n");
+}
+
+@Model.Output.WriteRow("BIN", "CAPTURE COUNT")
+@if (Receipt.Units != null && Receipt.Units.Any())
+{
+	foreach (var unit in Receipt.Units)
+	{
+		@Model.Output.WriteRow(unit.Name, @Model.Binding(unit.Count, "D5", Resources.NotSpecified))
+		WriteLiteral("\r\n");
+	}
+}

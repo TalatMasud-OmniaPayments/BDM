@@ -1,0 +1,42 @@
+﻿@using Omnia.Pie.Vtm.Framework.Properties
+@using Omnia.Pie.Vtm.Framework.Interface
+@{
+	Layout = "Layout";
+}
+@if (@Model.Receipt.IsEmiratesIdAuthentication)
+{
+	@Model.Output.WriteRow(@Resources.EmiratesIdAuthentication);
+	WriteLiteral("\r\n");
+}
+else
+{
+	@Model.Output.WriteRow(@Resources.CardNumberColon, @Model.Binding(@Model.Receipt.CardNumber, @Model.MaskedCardNumber, @Resources.NotSpecified))
+	WriteLiteral("\r\n");
+}
+@Model.Output.WriteRow(@Resources.AccountNumberColon, @Model.Binding(@Model.Receipt.AccountNumber, @Model.MaskedCardNumber, @Resources.NotSpecified))
+@Model.Output.WriteRow(@Resources.ReferenceNumberColon, @Model.Binding(@Model.Receipt.AuthCode, @Resources.NotSpecified))
+@if (Model.Receipt.TransactionStatus == TransactionStatus.Succeeded)
+{
+	@*@Model.Output.WriteRow(@Resources.AuthCodeColon, @Model.Binding(@Model.Receipt.AuthCode, @Resources.NotSpecified))
+		WriteLiteral("\r\n");*@
+	@Model.Output.WriteRow(@Resources.WithdrawalAmountColon, @String.Format("{0} {1}", @Model.Receipt.TransactionCurrency, @Model.Binding(@Model.Receipt.TransactionAmount, "N2", @Resources.NotSpecified)))
+	WriteLiteral("\r\n");
+	if (!string.IsNullOrEmpty(Model.Receipt.AvailableBalance.ToString()))
+	{
+		@Model.Output.WriteRow(@Resources.AvailableBalanceColon, @String.Format("{0} {1}", @Model.Receipt.AccountCurrency, @Model.Binding(@Model.Receipt.AvailableBalance, "N2", @Resources.NotSpecified)))
+	}
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRowCenter(@Resources.TransactionSuccess)
+}
+else if (Model.Receipt.TransactionStatus == TransactionStatus.Declined)
+{
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.TransactionDeclined)
+	WriteLiteral("\r\n");
+}
+else if (Model.Receipt.TransactionStatus == TransactionStatus.HardwareFailure)
+{
+	WriteLiteral("\r\n");
+	@Model.Output.WriteRow(@Resources.TransactionDeclinedHardwareError)
+	WriteLiteral("\r\n");
+}

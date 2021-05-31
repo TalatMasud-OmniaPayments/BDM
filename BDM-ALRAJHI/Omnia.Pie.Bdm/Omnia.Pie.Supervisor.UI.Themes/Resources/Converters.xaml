@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:c="clr-namespace:Omnia.Pie.Supervisor.UI.Themes.Resources.Converters">
+
+	<c:NullOrEmptyToBooleanConverter x:Key="NullOrEmptyToBoolean"/>
+	<c:NullToBooleanConverter x:Key="NullToBoolean"/>
+	<c:BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+
+	<c:ValueConverterGroup x:Key="NullOrEmptyToVisibility">
+		<c:NullOrEmptyToBooleanConverter/>
+		<c:BooleanToVisibilityConverter/>
+	</c:ValueConverterGroup>
+
+	<c:ValueConverterGroup x:Key="NullToVisibility">
+		<c:NullToBooleanConverter/>
+		<c:BooleanToVisibilityConverter/>
+	</c:ValueConverterGroup>
+
+	<c:EqualityToVisibilityConverter x:Key="EqualityToVisibility"/>
+	<c:ObjectToStringConverter x:Key="ObjectToString"/>
+	<c:InverseBooleanConverter x:Key="InverseBoolean"/>
+	<c:IntToBooleanConverter x:Key="IntToBoolean"/>
+
+	<c:ValueConverterGroup x:Key="IntToVisibility">
+		<c:IntToBooleanConverter/>
+		<c:BooleanToVisibilityConverter/>
+	</c:ValueConverterGroup>
+</ResourceDictionary>

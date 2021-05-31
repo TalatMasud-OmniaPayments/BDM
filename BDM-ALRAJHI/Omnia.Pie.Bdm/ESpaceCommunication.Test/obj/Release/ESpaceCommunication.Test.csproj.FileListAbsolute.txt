@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\ESpaceCommunication.Test\obj\Release\ESpaceCommunication.Test.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\ESpaceCommunication.Test\obj\Release\MainWindow.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\ESpaceCommunication.Test\obj\Release\Views\Video.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\ESpaceCommunication.Test\obj\Release\App.g.cs
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\ESpaceCommunication.Test\obj\Release\ESpaceCommunication.Test_MarkupCompile.cache
+C:\Users\Administrator\Desktop\VTMWork\BDMAPP\Omnia.Pie.Bdm\ESpaceCommunication.Test\obj\Release\ESpaceCommunication.Test_MarkupCompile.lref

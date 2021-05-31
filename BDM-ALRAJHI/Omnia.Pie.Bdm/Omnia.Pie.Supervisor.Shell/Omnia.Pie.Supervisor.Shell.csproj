@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4E05B84-023E-4957-AFCC-136038784894}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Omnia.Pie.Supervisor.Shell</RootNamespace>
+    <AssemblyName>Omnia.Pie.Supervisor.Shell</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Libs\Dependancies\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Applications\ApplicationCoordinator.cs" />
+    <Compile Include="Applications\ApplicationInfo.cs" />
+    <Compile Include="Applications\ApplicationStartRequestedEventArgs.cs" />
+    <Compile Include="Applications\EnvironmentHelper.cs" />
+    <Compile Include="Applications\ProcessManager.cs" />
+    <Compile Include="Applications\RequestListener.cs" />
+    <Compile Include="Configuration\ApplicationElement.cs" />
+    <Compile Include="Configuration\ControlPanelSection.cs" />
+    <Compile Include="Configuration\PreExecuteCommandElement.cs" />
+    <Compile Include="Configuration\SupervisoryConfiguration.cs" />
+    <Compile Include="Configuration\SupervisoryConfigurationElement.cs" />
+    <Compile Include="Configuration\SupervisoryConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\SupervisoryConfigurationSection.cs" />
+    <Compile Include="Constants\ConfigurationKeys.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Service\ChannelManagementDeviceStatusService.cs" />
+    <Compile Include="Service\ServiceLocator.cs" />
+    <Compile Include="Service\SupervisorService.cs" />
+    <Compile Include="Utilities\CITSteps.cs" />
+    <Compile Include="Utilities\ConfigurationConverter.cs" />
+    <Compile Include="Utilities\Crypto.cs" />
+    <Compile Include="Utilities\Screens.cs" />
+    <Compile Include="Utilities\StringExtensions.cs" />
+    <Compile Include="Utilities\SystemConfiguration.cs" />
+    <Compile Include="ViewModels\CashStatusViewModel.cs" />
+    <Compile Include="ViewModels\DashboardConfiguration.cs" />
+    <Compile Include="ViewModels\DeviceConfiguration.cs" />
+    <Compile Include="ViewModels\ConfigurationItemViewModel.cs" />
+    <Compile Include="ViewModels\Devices\DeviceSensorsViewModel.cs" />
+    <Compile Include="ViewModels\Devices\DoorViewModel.cs" />
+    <Compile Include="ViewModels\Devices\FingerPrintScannerViewModel.cs" />
+    <Compile Include="ViewModels\Devices\OperationViewModel.cs" />
+    <Compile Include="ViewModels\MachineDateTimeViewModel.cs" />
+    <Compile Include="ViewModels\MediaUnitViewModel.cs" />
+    <Compile Include="ViewModels\MonitorViewModel.cs" />
+    <Compile Include="MonitorStatus.cs" />
+    <Compile Include="ViewModels\Pages\AddCashViewModel.cs" />
+    <Compile Include="ViewModels\Pages\AddCoinViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ConnectionLostModel.cs" />
+    <Compile Include="ViewModels\Pages\DisplayCashOutViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ClearCardsViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ClearChecksViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ClearCashInViewModel.cs" />
+    <Compile Include="ViewModels\Pages\CopyLogsViewModel.cs" />
+    <Compile Include="ViewModels\Pages\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\Pages\DeviceConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\Pages\LoadingViewModel.cs" />
+    <Compile Include="ViewModels\Pages\PageWithPrintViewModel.cs" />
+    <Compile Include="ViewModels\Pages\RebootViewModel.cs" />
+    <Compile Include="ViewModels\Pages\StandardCashViewModel.cs" />
+    <Compile Include="ViewModels\Pages\SystemParametersViewModel.cs" />
+    <Compile Include="ViewModels\Pages\UserRolesViewModel.cs" />
+    <Compile Include="ViewModels\Pages\VdmViewModel.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="Views\MachineDateTimeView.xaml.cs">
+      <DependentUpon>MachineDateTimeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashStatusView.xaml.cs">
+      <DependentUpon>CashStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeviceChart.xaml.cs">
+      <DependentUpon>DeviceChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutOfServiceView.xaml.cs">
+      <DependentUpon>OutOfServiceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Devices\CashDispenserViewModel.cs" />
+    <Compile Include="ViewModels\Devices\DoorsViewModel.cs" />
+    <Compile Include="ViewModels\Devices\EidScannerViewModel.cs" />
+    <Compile Include="ViewModels\Devices\PinPadViewModel.cs" />
+    <Compile Include="ViewModels\Devices\SignPadViewModel.cs" />
+    <Compile Include="ViewModels\CredentialsViewModel.cs" />
+    <Compile Include="ViewModels\Pages\ConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\Pages\DiagnosticsViewModel.cs" />
+    <Compile Include="ViewModels\Pages\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Pages\PageViewModel.cs" />
+    <Compile Include="ViewModels\StatusViewModel.cs" />
+    <Compile Include="Views\Devices\CardReaderView.xaml.cs">
+      <DependentUpon>CardReaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\CashAcceptorView.xaml.cs">
+      <DependentUpon>CashAcceptorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\CashDispenserView.xaml.cs">
+      <DependentUpon>CashDispenserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\CheckAcceptorView.xaml.cs">
+      <DependentUpon>CheckAcceptorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\DoorsView.xaml.cs">
+      <DependentUpon>DoorsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\EidScannerView.xaml.cs">
+      <DependentUpon>EidScannerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\GuideLightsView.xaml.cs">
+      <DependentUpon>GuideLightsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\PinPadView.xaml.cs">
+      <DependentUpon>PinPadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\PrinterView.xaml.cs">
+      <DependentUpon>PrinterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Devices\SignPadView.xaml.cs">
+      <DependentUpon>SignPadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\AddCoinView.xaml.cs">
+      <DependentUpon>AddCoinView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Animation.xaml.cs">
+      <DependentUpon>Animation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\AddCashView.xaml.cs">
+      <DependentUpon>AddCashView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ClearChecksView.xaml.cs">
+      <DependentUpon>ClearChecksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ClearCardsView.xaml.cs">
+      <DependentUpon>ClearCardsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ClearCashInView.xaml.cs">
+      <DependentUpon>ClearCashInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ConfigurationView.xaml.cs">
+      <DependentUpon>ConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ConnectionLost.xaml.cs">
+      <DependentUpon>ConnectionLost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\CopyLogsView.xaml.cs">
+      <DependentUpon>CopyLogsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DashboardView.xaml.cs">
+      <DependentUpon>DashboardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DeviceConfigurationView.xaml.cs">
+      <DependentUpon>DeviceConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DiagnosticsView.xaml.cs">
+      <DependentUpon>DiagnosticsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\LoadingView.xaml.cs">
+      <DependentUpon>LoadingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MonitorView.xaml.cs">
+      <DependentUpon>MonitorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DisplayCashOutView.xaml.cs">
+      <DependentUpon>DisplayCashOutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\RebootView.xaml.cs">
+      <DependentUpon>RebootView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\StandardCashView.xaml.cs">
+      <DependentUpon>StandardCashView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\SystemParametersView.xaml.cs">
+      <DependentUpon>SystemParametersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\UserRolesView.xaml.cs">
+      <DependentUpon>UserRolesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\VdmView.xaml.cs">
+      <DependentUpon>VdmView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatusView.xaml.cs">
+      <DependentUpon>StatusView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MachineDateTimeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CashStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DeviceChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutOfServiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="ViewModels\SupervisorViewModel.cs" />
+    <Compile Include="ViewModels\Devices\GuideLightsViewModel.cs" />
+    <Compile Include="ViewModels\Devices\CheckAcceptorViewModel.cs" />
+    <Compile Include="ViewModels\Devices\DeviceViewModel.cs" />
+    <Compile Include="ViewModels\Devices\CardReaderViewModel.cs" />
+    <Compile Include="ViewModels\Devices\CashAcceptorViewModel.cs" />
+    <Compile Include="ViewModels\Devices\PrinterViewModel.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\Devices\CardReaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\CashAcceptorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\CashDispenserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\CheckAcceptorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\DoorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\EidScannerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\GuideLightsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\PinPadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\PrinterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Devices\SignPadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\AddCoinView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Animation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\AddCashView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\ClearChecksView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\ClearCardsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ClearCashInView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\ConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ConnectionLost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\CopyLogsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\DashboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\DeviceConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\DiagnosticsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\LoadingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MonitorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\DisplayCashOutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\RebootView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\StandardCashView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\SystemParametersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\UserRolesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\VdmView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnia.Pie.Client.Journal.Interface\Omnia.Pie.Client.Journal.Interface.csproj">
+      <Project>{a1099d06-6c3f-4eb8-8097-709b178e6b32}</Project>
+      <Name>Omnia.Pie.Client.Journal.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Client.Journal\Omnia.Pie.Client.Journal.csproj">
+      <Project>{ff7f2721-761f-4d37-8e82-e434168de720}</Project>
+      <Name>Omnia.Pie.Client.Journal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Supervisor.UI.Themes\Omnia.Pie.Supervisor.UI.Themes.csproj">
+      <Project>{b6d2823a-5d87-44c4-9d13-8a83f2e5ad48}</Project>
+      <Name>Omnia.Pie.Supervisor.UI.Themes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.DataAccess.Interface\Omnia.Pie.Vtm.DataAccess.Interface.csproj">
+      <Project>{f5e2ca67-7440-44cd-bcaf-8f4068699663}</Project>
+      <Name>Omnia.Pie.Vtm.DataAccess.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.DataAccess\Omnia.Pie.Vtm.DataAccess.csproj">
+      <Project>{82788099-841a-4a82-8800-3f0d15326bca}</Project>
+      <Name>Omnia.Pie.Vtm.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Devices.Interface\Omnia.Pie.Vtm.Devices.Interface.csproj">
+      <Project>{2930e351-9f29-466a-a540-8361e9b545de}</Project>
+      <Name>Omnia.Pie.Vtm.Devices.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework.Interface\Omnia.Pie.Vtm.Framework.Interface.csproj">
+      <Project>{2f83688e-bf17-4e7a-9ee2-222f6136fbbc}</Project>
+      <Name>Omnia.Pie.Vtm.Framework.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Framework\Omnia.Pie.Vtm.Framework.csproj">
+      <Project>{8da717d8-8d26-4a89-954b-d7489fa73565}</Project>
+      <Name>Omnia.Pie.Vtm.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Omnia.Pie.Vtm.Services.Interface\Omnia.Pie.Vtm.Services.Interface.csproj">
+      <Project>{a5802672-f8cb-490f-8566-02bfb616a0a3}</Project>
+      <Name>Omnia.Pie.Vtm.Services.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
